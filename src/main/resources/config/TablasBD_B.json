@@ -1,0 +1,29 @@
+{
+	"title": "Nombres de las tablas de SuperAndes Uniandes para la aplicación B",
+	"unidadPersistencia": "SuperAndes",
+	"tablas":
+	[
+		"superAndes_sequence",
+		"B_TIPO",
+		"B_CATEGORIA",
+		"B_PROVEEDOR",
+		"B_PROMOCION",
+		"B_PRODUCTO",
+		"B_PERSONANATURAL",
+		"B_EMPRESA",
+		"B_CLIENTE",
+		"B_FACTURA",
+		"B_SUCURSAL",
+		"B_ORDENPEDIDO",
+		"B_BODEGA",
+		"B_ESTANTE",
+		"B_PROVEEDORES_PRODUCTO",
+		"B_PRODUCTO_ORDENPEDIDO",
+		"B_FACTURA_PRODUCTO",
+		"B_CLIENTE_SUCURSAL",
+		"B_PRODUCTOSENBODEGA",
+		"B_PRODUCTOSENESTANTE",
+		"B_SUCURSAL_PRODUCTO",
+		"B_HISTORIAL_PROMOCIONES"
+	]
+}

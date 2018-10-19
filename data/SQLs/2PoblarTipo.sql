@@ -1,0 +1,13 @@
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('carnes'           , 'congelados');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('helados'          , 'congelados');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('comida preparada' , 'congelados');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('fritos'           , 'congelados');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('panaderia'        , 'perecederos');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('lacteos'          , 'perecederos');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('frutas'           , 'perecederos');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('vegetales'        , 'perecederos');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('deportiva'        , 'ropa');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('formal'           , 'ropa');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('niños'            , 'ropa');
+INSERT INTO ISIS2304B151820.TIPO (nombre, categoria) values ('adolecentes'      , 'ropa');
+COMMIT;

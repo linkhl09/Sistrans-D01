@@ -1,0 +1,29 @@
+{
+	"title": "Nombres de las tablas de Parranderos Uniandes para pruebas de la aplicación cuando la base de datos no existe o está caida",
+	"unidadPersistencia": "SuperAndesErrorDS",
+	"tablas":
+	[
+		"superAndes_sequence",
+		"X_TIPO",
+		"X_CATEGORIA",
+		"X_PROVEEDOR",
+		"X_PROMOCION",
+		"X_PRODUCTO",
+		"X_PERSONANATURAL",
+		"X_EMPRESA",
+		"X_CLIENTE",
+		"X_FACTURA",
+		"X_SUCURSAL",
+		"X_ORDENPEDIDO",
+		"X_BODEGA",
+		"X_ESTANTE",
+		"X_PROVEEDORES_PRODUCTO",
+		"X_PRODUCTO_ORDENPEDIDO",
+		"X_FACTURA_PRODUCTO",
+		"X_CLIENTE_SUCURSAL",
+		"X_PRODUCTOSENBODEGA",
+		"X_PRODUCTOSENESTANTE",
+		"X_SUCURSAL_PRODUCTO",
+		"X_HISTORIAL_PROMOCIONES"
+	]
+}
