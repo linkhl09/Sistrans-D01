@@ -804,7 +804,7 @@ public class PersistenciaSuperAndes {
 	public Producto adicionarProducto(String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
-			int nivelReorden, Date fechaVencimiento, String categoria, long promocion)
+			int nivelReorden, Date fechaVencimiento, String categoria, boolean promocion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();

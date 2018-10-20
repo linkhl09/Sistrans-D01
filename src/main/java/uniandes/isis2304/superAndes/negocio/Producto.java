@@ -90,7 +90,7 @@ public class Producto implements VOProducto{
 	/**
 	 * promocion del producto. null si actualmente no tiene una promoción.
 	 */
-	private long promocion;
+	private boolean estaEnPromocion;
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -117,7 +117,7 @@ public class Producto implements VOProducto{
 		this.nivelReorden = 0;
 		this.fechaVencimiento = null;
 		this.categoria = "";
-		this.promocion = 0;
+		this.estaEnPromocion = false;
 	}
 
 	/**
@@ -142,7 +142,7 @@ public class Producto implements VOProducto{
 	public Producto(String codigoBarras, String nombre, String marca, double precioUnitario, String presentacion,
 			double precioUnidadMedida, int cantidadPresentacion, double peso, String unidadMedidaPeso, double volumen,
 			String unidadMedidaVolumen, double calidad, int nivelReorden, Date fechaVencimiento, String categoria,
-			long promocion) 
+			boolean promocion) 
 	{
 		this.codigoBarras = codigoBarras;
 		this.nombre = nombre;
@@ -159,7 +159,7 @@ public class Producto implements VOProducto{
 		this.nivelReorden = nivelReorden;
 		this.fechaVencimiento = fechaVencimiento;
 		this.categoria = categoria;
-		this.promocion = promocion;
+		this.estaEnPromocion = promocion;
 	}
 	
     // -----------------------------------------------------------------
@@ -394,16 +394,16 @@ public class Producto implements VOProducto{
 	/**
 	 * @return Promocion actual del producto. Null si no tiene ninguna.
 	 */
-	public long getPromocion() {
-		return promocion;
+	public boolean getEstaEnPromocion() {
+		return estaEnPromocion;
 	}
 
 	/**
 	 * Asigna una promocion al producto.
 	 * @param promocion nueva promocion.
 	 */
-	public void setPromocion(long promocion) {
-		this.promocion = promocion;
+	public void setEstaEnPromocion(boolean promocion) {
+		this.estaEnPromocion = promocion;
 	}
 	
 	/**
@@ -422,7 +422,7 @@ public class Producto implements VOProducto{
 			msj += ", fechaVencimiento =" + fechaVencimiento.toString();
 		else
 			msj += ", fechaVencimiento =" + fechaVencimiento;
-		msj +=	", categoria=" + categoria + ", promocion" + promocion + "]";
+		msj +=	", categoria=" + categoria + ", estaEnPromocion" + estaEnPromocion + "]";
 		
 		return msj;
 	}

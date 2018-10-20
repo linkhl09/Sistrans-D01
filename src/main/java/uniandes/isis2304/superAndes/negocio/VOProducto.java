@@ -87,7 +87,7 @@ public interface VOProducto {
 	/**
 	 * @return Promocion actual del producto. Null si no tiene ninguna.
 	 */
-	public long getPromocion();
+	public boolean getEstaEnPromocion();
 	
 	/**
 	 * Cadena de caracteres con todos los atributos de.
