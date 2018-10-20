@@ -256,57 +256,6 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 
 
-	public Promocion adicionarPromocion(String descripcion, double precio, Date inicio, Date fin, int unidadesDisponibles, String proveedor)
-	{
-		log.info ("Adicionando Promocion: " + descripcion);
-		Promocion agregado = psa.adicionarPromocion(descripcion, precio, inicio, fin, unidadesDisponibles, proveedor);		
-		log.info ("Adicionado");
-		return agregado;
-	}
-
-	public long eliminarPromocion(long id) 
-	{
-		log.info ("Eliminando ");
-		long resp = psa.eliminarPromocion(id);	
-		log.info ("Eliminando : " + resp + " tuplas eliminadas");
-		return resp;
-	}
-
-	public List<Promocion> darPromociones()
-	{
-		log.info ("Consultando ");
-		List<Promocion> list = psa.darPromociones();
-		log.info ("Consultando : " + list.size() + " existentes");
-		return list;
-	}
-
-	public List<VOPromocion> darVOPromocion ()
-	{
-		log.info ("Generando los VO de ");        
-		List<VOPromocion> list = new LinkedList<VOPromocion> ();
-		for (Promocion tb : psa.darPromociones())
-		{
-			list.add (tb);
-		}
-		log.info ("Generando los VO de : " + list.size() + " existentes");
-		return list;
-	}
-
-	public Promocion darPromocion(long id)
-	{
-		log.info ("Dar información de ");
-		Promocion buscado = psa.darPromocion(id);
-		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
-		return buscado;
-	}
-
-	public long registrarVentas(long id, int unidadesVendidas)
-	{
-		log.info("Registrar ventas.");
-		long cambios = psa.registrarVentas(id, unidadesVendidas);
-		return cambios;
-	}
-
 	// -----------------------------------------------------------------
 	// Métodos de tabla producto
 	// -----------------------------------------------------------------
@@ -1214,61 +1163,5 @@ public class SuperAndes {
 		}
 		log.info ("Generando los VO de SucursalProducto: " + list.size() + " existentes");
 		return list;
-	}
-
-	// -----------------------------------------------------------------
-	// Métodos de tabla HistorialPromociones
-	// -----------------------------------------------------------------
-
-	public HistorialPromociones adicionarHistorialPromociones(String producto, long promocion)
-	{
-		log.info ("Adicionando HistorialPromociones: " + producto);
-		HistorialPromociones agregado = psa.adicionarHistorialPromociones(producto, promocion);	
-		log.info ("Adicionado");
-		return agregado;
-	}
-
-	public long eliminarHistorialPromociones(String producto, long promocion)
-	{
-		log.info ("Eliminando HistorialPromociones ");
-		long resp = psa.eliminarHistorialPromociones(producto, promocion);
-				log.info ("Eliminando : " + resp + " tuplas eliminadas");
-		return resp;
-	}
-
-	public List<HistorialPromociones> darHistorialCompletoPromociones()
-	{
-		log.info ("Consultando HistorialPromociones");
-		List<HistorialPromociones> list = psa.darHistorialCompletoPromociones();
-				log.info ("Consultando : " + list.size() + " existentes");
-		return list;
-	}
-
-	public List<HistorialPromociones> darHistorialPromocionesProducto(String producto)
-	{
-		log.info ("Consultando HistorialPromociones");
-		List<HistorialPromociones> list = psa.darHistorialPromocionesProducto(producto);
-				log.info ("Consultando : " + list.size() + " existentes");
-		return list;
-	}
-	
-	public List<VOHistorialPromociones> darVO ()
-	{
-		log.info ("Generando los VO de HistorialPromociones");        
-		List<VOHistorialPromociones> list = new LinkedList<VOHistorialPromociones> ();
-		for (HistorialPromociones tb : psa.darHistorialCompletoPromociones())
-		{
-			list.add (tb);
-		}
-		log.info ("Generando los VO de HistorialPromociones: " + list.size() + " existentes");
-		return list;
-	}
-
-	public HistorialPromociones darPromocion(String producto, long promocion)
-	{
-		log.info ("Dar información de HistorialPromociones");
-		HistorialPromociones buscado = psa.adicionarHistorialPromociones(producto, promocion);
-				log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
-		return buscado;
 	}
 }

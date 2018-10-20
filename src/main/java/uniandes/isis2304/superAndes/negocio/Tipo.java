@@ -16,6 +16,9 @@ public class Tipo implements VOTipo
 	 */
 	private String nombre;
 	
+	/**
+	 * Categoria del tipo.
+	 */
 	private String categoria;
 
 	// -----------------------------------------------------------------

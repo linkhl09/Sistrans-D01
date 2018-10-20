@@ -81,7 +81,7 @@ public class PersistenciaSuperAndes {
 	private SQLProveedor sqlProveedor;
 
 
-	private SQLPromocion sqlPromocion;
+	
 
 
 	private SQLProducto sqlProducto;
@@ -132,7 +132,7 @@ public class PersistenciaSuperAndes {
 	private SQLSucursalProducto sqlSucursalProducto;
 
 
-	private SQLHistorialPromociones sqlHistorialPromociones;
+	
 
 
 	private SQLUtil sqlUtil;
@@ -247,7 +247,6 @@ public class PersistenciaSuperAndes {
 		sqlTipo = new SQLTipo(this);
 		sqlCategoria = new SQLCategoria(this);
 		sqlProveedor = new SQLProveedor(this);
-		sqlPromocion = new SQLPromocion(this);
 		sqlProducto = new SQLProducto(this);
 		sqlPersonaNatural = new SQLPersonaNatural(this);
 		sqlEmpresa = new SQLEmpresa(this);
@@ -264,7 +263,6 @@ public class PersistenciaSuperAndes {
 		sqlProductosEnBodega = new SQLProductosEnBodega(this);
 		sqlProductosEnEstante = new SQLProductosEnEstante(this);
 		sqlSucursalProducto  = new SQLSucursalProducto(this);
-		sqlHistorialPromociones = new SQLHistorialPromociones(this);
 		sqlUtil  = new SQLUtil(this);
 	}
 
@@ -795,104 +793,7 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	
-	public Promocion adicionarPromocion( String descripcion, double precio, Date inicio, Date fin, int unidadesDisponibles, String proveedor)
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long id = nextval();
-			long tuplasInsertadas = sqlPromocion.adicionarPromocion(pm, id, descripcion, precio, inicio, fin, unidadesDisponibles, proveedor);
-					tx.commit();
-
-			log.trace("Inserción de la promocion con id: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
-
-			return new Promocion(id, descripcion, precio, inicio, fin, unidadesDisponibles, 0, proveedor);
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return null;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
 	
-
-	public long eliminarPromocion(long id) 
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long resp = sqlPromocion.eliminarPromocion(pm, id);
-			tx.commit();
-			return resp;
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return -1;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
-
-
-	public List<Promocion> darPromociones()
-	{
-		return sqlPromocion.darPromociones(pmf.getPersistenceManager());
-	}
-
-
-	public Promocion darPromocion(long id)
-	{
-		return sqlPromocion.darPromocion(pmf.getPersistenceManager(), id);
-	}
-
-
-	public long registrarVentas(long id, int unidadesVendidas)
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx=pm.currentTransaction();
-        try
-        {
-            tx.begin();
-            long resp = sqlPromocion.registrarVentas(pm, id, unidadesVendidas);
-            tx.commit();
-            return resp;
-        }
-        catch (Exception e)
-        {
-//        	e.printStackTrace();
-        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-            return -1;
-        }
-        finally
-        {
-            if (tx.isActive())
-            {
-                tx.rollback();
-            }
-            pm.close();
-        }
-	}
 
 	
 	// -----------------------------------------------------------------
@@ -2410,87 +2311,5 @@ public class PersistenciaSuperAndes {
 	public List<SucursalProducto> darTodosProductosSucursales()
 	{
 		return sqlSucursalProducto.darTodosProductosSucursales(pmf.getPersistenceManager());
-	}
-	
-	
-	// -----------------------------------------------------------------
-	// Métodos de tabla HistorialPromociones
-	// -----------------------------------------------------------------
-
-	
-	public HistorialPromociones adicionarHistorialPromociones(String producto, long promocion)
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long tuplasInsertadas = sqlHistorialPromociones.adicionarHistorialPromociones(pm, producto, promocion);
-			tx.commit();
-
-			log.trace("Inserción de promocion: " + promocion + ": " + tuplasInsertadas + " tuplas insertadas al historial."); 
-
-			return new HistorialPromociones(producto, promocion);
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return null;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
-
-
-	public long eliminarHistorialPromociones(String producto, long promocion) 
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long resp = sqlHistorialPromociones.eliminarHistorialPromociones(pm, producto, promocion);
-			tx.commit();
-			return resp;
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return -1;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
-
-
-	public List<HistorialPromociones> darHistorialCompletoPromociones()
-	{
-		return sqlHistorialPromociones.darHistorialCompletoPromociones(pmf.getPersistenceManager());
-	}
-
-
-	public List<HistorialPromociones> darHistorialPromocionesProducto(String producto)
-	{
-		return sqlHistorialPromociones.darHistorialPromocionesProducto(pmf.getPersistenceManager(), producto);
-	}
-	
-	
-	public HistorialPromociones darPromocion(String producto, long promocion)
-	{
-		return sqlHistorialPromociones.darHistorialPromocion(pmf.getPersistenceManager(), producto, promocion);
 	}
 }
