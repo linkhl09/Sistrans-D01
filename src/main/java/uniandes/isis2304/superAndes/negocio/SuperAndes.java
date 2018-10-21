@@ -641,10 +641,10 @@ public class SuperAndes {
 	// Métodos de tabla bodega
 	// -----------------------------------------------------------------
 
-	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, String direccionSucursal, String ciudadSucursal)
+	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Bodega");
-		Bodega agregado = psa.adicionarBodega(capacidadVol, capacidadPeso, tipo, direccionSucursal, ciudadSucursal);	
+		Bodega agregado = psa.adicionarBodega(capacidadVol, capacidadPeso, tipo, idSucursal);	
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -665,10 +665,10 @@ public class SuperAndes {
 		return list;
 	}
 
-	public List<Bodega> darBodegasSucursal(String direccionSucursal, String ciudadSucursal)
+	public List<Bodega> darBodegasSucursal(long idSucursal)
 	{
 		log.info ("Consultando Bodegas por sucursal");
-		List<Bodega> list = psa.darBodegasSucursal(direccionSucursal, ciudadSucursal);
+		List<Bodega> list = psa.darBodegasSucursal(idSucursal);
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
