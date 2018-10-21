@@ -1462,7 +1462,7 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	
-	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, String direccionSucursal, String ciudadSucursal)
+	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1470,12 +1470,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long id = nextval();
-			long tuplasInsertadas = sqlBodega.adicionarBodega(pm, id, capacidadVol, capacidadPeso, tipo, direccionSucursal, ciudadSucursal);
+			long tuplasInsertadas = sqlBodega.adicionarBodega(pm, id, capacidadVol, capacidadPeso, tipo, idSucursal);
 			tx.commit();
 
 			log.trace("Inserción de la bodega con id: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Bodega(id, capacidadPeso, capacidadVol, tipo, direccionSucursal, ciudadSucursal);
+			return new Bodega(id, capacidadPeso, capacidadVol, tipo, idSucursal);
 		}
 		catch (Exception e)
 		{
@@ -1528,9 +1528,9 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public List<Bodega> darBodegasSucursal(String direccionSucursal, String ciudadSucursal)
+	public List<Bodega> darBodegasSucursal(long idSucursal)
 	{
-		return sqlBodega.darBodegasSucursal(pmf.getPersistenceManager(), direccionSucursal, ciudadSucursal);
+		return sqlBodega.darBodegasSucursal(pmf.getPersistenceManager(), idSucursal);
 	}
 	
 	

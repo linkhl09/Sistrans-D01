@@ -33,12 +33,7 @@ public class Bodega implements VOBodega{
 	/**
 	 * direccion de la surcursal de la bodega.
 	 */
-	private String direccionSucursal;
-	
-	/**
-	 * ciudad de la sucursal de la bodega.
-	 */
-	private String ciudadSucursal;
+	private long idSucursal;
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -53,8 +48,7 @@ public class Bodega implements VOBodega{
 		this.capacidadPeso = 0;
 		this.capacidadVolumen = 0;
 		this.tipo = "";
-		this.direccionSucursal = "";
-		this.ciudadSucursal = "";
+		this.idSucursal = 0;
 	}
 	
 	/**
@@ -67,17 +61,14 @@ public class Bodega implements VOBodega{
 	 * @param ciudadSucursal ciudad de la sucursal de la bodega.
 	 */
 	public Bodega(long id, double capacidadPeso, double capacidadVolumen, 
-			String tipo, String direccionSucursal, String ciudadSucursal) 
+			String tipo, Long idSucursal) 
 	{
-		super();
 		this.id = id;
 		this.capacidadPeso = capacidadPeso;
 		this.capacidadVolumen = capacidadVolumen;
 		this.tipo = tipo;
-		this.direccionSucursal = direccionSucursal;
-		this.ciudadSucursal = ciudadSucursal;
+		this.idSucursal = idSucursal;
 	}
-	
 	
     // -----------------------------------------------------------------
     // Métodos.
@@ -154,35 +145,18 @@ public class Bodega implements VOBodega{
 	/**
 	 * @return dirección de la sucursal de la bodega.
 	 */
-	public String getDireccionSucursal() 
+	public Long getIdSucursal() 
 	{
-		return direccionSucursal;
+		return idSucursal;
 	}
 
 	/**
 	 * Asigna la dirección de la sucursal de la bodega.
-	 * @param direccionSucursal nueva dirección de la sucursal de la bodega.
+	 * @param idSucursal nueva dirección de la sucursal de la bodega.
 	 */
-	public void setDireccionSucursal(String direccionSucursal) 
+	public void setIdSucursal(Long idSucursal) 
 	{
-		this.direccionSucursal = direccionSucursal;
-	}
-
-	/**
-	 * @return Ciudad de la sucursal de la bodega.
-	 */
-	public String getCiudadSucursal() 
-	{
-		return ciudadSucursal;
-	}
-
-	/**
-	 * Asigna la ciudad de la sucursal de la bodega.
-	 * @param ciudadSucursal ciudad de la sucursal de la bodega.
-	 */
-	public void setCiudadSucursal(String ciudadSucursal) 
-	{
-		this.ciudadSucursal = ciudadSucursal;
+		this.idSucursal = idSucursal;
 	}
 	
 	/**
@@ -193,7 +167,6 @@ public class Bodega implements VOBodega{
 	{
 		return "Estante [id =" + id + ", capacidadVolumen=" + capacidadVolumen
 				+ ", capacidadPeso =" + capacidadPeso + ", tipo =" +tipo 
-				+ ", direccionSucursal =" + direccionSucursal + ", ciudadSucursal =" + ciudadSucursal + "]";
+				+ ", idSucursal =" + idSucursal + "]";
 	}	
-
 }

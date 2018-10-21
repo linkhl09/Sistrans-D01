@@ -30,12 +30,7 @@ public interface VOBodega {
 	/**
 	 * @return dirección de la sucursal de la bodega.
 	 */
-	public String getDireccionSucursal();
-
-	/**
-	 * @return Ciudad de la sucursal de la bodega.
-	 */
-	public String getCiudadSucursal();
+	public Long getIdSucursal();
 	
 	/**
 	 * Cadena de caracteres con todos los atributos de la bodega.
