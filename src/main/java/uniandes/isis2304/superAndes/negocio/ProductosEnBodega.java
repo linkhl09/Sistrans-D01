@@ -10,13 +10,25 @@ public class ProductosEnBodega implements VOProductosEnBodega {
     // Atributos.
     // -----------------------------------------------------------------
 
-	private long bodega;
+	/**
+	 * id de la bodega a la que pertenece el producto.
+	 */
+	private long idBodega;
 	
+	/**
+	 * Cantidad de unidades del producto que tiene esa bodega.
+	 */
 	private int cantidad;
 	
+	/**
+	 * Nivel de abastecimiento del producto en esa bodega.
+	 */
 	private  int nivelAbastecimiento;
 	
-	private String producto;	
+	/**
+	 * Producto almacenado en la bodega.
+	 */
+	private String codigoBarrasproducto;	
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -27,60 +39,92 @@ public class ProductosEnBodega implements VOProductosEnBodega {
 	 */
 	public ProductosEnBodega() 
 	{
-		bodega = 0;
+		idBodega = 0;
 		cantidad = 0; 
 		nivelAbastecimiento = 0;
-		producto = "";
+		codigoBarrasproducto = "";
 	}
 	
 	/**
 	 * Constructor con valores.
-	 * @param bodega
-	 * @param cantidad
-	 * @param nivelAbastecimiento
-	 * @param producto
+	 * @param idBodega id de la bodega donde se almacenará el producto.
+	 * @param cantidad Cantidad de unidades del producto almacenado en bodega.
+	 * @param nivelAbastecimiento nivel de abastecimiento de ese producto en la bodega.
+	 * @param codigoBarrasProducto
 	 */
-	public ProductosEnBodega(long bodega, int cantidad, int nivelAbastecimiento, String producto) {
-		this.bodega = bodega;
+	public ProductosEnBodega(long idBodega, int cantidad, int nivelAbastecimiento, String codigoBarrasProducto) {
+		this.idBodega = idBodega;
 		this.cantidad = cantidad;
 		this.nivelAbastecimiento = nivelAbastecimiento;
-		this.producto = producto;
+		this.codigoBarrasproducto = codigoBarrasProducto;
 	}
 
     // -----------------------------------------------------------------
     // Métodos.
     // -----------------------------------------------------------------
 
-	public long getBodega() {
-		return bodega;
+	/**
+	 * @return  id de la bodega donde esta almacenado el producto.
+	 */
+	public long getIdBodega() 
+	{
+		return idBodega;
 	}
 
-	public void setBodega(long bodega) {
-		this.bodega = bodega;
+	/**
+	 * @param idBodega Id de la nueva bodega donde se almacenará el producto.
+	 */
+	public void setIdBodega(long idBodega) 
+	{
+		this.idBodega = idBodega;
 	}
 
-	public int getCantidad() {
+	/**
+	 * @return Cantidad de unidades del producto almacenado en bodega.
+	 */
+	public int getCantidad() 
+	{
 		return cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
+	/**
+	 * @param cantidad nueva cantidad del producto almacenado en bodega.
+	 */
+	public void setCantidad(int cantidad) 
+	{
 		this.cantidad = cantidad;
 	}
 
-	public int getNivelAbastecimiento() {
+	/**
+	 * @return Nivel de abastecimiento del producto almacenado en bodega.
+	 */
+	public int getNivelAbastecimiento() 
+	{
 		return nivelAbastecimiento;
 	}
 
-	public void setNivelAbastecimiento(int nivelAbastecimiento) {
+	/**
+	 * @param nivelAbastecimiento - Nuevo nivel de abastecimiento de el producto almacenado en bodega.
+	 */
+	public void setNivelAbastecimiento(int nivelAbastecimiento) 
+	{
 		this.nivelAbastecimiento = nivelAbastecimiento;
 	}
 
-	public String getProducto() {
-		return producto;
+	/**
+	 * @return codigo de barras del producto almacenado en bodega.
+	 */
+	public String getCodigoBarrasProducto() 
+	{
+		return codigoBarrasproducto;
 	}
 
-	public void setProducto(String producto) {
-		this.producto = producto;
+	/**
+	 * @param codigoBarrasProducto El producto que se va a almacenar en la bodega.
+	 */
+	public void setCodigoBarrasProducto(String codigoBarrasProducto) 
+	{
+		this.codigoBarrasproducto = codigoBarrasProducto;
 	}
 	
 	/**
@@ -89,8 +133,8 @@ public class ProductosEnBodega implements VOProductosEnBodega {
 	@Override
 	public String toString()
 	{
-		return "ProductosEnBodega [bodega =" + bodega + ", cantidad =" + cantidad 
+		return "ProductosEnBodega [idBodega =" + idBodega + ", cantidad =" + cantidad 
 				+ ", nivelAbastecimiento =" + nivelAbastecimiento 
-				+ ", producto =" + producto + "]";
+				+ ", codigoBarrasProducto =" + codigoBarrasproducto + "]";
 	}	
 }

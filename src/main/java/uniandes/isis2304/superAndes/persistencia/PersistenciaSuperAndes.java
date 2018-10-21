@@ -79,10 +79,7 @@ public class PersistenciaSuperAndes {
 
 
 	private SQLProveedor sqlProveedor;
-
-
 	
-
 
 	private SQLProducto sqlProducto;
 
@@ -130,9 +127,6 @@ public class PersistenciaSuperAndes {
 
 
 	private SQLSucursalProducto sqlSucursalProducto;
-
-
-	
 
 
 	private SQLUtil sqlUtil;
@@ -642,7 +636,6 @@ public class PersistenciaSuperAndes {
 			pm.close();
 		}
 	}
-
 
 
 	public List<Categoria> darCategorias()
@@ -1954,27 +1947,26 @@ public class PersistenciaSuperAndes {
 	{
 		return sqlClienteSucursal.darTodosClientesSucursales(pmf.getPersistenceManager());
 	}
-	
-	
+		
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla productosEnBodega
 	// -----------------------------------------------------------------
 
 	
-	public ProductosEnBodega adicionarProductosEnBodega(long bodega, int cantidad, int nivelAbastecimiento, String producto)
+	public ProductosEnBodega adicionarProductosEnBodega(long idBodega, int cantidad, int nivelAbastecimiento, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlProductosEnBodega.adicionarProductosEnBodega(pm, bodega, cantidad, nivelAbastecimiento, producto);
+			long tuplasInsertadas = sqlProductosEnBodega.adicionarProductosEnBodega(pm, idBodega, cantidad, nivelAbastecimiento, codigoBarrasProducto);
 			tx.commit();
 
-			log.trace("Inserción de producto: " + producto + "en la bodega: " + bodega + " : " + tuplasInsertadas + " tuplas insertadas."); 
+			log.trace("Inserción de producto: " + codigoBarrasProducto + "en la bodega: " + idBodega + " : " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new ProductosEnBodega(bodega, cantidad, nivelAbastecimiento, producto);
+			return new ProductosEnBodega(idBodega, cantidad, nivelAbastecimiento, codigoBarrasProducto);
 		}
 		catch (Exception e)
 		{
@@ -1993,14 +1985,14 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public long eliminarProductoEnBodega(long bodega, String producto) 
+	public long eliminarProductoEnBodega(long idBodega, String codigoBarrasProducto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlProductosEnBodega.eliminarProductoEnBodega(pm, bodega, producto);
+			long resp = sqlProductosEnBodega.eliminarProductoEnBodega(pm, idBodega, codigoBarrasProducto);
 			tx.commit();
 			return resp;
 		}
@@ -2021,9 +2013,9 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public List<ProductosEnBodega> darProductosEnBodega(long bodega)
+	public List<ProductosEnBodega> darProductosEnBodega(long idBodega)
 	{
-		return sqlProductosEnBodega.darProductosEnBodega(pmf.getPersistenceManager(), bodega);
+		return sqlProductosEnBodega.darProductosEnBodega(pmf.getPersistenceManager(), idBodega);
 	}
 
 	
@@ -2033,20 +2025,20 @@ public class PersistenciaSuperAndes {
 	}
 	
 	
-	public List<ProductosEnBodega> darBodegasProducto(String producto)
+	public List<ProductosEnBodega> darBodegasProducto(String codigoBarrasProducto)
 	{
-		return sqlProductosEnBodega.darBodegasProducto(pmf.getPersistenceManager(), producto);
+		return sqlProductosEnBodega.darBodegasProducto(pmf.getPersistenceManager(), codigoBarrasProducto);
 	}
 	
 	
-	public long aumentarProductosEnBodega( long bodega, String producto, int productosPedidos )
+	public long aumentarProductosEnBodega( long idBodega, String codigoBarrasProducto, int productosPedidos )
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long resp = sqlProductosEnBodega.aumentarProductosEnBodega(pm, bodega, producto, productosPedidos);
+            long resp = sqlProductosEnBodega.aumentarProductosEnBodega(pm, idBodega, codigoBarrasProducto, productosPedidos);
             tx.commit();
             return resp;
         }
