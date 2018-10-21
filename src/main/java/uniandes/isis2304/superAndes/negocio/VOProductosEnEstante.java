@@ -7,11 +7,20 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOProductosEnEstante {
 	
-	public long getEstante();
+	/**
+	 * @return id del estante donde se guarda el producto.
+	 */
+	public long getIdEstante();
 	
+	/**
+	 * @return cantidad del producto guardado en el estante.
+	 */
 	public int getCantidad();
 	
-	public String getProducto();
+	/**
+	 * @return Codigo de barras del producto guardado en el estante.
+	 */
+	public String getCodigoBarrasProducto();
 	
 	/**
 	 * Cadena de caracteres con todos los atributos de ProductosEnEstante.

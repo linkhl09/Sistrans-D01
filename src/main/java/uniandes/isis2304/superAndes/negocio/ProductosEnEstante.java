@@ -10,11 +10,20 @@ public class ProductosEnEstante implements VOProductosEnEstante {
     // Atributos.
     // -----------------------------------------------------------------
 
-	private long estante;
+	/**
+	 * Id del estante donde se almacena el producto.
+	 */
+	private long idEstante;
 	
+	/**
+	 * Cantidad de unidades del producto almacenado en el estante.
+	 */
 	private int cantidad;
 	
-	private String producto;
+	/**
+	 * Codigo de barras del producto almacenado en el estante.
+	 */
+	private String codigoBarrasProducto;
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -25,50 +34,74 @@ public class ProductosEnEstante implements VOProductosEnEstante {
 	 */
 	public ProductosEnEstante() 
 	{
-		estante = 0;
+		idEstante = 0;
 		cantidad = 0;
-		producto = "";
+		codigoBarrasProducto = "";
 	}
 	
 	/**
 	 * Constructor con valores.
-	 * @param estante
-	 * @param cantidad
-	 * @param producto
+	 * @param idEstante Id del estante donde se almacena el producto.
+	 * @param cantidad Cantidad de productos que se almacenan en el estante.
+	 * @param codigoBarrasProducto Codigo de barras del producto almacenado en el estante.
 	 */
-	public ProductosEnEstante(long estante, int cantidad, String producto) 
+	public ProductosEnEstante(long idEstante, int cantidad, String codigoBarrasProducto) 
 	{
-		this.estante = estante;
+		this.idEstante = idEstante;
 		this.cantidad = cantidad;
-		this.producto = producto;
+		this.codigoBarrasProducto = codigoBarrasProducto;
 	}
 
     // -----------------------------------------------------------------
     // Métodos.
     // -----------------------------------------------------------------
 
-	public long getEstante() {
-		return estante;
+	/**
+	 * @return id del estante donde se guarda el producto.
+	 */
+	public long getIdEstante() 
+	{
+		return idEstante;
 	}
 
-	public void setEstante(long estante) {
-		this.estante = estante;
+	/**
+	 * @param idEstante - Nuevo id de estante donde se almacena el producto.
+	 */
+	public void setIdEstante(long idEstante) 
+	{
+		this.idEstante = idEstante;
 	}
 
-	public int getCantidad() {
+	/**
+	 * @return cantidad del producto guardado en el estante.
+	 */
+	public int getCantidad() 
+	{
 		return cantidad;
 	}
 
-	public void setCantidad(int cantidad) {
+	/**
+	 * @param cantidad - Nueva cantidad de productos en el estante.
+	 */
+	public void setCantidad(int cantidad) 
+	{
 		this.cantidad = cantidad;
 	}
 
-	public String getProducto() {
-		return producto;
+	/**
+	 * @return Codigo de barras del producto guardado en el estante.
+	 */
+	public String getCodigoBarrasProducto() 
+	{
+		return codigoBarrasProducto;
 	}
 
-	public void setProducto(String producto) {
-		this.producto = producto;
+	/**
+	 * @param codigoBarrasProducto - Codigo de barras del producto almacenado en el estante.
+	 */
+	public void setCodigoBarrasProducto(String codigoBarrasProducto) 
+	{
+		this.codigoBarrasProducto = codigoBarrasProducto;
 	}
 	
 	/**
@@ -77,7 +110,7 @@ public class ProductosEnEstante implements VOProductosEnEstante {
 	@Override
 	public String toString()
 	{
-		return "ProductosEnEstante [ estante ="+ estante +", cantidad =" +cantidad
-				+ "producto =" + producto + "]";
+		return "ProductosEnEstante [ estante ="+ idEstante +", cantidad =" +cantidad
+				+ "producto =" + codigoBarrasProducto + "]";
 	}
 }

@@ -871,14 +871,14 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public long nuevaPromocion(String codigoBarras, long promocion)
+	public long nuevaPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long resp = sqlProducto.nuevaPromocion(pm, codigoBarras, promocion);
+            long resp = sqlProducto.nuevaPromocion(pm, codigoBarras);
             tx.commit();
             return resp;
         }
@@ -2092,19 +2092,19 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	
-	public ProductosEnEstante adicionarProductosEnEstante(long estante, int cantidad, String producto)
+	public ProductosEnEstante adicionarProductosEnEstante(long idEstante, int cantidad, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlProductosEnEstante.adicionarProductosEnEstante(pm, estante, cantidad, producto);
+			long tuplasInsertadas = sqlProductosEnEstante.adicionarProductosEnEstante(pm, idEstante, cantidad, codigoBarrasProducto);
 			tx.commit();
 
-			log.trace("Inserción de producto : " + producto + " Al estante: "+ estante + " : " + tuplasInsertadas + " tuplas insertadas."); 
+			log.trace("Inserción de producto : " + codigoBarrasProducto + " Al estante: "+ idEstante + " : " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new ProductosEnEstante(estante, cantidad, producto);
+			return new ProductosEnEstante(idEstante, cantidad, codigoBarrasProducto);
 		}
 		catch (Exception e)
 		{
@@ -2123,14 +2123,14 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public long eliminarProductosEnEstante(long estante, String producto) 
+	public long eliminarProductosEnEstante(long idEstante, String codigoBarrasProducto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlProductosEnEstante.eliminarProductosEnEstante(pm, estante, producto);
+			long resp = sqlProductosEnEstante.eliminarProductosEnEstante(pm, idEstante, codigoBarrasProducto);
 			tx.commit();
 			return resp;
 		}
@@ -2151,15 +2151,15 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public List<ProductosEnEstante> darProductosEnEstante(long estante)
+	public List<ProductosEnEstante> darProductosEnEstante(long idEstante)
 	{
-		return sqlProductosEnEstante.darProductosEnEstante(pmf.getPersistenceManager(), estante);
+		return sqlProductosEnEstante.darProductosEnEstante(pmf.getPersistenceManager(), idEstante);
 	}
 
 
-	public ProductosEnEstante darProductoEnEstante (long estante,  String producto) 
+	public ProductosEnEstante darProductoEnEstante (long idEstante,  String codigoBarrasProducto) 
 	{
-		return sqlProductosEnEstante.darProductoEnEstante(pmf.getPersistenceManager(), estante, producto);
+		return sqlProductosEnEstante.darProductoEnEstante(pmf.getPersistenceManager(), idEstante, codigoBarrasProducto);
 	}
 	
 	
@@ -2169,14 +2169,14 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public long traerDeBodega(long estante, int productosTraidos, String producto)
+	public long traerDeBodega(long idEstante, int productosTraidos, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long resp = sqlProductosEnEstante.traerDeBodega(pm, estante, productosTraidos, producto);
+            long resp = sqlProductosEnEstante.traerDeBodega(pm, idEstante, productosTraidos, codigoBarrasProducto);
             tx.commit();
             return resp;
         }
@@ -2197,14 +2197,14 @@ public class PersistenciaSuperAndes {
 	}
 	
 	
-	public long venderProductos(long estante, int productosVendidos, String producto)
+	public long quitarProductosEstante(long idEstante, int productosVendidos, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
         {
             tx.begin();
-            long resp = sqlProductosEnEstante.venderProductos(pm, estante, productosVendidos, producto);
+            long resp = sqlProductosEnEstante.quitarProductosEstante(pm, idEstante, productosVendidos, codigoBarrasProducto);
             tx.commit();
             return resp;
         }

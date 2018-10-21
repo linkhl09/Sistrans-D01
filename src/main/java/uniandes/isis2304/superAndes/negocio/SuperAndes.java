@@ -1,6 +1,5 @@
 package uniandes.isis2304.superAndes.negocio;
 
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -273,7 +272,7 @@ public class SuperAndes {
 
 	public long eliminarProducto(String codigoBarras) 
 	{
-		log.info ("Eliminando ");
+		log.info ("Eliminando producto");
 		long resp = psa.eliminarProducto(codigoBarras);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
@@ -281,7 +280,7 @@ public class SuperAndes {
 
 	public List<Producto> darProductos()
 	{
-		log.info ("Consultando ");
+		log.info ("Consultando productos");
 		List<Producto> list = psa.darProductos();	
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
@@ -289,35 +288,35 @@ public class SuperAndes {
 
 	public List<VOProducto> darVOProducto ()
 	{
-		log.info ("Generando los VO de ");        
+		log.info ("Generando los VO de Productos");        
 		List<VOProducto> list = new LinkedList<VOProducto> ();
 		for (Producto tb : psa.darProductos())
 		{
 			list.add (tb);
 		}
-		log.info ("Generando los VO de : " + list.size() + " existentes");
+		log.info ("Generando los VO de productos: " + list.size() + " existentes");
 		return list;
 	}
 
 	public Producto darProducto(String codigoBarras)
 	{
-		log.info ("Dar información de ");
+		log.info ("Dar información de Producto con codigo de barras: "+ codigoBarras);
 		Producto buscado = psa.darProducto(codigoBarras);
-		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		log.info ("Buscando : " + buscado != null ? buscado.toString() : "NO EXISTE");
 		return buscado;
 	}
 
 
-	public long nuevaPromocion(String codigoBarras, long promocion)
+	public long nuevaPromocion(String codigoBarras)
 	{
-		log.info("Crear nueva promocion al producto");
-		long cambios = psa.nuevaPromocion(codigoBarras, promocion);
+		log.info("Se cambio el estado del producto a en promoción.");
+		long cambios = psa.nuevaPromocion(codigoBarras);
 		return cambios;
 	}
 
 	public long terminarPromocion(String codigoBarras)
 	{
-		log.info("");
+		log.info("Se cambio el estado del producto fuera de promoción.");
 		long cambios = psa.terminarPromocion(codigoBarras);
 		return cambios;
 	}
@@ -520,36 +519,36 @@ public class SuperAndes {
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
 
-	public Sucursal adicionarSucursal( long id, String direccion, String ciudad,
+	public Sucursal adicionarSucursal(String direccion, String ciudad,
 			String nombre, String segmentacionMercado, int tamanio)
 	{
-		log.info ("Adicionando Sucursal: " + nombre );
+		log.info ("Adicionando Sucursal: " + nombre +".");
 		Sucursal agregado = psa.adicionarSucursal(direccion, ciudad, nombre, segmentacionMercado, tamanio);	
-		log.info ("Adicionado");
+		log.info ("La sucursal fue adicionada.");
 		return agregado;
 	}
 
 	public long eliminarSucursal(String nombre) 
 	{
-		log.info ("Eliminando Sucursal");
+		log.info ("Eliminando Sucursal por nombre.");
 		long resp = psa.eliminarSucursalPorNombre(nombre);
-		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		log.info ("Eliminando sucursal: " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
 	public long eliminarSucursalPorId(long id) 
 	{
-		log.info ("Eliminando Sucursal");
+		log.info ("Eliminando Sucursal por id.");
 		long resp = psa.eliminarSucursalPorId(id);
-		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		log.info ("Eliminando sucursal por id: " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
 	public List<Sucursal> darSucursales()
 	{
-		log.info ("Consultando Sucursales");
+		log.info ("Consultando Sucursales.");
 		List<Sucursal> list = psa.darSucursales();	
-		log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando sucursales: " + list.size() + " existentes");
 		return list;
 	}
 
@@ -561,13 +560,13 @@ public class SuperAndes {
 		{
 			list.add (tb);
 		}
-		log.info ("Generando los VO de Sucursal : " + list.size() + " existentes");
+		log.info ("Generando los VO de Sucursal: " + list.size() + " existentes");
 		return list;
 	}
 
 	public Sucursal  darSucursalPorNombre(String nombre)
 	{
-		log.info ("Dar información de Sucursal");
+		log.info ("Dar información de Sucursal con nombre: " + nombre + ".");
 		Sucursal buscado = psa.darSucursalPorNombre(nombre); 
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
@@ -575,7 +574,7 @@ public class SuperAndes {
 
 	public Sucursal  darSucursalPorId(long id)
 	{
-		log.info ("Dar información de Sucursal");
+		log.info ("Dar información de Sucursal con el id: "+ id +".");
 		Sucursal buscado = psa.darSucursalPorId(id); 
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
@@ -641,39 +640,44 @@ public class SuperAndes {
 	// Métodos de tabla bodega
 	// -----------------------------------------------------------------
 
+	
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Bodega");
 		Bodega agregado = psa.adicionarBodega(capacidadVol, capacidadPeso, tipo, idSucursal);	
-		log.info ("Adicionado");
+		log.info ("Bodega adicionada");
 		return agregado;
 	}
 
+	
 	public long eliminarBodega(long id) 
 	{
-		log.info ("Eliminando Bodega");
+		log.info ("Eliminando Bodega con el id: " + id);
 		long resp = psa.eliminarBodega(id);
-		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		log.info ("Eliminando bodega: " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
+	
 	public List<Bodega> darBodegas ()
 	{
-		log.info ("Consultando Bodegas");
+		log.info ("Consultando Bodegas.");
 		List<Bodega> list = psa.darBodegas();
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
 
+	
 	public List<Bodega> darBodegasSucursal(long idSucursal)
 	{
-		log.info ("Consultando Bodegas por sucursal");
+		log.info ("Consultando Bodegas por sucursal.");
 		List<Bodega> list = psa.darBodegasSucursal(idSucursal);
-		log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando bodegas: " + list.size() + " existentes");
 		return list;
 	}
 
-	public List<VOBodega> darVOBodega ()
+	
+	public List<VOBodega> darVOBodega()
 	{
 		log.info ("Generando los VO de Bodega");        
 		List<VOBodega> list = new LinkedList<VOBodega> ();
@@ -685,6 +689,7 @@ public class SuperAndes {
 		return list;
 	}
 
+	
 	public Bodega darBodega(long id)
 	{
 		log.info ("Dar información de Bodega");
@@ -699,21 +704,23 @@ public class SuperAndes {
 
 	public Estante adicionarEstante(double capacidadVolumen, double capacidadPeso, String tipo, long idSucursal)
 	{
-		log.info ("Adicionando Estante");
+		log.info ("Adicionando Estante.");
 		Estante agregado = psa.adicionarEstante(capacidadVolumen, capacidadPeso, tipo, idSucursal);	
-		log.info ("Adicionado");
+		log.info ("Estante adicionado.");
 		return agregado;
 	}
 
+	
 	public long eliminarEstante(long id)
 	{
-		log.info ("Eliminando Estante");
+		log.info ("Eliminando Estante con id: " + id + ".");
 		long resp = psa.eliminarEstante(id);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
-	public List<Estante> darEstantes ()
+	
+	public List<Estante> darEstantes()
 	{
 		log.info ("Consultando Estantes");
 		List<Estante> list = psa.darEstantes();	
@@ -721,6 +728,7 @@ public class SuperAndes {
 		return list;
 	}
 
+	
 	public List<VOEstante> darVOEstante ()
 	{
 		log.info ("Generando los VO de Estante");        
@@ -735,7 +743,7 @@ public class SuperAndes {
 
 	public Estante darEstante(long id)
 	{
-		log.info ("Dar información de Estante");
+		log.info ("Dar información del Estante con id: " + id + ".");
 		Estante buscado = psa.darEstante(id); 
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
@@ -745,7 +753,7 @@ public class SuperAndes {
 	{
 		log.info ("Consultando Estantes por sucursal.");
 		List<Estante> list = psa.darEstantesPorSucursal(idSucursal);	
-		log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando estantes por sucursal: " + list.size() + " existentes");
 		return list;
 	}
 
@@ -977,50 +985,56 @@ public class SuperAndes {
 	// Métodos de tabla productosEnBodega
 	// -----------------------------------------------------------------
 
-	public ProductosEnBodega adicionarProductosEnBodega(long bodega, int cantidad, int nivelAbastecimiento, String producto)
+	
+	public ProductosEnBodega adicionarProductosEnBodega(long idBodega, int cantidad, int nivelAbastecimiento, String codigoBarrasProducto)
 	{
-		log.info ("Adicionando ProductosEnBodega: " + bodega);
-		ProductosEnBodega agregado = psa.adicionarProductosEnBodega(bodega, cantidad, nivelAbastecimiento, producto);	
-				log.info ("Adicionado");
+		log.info ("Adicionando ProductosEnBodega: producto: "+ codigoBarrasProducto + " y bodega con id: "+ idBodega);
+		ProductosEnBodega agregado = psa.adicionarProductosEnBodega(idBodega, cantidad, nivelAbastecimiento, codigoBarrasProducto);	
+		log.info ("Adicionado el producto a la bodega.");
 		return agregado;
 	}
 
-	public long eliminarProductoEnBodega(long bodega, String producto) 
+	
+	public long eliminarProductoEnBodega(long idBodega, String codigoBarrasProducto) 
 	{
-		log.info ("Eliminando ProductosEnBodega");
-		long resp = psa.eliminarProductoEnBodega(bodega, producto);
-				log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		log.info ("Eliminando ProductosEnBodega: producto: " + codigoBarrasProducto + " de la bodega: " + idBodega);
+		long resp = psa.eliminarProductoEnBodega(idBodega, codigoBarrasProducto);
+		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
-	public List<ProductosEnBodega> darProductosEnBodega(long bodega)
+	
+	public List<ProductosEnBodega> darProductosEnBodega(long idBodega)
 	{
-		log.info ("Consultando ProductosEnBodega ");
-		List<ProductosEnBodega> list = psa.darProductosEnBodega(bodega);
-				log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando ProductosEnBodega con id: " + idBodega);
+		List<ProductosEnBodega> list = psa.darProductosEnBodega(idBodega);
+		log.info ("Consultando productos en bodega: " + list.size() + " existentes");
 		return list;
 	}
 
+	
 	public List<ProductosEnBodega> darTodosProductosBodegas()
 	{
-		log.info ("Consultando ProductosEnBodega ");
+		log.info ("Consultando todos los ProductosEnBodega ");
 		List<ProductosEnBodega> list = psa.darTodosProductosBodegas();
-		log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando todos los ProductosEnBodega : " + list.size() + " existentes");
 		return list;
 	}
 	
-	public List<ProductosEnBodega> darBodegasProducto(String producto)
+	
+	public List<ProductosEnBodega> darBodegasProducto(String codigoBarrasProducto)
 	{
-		log.info ("Consultando ProductosEnBodega ");
-		List<ProductosEnBodega> list = psa.darBodegasProducto(producto);	
+		log.info ("Consultando ProductosEnBodega bodegas con el producto: " + codigoBarrasProducto + ".");
+		List<ProductosEnBodega> list = psa.darBodegasProducto(codigoBarrasProducto);	
 				log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
 	
-	public List<VOProductosEnBodega> darVOProductosEnBodega ()
+	
+	public List<VOProductosEnBodega> darVOProductosEnBodega()
 	{
 		log.info ("Generando los VO de ProductosEnBodega");        
-		List<VOProductosEnBodega> list = new LinkedList<VOProductosEnBodega> ();
+		List<VOProductosEnBodega> list = new LinkedList<VOProductosEnBodega>();
 		for (ProductosEnBodega tb : psa.darTodosProductosBodegas())
 		{
 			list.add (tb);
@@ -1029,13 +1043,17 @@ public class SuperAndes {
 		return list;
 	}
 
+	
 	public long aumentarProductosEnBodega( long bodega, String producto, int productosPedidos )
 	{
+		//TODO aumentar productos en Bodega.
 		return 0;
 	}
 
+	
 	public long disminuirProductosEnBodega(long bodega, String producto, int pasadosAEstante )
 	{
+		//TODO disminuir productos en Bodega.
 		return 0;
 	}
 
@@ -1043,69 +1061,75 @@ public class SuperAndes {
 	// Métodos de tabla productosEnEstante
 	// -----------------------------------------------------------------
 
-	public ProductosEnEstante adicionarProductosEnEstante(long estante, int cantidad, String producto)
+	
+	public ProductosEnEstante adicionarProductosEnEstante(long idEstante, int cantidad, String codigoBarrasProducto)
 	{
-		log.info ("Adicionando ProductosEnEstante: " + estante);
-		ProductosEnEstante agregado = psa.adicionarProductosEnEstante(estante, cantidad, producto);
-				log.info ("Adicionado");
+		log.info ("Adicionando ProductosEnEstante: producto: " + codigoBarrasProducto + " al estante con id: " + idEstante);
+		ProductosEnEstante agregado = psa.adicionarProductosEnEstante(idEstante, cantidad, codigoBarrasProducto);
+		log.info ("Adicionado");
 		return agregado;
 	}
 
-	public long eliminarProductosEnEstante(long estante, String producto)
+	
+	public long eliminarProductosEnEstante(long idEstante, String codigoBarrasProducto)
 	{
-		log.info ("Eliminando ProductosEnEstante");
-		long resp = psa.eliminarProductosEnEstante(estante, producto);
-		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		log.info ("Eliminando ProductosEnEstante: producto: " + codigoBarrasProducto + "del estante: " + idEstante);
+		long resp = psa.eliminarProductosEnEstante(idEstante, codigoBarrasProducto);
+		log.info ("Eliminando producto del estante: " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
-	public List<ProductosEnEstante> darProductosEnEstante(long estante)
+	
+	public List<ProductosEnEstante> darProductosEnEstante(long idEstante)
 	{
-		log.info ("Consultando ProductosEnEstante ");
-		List<ProductosEnEstante> list = psa.darProductosEnEstante(estante);	
-				log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando ProductosEnEstante productos del estante: " + idEstante );
+		List<ProductosEnEstante> list = psa.darProductosEnEstante(idEstante);	
+		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
 	
+	
 	public List<ProductosEnEstante>  darTodosProductosEnEstantes()
 	{
-		log.info ("Consultando ProductosEnEstante ");
+		log.info ("Consultando todos los ProductosEnEstante.");
 		List<ProductosEnEstante> list = psa.darTodosProductosEnEstantes();
-				log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando todos los productos en estante: " + list.size() + " existentes.");
 		return list;
 	}
 
+	
 	public List<VOProductosEnEstante> darVOProductosEnEstante ()
 	{
-		log.info ("Generando los VO de ");        
+		log.info ("Generando los VO de ProductosEnEstante:");        
 		List<VOProductosEnEstante> list = new LinkedList<VOProductosEnEstante> ();
 		for (ProductosEnEstante tb : psa.darTodosProductosEnEstantes())
 		{
 			list.add (tb);
 		}
-		log.info ("Generando los VO de : " + list.size() + " existentes");
+		log.info ("Generando los VO de ProductosEnEstante: " + list.size() + " existentes.");
 		return list;
 	}
 
-	public ProductosEnEstante darProductoEnEstante (long estante,  String producto)
+	
+	public ProductosEnEstante darProductoEnEstante (long idEstante,  String codigoBarrasProducto)
 	{
-		log.info ("Dar información de ");
-		ProductosEnEstante buscado = psa.darProductoEnEstante(estante, producto);
-				log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		log.info ("Dar información de ProductosEnEstante del producto: " + codigoBarrasProducto + " en el estante: " + idEstante);
+		ProductosEnEstante buscado = psa.darProductoEnEstante(idEstante, codigoBarrasProducto);
+		log.info ("Buscando ProductosEnEstante: " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
 
-	public long traerDeBodega(long estante, int productosTraidos, String producto)
+	public long traerDeBodega(long idEstante, int productosTraidos, String codigoBarrasProducto)
 	{
-		log.info("Traer productos de bodega");
-		long cambios = psa.traerDeBodega(estante, productosTraidos, producto);
+		log.info("Traer productos de bodega.");
+		long cambios = psa.traerDeBodega(idEstante, productosTraidos, codigoBarrasProducto);
 		return cambios;
 	}
 	
-	public long venderProductos(long estante, int productosVendidos, String producto)
+	public long quitarProductosEstante(long estante, int productosAQuitar, String producto)
 	{
 		log.info("vender productos del estante");
-		long cambios = psa.venderProductos(estante, productosVendidos, producto);
+		long cambios = psa.quitarProductosEstante(estante, productosAQuitar, producto);
 		return cambios;
 	}
 	
@@ -1113,10 +1137,10 @@ public class SuperAndes {
 	// Métodos de tabla SucursalProducto
 	// -----------------------------------------------------------------
 
-	public SucursalProducto adicionarSucursalProducto(String direccionSucursal, String ciudadSucursal, String producto)
+	public SucursalProducto adicionarSucursalProducto(String direccionSucursal, String ciudadSucursal, String codigoBarrasProducto)
 	{
 		log.info ("Adicionando SucursalProducto: " + direccionSucursal);
-		SucursalProducto agregado = psa.adicionarSucursalProducto(direccionSucursal, ciudadSucursal, producto);	
+		SucursalProducto agregado = psa.adicionarSucursalProducto(direccionSucursal, ciudadSucursal, codigoBarrasProducto);	
 		log.info ("Adicionado");
 		return agregado;
 	}

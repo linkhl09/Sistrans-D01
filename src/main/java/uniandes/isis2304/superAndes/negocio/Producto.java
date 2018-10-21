@@ -18,12 +18,12 @@ public class Producto implements VOProducto{
 	private String codigoBarras;
 	
 	/**
-	 * nombre del producto.
+	 * Nombre del producto.
 	 */
 	private String nombre;
 	
 	/**
-	 * marca del producto.
+	 * Marca del producto.
 	 */
 	private String marca;
 	
@@ -33,7 +33,7 @@ public class Producto implements VOProducto{
 	private double precioUnitario;
 	
 	/**
-	 * presentacion del producto.
+	 * Presentacion del producto.
 	 */
 	private String presentacion;
 	
@@ -43,59 +43,58 @@ public class Producto implements VOProducto{
 	private double precioUnidadMedida;
 	
 	/**
-	 * cantidad en la presentacion del producto.
+	 * Cantidad en la presentacion del producto.
 	 */
 	private int cantidadPresentacion;
 	
 	/**
-	 * peso del producto.
+	 * Peso del producto.
 	 */
 	private double peso;
 	
 	/**
-	 * unidade de medida del peso del producto.
+	 * Unidad de medida del peso del producto.
 	 */
 	private String unidadMedidaPeso;
 	
 	/**
-	 * volumen del producto.
+	 * Volumen del producto.
 	 */
 	private double volumen;
 	
 	/**
-	 * unidad de medida del volumen del producto.
+	 * Unidad de medida del volumen del producto.
 	 */
 	private String unidadMedidaVolumen;
 	
 	/**
-	 * calidad del producto.
+	 * Calidad del producto.
 	 */
 	private double calidad;
 	
 	/**
-	 * nivel de re orden del producto.
+	 * Nivel de re orden del producto.
 	 */
 	private int nivelReorden;
 	
 	/**
-	 * fecha de vencimiento del producto. null si no es perecedero.
+	 * Fecha de vencimiento del producto. Null si no es perecedero.
 	 */
 	private Date fechaVencimiento;
 	
 	/**
-	 * categoria del producto.
+	 * Categoria del producto.
 	 */
 	private String categoria;
 	
 	/**
-	 * promocion del producto. null si actualmente no tiene una promoción.
+	 * Boolean que indica si el producto esta en promoción. 
 	 */
 	private boolean estaEnPromocion;	
 
     // -----------------------------------------------------------------
     // Constructores.
     // -----------------------------------------------------------------
-
 	
 	/**
 	 * Constructor vacio.
@@ -169,7 +168,8 @@ public class Producto implements VOProducto{
 	/**
 	 * @return codigo de barras del producto.
 	 */
-	public String getCodigoBarras() {
+	public String getCodigoBarras() 
+	{
 		return codigoBarras;
 	}
 
@@ -177,14 +177,16 @@ public class Producto implements VOProducto{
 	 * Asigna el codigo de barras del producto.
 	 * @param codigoBarras nuevo codigo de barras del producto.
 	 */
-	public void setCodigoBarras(String codigoBarras) {
+	public void setCodigoBarras(String codigoBarras) 
+	{
 		this.codigoBarras = codigoBarras;
 	}
 
 	/**
 	 * @return nombre del producto.
 	 */
-	public String getNombre() {
+	public String getNombre() 
+	{
 		return nombre;
 	}
 
@@ -192,14 +194,16 @@ public class Producto implements VOProducto{
 	 * Asigna le nombre del producto.
 	 * @param nombre nuevo nombre del producto.
 	 */
-	public void setNombre(String nombre) {
+	public void setNombre(String nombre) 
+	{
 		this.nombre = nombre;
 	}
 
 	/**
 	 * @return marca del producto.
 	 */
-	public String getMarca() {
+	public String getMarca() 
+	{
 		return marca;
 	}
 
@@ -207,14 +211,16 @@ public class Producto implements VOProducto{
 	 * Asigna la marca del producto.
 	 * @param marca nueva marca del producto.
 	 */
-	public void setMarca(String marca) {
+	public void setMarca(String marca) 
+	{
 		this.marca = marca;
 	}
 
 	/**
 	 * @return precio unitario del producto.
 	 */
-	public double getPrecioUnitario() {
+	public double getPrecioUnitario() 
+	{
 		return precioUnitario;
 	}
 
@@ -222,14 +228,16 @@ public class Producto implements VOProducto{
 	 * Asigna el precio unitario del producto.
 	 * @param precioUnitario nuevo precio unitario.
 	 */
-	public void setPrecioUnitario(double precioUnitario) {
+	public void setPrecioUnitario(double precioUnitario)
+	{
 		this.precioUnitario = precioUnitario;
 	}
 
 	/**
 	 * @return presentacion del producto.
 	 */
-	public String getPresentacion() {
+	public String getPresentacion() 
+	{
 		return presentacion;
 	}
 
@@ -237,14 +245,16 @@ public class Producto implements VOProducto{
 	 * Asigna la presentación del producto.
 	 * @param presentacion nueva presentación del producto.
 	 */
-	public void setPresentacion(String presentacion) {
+	public void setPresentacion(String presentacion)
+	{
 		this.presentacion = presentacion;
 	}
 
 	/**
 	 * @return precio unidad de medida del producto.
 	 */
-	public double getPrecioUnidadMedida() {
+	public double getPrecioUnidadMedida()
+	{
 		return precioUnidadMedida;
 	}
 
@@ -252,14 +262,16 @@ public class Producto implements VOProducto{
 	 * Asigna el precio por unidad de medida al producto.
 	 * @param precioUnidadMedida nuevo precio por unidad de medida.
 	 */
-	public void setPrecioUnidadMedida(double precioUnidadMedida) {
+	public void setPrecioUnidadMedida(double precioUnidadMedida)
+	{
 		this.precioUnidadMedida = precioUnidadMedida;
 	}
 
 	/**
 	 * @return presentacion del producto
 	 */
-	public int getCantidadPresentacion() {
+	public int getCantidadPresentacion()
+	{
 		return cantidadPresentacion;
 	}
 
@@ -267,14 +279,16 @@ public class Producto implements VOProducto{
 	 * Asigna la cantidad en la presentación del producto. 
 	 * @param cantidadPresentacion nueva cantidad.
 	 */
-	public void setCantidadPresentacion(int cantidadPresentacion) {
+	public void setCantidadPresentacion(int cantidadPresentacion)
+	{
 		this.cantidadPresentacion = cantidadPresentacion;
 	}
 
 	/**
 	 * @return peso del producto.
 	 */
-	public double getPeso() {
+	public double getPeso()
+	{
 		return peso;
 	}
 
@@ -282,14 +296,16 @@ public class Producto implements VOProducto{
 	 * Asigna el peso del producto.
 	 * @param peso nuevo peso del producto.
 	 */
-	public void setPeso(double peso) {
+	public void setPeso(double peso)
+	{
 		this.peso = peso;
 	}
 	
 	/**
 	 * @return unidad de medida del peso del producto.
 	 */	
-	public String getUnidadMedidaPeso() {
+	public String getUnidadMedidaPeso()
+	{
 		return unidadMedidaPeso;
 	}
 
@@ -297,14 +313,16 @@ public class Producto implements VOProducto{
 	 * Asigna la unidad de medida del peso del producto.
 	 * @param unidadMedidaPeso
 	 */
-	public void setUnidadMedidaPeso(String unidadMedidaPeso) {
+	public void setUnidadMedidaPeso(String unidadMedidaPeso)
+	{
 		this.unidadMedidaPeso = unidadMedidaPeso;
 	}
 
 	/**
 	 * @return Volumen del producto.
 	 */
-	public double getVolumen() {
+	public double getVolumen()
+	{
 		return volumen;
 	}
 
@@ -312,14 +330,16 @@ public class Producto implements VOProducto{
 	 * Asigna el volumen del producto.
 	 * @param volumen nuevo volumen del producto.
 	 */
-	public void setVolumen(double volumen) {
+	public void setVolumen(double volumen) 
+	{
 		this.volumen = volumen;
 	}
 
 	/**
 	 * @return unidad de medida del volumen del producto.
 	 */
-	public String getUnidadMedidaVolumen() {
+	public String getUnidadMedidaVolumen() 
+	{
 		return unidadMedidaVolumen;
 	}
 
@@ -327,14 +347,16 @@ public class Producto implements VOProducto{
 	 * Asigna la unidad de medida del volumen.
 	 * @param unidadMedidaVolumen nueva unidad de medida del volumen.
 	 */
-	public void setUnidadMedidaVolumen(String unidadMedidaVolumen) {
+	public void setUnidadMedidaVolumen(String unidadMedidaVolumen) 
+	{
 		this.unidadMedidaVolumen = unidadMedidaVolumen;
 	}
 
 	/**
 	 * @return calidad del producto.
 	 */
-	public double getCalidad() {
+	public double getCalidad() 
+	{
 		return calidad;
 	}
 
@@ -342,14 +364,16 @@ public class Producto implements VOProducto{
 	 * Asigna la calidad del producto.
 	 * @param calidad nueva calidad del producto.
 	 */
-	public void setCalidad(double calidad) {
+	public void setCalidad(double calidad) 
+	{
 		this.calidad = calidad;
 	}
 
 	/**
 	 * @return nivel de re orden producto.
 	 */
-	public int getNivelReorden() {
+	public int getNivelReorden() 
+	{
 		return nivelReorden;
 	}
 	
@@ -357,14 +381,16 @@ public class Producto implements VOProducto{
 	 * Asigna el nivel de re orden del producto.
 	 * @param nivelReorden nuevo nivel de re orden.
 	 */
-	public void setNivelReorden(int nivelReorden) {
+	public void setNivelReorden(int nivelReorden) 
+	{
 		this.nivelReorden = nivelReorden;
 	}
 	
 	/**
 	 * @return fecha vencimiento producto.
 	 */	
-	public Date getFechaVencimiento() {
+	public Date getFechaVencimiento()
+	{
 		return fechaVencimiento;
 	}
 
@@ -372,14 +398,16 @@ public class Producto implements VOProducto{
 	 * Asigna una fecha de vencimiento al producto.
 	 * @param fechaVencimiento nueva fecha de vencimiento.
 	 */
-	public void setFechaVencimiento(Date fechaVencimiento) {
+	public void setFechaVencimiento(Date fechaVencimiento)
+	{
 		this.fechaVencimiento = fechaVencimiento;
 	}
 	
 	/**
 	 * @return categoria del producto.
 	 */
-	public String getCategoria() {
+	public String getCategoria()
+	{
 		return categoria;
 	}
 
@@ -387,14 +415,16 @@ public class Producto implements VOProducto{
 	 * Asigna una categoria al producto.
 	 * @param categoria nueva categoria.
 	 */
-	public void setCategoria(String categoria) {
+	public void setCategoria(String categoria)
+	{
 		this.categoria = categoria;
 	}
 
 	/**
 	 * @return Promocion actual del producto. Null si no tiene ninguna.
 	 */
-	public boolean getEstaEnPromocion() {
+	public boolean getEstaEnPromocion()
+	{
 		return estaEnPromocion;
 	}
 
@@ -402,12 +432,13 @@ public class Producto implements VOProducto{
 	 * Asigna una promocion al producto.
 	 * @param promocion nueva promocion.
 	 */
-	public void setEstaEnPromocion(boolean promocion) {
+	public void setEstaEnPromocion(boolean promocion)
+	{
 		this.estaEnPromocion = promocion;
 	}
 	
 	/**
-	 * Cadena de caracteres con todos los atributos de.
+	 * Cadena de caracteres con todos los atributos de Producto.
 	 */
 	@Override
 	public String toString()
@@ -423,7 +454,6 @@ public class Producto implements VOProducto{
 		else
 			msj += ", fechaVencimiento =" + fechaVencimiento;
 		msj +=	", categoria=" + categoria + ", estaEnPromocion" + estaEnPromocion + "]";
-		
 		return msj;
 	}
 }

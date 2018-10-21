@@ -41,35 +41,35 @@ class SQLProductosEnEstante {
 	}
 	
 	
-	public long adicionarProductosEnEstante(PersistenceManager pm, long estante, int cantidad, String producto)
+	public long adicionarProductosEnEstante(PersistenceManager pm, long idEstante, int cantidad, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProductosEnEstante() + " (estante, cantidad, producto) VALUES (?, ?, ?)");
-		q.setParameters(estante, cantidad, producto);
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProductosEnEstante() + " (idEstante, cantidad, codigoBarrasProducto) VALUES (?, ?, ?)");
+		q.setParameters(idEstante, cantidad, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
 	
 	
-	public long eliminarProductosEnEstante(PersistenceManager pm, long estante, String producto)
+	public long eliminarProductosEnEstante(PersistenceManager pm, long idEstante, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnEstante() + " WHERE estante = ? AND producto = ?");
-		q.setParameters(estante, producto);
+		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnEstante() + " WHERE idEstante = ? AND codigoBarrasProducto = ?");
+		q.setParameters(idEstante, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
 	
 
-	public List<ProductosEnEstante> darProductosEnEstante(PersistenceManager pm, long estante)
+	public List<ProductosEnEstante> darProductosEnEstante(PersistenceManager pm, long idEstante)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductosEnEstante() + "WHERE estante = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductosEnEstante() + "WHERE idEstante = ?");
 		q.setResultClass(ProductosEnEstante.class);
-		q.setParameters(estante);
+		q.setParameters(idEstante);
 		return (List<ProductosEnEstante>) q.executeList();
 	}
 	
-	public ProductosEnEstante darProductoEnEstante(PersistenceManager pm, long estante, String producto)
+	public ProductosEnEstante darProductoEnEstante(PersistenceManager pm, long idEstante, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductosEnEstante() + "WHERE estante = ? AND producto = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductosEnEstante() + "WHERE idEstante = ? AND codigoBarrasProducto = ?");
 		q.setResultClass(ProductosEnEstante.class);
-		q.setParameters(estante, producto);
+		q.setParameters(idEstante, codigoBarrasProducto);
 		return (ProductosEnEstante) q.executeUnique();
 	}
 	
@@ -81,18 +81,18 @@ class SQLProductosEnEstante {
 	}
 
 
-	public long traerDeBodega(PersistenceManager pm, long estante, int productosTraidos, String producto)
+	public long traerDeBodega(PersistenceManager pm, long idEstante, int productosTraidos, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnEstante() + "SET cantidad = cantidad + ? WHERE estante = ? AND producto = ?");
-		q.setParameters(productosTraidos, estante, producto);
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnEstante() + "SET cantidad = cantidad + ? WHERE idEstante = ? AND codigoBarrasProducto = ?");
+		q.setParameters(productosTraidos, idEstante, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
 	
 	
-	public long venderProductos(PersistenceManager pm, long estante, int productosVendidos, String producto)
+	public long quitarProductosEstante(PersistenceManager pm, long idEstante, int productosVendidos, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnEstante() + "SET cantidad = cantidad - ? WHERE estante = ? AND producto = ?");
-		q.setParameters(productosVendidos, estante, producto);
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnEstante() + "SET cantidad = cantidad - ? WHERE idEstante = ? AND codigoBarrasProducto = ?");
+		q.setParameters(productosVendidos, idEstante, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
 }

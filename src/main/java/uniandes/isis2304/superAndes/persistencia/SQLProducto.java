@@ -65,11 +65,12 @@ class SQLProducto {
 
 	public Producto darProducto(PersistenceManager pm, String codigoBarras)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProducto() + "WHERE pk = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProducto() + "WHERE codigobarras = ?");
 		q.setResultClass(Producto.class);
 		q.setParameters(codigoBarras);
 		return (Producto) q.executeUnique();
 	}
+
 	
 	public List<Producto> darProductos(PersistenceManager pm)
 	{
@@ -79,17 +80,17 @@ class SQLProducto {
 	}
 
 
-	public long nuevaPromocion(PersistenceManager pm, String codigoBarras, long promocion)
+	public long nuevaPromocion(PersistenceManager pm, String codigoBarras)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProducto() + "SET promocion = ? WHERE codigobarras = ?");
-		q.setParameters(promocion, codigoBarras);
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProducto() + "SET promocion = 1 WHERE codigobarras = ?");
+		q.setParameters(codigoBarras);
 		return (long) q.executeUnique();
 	}
 	
 	
 	public long terminarPromocion(PersistenceManager pm, String codigoBarras)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProducto() + "SET promocion = NULL WHERE codigobarras = ?");
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProducto() + "SET promocion = 0 WHERE codigobarras = ?");
 		q.setParameters(codigoBarras);
 		return (long) q.executeUnique();
 	}
