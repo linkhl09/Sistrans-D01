@@ -90,7 +90,7 @@ public class Producto implements VOProducto{
 	/**
 	 * promocion del producto. null si actualmente no tiene una promoción.
 	 */
-	private boolean estaEnPromocion;
+	private boolean estaEnPromocion;	
 
     // -----------------------------------------------------------------
     // Constructores.
