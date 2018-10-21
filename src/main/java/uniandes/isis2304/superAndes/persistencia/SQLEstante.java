@@ -40,11 +40,12 @@ class SQLEstante {
 		this.psa = psa;
 	}
 	
+	
 	public long adicionarEstante(PersistenceManager pm, long id, double capacidadVol, 
-			double capacidadPeso, String tipo, String direccionSucursal, String ciudadSucursal)
+			double capacidadPeso, String tipo, long idSucursal)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaEstante() + " (id, capacidadvol, capacidadpeso, tipo, direccionsucursal, ciudadsucursal) VALUES (?, ?, ?, ?, ?, ?)");
-		q.setParameters(id, capacidadVol, capacidadPeso, tipo, direccionSucursal, ciudadSucursal);
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaEstante() + " (id, capacidadvol, capacidadpeso, tipo, idsucursal) VALUES (?, ?, ?, ?, ?)");
+		q.setParameters(id, capacidadVol, capacidadPeso, tipo, idSucursal);
 		return (long) q.executeUnique();
 	}
 	
@@ -72,10 +73,11 @@ class SQLEstante {
 		return (List<Estante>) q.executeList();
 	}
 	
-	public List<Estante> darEstantesSucursal(PersistenceManager pm, String direccionSucursal, String ciudadSucursal)
+	public List<Estante> darEstantesSucursal(PersistenceManager pm, long idSucursal)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEstante() + "WHERE direccionSucursal = ? AND ciudadSucursal = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEstante() + "WHERE idSucursal = ?");
 		q.setResultClass(Estante.class);
+		q.setParameters(idSucursal);
 		return (List<Estante>) q.executeList();
 	}
 }

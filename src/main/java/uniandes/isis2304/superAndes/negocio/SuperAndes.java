@@ -697,10 +697,10 @@ public class SuperAndes {
 	// Métodos de tabla estante
 	// -----------------------------------------------------------------
 
-	public Estante adicionarEstante(double capacidadVolumen, double capacidadPeso, String tipo, String direccionSucursal, String ciudadSucursal)
+	public Estante adicionarEstante(double capacidadVolumen, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Estante");
-		Estante agregado = psa.adicionarEstante(capacidadVolumen, capacidadPeso, tipo, direccionSucursal, ciudadSucursal);	
+		Estante agregado = psa.adicionarEstante(capacidadVolumen, capacidadPeso, tipo, idSucursal);	
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -741,10 +741,10 @@ public class SuperAndes {
 		return buscado;
 	}
 
-	public List<Estante> darEstantePorSucursal(String direccionSucursal, String ciudadSucursal)
+	public List<Estante> darEstantePorSucursal(long idSucursal)
 	{
 		log.info ("Consultando Estantes por sucursal.");
-		List<Estante> list = psa.darEstantesPorSucursal(direccionSucursal, ciudadSucursal);	
+		List<Estante> list = psa.darEstantesPorSucursal(idSucursal);	
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}

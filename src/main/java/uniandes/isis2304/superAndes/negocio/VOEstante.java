@@ -28,15 +28,10 @@ public interface VOEstante {
 	public String getTipo();
 	
 	/**
-	 * @return dirección de la sucursal del estante.
+	 * @return id de la sucursal del estante.
 	 */
-	public String getDireccionSucursal();
+	public long getIdSucursal();
 
-	/**
-	 * @return Ciudad de la sucursal del estante.
-	 */
-	public String getCiudadSucursal();
-	
 	/**
 	 * Cadena de caracteres con todos los atributos de Estante.
 	 */
