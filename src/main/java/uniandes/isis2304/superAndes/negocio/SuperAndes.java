@@ -520,7 +520,7 @@ public class SuperAndes {
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
 
-	public Sucursal adicionarSucursal( String direccion, String ciudad,
+	public Sucursal adicionarSucursal( long id, String direccion, String ciudad,
 			String nombre, String segmentacionMercado, int tamanio)
 	{
 		log.info ("Adicionando Sucursal: " + nombre );
@@ -532,15 +532,15 @@ public class SuperAndes {
 	public long eliminarSucursal(String nombre) 
 	{
 		log.info ("Eliminando Sucursal");
-		long resp = psa.eliminarSucursal(nombre);
+		long resp = psa.eliminarSucursalPorNombre(nombre);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
-	public long eliminarSucursal(String direccion, String ciudad) 
+	public long eliminarSucursalPorId(long id) 
 	{
 		log.info ("Eliminando Sucursal");
-		long resp = psa.eliminarSucursal(direccion, ciudad);
+		long resp = psa.eliminarSucursalPorId(id);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
@@ -565,18 +565,18 @@ public class SuperAndes {
 		return list;
 	}
 
-	public Sucursal  darSucursal(String nombre)
+	public Sucursal  darSucursalPorNombre(String nombre)
 	{
 		log.info ("Dar información de Sucursal");
-		Sucursal buscado = psa.darSucursal(nombre); 
+		Sucursal buscado = psa.darSucursalPorNombre(nombre); 
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
 
-	public Sucursal  darSucursal(String direccion, String ciudad)
+	public Sucursal  darSucursalPorId(long id)
 	{
 		log.info ("Dar información de Sucursal");
-		Sucursal buscado = psa.darSucursal(direccion, ciudad); 
+		Sucursal buscado = psa.darSucursalPorId(id); 
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}

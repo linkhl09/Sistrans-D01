@@ -31,7 +31,7 @@ public class Estante implements VOEstante{
 	private String tipo;
 	
 	/**
-	 * direccion de la surcursal del estante.
+	 * id de la surcursal del estante.
 	 */
 	private long idSucursal;
 
@@ -57,8 +57,7 @@ public class Estante implements VOEstante{
 	 * @param capacidadPeso capacidad en peso del estante, por defecto en Kg.
 	 * @param capacidadVolumen Capacidad en volumen del estante, por defecto en m^3.
 	 * @param tipo Tipo del estante. 
-	 * @param idSucursal direccion de la surcursal del estante.
-	 * @param ciudadSucursal ciudad de la sucursal del estante.
+	 * @param idSucursal id de la surcursal del estante.
 	 */
 	public Estante(long id, double capacidadPeso, double capacidadVolumen, 
 			String tipo, long idSucursal) 
@@ -144,7 +143,7 @@ public class Estante implements VOEstante{
 	}
 
 	/**
-	 * @return dirección de la sucursal del estante.
+	 * @return id de la sucursal del estante.
 	 */
 	public long getIdSucursal() 
 	{

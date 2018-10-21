@@ -1245,7 +1245,7 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	
-	public Sucursal adicionarSucursal( String direccion, String ciudad,
+	public Sucursal adicionarSucursal(String direccion, String ciudad,
 			 String nombre, String segmentacionMercado, int tamanio)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1253,12 +1253,13 @@ public class PersistenciaSuperAndes {
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlSucursal.adicionarSucursal(pm, direccion, ciudad, nombre, segmentacionMercado, tamanio);
+			long id = nextval();
+			long tuplasInsertadas = sqlSucursal.adicionarSucursal(pm, id, direccion, ciudad, nombre, segmentacionMercado, tamanio);
 			tx.commit();
 
 			log.trace("Inserción de la sucursal con nombre: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Sucursal(direccion, ciudad, nombre, segmentacionMercado, tamanio);
+			return new Sucursal(id, direccion, ciudad, nombre, segmentacionMercado, tamanio);
 		}
 		catch (Exception e)
 		{
@@ -1277,14 +1278,14 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public long eliminarSucursal(String nombre) 
+	public long eliminarSucursalPorNombre(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlSucursal.eliminarSucursal(pm, nombre);
+			long resp = sqlSucursal.eliminarSucursalPorNombre(pm, nombre);
 			tx.commit();
 			return resp;
 		}
@@ -1305,14 +1306,14 @@ public class PersistenciaSuperAndes {
 	}
 
 	
-	public long eliminarSucursal(String direccion, String ciudad) 
+	public long eliminarSucursalPorId(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlSucursal.eliminarSucursal(pm, direccion, ciudad);
+			long resp = sqlSucursal.eliminarSucursalPorId(pm, id);
 			tx.commit();
 			return resp;
 		}
@@ -1339,15 +1340,15 @@ public class PersistenciaSuperAndes {
 	}
 	
 
-	public Sucursal darSucursal(String nombre)
+	public Sucursal darSucursalPorNombre(String nombre)
 	{
-		return sqlSucursal.darSucursal(pmf.getPersistenceManager(), nombre);
+		return sqlSucursal.darSucursalPorNombre(pmf.getPersistenceManager(), nombre);
 	}
 	
 	
-	public Sucursal darSucursal(String direccion, String ciudad)
+	public Sucursal darSucursalPorId(long id)
 	{
-		return sqlSucursal.darSucursal(pmf.getPersistenceManager(), direccion, ciudad);
+		return sqlSucursal.darSucursalPorId(pmf.getPersistenceManager(), id);
 	}
 	
 
