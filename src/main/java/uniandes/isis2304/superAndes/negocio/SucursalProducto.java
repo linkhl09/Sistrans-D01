@@ -10,10 +10,14 @@ public class SucursalProducto implements VOSucursalProducto{
     // Atributos.
     // -----------------------------------------------------------------
 
-	private String direccionSucursal;
+	/**
+	 * Id de la sucursal a la que pertenece el producto.
+	 */
+	private long idSucursal;
 	
-	private String ciudadSucursal;
-	
+	/**
+	 * Producto asociado a la sucursal.
+	 */
 	private String producto;
 
     // -----------------------------------------------------------------
@@ -25,21 +29,18 @@ public class SucursalProducto implements VOSucursalProducto{
 	 */
 	public SucursalProducto() 
 	{
-		direccionSucursal = "";
-		ciudadSucursal = "";
+		idSucursal = 0;
 		producto = "";
 	}
 
 	/**
 	 * Constructor con valores.
-	 * @param direccionSucursal
-	 * @param ciudadSucursal
-	 * @param producto
+	 * @param idSucursal id de la sucursal a la que pertenece el producto.
+	 * @param producto producto asociado a la sucursal.
 	 */
-	public SucursalProducto(String direccionSucursal, String ciudadSucursal, String producto) 
+	public SucursalProducto(long idSucursal, String producto) 
 	{
-		this.direccionSucursal = direccionSucursal;
-		this.ciudadSucursal = ciudadSucursal;
+		this.idSucursal = idSucursal;
 		this.producto = producto;
 	}
    
@@ -47,28 +48,35 @@ public class SucursalProducto implements VOSucursalProducto{
     // Métodos.
     // -----------------------------------------------------------------
 
-	public String getDireccionSucursal()
+	/**
+	 * @return La id de la sucursal dueña del producto.
+	 */
+	public long getIdSucursal() 
 	{
-		return direccionSucursal;
+		return idSucursal;
 	}
 
-	public void setDireccionSucursal(String direccionSucursal) {
-		this.direccionSucursal = direccionSucursal;
+	/**
+	 * @param idSucursal - Id de la sucursal a la que pertenece el producto.
+	 */
+	public void setIdSucursal(long idSucursal) 
+	{
+		this.idSucursal = idSucursal;
 	}
 
-	public String getCiudadSucursal() {
-		return ciudadSucursal;
-	}
-
-	public void setCiudadSucursal(String ciudadSucursal) {
-		this.ciudadSucursal = ciudadSucursal;
-	}
-
-	public String getProducto() {
+	/**
+	 * @return El codigo de barras del producto asociado a la sucursal.
+	 */
+	public String getProducto() 
+	{
 		return producto;
 	}
 
-	public void setProducto(String producto) {
+	/**
+	 * @param producto - Nuevo producto asociado a la sucursal.
+	 */
+	public void setProducto(String producto) 
+	{	
 		this.producto = producto;
 	}
 
@@ -78,8 +86,7 @@ public class SucursalProducto implements VOSucursalProducto{
 	@Override
 	public String toString()
 	{
-		return "SucursalProducto [direccionSucursal =" + direccionSucursal 
-				+ ", ciudadSucursal =" + ciudadSucursal 
+		return "SucursalProducto [idSucursal =" + idSucursal 
 				+ ", producto" + producto +"]";
 	}
 }

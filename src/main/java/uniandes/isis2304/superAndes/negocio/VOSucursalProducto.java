@@ -5,12 +5,17 @@ package uniandes.isis2304.superAndes.negocio;
  * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz.
  * @author Andrés Hernández.
  */
-public interface VOSucursalProducto {
+public interface VOSucursalProducto 
+{
 
-	public String getDireccionSucursal();
+	/**
+	 * @return La id de la sucursal dueña del producto.
+	 */
+	public long getIdSucursal();
 	
-	public String getCiudadSucursal();
-	
+	/**
+	 * @return El codigo de barras del producto asociado a la sucursal.
+	 */
 	public String getProducto();
 	
 	/**

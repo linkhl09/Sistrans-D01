@@ -40,32 +40,32 @@ class SQLSucursalProducto {
 		this.psa = psa;
 	}
 	
-	public long adicionarSucursalProducto(PersistenceManager pm, String direccionSucursal, String ciudadSucursal, String producto)
+	public long adicionarSucursalProducto(PersistenceManager pm, long idSucursal, String producto)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaSucursalProducto() + " (direccionSucursal, ciudadsucursal, prodcuto) VALUES (?, ?, ?)");
-		q.setParameters(direccionSucursal, ciudadSucursal, producto);
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaSucursalProducto() + " (idsucursal, prodcuto) VALUES (?, ?)");
+		q.setParameters(idSucursal, producto);
 		return (long) q.executeUnique();
 	}
 	
 	
-	public long eliminarSucursalProducto(PersistenceManager pm, String direccionSucursal, String ciudadSucursal, String producto)
+	public long eliminarSucursalProducto(PersistenceManager pm, long idSucursal, String producto)
 	{
-		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() + " WHERE direccionSucursal = ? AND ciudadSucursal = ? AND producto = ?");
-		q.setParameters(direccionSucursal, ciudadSucursal, producto);
+		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() + " WHERE idSucursal = ? AND producto = ?");
+		q.setParameters(idSucursal, producto);
 		return (long) q.executeUnique();
 	}
 
 
-	public List<SucursalProducto> darProductosSucursal(PersistenceManager pm, String direccionSucursal, String ciudadSucursal )
+	public List<SucursalProducto> darProductosSucursal(PersistenceManager pm, long idSucursal)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursalProducto() + " WHERE direccionSucursal = ? AND ciudadSucursal = ?");
-		q.setParameters(direccionSucursal, ciudadSucursal);
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursalProducto() + " WHERE idSucursal = ?");
+		q.setParameters(idSucursal);
 		q.setResultClass(SucursalProducto.class);
 		return (List<SucursalProducto>) q.executeList();
 	}
 
 
-	public List<SucursalProducto> darSucursalesProducto(PersistenceManager pm, String producto )
+	public List<SucursalProducto> darSucursalesProducto(PersistenceManager pm, String producto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursalProducto() + " WHERE producto = ?");
 		q.setParameters(producto);
