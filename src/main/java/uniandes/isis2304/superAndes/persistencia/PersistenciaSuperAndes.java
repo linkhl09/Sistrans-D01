@@ -80,6 +80,9 @@ public class PersistenciaSuperAndes {
 
 	private SQLProveedor sqlProveedor;
 	
+	
+	private SQLTipoCategoria sqlTipoCategoria;
+	
 
 	private SQLProducto sqlProducto;
 
@@ -140,30 +143,32 @@ public class PersistenciaSuperAndes {
 	{
 		pmf = JDOHelper.getPersistenceManagerFactory("SuperAndes");
 		crearClasesSQL();
-
+		
+		//TODO Completar después de inicializar las tablas.
+		
 		tablas = new LinkedList<String>();
-		tablas.add("superAndes_sequence");
-		tablas.add("TIPO");
-		tablas.add("CATEGORIA");
-		tablas.add("PROVEEDOR");
-		tablas.add("PROMOCION");
-		tablas.add("PRODUCTO");
-		tablas.add("PERSONANATURAL");
-		tablas.add("EMPRESA");
-		tablas.add("CLIENTE");
-		tablas.add("FACTURA");
-		tablas.add("SUCURSAL");
-		tablas.add("ORDENPEDIDO");
-		tablas.add("BODEGA");
-		tablas.add("ESTANTE");
-		tablas.add("PROVEEDORES_PRODUCTO");
-		tablas.add("PRODUCTO_ORDENPEDIDO");
-		tablas.add("FACTURA_PRODUCTO");
-		tablas.add("CLIENTE_SUCURSAL");
-		tablas.add("PRODUCTOSENBODEGA");
-		tablas.add("PRODUCTOSENESTANTE");
-		tablas.add("SUCURSAL_PRODUCTO");
-		tablas.add("HISTORIAL_PROMOCIONES");
+//		tablas.add("superAndes_sequence");
+//		tablas.add("TIPO");
+//		tablas.add("CATEGORIA");
+//		tablas.add("PROVEEDOR");
+//		tablas.add("PROMOCION");
+//		tablas.add("PRODUCTO");
+//		tablas.add("PERSONANATURAL");
+//		tablas.add("EMPRESA");
+//		tablas.add("CLIENTE");
+//		tablas.add("FACTURA");
+//		tablas.add("SUCURSAL");
+//		tablas.add("ORDENPEDIDO");
+//		tablas.add("BODEGA");
+//		tablas.add("ESTANTE");
+//		tablas.add("PROVEEDORES_PRODUCTO");
+//		tablas.add("PRODUCTO_ORDENPEDIDO");
+//		tablas.add("FACTURA_PRODUCTO");
+//		tablas.add("CLIENTE_SUCURSAL");
+//		tablas.add("PRODUCTOSENBODEGA");
+//		tablas.add("PRODUCTOSENESTANTE");
+//		tablas.add("SUCURSAL_PRODUCTO");
+//		tablas.add("HISTORIAL_PROMOCIONES");
 	}
 
 	/**
@@ -235,8 +240,10 @@ public class PersistenciaSuperAndes {
 	 */
 	private void crearClasesSQL()
 	{
+		// TODO revisar que esten todas las clases SQL inicializadas.
 		sqlTipo = new SQLTipo(this);
 		sqlCategoria = new SQLCategoria(this);
+		sqlTipoCategoria = new SQLTipoCategoria(this);
 		sqlProveedor = new SQLProveedor(this);
 		sqlProducto = new SQLProducto(this);
 		sqlPersonaNatural = new SQLPersonaNatural(this);
@@ -508,19 +515,25 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Tipo
 	// -----------------------------------------------------------------
 
-	public Tipo adicionarTipo(String nombre, String categoria)
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Tipop.
+	 * Adiciona entradas al log de la aplicacion.
+	 * @param nombre - El nombre del tipo a adicionar.
+	 * @return El objeto Tipo adicionado. null si ocurre alguna Exception.
+	 */
+	public Tipo adicionarTipo(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlTipo.adicionarTipo(pm, nombre, categoria);
+			long tuplasInsertadas = sqlTipo.adicionarTipo(pm, nombre);
 			tx.commit();
 
 			log.trace("Inserción de tipo producto: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Tipo(nombre, categoria);
+			return new Tipo(nombre);
 		}
 		catch (Exception e)
 		{
@@ -538,7 +551,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 	
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Tipo.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param nombre - El nombre del tipo de bebida.
+	 * @return El número de tuplas eliminadas, -1 si ocurre alguna Exception. 
+	 */
 	public long eliminarTipo(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -566,16 +584,23 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Tipo
+	 * @return Una lista de objetos TipoBebida, construidos con base en las tuplas de la tabla TIPO.
+	 */
 	public List<Tipo> darTipos()
 	{
 		return sqlTipo.darTipos(pmf.getPersistenceManager());
 	}
 
-
-	public Tipo darTipoPorNombre(String nombre)
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
+	 * @param nombre - El nombre del tipo.
+	 * @return El objeto de Tipo, construido con base en las tablas de la tabla TIPO.
+	 */
+	public Tipo darTipo(String nombre)
 	{
-		return sqlTipo.darTipoPorNombre(pmf.getPersistenceManager(), nombre);
+		return sqlTipo.darTipo(pmf.getPersistenceManager(), nombre);
 	}
 
 	

@@ -4,7 +4,6 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.superAndes.negocio.SucursalProducto;
 import uniandes.isis2304.superAndes.negocio.TipoCategoria;
 
 
@@ -44,11 +43,11 @@ public class SQLTipoCategoria
 	}
 	
 	/**
-	 * 
-	 * @param pm
-	 * @param nombreCategoria
-	 * @param nombreTipo
-	 * @return
+	 * Crea y ejecuta la sentencia SQL para adicionar un TIPOCATEGORIA a la base de datos.
+	 * @param pm - EL manejador de persistencia.
+	 * @param nombreCategoria - Nombre de la categoria.
+	 * @param nombreTipo - Tipo de la categoria.
+	 * @return El número de tuplas insertadas.
 	 */
 	public long adicionarTipoCategoria(PersistenceManager pm, String nombreCategoria, String nombreTipo)
 	{
@@ -57,7 +56,13 @@ public class SQLTipoCategoria
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar un TIPOCATEGORIA de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombreCategoria - Nombre de la categoria.
+	 * @param nombreTipo - Tipo de la categoria.
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarTipoCategoria(PersistenceManager pm, String nombreCategoria, String nombreTipo)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipoCategoria() + "WHERE nombreCategoria = ? AND nombreTipo = ?");
@@ -65,7 +70,12 @@ public class SQLTipoCategoria
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los tipos de la categoria dada por parametro.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombreCategoria Nombre de la categoria de la que se quieren saber los tipos.
+	 * @return Lista con los TIPOCATEGORIA que cumplan con la especificación.
+	 */
 	public List<TipoCategoria> darTiposCategoria(PersistenceManager pm, String nombreCategoria)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipoCategoria() + "WHERE nombreCategoria = ?");
@@ -74,7 +84,11 @@ public class SQLTipoCategoria
 		return (List<TipoCategoria>) q.executeList();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los TIPOCATEGORIA de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @return Una lista de objetos TIPOCATEGORIA.
+	 */
 	public List<TipoCategoria> darTodosTipoCategoria(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipoCategoria());

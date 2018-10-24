@@ -133,7 +133,7 @@ public class SuperAndes {
 	public Tipo darTipo(String nombre)
 	{
 		log.info ("Dar información de Tipo");
-		Tipo buscado = psa.darTipoPorNombre(nombre); 
+		Tipo buscado = psa.darTipo(nombre); 
 		log.info ("Buscando tipo: " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}

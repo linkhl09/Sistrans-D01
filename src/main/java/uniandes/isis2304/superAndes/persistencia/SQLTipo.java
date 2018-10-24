@@ -90,7 +90,7 @@ class SQLTipo {
 	 * @param nombre - Nombbre del tipo.
 	 * @return El TIPO con el nombre dado.
 	 */
-	public Tipo darTipoPorNombre(PersistenceManager pm, String nombre)
+	public Tipo darTipo(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipo() + " WHERE nombre = ?");
 		q.setParameters(nombre);
