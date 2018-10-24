@@ -40,7 +40,12 @@ class SQLCategoria {
 		this.psa = psa;
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar una CATEGORIA a la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - El nombre de la categoria.
+	 * @return El número de tuplas insertadas.
+	 */
 	public long adicionarCategoria(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCategoria() + " (nombre) VALUES (?)");
@@ -48,6 +53,12 @@ class SQLCategoria {
 		return (long) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar una CATEGORIA de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - Nombre de la categoria a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarCategoria(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCategoria() + " WHERE nombre = ?");
@@ -55,6 +66,12 @@ class SQLCategoria {
 		return (long) q.executeUnique();
 	}
 
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de CATEGORIA de la base de datos, por su nombre.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - Nombre de la categoria.
+	 * @return El objeto Categoria con el nombre dado.
+	 */
 	public Categoria darCategoria(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCategoria() + "WHERE nombre = ?");
@@ -63,6 +80,11 @@ class SQLCategoria {
 		return (Categoria) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar al información de las CATEGORIAS de lla base de datos.
+	 * @param pm - EL manejador de persistencia.
+	 * @return Una lista de objetos CATEGORIA.
+	 */
 	public List<Categoria> darCategorias(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCategoria());

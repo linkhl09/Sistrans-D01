@@ -281,6 +281,15 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de TipoCategoria de SuperAndes.
+	 */
+	public String darTablaTipoCategoria() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Proveedor de SuperAndes
 	 */
 	public String darTablaProveedor()

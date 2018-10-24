@@ -46,13 +46,25 @@ class SQLTipo {
 	}
 	
 
-	public long adicionarTipo(PersistenceManager pm, String nombre, String categoria)
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un TIPO a la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - Nombre del tipo.
+	 * @return El número asociado a las tuplas insertadas.
+	 */
+	public long adicionarTipo(PersistenceManager pm, String nombre)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaTipo() + "(nombre, categoria) values (?, ?)");
-        q.setParameters(nombre, categoria);
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaTipo() + "(nombre) values (?)");
+        q.setParameters(nombre);
         return (long) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y efectua la sentencia SQL para eliminar un TIPO de la base de datos de SuperAndes.
+	 * @param pm - El manejador de persitencia.
+	 * @param nombre nombre del tipo a eliminar.
+	 * @return EL número asociado a las tuplas eliminadas.
+	 */
 	public long eliminarTipo(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipo() + " WHERE nombre = ?");
@@ -60,6 +72,11 @@ class SQLTipo {
 		return (long) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los tipos en la base de datos.
+	 * @param pm - EL manejador de persistencia.
+	 * @return Una lista de Objetos Tipo.
+	 */
 	public List<Tipo> darTipos(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipo());
@@ -67,6 +84,12 @@ class SQLTipo {
 		return (List<Tipo>) q.executeList();
 	}
 
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de TIPO de la base de datos por su nombre.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - Nombbre del tipo.
+	 * @return El TIPO con el nombre dado.
+	 */
 	public Tipo darTipoPorNombre(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipo() + " WHERE nombre = ?");

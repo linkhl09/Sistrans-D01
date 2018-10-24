@@ -12,7 +12,7 @@ public interface VOCategoria {
 	public String getNombre();
 	
 	/**
-	 * Cadena de caracteres con todos los atributos de.
+	 * Cadena de caracteres con todos los atributos de Categoria.
 	 */
 	@Override
 	public String toString();

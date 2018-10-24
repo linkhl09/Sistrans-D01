@@ -16,11 +16,7 @@ public class Tipo implements VOTipo
 	 */
 	private String nombre;
 	
-	/**
-	 * Categoria del tipo.
-	 */
-	private String categoria;
-
+	
 	// -----------------------------------------------------------------
     // Constructores.
     // -----------------------------------------------------------------
@@ -31,17 +27,15 @@ public class Tipo implements VOTipo
 	public Tipo()
 	{
 		nombre="";
-		categoria = "";
 	}
 	
 	/**
 	 * Constructor con valores.
 	 * @param nombre
 	 */
-	public Tipo(String nombre, String categoria)
+	public Tipo(String nombre)
 	{
 		this.nombre = nombre;
-		this.categoria = categoria;
 	}
 	
     // -----------------------------------------------------------------
@@ -64,23 +58,6 @@ public class Tipo implements VOTipo
 	{
 		this.nombre = nombre;
 	}
-	
-	/**
-	 * @return categoria del tipo.
-	 */
-	public String getCategoria() 
-	{
-		return categoria;
-	}
-
-	/**
-	 * Set de la categoria.
-	 * @param categoria nueva categoria.
-	 */
-	public void setCategoria(String categoria) 
-	{
-		this.categoria = categoria;
-	}
 
 	/**
 	 * Cadena de caracteres con todos los atributos del Tipo.
@@ -88,6 +65,6 @@ public class Tipo implements VOTipo
 	@Override
 	public String toString()
 	{
-		return "Tipo [nombre=" + nombre + ", categoria ="+ categoria + "]";
+		return "Tipo [nombre=" + nombre + "]";
 	}
 }
