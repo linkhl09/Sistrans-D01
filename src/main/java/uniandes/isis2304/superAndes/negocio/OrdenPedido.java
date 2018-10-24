@@ -92,55 +92,112 @@ public class OrdenPedido implements VOOrdenPedido {
     // Métodos.
     // -----------------------------------------------------------------
 
+
+	/**
+	 * @return identificacion de la orden de pedido.
+	 */
 	public long getId() 
 	{
 		return id;
 	}
 
+	/**
+	 * Cambia la identificacion de la orden de pedido
+	 * @param nueva id  
+	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return fecha de entrega del pedido.
+	 */
 	public Date getFechaEntrega() {
 		return fechaEntrega;
 	}
 
+	/**
+	 * Cambia la fecha de entrega del pedido
+	 * @param nueva fecha de entrega
+	 */
 	public void setFechaEntrega(Date fechaEntrega) {
 		this.fechaEntrega = fechaEntrega;
 	}
 
+	/**
+	 * @return fecha esperada de entrega del pedido.
+	 */
 	public Date getFechaEsperadaEntrega() {
 		return fechaEsperadaEntrega;
 	}
 
+	/**
+	 * Cambia la fecha esperada de entrega del pedido
+	 * @param nueva fecha esperada de entrega
+	 */
 	public void setFechaEsperadaEntrega(Date fechaEsperadaEntrega) {
 		this.fechaEsperadaEntrega = fechaEsperadaEntrega;
 	}
 
+	/**
+	 * @return calificacion otorgada al proveedor por la orden.
+	 */
 	public double getCalificacionProveedor() {
 		return calificacionProveedor;
 	}
 
+	/**
+	 * Cambia la calificacion del proveedor 
+	 * @param nueva calificacion 
+	 */
 	public void setCalificacionProveedor(double calificacionProveedor) {
 		this.calificacionProveedor = calificacionProveedor;
 	}
 
+	/**
+	 * @return identificador del proveedor al que se le hace el pedido.
+	 */
 	public String getProveedor() {
 		return proveedor;
 	}
 
+	/**
+	 * Cambia el identificador del proveedor 
+	 * @param nuevo identificador
+	 */
 	public void setProveedor(String proveedor) {
 		this.proveedor = proveedor;
 	}
 
+	/**
+	 * @return identificador de la sucursal que emite la orden de pedido.
+	 */
 	public long getidSucursal() {
 		return idSucursal;
 	}
 
+	/**
+	 * Cambia el identificador de la sucursal 
+	 * @param nuevo identificador
+	 */
 	public void setidSucursal(long idSucursal) {
 		this.idSucursal = idSucursal;
 	}
 
+	/**
+	 * @return estado de la orden.
+	 */
+	public String getEstado() {
+		return estado;
+	}
+
+	/**
+	 * Cambia el esatdo de la orden
+	 * @param nuevo esatado
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 	
 
 	/**
@@ -160,15 +217,5 @@ public class OrdenPedido implements VOOrdenPedido {
 				+ ", estado de la orden =" + estado 
 				 + " ]";
 	}
-
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-
-	
 	
 }

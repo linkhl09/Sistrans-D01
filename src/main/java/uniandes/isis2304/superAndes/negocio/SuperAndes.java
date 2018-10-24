@@ -470,7 +470,7 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 
 	public Factura adicionarFactura( String direccion, 
-			Date fecha, String nombreCajero, double valorTotal, int pagoExitoso, 
+			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
 			int puntosCompra, String cliente)
 	{
 		log.info ("Adicionando factura: " + fecha.toString() );
@@ -585,10 +585,10 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 
 	public OrdenPedido adicionarOrdenPedido( Date fechaEsperadaEntrega
-			, String proveedor, String direccionSucursal, String ciudadSucursal)
+			, String proveedor, long idSucursal, String estado)
 	{
 		log.info ("Adicionando OrdenPedido");
-		OrdenPedido agregado = psa.adicionarOrdenPedido(fechaEsperadaEntrega, proveedor, direccionSucursal, ciudadSucursal);	
+		OrdenPedido agregado = psa.adicionarOrdenPedido(fechaEsperadaEntrega, proveedor, idSucursal, estado);	
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -925,62 +925,7 @@ public class SuperAndes {
 		return buscado;
 	}
 
-	// -----------------------------------------------------------------
-	// Métodos de tabla cliente_sucursal
-	// -----------------------------------------------------------------
-
-	public ClienteSucursal adicionarClienteSucursal(String cliente, String direccionSucursal, String ciudadSucursal)
-	{
-		log.info ("Adicionando ClienteSucursal: " + cliente);
-		ClienteSucursal agregado = psa.adicionarClienteSucursal(cliente, direccionSucursal, ciudadSucursal);
-				log.info ("Adicionado");
-		return agregado;
-	}
-
-	public long eliminarClienteSucursal(String cliente, String direccionSucursal, String ciudadSucursal)
-	{
-		log.info ("Eliminando ClienteSucursal");
-		long resp = psa.eliminarClienteSucursal(cliente, direccionSucursal, ciudadSucursal);
-				log.info ("Eliminando : " + resp + " tuplas eliminadas");
-		return resp;
-	}
-
-	public List<ClienteSucursal> darSucursalesCliente(String cliente)
-	{
-		log.info ("Consultando ClienteSucursal");
-		List<ClienteSucursal> list = psa.darSucursalesCliente(cliente);	
-				log.info ("Consultando : " + list.size() + " existentes");
-		return list;
-	}
 	
-	public List<ClienteSucursal> darClientesSucursal(String direccionSucursal, String ciudadSucursal)
-	{
-		log.info ("Consultando ClienteSucursal");
-		List<ClienteSucursal> list = psa.darClientesSucursal(direccionSucursal, ciudadSucursal);	
-				log.info ("Consultando : " + list.size() + " existentes");
-		return list;
-	}
-	
-	public List<ClienteSucursal> darTodosClientesSucursales()
-	{
-		log.info ("Consultando ClienteSucursal");
-		List<ClienteSucursal> list = psa.darTodosClientesSucursales();	
-				log.info ("Consultando : " + list.size() + " existentes");
-		return list;
-	}
-
-	public List<VOClienteSucursal> darVOClienteSucursal ()
-	{
-		log.info ("Generando los VO de ClienteSucursal");        
-		List<VOClienteSucursal> list = new LinkedList<VOClienteSucursal> ();
-		for (ClienteSucursal tb : psa.darTodosClientesSucursales())
-		{
-			list.add (tb);
-		}
-		log.info ("Generando los VO de ClienteSucursal: " + list.size() + " existentes");
-		return list;
-	}
-
 	// -----------------------------------------------------------------
 	// Métodos de tabla productosEnBodega
 	// -----------------------------------------------------------------
@@ -1137,26 +1082,26 @@ public class SuperAndes {
 	// Métodos de tabla SucursalProducto
 	// -----------------------------------------------------------------
 
-	public SucursalProducto adicionarSucursalProducto(String direccionSucursal, String ciudadSucursal, String codigoBarrasProducto)
+	public SucursalProducto adicionarSucursalProducto(long idSucursal, String codigoBarrasProducto)
 	{
-		log.info ("Adicionando SucursalProducto: " + direccionSucursal);
-		SucursalProducto agregado = psa.adicionarSucursalProducto(direccionSucursal, ciudadSucursal, codigoBarrasProducto);	
+		log.info ("Adicionando SucursalProducto: " + idSucursal);
+		SucursalProducto agregado = psa.adicionarSucursalProducto(idSucursal, codigoBarrasProducto);	
 		log.info ("Adicionado");
 		return agregado;
 	}
 
-	public long eliminarSucursalProducto(String direccionSucursal, String ciudadSucursal, String producto)
+	public long eliminarSucursalProducto(long idSucursal, String producto)
 	{
 		log.info ("Eliminando SucursalProducto ");
-		long resp = psa.eliminarSucursalProducto(direccionSucursal, ciudadSucursal, producto);
+		long resp = psa.eliminarSucursalProducto(idSucursal, producto);
 				log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
-	public List<SucursalProducto> darProductosSucursal(String direccionSucursal, String ciudadSucursal)
+	public List<SucursalProducto> darProductosSucursal(long idSucursal)
 	{
 		log.info ("Consultando SucursalProducto");
-		List<SucursalProducto> list = psa.darProductosSucursal(direccionSucursal, ciudadSucursal);
+		List<SucursalProducto> list = psa.darProductosSucursal(idSucursal);
 				log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}

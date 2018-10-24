@@ -198,7 +198,7 @@ public class Factura implements VOFactura {
 	}
 
 	/**
-	 * Asigna si el pago fue exitoso.
+	 * Asigna si el pago fue exitoso o no.
 	 * @param pagoExitoso pago Exitoso. 1 éxito. 0 Failure.
 	 */
 	public void setPagoExitoso(boolean pagoExitoso) 
@@ -207,7 +207,7 @@ public class Factura implements VOFactura {
 	}
 
 	/**
-	 * @return Los puntos de la cabesra.
+	 * @return Los puntos que se asignan por la compra.
 	 */
 	public int getPuntosCompra() 
 	{
@@ -215,7 +215,7 @@ public class Factura implements VOFactura {
 	}
 
 	/**
-	 * Asigna los puntos de la compra.
+	 * Asigna los puntos que se dan por la compra.
 	 * @param puntosCompra asigna los puntos de la compra.
 	 */
 	public void setPuntosCompra(int puntosCompra) 

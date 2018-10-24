@@ -2,15 +2,19 @@ package uniandes.isis2304.superAndes.negocio;
 
 /**
  * Clase para modelar el concepto de Pesona natural.
- * @author Andrés Hernández
+ * @author Andrés Hernández y jenifer rodriguez
  */
 public class PersonaNatural extends Cliente implements VOPersonaNatural {
 	// -----------------------------------------------------------------
     // Atributos.
     // -----------------------------------------------------------------
-
+	/**
+	 * numero de documento de la persona.
+	 */
 	private String documento;
-	
+	/**
+	 * tipo de documento del cliente cuando es persona natural.
+	 */
 	private String tipoDocumento;
 
     // -----------------------------------------------------------------
@@ -45,25 +49,33 @@ public class PersonaNatural extends Cliente implements VOPersonaNatural {
     // Métodos.
     // -----------------------------------------------------------------
 
-
+	/**
+	 * @return numero de documento de cliente .
+	 */
 	public String getDocumento()
 	{
 		return documento;
 	}
 
-
+	/**
+	 * cambia el numero de documento de la persona.
+	 */
 	public void setDocumento(String documento) 
 	{
 		this.documento = documento;
 	}
 
-
+	/**
+	 * @return tipo de documento del cliente.
+	 */
 	public String getTipoDocumento() 
 	{
 		return tipoDocumento;
 	}
 
-
+	/**
+	 * cambia el tipo de documento del cliente.
+	 */
 	public void setTipoDocumento(String tipoDocumento) 
 	{
 		this.tipoDocumento = tipoDocumento;

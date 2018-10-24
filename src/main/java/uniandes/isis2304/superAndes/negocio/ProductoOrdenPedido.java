@@ -2,20 +2,31 @@ package uniandes.isis2304.superAndes.negocio;
 
 /**
  * Clase para modelar el concepto de .
- * @author Andrés Hernández
+ * @author Andrés Hernández y jenifer Rodriguez
  */
 public class ProductoOrdenPedido implements VOProductoOrdenPedido{
 
 	// -----------------------------------------------------------------
     // Atributos.
     // -----------------------------------------------------------------
-
+	/**
+	 * numero identificador de la orden de pedido.
+	 */
 	private long pedido;
 	
+	/**
+	 * Cantidad del producto que se solicita en la orden de pedido.
+	 */
 	private int cantidad;
 	
+	/**
+	 * calificacion de calidad de los productos entregados en la orden.
+	 */
 	private double calidad;
 	
+	/**
+	 * Clodigo del producto asiciado a la orden de pedido.
+	 */
 	private String producto;
 
     // -----------------------------------------------------------------
@@ -35,10 +46,10 @@ public class ProductoOrdenPedido implements VOProductoOrdenPedido{
 	
 	/**
 	 * Constructor con valores.
-	 * @param pedido
-	 * @param cantidad
-	 * @param calidad
-	 * @param producto
+	 * @param pedido - numero identificador de la orden de pedido
+	 * @param cantidad - cantidad del producto
+	 * @param calidad - calidad de los productos entregados
+	 * @param producto - codigo dle producto asociado a la orden de pedido
 	 */
 	public ProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto) {
 		this.pedido = pedido;
