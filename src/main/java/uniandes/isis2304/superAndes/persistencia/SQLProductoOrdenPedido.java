@@ -40,7 +40,13 @@ class SQLProductoOrdenPedido {
 		this.psa = psa;
 	}
 	
-	
+	/**
+	 * Adiciona un nuevo producto-orden pedido a la tabla con toda la informacion necesaria
+	 * @param pedido - identificador del pedido
+	 * @param cantidad - cantidad del producto asociado a la orden
+	 * @param calidad - calidad de los productos asociados 
+	 * @param producto - codigo del producto
+	 */
 	public long adicionarProductoOrdenPedido(PersistenceManager pm, long pedido, int cantidad, double calidad, String producto)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProductoOrdenPedido() + " (pedido, cantidad, calidad, producto) VALUES (?, ?, ?, ?)");
@@ -48,6 +54,12 @@ class SQLProductoOrdenPedido {
 		return (long) q.executeUnique();
 	}
 	
+	/**
+	 * devuelve la informacion del producto-ordenPedido cuyo identificador de pedido y codigo de producto sen iguales a los ingresados
+	 * por parametro
+	 * @param pedido - identificador del pedido
+	 * @param producto - codigo del producto
+	 */
 	public ProductoOrdenPedido darProductoOrdenPedido(PersistenceManager pm, long pedido, String producto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoOrdenPedido() + "WHERE pedido = ? AND producto = ?");
@@ -56,6 +68,9 @@ class SQLProductoOrdenPedido {
 		return (ProductoOrdenPedido) q.executeUnique();
 	}
 	
+	/**
+	 * devuelve una lista con la informacion de todos los producto-ordenPedido 
+	 */
 	public List<ProductoOrdenPedido> darProductosOrdenPedidos(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoOrdenPedido());
@@ -63,6 +78,10 @@ class SQLProductoOrdenPedido {
 		return (List<ProductoOrdenPedido>) q.executeList();
 	}
 	
+	/**
+	 * devuelve todos los productos vinculados a una orden de pedido
+	 * @param pedido - identificador de la orden de pedido
+	 */
 	public List<ProductoOrdenPedido> darProductosDelPedido(PersistenceManager pm, long pedido)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoOrdenPedido() + " WHERE pedido = ?");
@@ -71,6 +90,11 @@ class SQLProductoOrdenPedido {
 		return (List<ProductoOrdenPedido>) q.executeList();
 	}
 	
+	/**
+	 * devuelve el historial de todos las ordenes de pedido vinculadas al codigo de producto pasado
+	 * por parametro
+	 * @param producto - codigo del producto del cual se quiere saber el historial
+	 */
 	public List<ProductoOrdenPedido> darHistorialPedidosProducto(PersistenceManager pm, String producto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoOrdenPedido() + " WHERE producto = ?");

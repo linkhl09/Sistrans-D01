@@ -50,7 +50,7 @@ class SQLOrdenPedido {
 	 * @param esatdo - estado de la orden
 	 */
 	public long adicionarOrdenPedido(PersistenceManager pm, long id, Date fechaEsperadaEntrega
-			, String proveedor, String idSucursal, String estado)
+			, String proveedor, long idSucursal, String estado)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaOrdenPedido() 
 		+ " (id, fechaEsperadaEntrega, calificacionProveedor, proveedor, idSucursal, estado) VALUES (?, ?, 0, ?, ?, ?)");
@@ -60,7 +60,7 @@ class SQLOrdenPedido {
 	
 	/**
 	 * Elimina la orden de pedido cuyo identificador es igual al ingresado por parametro
-	 * * @param id -identificador unico de la orden de pedido
+	 * * @param id -identificador unico de la orden de pedido a eliminar
 	 **/
 	public long eliminarOrdenPedido(PersistenceManager pm, long id)
 	{
@@ -69,7 +69,10 @@ class SQLOrdenPedido {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * Devuele la informacion de la orden de pedido cuyo identificador es igual al ingresado por parametro
+	 * * @param id -identificador unico de la orden de pedido buscada
+	 **/
 	public OrdenPedido darOrdenPedido(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaOrdenPedido() + "WHERE id = ?");
@@ -78,7 +81,9 @@ class SQLOrdenPedido {
 		return (OrdenPedido) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Devuele todas las ordenes de pedido 
+	 **/
 	public List<OrdenPedido> darOrdenesPedidos(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaOrdenPedido());
@@ -86,10 +91,18 @@ class SQLOrdenPedido {
 		return (List<OrdenPedido>) q.executeList();
 	}
 
-
+	/**
+	 * registra la fecha de llegada de una orden de pedido, guarda la calificacion otorgada al proveedor 
+	 * por el estado dela orden 
+	 * @param id -identificador unico de la orden de pedido 
+	  * @param fechaEntrega -fecha en la que se raliza la entrega de la orden de pedido 
+	  * @param nuevaCalificacion -calificacion otorgada al proveedor por el estado de la orden
+	  *  
+	 **/
 	public long registrarFechaLlegada(PersistenceManager pm, long id, Date fechaEntrega, double nuevaCalificacion)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaOrdenPedido() + "SET fechaentrega = ? , calificacionproveedor = ? WHERE id = ?");
+
 		q.setParameters(fechaEntrega, nuevaCalificacion, id);
 		return (long) q.executeUnique();
 	}

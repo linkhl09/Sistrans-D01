@@ -945,7 +945,7 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long tuplasInsertadas = sqlPersonaNatural.adicionarPersonaNatural(pm, documento, tipoDocumento);
-			long tuplasInsertadas2 = sqlCliente.adicionarClientePersonaNatural(pm, correoElectronico, nombre, tipoDocumento, tipoDocumento);
+			long tuplasInsertadas2 = sqlCliente.adicionarClientePersonaNatural(pm, correoElectronico, nombre,documento);
 			tx.commit();			
 
 			log.trace("Inserción de la persona natural con documento: " + documento + ": " + tuplasInsertadas + " tuplas insertadas.");
@@ -978,7 +978,7 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long resp = sqlCliente.eliminarCliente(pm, correoElectronico);
-			long resp2 = sqlPersonaNatural.eliminarPersonaNatural(pm, documento, tipoDocumento); 
+			long resp2 = sqlPersonaNatural.eliminarPersonaNatural(pm, documento); 
 			tx.commit();
 			return new long[] {resp, resp2};
 		}
@@ -1007,7 +1007,7 @@ public class PersistenciaSuperAndes {
 
 	public PersonaNatural darPersonaNatural (String documento, String tipodocumento)
 	{
-		return sqlPersonaNatural.darPersonaNatural(pmf.getPersistenceManager(), documento, tipodocumento);
+		return sqlPersonaNatural.darPersonaNatural(pmf.getPersistenceManager(), documento);
 	}	
 	
 	
@@ -1165,8 +1165,8 @@ public class PersistenciaSuperAndes {
 
 	
 	public Factura adicionarFactura( String direccion, 
-			Date fecha, String nombreCajero, double valorTotal, int pagoExitoso, 
-			int puntosCompra, String cliente)
+			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
+			int puntosCompra, String correoCliente)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1174,12 +1174,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numero = nextval();
-			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, cliente);
+			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente);
 			tx.commit();
 
 			log.trace("Inserción de la factura con el numero: " + numero + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, cliente);
+			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente);
 		}
 		catch (Exception e)
 		{
@@ -1356,7 +1356,7 @@ public class PersistenciaSuperAndes {
 
 	
 	public OrdenPedido adicionarOrdenPedido( Date fechaEsperadaEntrega
-			, String proveedor, String direccionSucursal, String ciudadSucursal)
+			, String proveedor, long idSucursal, String estado)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1364,12 +1364,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long id = nextval();
-			long tuplasInsertadas = sqlOrdenPedido.adicionarOrdenPedido(pm, id, fechaEsperadaEntrega, proveedor, direccionSucursal, ciudadSucursal);
+			long tuplasInsertadas = sqlOrdenPedido.adicionarOrdenPedido(pm, id, fechaEsperadaEntrega, proveedor, idSucursal, estado);
 			tx.commit();
 
 			log.trace("Inserción de ordenPedido con el id: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new OrdenPedido(id, null, fechaEsperadaEntrega, 0, proveedor, direccionSucursal, ciudadSucursal);
+			return new OrdenPedido(id, null, fechaEsperadaEntrega, 0, proveedor, idSucursal , estado);
 		}
 		catch (Exception e)
 		{
@@ -2152,19 +2152,19 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	
-	public SucursalProducto adicionarSucursalProducto(String direccionSucursal, String ciudadSucursal, String producto)
+	public SucursalProducto adicionarSucursalProducto(long idSucursal, String producto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlSucursalProducto.adicionarSucursalProducto(pm, direccionSucursal, ciudadSucursal, producto);
+			long tuplasInsertadas = sqlSucursalProducto.adicionarSucursalProducto(pm, idSucursal, producto);
 			tx.commit();
 
 			log.trace("Inserción de asociacion entre sucursal y producto: " + producto + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new SucursalProducto(direccionSucursal, ciudadSucursal, producto);
+			return new SucursalProducto(idSucursal, producto);
 		}
 		catch (Exception e)
 		{
@@ -2183,14 +2183,14 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public long eliminarSucursalProducto(String direccionSucursal, String ciudadSucursal, String producto) 
+	public long eliminarSucursalProducto(long idSucursal, String producto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlSucursalProducto.eliminarSucursalProducto(pm, direccionSucursal, ciudadSucursal, producto);
+			long resp = sqlSucursalProducto.eliminarSucursalProducto(pm, idSucursal, producto);
 			tx.commit();
 			return resp;
 		}
@@ -2211,9 +2211,9 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	public List<SucursalProducto> darProductosSucursal(String direccionSucursal, String ciudadSucursal)
+	public List<SucursalProducto> darProductosSucursal(long idSucursal)
 	{
-		return sqlSucursalProducto.darProductosSucursal(pmf.getPersistenceManager(), direccionSucursal, ciudadSucursal);
+		return sqlSucursalProducto.darProductosSucursal(pmf.getPersistenceManager(),idSucursal);
 	}
 
 	

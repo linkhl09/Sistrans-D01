@@ -7,12 +7,24 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOProductoOrdenPedido {
 
+	/**
+	 * @return identificador del pedido.
+	 */
 	public long getPedido();
 	
+	/**
+	 * @return cantidad del producto asociado a la orden.
+	 */
 	public int getCantidad();
 	
+	/**
+	 * @return calidad de los productos entregados.
+	 */
 	public double getCalidad();
 	
+	/**
+	 * @return codigo del producto asociado a la orden.
+	 */
 	public String getProducto();
 	
 	/**
