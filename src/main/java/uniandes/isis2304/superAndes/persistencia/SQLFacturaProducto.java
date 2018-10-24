@@ -40,6 +40,12 @@ class SQLFacturaProducto {
 		this.psa = psa;
 	}
 	
+	/**
+	 * Adiciona una nueva factura-producto a a la tabla con toda la informacion necesaria
+	 * @param factura - numero de la factura ,identificador unico de la factura
+	 * @param cantidad - cantidada del producto
+	 * @param producto - codigo de producto , identificador unico del producto
+	 */
 	public long adicionarFacturaProducto(PersistenceManager pm, long factura, int cantidad, String producto)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaFacturaProducto() + " (factura, cantidad, producto) VALUES (?, ?, ?)");
@@ -47,7 +53,10 @@ class SQLFacturaProducto {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Elimina las factura-producto cuyo numero de factura es el ingresado por parametro
+	 * @param factura - numero de la factura ,identificador unico de la factura
+	 */
 	public long eliminarProductosDeFactura(PersistenceManager pm, long factura)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFacturaProducto() + " WHERE factura = ?");
@@ -55,7 +64,11 @@ class SQLFacturaProducto {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Eliminia las factura-producto cuyo numero de factura y codigo de producto son los ingresados por parametro
+	 * @param factura - numero de la factura ,identificador unico de la factura
+	 * @param producto - codigo de producto , identificador unico del producto
+	 */
 	public long eliminarProductoDeFactura(PersistenceManager pm, long factura, String producto)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFacturaProducto() + " WHERE factura = ? AND producto = ?");
@@ -63,7 +76,11 @@ class SQLFacturaProducto {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * devuelve la informacion de la  factura-producto cuyo numero de factura y codigo de producto es igual al ingresado por parametro
+	 * @param factura - numero de la factura ,identificador unico de la factura
+	 * @param producto - codigo de producto , identificador unico del producto
+	 */
 	public FacturaProducto darProductoDeFactura(PersistenceManager pm, long factura, String producto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaFacturaProducto() + "WHERE factura = ? AND producto = ?");
@@ -72,6 +89,9 @@ class SQLFacturaProducto {
 		return (FacturaProducto) q.executeUnique();
 	}
 	
+	/**
+	 * devuelve la informacion de todos los productos de una factura
+	 */
 	public List<FacturaProducto> darProductosFactura(PersistenceManager pm, long factura)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaFacturaProducto() + "WHERE factura = ?");
@@ -80,6 +100,9 @@ class SQLFacturaProducto {
 		return (List<FacturaProducto>) q.executeList();
 	}
 	
+	/**
+	 * devuelve todos los datos en al tabla factura-producto
+	 */
 	public List<FacturaProducto> darProductosFacturas(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaFacturaProducto());

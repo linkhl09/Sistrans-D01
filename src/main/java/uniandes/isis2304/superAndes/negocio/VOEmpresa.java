@@ -8,8 +8,14 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOEmpresa {
 
+	/**
+	 * Devuelve el nit de la empresa.
+	 */
 	public String getNit();
 	
+	/**
+	 * Devuelve la direccion de la empresa.
+	 */
 	public String getDireccion();
 	
 	/**

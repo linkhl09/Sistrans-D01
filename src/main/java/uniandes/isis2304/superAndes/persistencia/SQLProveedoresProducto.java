@@ -40,6 +40,11 @@ class SQLProveedoresProducto {
 		this.psa = psa;
 	}
 	
+	/**
+	 * Adiciona un nuevo proveedor-producto con toda la informacion necesaria
+	 * @param proveedor - El identificador unico del proveedor
+	 * @param producto - El codigo del producto
+	 */
 	public long adicionarProveedoresProducto(PersistenceManager pm, String proveedor, String producto)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProveedoresProducto() + " (proveedor, producto) VALUES (?, ?)");
@@ -47,7 +52,12 @@ class SQLProveedoresProducto {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Elimina el proveedor-producto cuyo identificador de proveedor y codigo de producto 
+	 * es igual a los ingresados por parametros
+	 * @param proveedor - El identificador unico del proveedor
+	 * @param producto - El codigo del producto
+	 */
 	public long eliminarProveedoresProducto(PersistenceManager pm, String proveedor, String producto)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedoresProducto() + " WHERE proveedor = ? AND producto = ?");
@@ -55,7 +65,10 @@ class SQLProveedoresProducto {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * Devuelve una lista de todos los proveedores que ofecen un producto
+	 * @param producto - El codigo del producto
+	 */
 	public List<ProveedoresProducto> darProveedoresProducto(PersistenceManager pm, String producto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProveedoresProducto() + " WHERE producto = ?");
@@ -64,6 +77,10 @@ class SQLProveedoresProducto {
 		return (List<ProveedoresProducto>) q.executeUnique();
 	}
 	
+	/**
+	 * Devuelve una lista de todos los productos ofrecidos por un mismo proveedor
+	 * @param proveedor - El identificador unico del proveedor
+	 */
 	public List<ProveedoresProducto> darProductosProveedor(PersistenceManager pm, String proveedor)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProveedoresProducto() + " WHERE proveedor = ?");
@@ -72,6 +89,10 @@ class SQLProveedoresProducto {
 		return (List<ProveedoresProducto>) q.executeUnique();
 	}
 	
+	/**
+	 * Devuelve una lista de todos los productos ofrecidos por todos los proveedores, es decir 
+	 * devuelve todos los proveedores-producto en la base de datos
+	 */
 	public List<ProveedoresProducto> darTodosProveedoresProductos(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProveedoresProducto());

@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Clase para modelar el concepto de Orden pedido.
- * @author Andrés Hernández
+ * @author Andrés Hernández y Jenifer Rodriguez
  */
 public class OrdenPedido implements VOOrdenPedido {
 
@@ -12,26 +12,41 @@ public class OrdenPedido implements VOOrdenPedido {
     // Atributos.
     // -----------------------------------------------------------------
 	
-	
+	/**
+	 * identificador unico de la orden de pedido.
+	 */
 	private long id;
 	
-	
+	/**
+	 * fecha en la que se raliza la entrega de la  orden de la entrega.
+	 */
 	private Date fechaEntrega;
 	
-	
+	/**
+	 * fecha esperada de la entrega de la orden de pedido.
+	 */
 	private Date fechaEsperadaEntrega;
 	
-	
+	/**
+	 * calificacion que le otorga la sucursal al proveedor por el esatado de los prodcutos entregados.
+	 */
 	private double calificacionProveedor;
 
-	
+	/**
+	 * identificador del proveedor al que se le realiza la orden.
+	 */
 	private String proveedor;
 	
+	/**
+	 * identificador de la sucursal que realiza la orden.
+	 */
+	private long idSucursal;
 	
-	private String direccionSucursal;
+	/**
+	 * estado en el que se encuentra la orden.
+	 */
+	private String estado;
 	
-	
-	private String ciudadSucursal;
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -47,30 +62,30 @@ public class OrdenPedido implements VOOrdenPedido {
 		this.fechaEsperadaEntrega = new Date();
 		this.calificacionProveedor = 0;
 		this.proveedor = "";
-		this.direccionSucursal = "";
-		this.ciudadSucursal = "";
+		this.idSucursal = 0;
+		this.estado ="" ;
 	}
 	
 	/**
 	 * 
-	 * @param id
-	 * @param fechaEntrega
-	 * @param fechaEsperadaEntrega
+	 * @param id 
+	 * @param fechaEntrega 
+	 * @param fechaEsperadaEntrega 
 	 * @param calificacionProveedor
-	 * @param proveedor
-	 * @param direccionSucursal
-	 * @param ciudadSucursal
+	 * @param proveedor- identificador del proveedor al que va dirigida la orden 
+	 * @param idSucursal - id de la sucursal que realiza el pedido
+	 * @param Estado - estado en el que se encuentra el pedido
 	 */
 	public OrdenPedido(long id, Date fechaEntrega, Date fechaEsperadaEntrega, double calificacionProveedor,
-			String proveedor, String direccionSucursal, String ciudadSucursal) 
+			String proveedor, long idSucursal, String estado) 
 	{
 		this.id = id;
 		this.fechaEntrega = fechaEntrega;
 		this.fechaEsperadaEntrega = fechaEsperadaEntrega;
 		this.calificacionProveedor = calificacionProveedor;
 		this.proveedor = proveedor;
-		this.direccionSucursal = direccionSucursal;
-		this.ciudadSucursal = ciudadSucursal;
+		this.idSucursal = idSucursal;
+		this.estado = estado;
 	}
 
     // -----------------------------------------------------------------
@@ -118,21 +133,15 @@ public class OrdenPedido implements VOOrdenPedido {
 		this.proveedor = proveedor;
 	}
 
-	public String getDireccionSucursal() {
-		return direccionSucursal;
+	public long getidSucursal() {
+		return idSucursal;
 	}
 
-	public void setDireccionSucursal(String direccionSucursal) {
-		this.direccionSucursal = direccionSucursal;
+	public void setidSucursal(long idSucursal) {
+		this.idSucursal = idSucursal;
 	}
 
-	public String getCiudadSucursal() {
-		return ciudadSucursal;
-	}
-
-	public void setCiudadSucursal(String ciudadSucursal) {
-		this.ciudadSucursal = ciudadSucursal;
-	}
+	
 
 	/**
 	 * Cadena de caracteres con todos los atributos de.
@@ -147,7 +156,19 @@ public class OrdenPedido implements VOOrdenPedido {
 				+ ", fechaEsperadaEntrega =" + fechaEsperadaEntrega.toString() 
 				+ ", calificacionProveedor =" + calificacionProveedor 
 				+ ", proveedor =" + proveedor 
-				+ ", direccionSucursal =" + direccionSucursal 
-				+ ", ciudadSucursal =" + ciudadSucursal + "]";
+				+ ", idSucursal =" + idSucursal 
+				+ ", estado de la orden =" + estado 
+				 + " ]";
 	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	
+	
 }

@@ -117,9 +117,6 @@ public class PersistenciaSuperAndes {
 	private SQLFacturaProducto sqlFacturaProducto;
 
 
-	private SQLClienteSucursal sqlClienteSucursal;
-
-
 	private SQLProductosEnBodega sqlProductosEnBodega;
 
 
@@ -253,7 +250,6 @@ public class PersistenciaSuperAndes {
 		sqlProveedoresProducto = new SQLProveedoresProducto(this);
 		sqlProductoOrdenPedido = new SQLProductoOrdenPedido(this);
 		sqlFacturaProducto = new SQLFacturaProducto(this);
-		sqlClienteSucursal  = new SQLClienteSucursal(this);
 		sqlProductosEnBodega = new SQLProductosEnBodega(this);
 		sqlProductosEnEstante = new SQLProductosEnEstante(this);
 		sqlSucursalProducto  = new SQLSucursalProducto(this);
@@ -1866,89 +1862,6 @@ public class PersistenciaSuperAndes {
 		return sqlFacturaProducto.darProductoDeFactura(pmf.getPersistenceManager(), factura, producto );
 	}
 	
-
-	// -----------------------------------------------------------------
-	// Métodos de tabla cliente_sucursal
-	// -----------------------------------------------------------------
-	
-	
-	public ClienteSucursal adicionarClienteSucursal(String cliente, String direccionSucursal, String ciudadSucursal)
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long tuplasInsertadas = sqlClienteSucursal.adicionarClienteSucursal(pm, cliente, direccionSucursal, ciudadSucursal);
-			tx.commit();
-
-			log.trace("Inserción de asociación cliente: " + cliente + "con su sucursal.  : " + tuplasInsertadas + " tuplas insertadas."); 
-
-			return new ClienteSucursal(cliente, direccionSucursal, ciudadSucursal);
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return null;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
-
-
-	public long eliminarClienteSucursal(String cliente, String direccionSucursal, String ciudadSucursal) 
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long resp = sqlClienteSucursal.eliminarClienteSucursal(pm, cliente, direccionSucursal, ciudadSucursal);
-			tx.commit();
-			return resp;
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return -1;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}
-
-
-	public List<ClienteSucursal> darSucursalesCliente(String cliente)
-	{
-		return sqlClienteSucursal.darSucursalesCliente(pmf.getPersistenceManager(), cliente);
-	}
-
-
-	public List<ClienteSucursal>  darClientesSucursal(String direccionSucursal, String ciudadSucursal)
-	{
-		return sqlClienteSucursal.darClientesSucursal(pmf.getPersistenceManager(), direccionSucursal, ciudadSucursal);
-	}
-	
-	
-	public List<ClienteSucursal> darTodosClientesSucursales()
-	{
-		return sqlClienteSucursal.darTodosClientesSucursales(pmf.getPersistenceManager());
-	}
-		
-
 	// -----------------------------------------------------------------
 	// Métodos de tabla productosEnBodega
 	// -----------------------------------------------------------------

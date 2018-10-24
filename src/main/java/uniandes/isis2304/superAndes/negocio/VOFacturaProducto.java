@@ -8,10 +8,19 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOFacturaProducto {
 
+	/**
+	 * @return numero de la factura.
+	 */
 	public long getFactura();
 	
+	/**
+	 * @return cantidad de producto.
+	 */
 	public int getCantidad();
 	
+	/**
+	 * @return codigo del producto.
+	 */
 	public String getProducto();
 	
 	/**

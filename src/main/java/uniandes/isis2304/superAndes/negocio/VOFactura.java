@@ -32,7 +32,7 @@ public interface VOFactura
 	/**
 	 * @return pago exitoso. 1 si exito, 0 de lo contrario.
 	 */
-	public int isPagoExitoso();
+	public boolean isPagoExitoso();
 	
 	/**
 	 * @return asigna los puntos de la cabesra.
@@ -42,7 +42,7 @@ public interface VOFactura
 	/**
 	 * @return cliente de la factura.
 	 */
-	public String getCliente();
+	public String getCorreoCliente();
 	
 	/**
 	 * Cadena de caracteres con todos los atributos de la factura.

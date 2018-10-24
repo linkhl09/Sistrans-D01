@@ -41,16 +41,27 @@ class SQLOrdenPedido {
 		this.psa = psa;
 	}
 	
+	/**
+	 * Adiciona una orden de pedido con toda la informacion necesaria
+	 * @param id -identificador unico de la orden de pedido
+	 * @param fechaEsperadaEntrega - fecha esperada ded entrega de la orden
+	 * @param proveedor - identificador del proveedor al que se le hace la orden
+	 * @param idSucursal - identificador de la sucursal que emite la orden de pedido
+	 * @param esatdo - estado de la orden
+	 */
 	public long adicionarOrdenPedido(PersistenceManager pm, long id, Date fechaEsperadaEntrega
-			, String proveedor, String direccionSucursal, String ciudadSUcursal)
+			, String proveedor, String idSucursal, String estado)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaOrdenPedido() 
-		+ " (id, fechaEsperadaEntrega, calificacionProveedor, proveedor, direccionSucursal, ciudadSucursal) VALUES (?, ?, 0, ?, ?, ?)");
-		q.setParameters(id, fechaEsperadaEntrega, proveedor, direccionSucursal, ciudadSUcursal);
+		+ " (id, fechaEsperadaEntrega, calificacionProveedor, proveedor, idSucursal, estado) VALUES (?, ?, 0, ?, ?, ?)");
+		q.setParameters(id, fechaEsperadaEntrega, proveedor, idSucursal, estado);
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Elimina la orden de pedido cuyo identificador es igual al ingresado por parametro
+	 * * @param id -identificador unico de la orden de pedido
+	 **/
 	public long eliminarOrdenPedido(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaOrdenPedido() + " WHERE id = ?");

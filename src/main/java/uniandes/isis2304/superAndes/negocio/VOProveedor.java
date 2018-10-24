@@ -8,10 +8,19 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOProveedor 
 {
+	/**
+	 * @return numero de identificacion unico del proveedor.
+	 */
 	public String getNit();
-		
+	
+	/**
+	 * @return nombre del proveedor.
+	 */
 	public String getNombre();
 
+	/**
+	 * @return calificacion de calidad del proveedor.
+	 */
 	public double getCalificacionCalidad();
 	
 	/**

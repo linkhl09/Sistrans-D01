@@ -42,8 +42,21 @@ class SQLFactura {
 		this.psa = psa;
 	}
 	
+	/**
+	 * Adiciona una nueva factura a la tabla "Facturas" con la informacion
+	 * pasada por parametro
+	 * @param numero - El Numero de factura , identificador unico
+	 * @param direccion - La direccion de la factura
+	 * @param facha - fecha de generacion de la factura
+	 * @param nombreCajero - Nombre del cajero q expide la factura
+	 * @param valorTotal - Valor total  de la factura 
+	 * @param pagoExitoso - boolen que dice si se pudo realizar o no el pago
+	 * @param puntosCompra - numero de puntos asignados por la compra
+	 * @param cliente - correo electronico del cluente que realiza la compra,
+	 *  identificador unico del cliente en la tabla "clientes"
+	 */
 	public long adicionarFactura(PersistenceManager pm, long numero, String direccion, 
-			Date fecha, String nombreCajero, double valorTotal, int pagoExitoso, 
+			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
 			int puntosCompra, String cliente)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaFactura() + " (numero, direccion, fecha, nombrecajero, valortotal, pagoexitoso, puntoscompra, cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
@@ -51,7 +64,10 @@ class SQLFactura {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * elimica una factura por el numero de factura, su identificador unico
+	 * @param numero -numero de la factura a eliminar
+	 */
 	public long eliminarFactura(PersistenceManager pm, long numero)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFactura() + " WHERE numero = ?");
@@ -59,7 +75,10 @@ class SQLFactura {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * devuelve la factura cuyo numero es igual al ingresado por parametro
+	 * @param numero -numero de la factura 
+	 */
 	public Factura darFactura(PersistenceManager pm, long numero)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaFactura() + "WHERE numero = ?");
@@ -68,6 +87,9 @@ class SQLFactura {
 		return (Factura) q.executeUnique();
 	}
 	
+	/**
+	 * devuelve todas las facturas 
+	 */
 	public List<Factura> darFacturas(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaFactura());

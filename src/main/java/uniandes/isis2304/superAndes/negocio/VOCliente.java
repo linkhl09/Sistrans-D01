@@ -8,9 +8,22 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOCliente {
 
+    // -----------------------------------------------------------------
+    // Metodos
+    // -----------------------------------------------------------------
+
+	/**
+	 * devuelve el correo electronico del cliente
+	 */
 	public String getCorreoElectronico();
 	
+	/**
+	 * devuelve el nombre del cliente
+	 */
 	public String getNombre();
 	
+	/**
+	 * devuelve los puntos acumulados del cliente
+	 */
 	public int getPuntos();
 }

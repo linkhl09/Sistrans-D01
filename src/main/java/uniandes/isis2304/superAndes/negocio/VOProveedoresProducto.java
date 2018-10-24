@@ -7,8 +7,14 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOProveedoresProducto {
 
+	/**
+	 * @return identificacion de proveedor.
+	 */
 	public String getProveedor();
 	
+	/**
+	 * @return codigo del producto.
+	 */
 	public String getProducto();
 	
 	/**

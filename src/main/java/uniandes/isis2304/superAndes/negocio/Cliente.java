@@ -2,7 +2,7 @@ package uniandes.isis2304.superAndes.negocio;
 
 /**
  * Clase para modelar el concepto de Cliente.
- * @author Andrés Hernández
+ * @author Andrés Hernández y jenifer rodriguez
  */
 public abstract class Cliente implements VOCliente{
 
@@ -10,10 +10,19 @@ public abstract class Cliente implements VOCliente{
     // Atributos.
     // -----------------------------------------------------------------
 
+	/**
+	 *coreo electronico del cliente
+	 */
 	protected String correoElectronico;
 	
+	/**
+	 *nombre del cliente
+	 */
 	protected String nombre;
 	
+	/**
+	 *puntos que lleva acumulado el cliente (para requerimientos futuros)
+	 */
 	protected int puntos;
 
     // -----------------------------------------------------------------
@@ -33,7 +42,7 @@ public abstract class Cliente implements VOCliente{
 	/**
 	 * Constructor con valores.
 	 * @param correoElectronico
-	 * @param nombre
+	 * @param nombre del cliente
 	 * @param puntos
 	 */
 	public Cliente(String correoElectronico, String nombre, int puntos) 

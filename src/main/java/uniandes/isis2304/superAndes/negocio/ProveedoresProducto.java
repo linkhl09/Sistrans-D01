@@ -10,8 +10,14 @@ public class ProveedoresProducto implements VOProveedoresProducto{
     // Atributos.
     // -----------------------------------------------------------------
 
+	/**
+	 *numero de identificacion del proveedor.
+	 */
 	private String proveedor;
 	
+	/**
+	 * codigo del producto .
+	 */
 	private String producto;
 
     // -----------------------------------------------------------------
@@ -29,8 +35,8 @@ public class ProveedoresProducto implements VOProveedoresProducto{
 	
 	/**
 	 * Constructor con valores.
-	 * @param proveedor
-	 * @param producto
+	 * @param proveedor - numero de identificacion del proveedor
+	 * @param producto - codigo del producto
 	 */
 	public ProveedoresProducto(String proveedor, String producto) 
 	{
@@ -42,22 +48,35 @@ public class ProveedoresProducto implements VOProveedoresProducto{
     // Métodos.
     // -----------------------------------------------------------------
 
-	
+	/**
+	 * @return identificador del proveedor.
+	 */
 	public String getProveedor() 
 	{
 		return proveedor;
 	}
 
+	/**
+	 * Cambia el proveedor del proveedor
+	 * @param nueva identificador 
+	 */
 	public void setProveedor(String proveedor) 
 	{
 		this.proveedor = proveedor;
 	}
 
+	/**
+	 * @return codigo del producto.
+	 */
 	public String getProducto() 
 	{
 		return producto;
 	}
 
+	/**
+	 * Cambia el producto
+	 * @param nuevo codigo
+	 */
 	public void setProducto(String producto) {
 		this.producto = producto;
 	}

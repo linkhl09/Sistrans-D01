@@ -40,7 +40,11 @@ class SQLPersonaNatural {
 		this.psa = psa;
 	}
 	
-	
+	/**
+	 * Agrega una nueva  persona natural  a la base de datos
+	 * @param documento -  el numero de documento de la persona , es el identficador unico de la persona
+	 * @param tipoDocumento -  el tipo de documento de la persona
+	 */
 	public long adicionarPersonaNatural(PersistenceManager pm, String documento, String tipoDocumento)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaPersonaNatural() + " (documento, tipodocumento) VALUES (?, ?)");
@@ -48,23 +52,34 @@ class SQLPersonaNatural {
 		return (long) q.executeUnique();
 	}
 	
-	
-	public long eliminarPersonaNatural(PersistenceManager pm, String documento, String tipoDocumento)
+	/**
+	 * elimina una  persona natural  de la base de datos
+	 * @param documento -  el numero de documento de la persona a eliminar , es el identficador unico de la persona
+	 * @param tipoDocumento -  el tipo de documento de la persona
+	 */
+	public long eliminarPersonaNatural(PersistenceManager pm, String documento)
 	{
-		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPersonaNatural() + " WHERE documento = ? AND tipodocumento = ?");
-		q.setParameters(documento, tipoDocumento);
+		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPersonaNatural() + " WHERE documento = ?");
+		q.setParameters(documento);
 		return (long) q.executeUnique();
 	}
 	
-
-	public PersonaNatural darPersonaNatural(PersistenceManager pm, String documento, String tipodocumento)
+	/**
+	 * devuelve la informacion de la persona con el documento dado
+	 * @param documento -  el numero de documento de la persona a eliminar , es el identficador unico de la persona
+	 * @param tipoDocumento -  el tipo de documento de la persona
+	 */
+	public PersonaNatural darPersonaNatural(PersistenceManager pm, String documento)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaPersonaNatural() + "WHERE documento = ? AND tipodocumento = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaPersonaNatural() + "WHERE documento = ?");
 		q.setResultClass(PersonaNatural.class);
-		q.setParameters(documento, tipodocumento);
+		q.setParameters(documento);
 		return (PersonaNatural) q.executeUnique();
 	}
 	
+	/**
+	 * devuelvela informacion de todas las personas naturales 
+	 */
 	public List<PersonaNatural> darPersonasNaturales(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaPersonaNatural());

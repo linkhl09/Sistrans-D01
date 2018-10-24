@@ -40,6 +40,11 @@ class SQLEmpresa {
 		this.psa = psa;
 	}
 	
+	/**
+	 * Adiciona una nueva empresa a la tabla "Empresa"
+	 * @param nit - identificador unico de la empresa
+	 *  @param direccion - direccion de la empresa
+	 */
 	public long adicionarEmpresa(PersistenceManager pm, String nit, String direccion)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaEmpresa() + " (nit, direccion) VALUES (?, ?)");
@@ -47,7 +52,11 @@ class SQLEmpresa {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 Elimina la empresa de la tabla "Empresa" cuyo nit es igual al que entra 
+	 * por parametro
+	 * @param nit - identificador unico de la empresa a eliminar
+	 */
 	public long eliminarEmpresaPorNit(PersistenceManager pm, String nit)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaEmpresa() + " WHERE nit = ?");
@@ -55,7 +64,11 @@ class SQLEmpresa {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * Elimina la empresa de la tabla "Empresa" cuya direccion es igual a la que entra 
+	 * por parametro
+     * @param nit - identificador unico de la empresa a eliminar
+	 */
 	public long eliminarEmpresaPorDireccion(PersistenceManager pm, String direccion)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaEmpresa() + " WHERE direccion = ?");
@@ -63,7 +76,11 @@ class SQLEmpresa {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Devuelve la empresa de la tabla "Empresa" cuyo nit es igual al que entra 
+	 * por parametro
+	 *  * @param nit - identificador unico de la empresa a devolver
+	 */
 	public Empresa darEmpresa(PersistenceManager pm, String nit)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEmpresa() + "WHERE nit = ?");
@@ -72,6 +89,9 @@ class SQLEmpresa {
 		return (Empresa) q.executeUnique();
 	}
 	
+	/**
+	 * Devuelve todas laa empresa de la tabla "Empresa" 
+	 */
 	public List<Empresa> darEmpresas(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEmpresa());

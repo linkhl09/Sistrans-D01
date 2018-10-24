@@ -18,17 +18,17 @@ public class Factura implements VOFactura {
 	private long numero;
 
 	/**
-	 * direccion de la factura.
+	 * direccion de la sucursal donde se genera la factura.
 	 */
 	private String direccion;
 	
 	/**
-	 * Fecha de la factura.
+	 * Fecha de generacion de la factura.
 	 */
 	private Date fecha;
 	
 	/**
-	 * nombre del cajero de la factura.
+	 * Nombre del cajero q expide la factura.
 	 */
 	private String nombreCajero;
 	
@@ -38,19 +38,26 @@ public class Factura implements VOFactura {
 	private double valorTotal;
 	
 	/**
-	 * pago exitoso de la compra.
+	 * dice si el pago  de la compra fue exitoso o no.
 	 */
-	private int pagoExitoso;
+	private boolean pagoExitoso;
 	
 	/**
-	 * puntos de la factura.
+	 * puntos  de la factura.
 	 */
 	private int puntosCompra;
 	
 	/**
-	 * CLiente que realiza la compra.
+	 * correo electronico del CLiente que realiza la compra
 	 */
-	private String cliente;
+	private String correoCliente;
+	
+	/**
+	 * Id de la sucursal en donde se realiza la compra
+	 */
+	private Long idSucursal;
+	
+	
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -66,9 +73,9 @@ public class Factura implements VOFactura {
 		this.fecha = new Date();
 		this.nombreCajero = "";
 		this.valorTotal = 0;
-		this.pagoExitoso = 0;
+		this.pagoExitoso = false;
 		this.puntosCompra = 0;
-		this.cliente = "";
+		this.correoCliente = "";
 	}
 
 	/**
@@ -83,7 +90,7 @@ public class Factura implements VOFactura {
 	 * @param cliente CLiente que realiza la compra.
 	 */
 	public Factura(long numero, String direccion, Date fecha, String nombreCajero, double valorTotal,
-			int pagoExitoso, int puntosCompra, String cliente) 
+			boolean pagoExitoso, int puntosCompra, String correoCliente) 
 	{
 		this.numero = numero;
 		this.direccion = direccion;
@@ -92,7 +99,7 @@ public class Factura implements VOFactura {
 		this.valorTotal = valorTotal;
 		this.pagoExitoso = pagoExitoso;
 		this.puntosCompra = puntosCompra;
-		this.cliente = cliente;
+		this.correoCliente = correoCliente;
 	}
     // -----------------------------------------------------------------
     // Métodos.
@@ -186,7 +193,7 @@ public class Factura implements VOFactura {
 	/**
 	 * @return pago exitoso. 1 si exito, 0 de lo contrario.
 	 */
-	public int isPagoExitoso() {
+	public boolean isPagoExitoso() {
 		return pagoExitoso;
 	}
 
@@ -194,7 +201,7 @@ public class Factura implements VOFactura {
 	 * Asigna si el pago fue exitoso.
 	 * @param pagoExitoso pago Exitoso. 1 éxito. 0 Failure.
 	 */
-	public void setPagoExitoso(int pagoExitoso) 
+	public void setPagoExitoso(boolean pagoExitoso) 
 	{
 		this.pagoExitoso = pagoExitoso;
 	}
@@ -219,17 +226,17 @@ public class Factura implements VOFactura {
 	/**
 	 * @return cliente de la factura.
 	 */
-	public String getCliente() 
+	public String getCorreoCliente() 
 	{
-		return cliente;
+		return correoCliente;
 	}
 
 	/**
 	 * Asigna el cliente de la factura.
 	 * @param cliente nuevo cliente de la factura.
 	 */
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
+	public void setCliente(String correoCliente) {
+		this.correoCliente = correoCliente;
 	}
 
 	/**
@@ -240,6 +247,6 @@ public class Factura implements VOFactura {
 	{
 		return "Factura [numero =" + numero + ", direccion =" + direccion + ", fecha =" + fecha.toString() 
 				+ ", valorTotal =" + valorTotal + ", pagoExitoso =" + pagoExitoso + ", puntosCompra =" + puntosCompra 
-				+ ", cliente =" + cliente + "]";
+				+ ", correo del cliente =" + correoCliente + "]";
 	}	
 }
