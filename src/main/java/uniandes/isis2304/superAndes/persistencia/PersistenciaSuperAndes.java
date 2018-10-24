@@ -516,7 +516,7 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla Tipop.
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Tipo.
 	 * Adiciona entradas al log de la aplicacion.
 	 * @param nombre - El nombre del tipo a adicionar.
 	 * @return El objeto Tipo adicionado. null si ocurre alguna Exception.
@@ -586,7 +586,7 @@ public class PersistenciaSuperAndes {
 
 	/**
 	 * Método que consulta todas las tuplas en la tabla de Tipo
-	 * @return Una lista de objetos TipoBebida, construidos con base en las tuplas de la tabla TIPO.
+	 * @return Una lista de objetos Tipo, construidos con base en las tuplas de la tabla TIPO.
 	 */
 	public List<Tipo> darTipos()
 	{
@@ -608,7 +608,11 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Categoria
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Categoria.
+	 * @param nombre - El nombre de la categoria a adicionar.
+	 * @return el objeto Categoria adicionado. Null si ocurre alguna Exception.
+	 */
 	public Categoria adicionarCategoria(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -639,7 +643,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	
+	/**
+	 * Método que elimina, de manera transaccuibakm yba tupla de la tabla Categoria.
+	 * @param nombre - Nombre de la categoria a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
 	public long eliminarCategoria(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -667,13 +675,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Categoria.
+	 * @return Una lista de objetos Categoria, construidos con base en las tuplas de la tabla CATEGORIA.
+	 */
 	public List<Categoria> darCategorias()
 	{
 		return sqlCategoria.darCategorias(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
+	 * @param nombre - Nombre de la categoria.
+	 * @return El objeto de Categoria, construido con base en la tabla CATEGORIA.
+	 */
 	public Categoria darCategoria(String nombre)
 	{
 		return sqlCategoria.darCategoria(pmf.getPersistenceManager(), nombre);
@@ -684,6 +699,7 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
 
+	
 	public Proveedor adicionarProveedor(String nit, String nombre, double calificacion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -810,7 +826,6 @@ public class PersistenciaSuperAndes {
         }
 	}
 	
-	
 	// -----------------------------------------------------------------
 	// Métodos de tabla promoción
 	// -----------------------------------------------------------------
@@ -823,11 +838,31 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla producto
 	// -----------------------------------------------------------------
 
-	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla de Producto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param codigoBarras - Codigo de barras del producto.
+	 * @param nombre - Nombre del producto.
+	 * @param marca - Marca del producto.
+	 * @param precioUnitario - Precio unitario del producto.
+	 * @param presentacion - Presentación del producto.
+	 * @param precioUnidadMedida - Precio por unidad de medida del producto.
+	 * @param cantidadPresentacion - Cantidad en la presentación del producto.
+	 * @param peso - Valor númerico del peso del producto.
+	 * @param unidadMedidaPeso - Unidad de medida del peso del producto.
+	 * @param volumen - Valor númerico del volumen del producto.
+	 * @param unidadMedidaVolumen - Unidad de medida del volumen del producto.
+	 * @param calidad - Calidad del producto.
+	 * @param nivelReorden - Nivel de reorden del producto. 
+	 * @param fechaVencimiento - Fecha de vencimiento del producto, null si no es un producto perecedero.
+	 * @param categoria - Categoria del prodcuto
+	 * @param estaEnPromocion - Booleano que indica si el producto esta en promoción.
+	 * @return El objeto de tipo Producto adicionado. Null si ocurre alguna Exception.
+	 */
 	public Producto adicionarProducto(String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
-			int nivelReorden, Date fechaVencimiento, String categoria, boolean promocion)
+			int nivelReorden, Date fechaVencimiento, String categoria, boolean estaEnPromocion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -836,13 +871,13 @@ public class PersistenciaSuperAndes {
 			tx.begin();
 			long tuplasInsertadas = sqlProducto.adicionarProducto(pm, codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, 
 																cantidadPresentacion, peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, 
-																nivelReorden, fechaVencimiento, categoria, promocion);
+																nivelReorden, fechaVencimiento, categoria, estaEnPromocion);
 			tx.commit();
 
 			log.trace("Inserción del producto con (nombre: " + nombre + " y marca: " + marca + " ): " + tuplasInsertadas + " tuplas insertadas."); 
 
 			return new Producto(codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, peso, unidadMedidaPeso,
-								volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, promocion);
+								volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, estaEnPromocion);
 		}
 		catch (Exception e)
 		{
