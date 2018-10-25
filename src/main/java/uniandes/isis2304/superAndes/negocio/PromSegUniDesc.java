@@ -60,7 +60,7 @@ public class PromSegUniDesc extends Promocion implements VOPromSegUniDesc {
 	 *****************************************************************/
 
 	/**
-	 * @return porcentaje de descuento a realizar.
+	 * @return porcentaje de descuento a realizar a la segunda unidad.
 	 */
 	public double getDescuento() {
 		return descuento;
@@ -75,7 +75,7 @@ public class PromSegUniDesc extends Promocion implements VOPromSegUniDesc {
 	}
 
 	/**
-	 * Cadena de caracteres con todos los atributos de la Promocion promDescuento.
+	 * Cadena de caracteres con todos los atributos de la Promocion promSegUniDesc.
 	 */
 	@Override
 	public String toString()
@@ -83,7 +83,7 @@ public class PromSegUniDesc extends Promocion implements VOPromSegUniDesc {
 		return "Promocion [identificador de la promocion ="+ id +", descripcion =" + descripcion
 				+ "producto =" + producto + "unidades disponibles =" + unidadesDisponibles 
 				+"unidades vendidas =" + unidadesVendidas + "fecha de inicio =" + fechaInicio
-				+"fecha de finalizacion =" + fechaFin+ "porcentaje de descuento=" + descuento+"%" +"]";
+				+"fecha de finalizacion =" + fechaFin+ "porcentaje de descuento de la segunda unidad=" + descuento+"%" +"]";
 	}
 	
 	

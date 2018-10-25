@@ -131,6 +131,23 @@ public class PersistenciaSuperAndes {
 
 	private SQLUtil sqlUtil;
 
+	/**
+	 * Atributo para el acceso a la tabla "PomDescuento" de la base de datos
+	 */
+	private SQLPromDescuento sqlPromDescuento;
+	/**
+	 * Atributo para el acceso a la tabla "PromPagLlevUnidad" de la base de datos
+	 */
+	private SQLPromPagLlevUnidad sqlPromPagLlevUnidad;
+	/**
+	 * Atributo para el acceso a la tabla "PromDescSegUnid" de la base de datos
+	 */
+	private SQLPromDescSegUnid sqlPromDescSegUnid;
+
+	/**
+	 * Atributo para el acceso a la tabla "PromPagLleveCatidad" de la base de datos
+	 */
+	private SQLPromPagLleveCatidad sqlPromPagLleveCatidad;
 
 	// -----------------------------------------------------------------
 	// Métodos Manejador de persistencia.
@@ -447,6 +464,39 @@ public class PersistenciaSuperAndes {
 	{
 		return tablas.get(21);
 	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de PromDescuento de parranderos
+	 */
+	public String darTablaPromDescuento ()
+	{
+		return tablas.get (11);
+	}
+
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de PromPagLleveUnida de parranderos
+	 */
+	public String darTablaPromPagLleveUnida ()
+	{
+		return tablas.get (12);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de PromDescSegUnid de parranderos
+	 */
+	public String darTablaPromDescSegUnid ()
+	{
+		return tablas.get (13);
+	}
+
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de PromPagLleveCant de parranderos
+	 */
+	public String darTablaPromPagLleveCant()
+	{
+		return tablas.get (14);
+	}
+
 
 	/**
 	 * Transacción para el generador de secuencia de SuperAndes
