@@ -7,67 +7,85 @@ public class PromDesc extends Promocion implements VOPromDesc {
 	/* ****************************************************************
 	 * 			Atributos
 	 *****************************************************************/
-	
-	/**
-	 * fecha en la cual se inicia la promocion
-	 */
-	private Date fechaInicio;
-	
-	/**
-	 * fecha en la cual se finaliza la promocion
-	 */
-	private Date fechaFin;
-	
-	/**
-	 * producto que esta en promocion
-	 */
-	private String producto;
 
-	/**
-	 * tipo de promocion 1: PromPagLleveUni , 2: PronDesc , 3: PronSegunUnidDesc, 4 : PromPagueLleveCant
-	 */
-	private Integer tipoProm;
-	
 	/**
 	 * porcentaje del descuento a  realizar
 	 */
-	private Integer descuento;
+	private double descuento;
 
 	
 	
 	/* ****************************************************************
 	 * 			Constructores
 	 *****************************************************************/
+	/**
+	 * Constructor vacio.
+	 */
+	public PromDesc()
+	{
+		id = 0;
+		descripcion= "";
+		unidadesDisponibles = 0;
+		unidadesVendidas = 0;
+		fechaInicio= null;
+		fechaFin= null;
+		producto= "";
+		descuento =0;
+		
+		
+	}
 	
-	/**@param pFechaInicio fecha en la cual se inicia la promocion
-	/**@param fechaFin fecha en la cual se finaliza la promocion
-	/**@param producto  producto que esta en promocion
-	 * @param tipoProm tipo de promocion 1: PromPagLleveUni , 2: PronDesc , 3: PronSegunUnidDesc, 4 : PromPagueLleveCant
-	 *   @param   descuento   porcentaje del descuento a  realizar
+	 /** Constructor con valores.
+	 * @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param descuento -  porcentaje del descuento a  realizar   
 	**/
 	
-	public PromDesc(Date pFechaInicio,Date pFechaFin, String pCodigoProducto, Integer pDescuento)
+	public PromDesc(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, int descuento) 
 	{
-		fechaInicio = pFechaInicio;
-		fechaFin = pFechaFin;
-		producto= pCodigoProducto; 
-		setDescuento(pDescuento);
-		tipoProm=2;
+	
+		super(id,descripcion,unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto);
+		this.descuento= descuento;
+	
 	}
 
 	/* ****************************************************************
 	 * 			Metodos
 	 *****************************************************************/
 
-	public Integer getDescuento() {
+	/**
+	 * @return porcentaje de descuento a realizar.
+	 */
+	public double getDescuento() {
 		return descuento;
 	}
 
-
-
-	public void setDescuento(Integer descuento) {
+	/**
+	 * Asigna el porcentaje de descuento.
+	 * @param nuevo porcentaje.
+	 */
+	public void setDescuento(double descuento) {
 		this.descuento = descuento;
 	}
+
+	/**
+	 * Cadena de caracteres con todos los atributos de la Promocion promDescuento.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Promocion [identificador de la promocion ="+ id +", descripcion =" + descripcion
+				+ "producto =" + producto + "unidades disponibles =" + unidadesDisponibles 
+				+"unidades vendidas =" + unidadesVendidas + "fecha de inicio =" + fechaInicio
+				+"fecha de finalizacion =" + fechaFin+ "porcentaje de descuento=" + descuento+"%" +"]";
+	}
+	
 	
 
 	

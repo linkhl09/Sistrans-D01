@@ -9,26 +9,6 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 	 *****************************************************************/
 	
 	/**
-	 * fecha en la cual se inicia la promocion
-	 */
-	private Date fechaInicio;
-	
-	/**
-	 * fecha en la cual se finaliza la promocion
-	 */
-	private Date fechaFin;
-	
-	/**
-	 * producto que esta en promocion
-	 */
-	private String producto;
-
-	/**
-	 * tipo de promocion 1: PromPagLleveUni , 2: PronDesc , 3: PronSegunUnidDesc, 4 : PromPagueLleveCant
-	 */
-	private Integer tipoProm;
-	
-	/**
 	 *cantidad del producto que se esta pagando
 	 */
 	private Integer pague;
@@ -42,44 +22,90 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 	/* ****************************************************************
 	 * 			Constructores
 	 *****************************************************************/
-	
-	public PromPagueLleveCant(Date pFechaInicio,Date pFechaFin, String pProducto
-			, Integer pPague, Integer pLleve)
+	/**
+	 * Constructor vacio.
+	 */
+	public PromPagueLleveCant()
 	{
-		fechaInicio = pFechaInicio;
-		fechaFin = pFechaFin;
-		producto= pProducto; 
-		pague = pPague;
-		lleve = pLleve;
-		tipoProm = 4;
+		id = 0;
+		descripcion= "";
+		unidadesDisponibles = 0;
+		unidadesVendidas = 0;
+		fechaInicio= null;
+		fechaFin= null;
+		producto= "";
+		pague=0;
+		lleve=0;
 		
 	}
+	
+	 /** Constructor con valores.
+		 * @param id - identificador de la promocion
+		 * @param descripcion - descripcion de la promocion
+		 * @param unidadesDisponibles - unidades disponibles de la promocion
+		 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+		 * @param fechaInicio - fecha de inicion de la promocion
+		 * @param fechaFin - fecha de finalizacion de la promocion
+		 * @param poducto - codigo del producto asociado a la promocion
+		 **@param pague -  cantidad del producto que se debe pagar
+		 * @param lleve -  cantidad del producto que se llevara
+		**/
+		
+		public PromPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+				, Date fechaInicio, Date fechaFin, String producto, int pague, int lleve) 
+		{
+		
+			super(id,descripcion,unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto);
+			this.pague = pague;
+			this.lleve = lleve;
+		
+		}
 
 	/* ****************************************************************
 	 * 			Metodos
 	 *****************************************************************/
 	
-
-
+	/**
+	 * @return cantidad del producto que se debe pagar.
+	 */
 	public Integer getPague() {
 		return pague;
 	}
 
-
+	/**
+	 * Asigna la cantidad que se debe pagar del producto.
+	 * @param cantidad a pagar.
+	 */
 	public void setPague(Integer pague) {
 		this.pague = pague;
 	}
 
-
+	/**
+	 * @return  cantidad del producto que se llevara.
+	 */
 	public Integer getLleve() {
 		return lleve;
 	}
 
-
+	/**
+	 * Asigna la cantidad de producto que se llevara.
+	 * @param cantidad que se llevara.
+	 */
 	public void setLleve(Integer lleve) {
 		this.lleve = lleve;
 	}
 	
+	/**
+	 * Cadena de caracteres con todos los atributos de la Promocion promPagueLleveCantidad.
+	 */
+	@Override
+	public String toString()
+	{
+		return "Promocion [identificador de la promocion ="+ id +", descripcion =" + descripcion
+				+ "producto =" + producto + "unidades disponibles =" + unidadesDisponibles 
+				+"unidades vendidas =" + unidadesVendidas + "fecha de inicio =" + fechaInicio
+				+"fecha de finalizacion =" + fechaFin+ "pague=" + pague +"lleve" + lleve +"]";
+	}
 	
 
 	
