@@ -80,6 +80,9 @@ public class PersistenciaSuperAndes {
 
 	private SQLProveedor sqlProveedor;
 	
+	
+	private SQLTipoCategoria sqlTipoCategoria;
+	
 
 	private SQLProducto sqlProducto;
 
@@ -140,30 +143,32 @@ public class PersistenciaSuperAndes {
 	{
 		pmf = JDOHelper.getPersistenceManagerFactory("SuperAndes");
 		crearClasesSQL();
-
+		
+		//TODO Completar después de inicializar las tablas.
+		
 		tablas = new LinkedList<String>();
-		tablas.add("superAndes_sequence");
-		tablas.add("TIPO");
-		tablas.add("CATEGORIA");
-		tablas.add("PROVEEDOR");
-		tablas.add("PROMOCION");
-		tablas.add("PRODUCTO");
-		tablas.add("PERSONANATURAL");
-		tablas.add("EMPRESA");
-		tablas.add("CLIENTE");
-		tablas.add("FACTURA");
-		tablas.add("SUCURSAL");
-		tablas.add("ORDENPEDIDO");
-		tablas.add("BODEGA");
-		tablas.add("ESTANTE");
-		tablas.add("PROVEEDORES_PRODUCTO");
-		tablas.add("PRODUCTO_ORDENPEDIDO");
-		tablas.add("FACTURA_PRODUCTO");
-		tablas.add("CLIENTE_SUCURSAL");
-		tablas.add("PRODUCTOSENBODEGA");
-		tablas.add("PRODUCTOSENESTANTE");
-		tablas.add("SUCURSAL_PRODUCTO");
-		tablas.add("HISTORIAL_PROMOCIONES");
+//		tablas.add("superAndes_sequence");
+//		tablas.add("TIPO");
+//		tablas.add("CATEGORIA");
+//		tablas.add("PROVEEDOR");
+//		tablas.add("PROMOCION");
+//		tablas.add("PRODUCTO");
+//		tablas.add("PERSONANATURAL");
+//		tablas.add("EMPRESA");
+//		tablas.add("CLIENTE");
+//		tablas.add("FACTURA");
+//		tablas.add("SUCURSAL");
+//		tablas.add("ORDENPEDIDO");
+//		tablas.add("BODEGA");
+//		tablas.add("ESTANTE");
+//		tablas.add("PROVEEDORES_PRODUCTO");
+//		tablas.add("PRODUCTO_ORDENPEDIDO");
+//		tablas.add("FACTURA_PRODUCTO");
+//		tablas.add("CLIENTE_SUCURSAL");
+//		tablas.add("PRODUCTOSENBODEGA");
+//		tablas.add("PRODUCTOSENESTANTE");
+//		tablas.add("SUCURSAL_PRODUCTO");
+//		tablas.add("HISTORIAL_PROMOCIONES");
 	}
 
 	/**
@@ -235,8 +240,10 @@ public class PersistenciaSuperAndes {
 	 */
 	private void crearClasesSQL()
 	{
+		// TODO revisar que esten todas las clases SQL inicializadas.
 		sqlTipo = new SQLTipo(this);
 		sqlCategoria = new SQLCategoria(this);
+		sqlTipoCategoria = new SQLTipoCategoria(this);
 		sqlProveedor = new SQLProveedor(this);
 		sqlProducto = new SQLProducto(this);
 		sqlPersonaNatural = new SQLPersonaNatural(this);
@@ -280,6 +287,15 @@ public class PersistenciaSuperAndes {
 		return tablas.get(2);
 	}
 
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de TipoCategoria de SuperAndes.
+	 */
+	public String darTablaTipoCategoria() 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Proveedor de SuperAndes
 	 */
@@ -499,19 +515,25 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Tipo
 	// -----------------------------------------------------------------
 
-	public Tipo adicionarTipo(String nombre, String categoria)
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Tipo.
+	 * Adiciona entradas al log de la aplicacion.
+	 * @param nombre - El nombre del tipo a adicionar.
+	 * @return El objeto Tipo adicionado. null si ocurre alguna Exception.
+	 */
+	public Tipo adicionarTipo(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlTipo.adicionarTipo(pm, nombre, categoria);
+			long tuplasInsertadas = sqlTipo.adicionarTipo(pm, nombre);
 			tx.commit();
 
 			log.trace("Inserción de tipo producto: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Tipo(nombre, categoria);
+			return new Tipo(nombre);
 		}
 		catch (Exception e)
 		{
@@ -529,7 +551,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 	
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Tipo.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param nombre - El nombre del tipo de bebida.
+	 * @return El número de tuplas eliminadas, -1 si ocurre alguna Exception. 
+	 */
 	public long eliminarTipo(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -557,16 +584,23 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Tipo
+	 * @return Una lista de objetos Tipo, construidos con base en las tuplas de la tabla TIPO.
+	 */
 	public List<Tipo> darTipos()
 	{
 		return sqlTipo.darTipos(pmf.getPersistenceManager());
 	}
 
-
-	public Tipo darTipoPorNombre(String nombre)
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
+	 * @param nombre - El nombre del tipo.
+	 * @return El objeto de Tipo, construido con base en las tablas de la tabla TIPO.
+	 */
+	public Tipo darTipo(String nombre)
 	{
-		return sqlTipo.darTipoPorNombre(pmf.getPersistenceManager(), nombre);
+		return sqlTipo.darTipo(pmf.getPersistenceManager(), nombre);
 	}
 
 	
@@ -574,7 +608,11 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Categoria
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Categoria.
+	 * @param nombre - El nombre de la categoria a adicionar.
+	 * @return el objeto Categoria adicionado. Null si ocurre alguna Exception.
+	 */
 	public Categoria adicionarCategoria(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -605,7 +643,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	
+	/**
+	 * Método que elimina, de manera transaccuibakm yba tupla de la tabla Categoria.
+	 * @param nombre - Nombre de la categoria a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
 	public long eliminarCategoria(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -633,13 +675,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Categoria.
+	 * @return Una lista de objetos Categoria, construidos con base en las tuplas de la tabla CATEGORIA.
+	 */
 	public List<Categoria> darCategorias()
 	{
 		return sqlCategoria.darCategorias(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
+	 * @param nombre - Nombre de la categoria.
+	 * @return El objeto de Categoria, construido con base en la tabla CATEGORIA.
+	 */
 	public Categoria darCategoria(String nombre)
 	{
 		return sqlCategoria.darCategoria(pmf.getPersistenceManager(), nombre);
@@ -650,6 +699,7 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
 
+	
 	public Proveedor adicionarProveedor(String nit, String nombre, double calificacion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -776,7 +826,6 @@ public class PersistenciaSuperAndes {
         }
 	}
 	
-	
 	// -----------------------------------------------------------------
 	// Métodos de tabla promoción
 	// -----------------------------------------------------------------
@@ -789,11 +838,31 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla producto
 	// -----------------------------------------------------------------
 
-	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla de Producto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param codigoBarras - Codigo de barras del producto.
+	 * @param nombre - Nombre del producto.
+	 * @param marca - Marca del producto.
+	 * @param precioUnitario - Precio unitario del producto.
+	 * @param presentacion - Presentación del producto.
+	 * @param precioUnidadMedida - Precio por unidad de medida del producto.
+	 * @param cantidadPresentacion - Cantidad en la presentación del producto.
+	 * @param peso - Valor númerico del peso del producto.
+	 * @param unidadMedidaPeso - Unidad de medida del peso del producto.
+	 * @param volumen - Valor númerico del volumen del producto.
+	 * @param unidadMedidaVolumen - Unidad de medida del volumen del producto.
+	 * @param calidad - Calidad del producto.
+	 * @param nivelReorden - Nivel de reorden del producto. 
+	 * @param fechaVencimiento - Fecha de vencimiento del producto, null si no es un producto perecedero.
+	 * @param categoria - Categoria del prodcuto
+	 * @param estaEnPromocion - Booleano que indica si el producto esta en promoción.
+	 * @return El objeto de tipo Producto adicionado. Null si ocurre alguna Exception.
+	 */
 	public Producto adicionarProducto(String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
-			int nivelReorden, Date fechaVencimiento, String categoria, boolean promocion)
+			int nivelReorden, Date fechaVencimiento, String categoria, boolean estaEnPromocion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -802,13 +871,13 @@ public class PersistenciaSuperAndes {
 			tx.begin();
 			long tuplasInsertadas = sqlProducto.adicionarProducto(pm, codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, 
 																cantidadPresentacion, peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, 
-																nivelReorden, fechaVencimiento, categoria, promocion);
+																nivelReorden, fechaVencimiento, categoria, estaEnPromocion);
 			tx.commit();
 
 			log.trace("Inserción del producto con (nombre: " + nombre + " y marca: " + marca + " ): " + tuplasInsertadas + " tuplas insertadas."); 
 
 			return new Producto(codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, peso, unidadMedidaPeso,
-								volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, promocion);
+								volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, estaEnPromocion);
 		}
 		catch (Exception e)
 		{

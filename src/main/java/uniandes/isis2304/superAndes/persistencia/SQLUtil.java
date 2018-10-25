@@ -59,6 +59,7 @@ class SQLUtil {
 	 */
 	public long[] limpiarSuperAndes(PersistenceManager pm)
 	{
+		// TODO revisar nuevo orden de borrado para las tablas e implementar.
 		Query qProveedoresProducto		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedoresProducto() );
 		Query qProductoOrdenPedido	 	= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductoOrdenPedido() );
 		Query qFacturaProducto 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFacturaProducto() );
