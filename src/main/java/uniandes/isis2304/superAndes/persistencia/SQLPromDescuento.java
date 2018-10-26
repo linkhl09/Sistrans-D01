@@ -101,7 +101,7 @@ public class SQLPromDescuento
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos PromDescuento
 	 */
-	public List<PromDesc> darPromDescuento (PersistenceManager pm)
+	public List<PromDesc> darTodasPromDescuento (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromDescuento());
 		q.setResultClass(PromDesc.class);
