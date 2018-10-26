@@ -749,7 +749,15 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
 
-	
+
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Proveedor.
+	 * Adiciona entradas al log de la aplicacion.
+	 * @param nombre - El nombre del proveedor.
+	 * @param nit - identificador unico del proveedor.
+	 * @param calificacion - calificacion de calidad del proveedor.
+	 * @return El objeto Proveedor adicionado. null si ocurre alguna Exception.
+	 */
 	public Proveedor adicionarProveedor(String nit, String nombre, double calificacion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -781,6 +789,11 @@ public class PersistenciaSuperAndes {
 	}
 
 	
+	/**
+	 * Método que elimina, de manera transaccional la tupla de la tabla Proveedor.
+	 * @param nit - identificador del proveedor a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
 	public long eliminarProveedorPorNit(String nit) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -808,7 +821,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	
+	/**
+	 * Método que elimina, de manera transaccional la tupla de la tabla Proveedor.
+	 * @param nombre - nombre del proveedor a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
 	public long eliminarProveedorPorNombre(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -836,19 +853,32 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Proveedores.
+	 * @return Una lista de objetos Proveedor, construidos con base en las tuplas de la tabla PROVEEDOR.
+	 */
 	public List<Proveedor> darProveedores()
 	{
 		return sqlProveedor.darProveedores(pmf.getPersistenceManager());
 	}
 
 
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un identificador dado.
+	 * @param nit - identificador del proveedor.
+	 * @return El objeto Proveedor, construido con base en la tabla PROVEEDOR.
+	 */
 	public Proveedor darProveedor(String nit)
 	{
 		return sqlProveedor.darProveedor(pmf.getPersistenceManager(), nit);
 	}
 
-	
+	/**
+	 * Método que actualiza la calificacion de  todas las tuplas en la tabla con un identificador dado.
+	 * @param nit - identificador del proveedor.
+	 * @param nuevaCalificaion - nueva calificacion del proveedor.
+	 * @return El numero de tuplas modificadas,-1 Si ocurre alguna Exception. .
+	 */
 	public long updateCalificacionProveedor(String nit, double nuevaCalificacion)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -946,10 +976,16 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO, dado el identificador del producto.
 	 * Adiciona entradas al log de la aplicación.
 	 * @param codigoBarras - codigo de barras del producto.
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+=======
+	 * Método que elimina, de manera transaccional la tupla de la tabla Producto.
+	 * @param codigoBarras - codigo de barras del producto a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	 */
 	public long eliminarProducto(String codigoBarras) 
 	{
@@ -979,8 +1015,13 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Método que consulta todas las tupas de la tabla PRODCUTO.
 	 * @return La lista de objetos Producto, construidos con base a las tuplas de la tabla PRODUCTO.
+=======
+	 * Método que consulta todas las tuplas en la tabla de Producto.
+	 * @return Una lista de objetos Producto, construidos con base en las tuplas de la tabla PRODUCTO.
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	 */
 	public List<Producto> darProductos()
 	{
@@ -988,20 +1029,30 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Método que consulta todas las tuplas en la tabla PRODUCTO con el identificador dado.
 	 * @param codigoBarras - Código de barras del producto buscado.
 	 * @return El objeto TipoProducto construido con base en las tuplas de la tabla PRODUCTO.
+=======
+	 * Método que consulta todas las tuplas en la tabla con un codigo de barras dado.
+	 * @param codigoBarras - codigo de barras del producto.
+	 * @return El objeto Producto, construido con base en la tabla PRODUCTO.
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	 */
 	public Producto darProducto(String codigoBarras)
 	{
 		return sqlProducto.darProducto(pmf.getPersistenceManager(), codigoBarras);
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Método que cambia el valor booleano de estaEnPromoción de un producto dado a verdadero.
 	 * @param codigoBarras - Identificador del producto al que se le creo una promoción.
 	 * @return El número de tuplas actualizadas. -1 Si ocurre alguna Exception.
 	 */
+=======
+///////////////////////////////////////////////////////////////
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	public long nuevaPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1029,11 +1080,14 @@ public class PersistenciaSuperAndes {
         }
 	}
 
+<<<<<<< HEAD
 	/**
 	 * Método que cambia el valor booleano de Esta en promoción de un producto dado a falso.
 	 * @param codigoBarras - Identificador del producto al que se le quito la promoción.
 	 * @return El número de tuplas actualizadas. -1 si ocurre alguna Exception.
 	 */
+=======
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	public long terminarPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1061,7 +1115,8 @@ public class PersistenciaSuperAndes {
         }
 	}
 	
-
+	//////////////////////////////////////////////////////////////////77
+	
 	// -----------------------------------------------------------------
 	// Métodos de tabla personaNatural
 	// -----------------------------------------------------------------
@@ -2357,4 +2412,24 @@ public class PersistenciaSuperAndes {
 	{
 		return sqlSucursalProducto.darTodosProductosSucursales(pmf.getPersistenceManager());
 	}
+	
+	public List<PromDesc> darTodasPromDescuento()
+	{
+	
+		return sqlPromDescuento.darTodasPromDescuento(pmf.getPersistenceManager());
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
 }
