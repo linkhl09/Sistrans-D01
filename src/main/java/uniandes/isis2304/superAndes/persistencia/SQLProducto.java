@@ -33,7 +33,7 @@ class SQLProducto {
     // -----------------------------------------------------------------
 	
 	/**
-	 * Constructor
+	 * Constructor.
 	 * @param psa - El Manejador de persistencia de la aplicación
 	 */
 	public SQLProducto(PersistenciaSuperAndes psa)
@@ -41,7 +41,27 @@ class SQLProducto {
 		this.psa = psa;
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un PRODUCTO a la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param codigoBarras - el Código de barras que identifica al nuevo producto.
+	 * @param nombre - El nombre del nuevo producto.
+	 * @param marca - Marca del nuevo Producto.
+	 * @param precioUnitario - Precio unitario del nuevo producto.
+	 * @param presentacion - presentación del nuevo producto. 
+	 * @param precioUnidadMedida - Precio por unidad de medida del nuevo prodcuto.
+	 * @param cantidadPresentacion - Cantidad en la presentación del producto.
+	 * @param peso - Valor numerico del peso del producto. 
+	 * @param unidadMedidaPeso - Unidad de medida del peso del producto.
+	 * @param volumen - Valor númerico del volumen del producto.
+	 * @param unidadMedidaVolumen - Unidad de medida del volumen del producto.
+	 * @param calidad - Calidad del nuevo producto.
+	 * @param nivelReorden - Nivel de reorden del nuevo producto.
+	 * @param fechaVencimiento - fehca de vencimiento del producto. Null si no es un producto perecedero.
+	 * @param categoria - Categoria del producto.
+	 * @param estaEnPromocion - Booleano que indica si el nuevo producto esta en promoción.
+	 * @return El número de tuplas insertadas.
+	 */
 	public long adicionarProducto(PersistenceManager pm, String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
@@ -54,7 +74,12 @@ class SQLProducto {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar un PRODUCTO por su codigo de barras de la base de datos.
+	 * @param pm - El manejador  de persistencia.
+	 * @param codigoBarras - El código de Barras del producto a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarProductoCodigoBarras(PersistenceManager pm, String codigoBarras)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProducto() + " WHERE codigobarras = ?");
@@ -62,7 +87,12 @@ class SQLProducto {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * Crea y ejecuta la secuencia SQL para encontrar la información de un PRODUCTO de la base de datos, por su codigo de barras.
+	 * @param pm - El manejador de persistencia.
+	 * @param codigoBarras - El identificador del producto.
+	 * @return El objeto Producto que tiene el identificador dado.
+	 */
 	public Producto darProducto(PersistenceManager pm, String codigoBarras)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProducto() + "WHERE codigobarras = ?");
@@ -71,7 +101,11 @@ class SQLProducto {
 		return (Producto) q.executeUnique();
 	}
 
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los productos de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @return 
+	 */
 	public List<Producto> darProductos(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProducto());

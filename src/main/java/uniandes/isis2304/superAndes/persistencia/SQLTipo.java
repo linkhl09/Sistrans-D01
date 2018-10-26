@@ -37,7 +37,7 @@ class SQLTipo {
     // -----------------------------------------------------------------
 	
 	/**
-	 * Constructor
+	 * Constructor.
 	 * @param psa - El Manejador de persistencia de la aplicación
 	 */
 	public SQLTipo(PersistenciaSuperAndes psa)
