@@ -7,7 +7,7 @@ package uniandes.isis2304.superAndes.negocio;
 public interface VOCategoria {
 
 	/**
-	 * @return nombre de la categoría.
+	 * @return Nombre de la categoría.
 	 */
 	public String getNombre();
 	
