@@ -1087,8 +1087,17 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla personaNatural
 	// -----------------------------------------------------------------
 
-	
-	public PersonaNatural adicionarPersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre, String empresa)
+
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla PersonaNatural.
+	 * Adiciona entradas al log de la aplicacion.
+	 * @param documento - numero de identificacion de la persona.
+	 * @param tipoDocumento - tipo de documento.
+	 * @param correoElectronico - correo electronico de la persona.
+	 * @param nombre - nombre de la persona. 
+	 * @return El objeto PersonaNatural adicionado. null si ocurre alguna Exception.
+	 */
+	public PersonaNatural adicionarPersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1121,7 +1130,13 @@ public class PersistenciaSuperAndes {
 	}
 	
 
-	public long[] eliminarPersonaNatural(String documento, String tipoDocumento, String correoElectronico) 
+	/**
+	 * Método que elimina, de manera transaccional la tupla de la tabla PersonaNatural y Cliente.
+	 * @param documento - numero de identificacion de la persona natural a eliminar.
+	 * @param correoElectronico - correo electronico de la persona natural a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
+	public long[] eliminarPersonaNatural(String documento, String correoElectronico) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1149,14 +1164,21 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de PersonaNatural.
+	 * @return Una lista de objetos PersonaNatural, construidos con base en las tuplas de la tabla PERSONA_NATURAL.
+	 */
 	public List<PersonaNatural> darPersonasNaturales ()
 	{
 		return sqlPersonaNatural.darPersonasNaturales(pmf.getPersistenceManager());
 	}
 
-
-	public PersonaNatural darPersonaNatural (String documento, String tipodocumento)
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un numero de documento dado.
+	 * @param documento - numero de identificaciom de la  persona.
+	 * @return El objeto PersonaNatural, construido con base en la tabla PERSONA_NATURAL.
+	 */
+	public PersonaNatural darPersonaNatural (String documento)
 	{
 		return sqlPersonaNatural.darPersonaNatural(pmf.getPersistenceManager(), documento);
 	}	
@@ -1166,8 +1188,15 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Empresa
 	// -----------------------------------------------------------------
 
-
-	public Empresa adicionarEmpresa(String nit, String direccion, String correoElectronico, String nombre, String empresa)
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Empresa.
+	 * Adiciona entradas al log de la aplicacion.
+	 * @param nit - numero de identificacion de la empresa.
+	 * @param correoElectronico - correo electronico de la persona, es la llave de la tabla cliente
+	 * @param nombre - nombre de la empresa.  
+	 * @return El objeto PersonaNatural adicionado. null si ocurre alguna Exception.
+	 */
+	public Empresa adicionarEmpresa(String nit, String direccion, String correoElectronico, String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1175,7 +1204,7 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long tuplasInsertadas = sqlEmpresa.adicionarEmpresa(pm, nit, direccion);
-			long tuplasInsertadas2 = sqlCliente.adicionarClienteEmpresa(pm, correoElectronico, nombre, empresa);
+			long tuplasInsertadas2 = sqlCliente.adicionarClienteEmpresa(pm, correoElectronico, nombre, nit);
 			tx.commit();
 
 			log.trace("Inserción de: " + nombre + ": " + tuplasInsertadas + " tuplas insertadas."); 
@@ -1198,7 +1227,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional la tupla de la empresa y Cliente.
+	 * @param nit - numero de identificacion de la empresa a eliminar
+	 * @param correoElectronico - correo electronico de la persona, es la llave de la tabla cliente
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
 	public long[] eliminarEmpresaPorNit(String nit, String correoElectronico) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1227,6 +1261,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 	
+	/**
+	 * Método que elimina, de manera transaccional la tupla de la tabla Empresa y Cliente.
+	 * @param direccion - direccion de la empresa a eliminar.
+	 * @param correoElectronico - correo electronico de la empresa a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+	 */
 	public long[] eliminarEmpresaPorDireccion(String direccion, String correoElectronico) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1255,11 +1295,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 	
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Empresas.
+	 * @return Una lista de objetos Empresa, construidos con base en las tuplas de la tabla EMPRESA.
+	 */
 	public List<Empresa> darEmpresas()
 	{
 		return sqlEmpresa.darEmpresas(pmf.getPersistenceManager());
 	}
 	
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un numero de identificacion "nit" dado.
+	 * @param nit - numero de identificaciom de la  empresa.
+	 * @return El objeto Empresa, construido con base en la tabla EMPRESA.
+	 */
 	public Empresa darEmpresa(String nit)
 	{
 		return sqlEmpresa.darEmpresa(pmf.getPersistenceManager(), nit);
@@ -1269,19 +1318,32 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Cliente
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla de Cliente.
+	 * @return Una lista de objetos Cliente, construidos con base en las tuplas de la tabla CLIENTE	.
+	 */
 	public List<Cliente> darClientes()
 	{
 		return sqlCliente.darClientes(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un correo electronico dado.
+	 * @param correoElectronco - correo electronico del cleinte.
+	 * @return El objeto Cliente, construido con base en la tabla CLIENTE.
+	 */
 	public Cliente darCliente (String correoElectronico)
 	{
 		return sqlCliente.darCliente(pmf.getPersistenceManager(), correoElectronico);
 	}
 	
-	
+	/**
+	 * Método que modifica todas las tuplas en la tabla con un correo electronico dado aumentado la
+	 * cantidad de puntos .
+	 * @param correoElectronco - correo electronico del cliente.
+	 * @param puntos - puntos a agregar.
+	 * @return El número de tuplas modificadas, -1 Si ocurre alguna Exception.
+	 */
 	public long aumentarPuntos(String correoElectronico, int puntos)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
