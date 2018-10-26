@@ -44,6 +44,16 @@ class SQLBodega {
 		this.psa = psa;
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar una BODEGA a la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador de la bodega.
+	 * @param capacidadVol - Capacidad númerica del volumen de la bodega.
+	 * @param capacidadPeso - Capacidad númerica del peso de la bodega.
+	 * @param tipo - Tipo de los objetos que puede almacenar la bodega.
+	 * @param idSucursal - id de la sucursal a la que pertenece la bodega.
+	 * @return
+	 */
 	public long adicionarBodega(PersistenceManager pm, long id, double capacidadVol, 
 			double capacidadPeso, String tipo, long idSucursal)
 	{
@@ -52,7 +62,12 @@ class SQLBodega {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar PRODUCTO de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador de la bodega.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarBodega(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaBodega() + " WHERE id = ?");
@@ -60,7 +75,12 @@ class SQLBodega {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * Crea y ejecuta la setencia SQL para encontrar la información de una BODEGA en la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El id de la bodega que se desea buscar.
+	 * @return El objeto Bodega que tiene el identificador dado.
+	 */
 	public Bodega darBodega(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaBodega() + "WHERE id = ?");
@@ -69,6 +89,11 @@ class SQLBodega {
 		return (Bodega) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de todas las bodegas de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @return Una lista de objetos Bodega.
+	 */
 	public List<Bodega> darBodegas(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaBodega());
@@ -76,6 +101,12 @@ class SQLBodega {
 		return (List<Bodega>) q.executeList();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para  
+	 * @param pm
+	 * @param idSucursal
+	 * @return
+	 */
 	public List<Bodega> darBodegasSucursal(PersistenceManager pm, long idSucursal)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaBodega() + "WHERE idsucursal = ?");

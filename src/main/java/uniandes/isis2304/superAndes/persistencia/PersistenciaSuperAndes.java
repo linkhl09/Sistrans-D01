@@ -1044,15 +1044,11 @@ public class PersistenciaSuperAndes {
 		return sqlProducto.darProducto(pmf.getPersistenceManager(), codigoBarras);
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Método que cambia el valor booleano de estaEnPromoción de un producto dado a verdadero.
 	 * @param codigoBarras - Identificador del producto al que se le creo una promoción.
 	 * @return El número de tuplas actualizadas. -1 Si ocurre alguna Exception.
 	 */
-=======
-///////////////////////////////////////////////////////////////
->>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	public long nuevaPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1080,14 +1076,11 @@ public class PersistenciaSuperAndes {
         }
 	}
 
-<<<<<<< HEAD
 	/**
 	 * Método que cambia el valor booleano de Esta en promoción de un producto dado a falso.
 	 * @param codigoBarras - Identificador del producto al que se le quito la promoción.
 	 * @return El número de tuplas actualizadas. -1 si ocurre alguna Exception.
 	 */
-=======
->>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
 	public long terminarPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2417,19 +2410,5 @@ public class PersistenciaSuperAndes {
 	{
 	
 		return sqlPromDescuento.darTodasPromDescuento(pmf.getPersistenceManager());
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-}
+	}	
 }
