@@ -945,7 +945,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO, dado el identificador del producto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param codigoBarras - codigo de barras del producto.
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
 	public long eliminarProducto(String codigoBarras) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -973,19 +978,30 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tupas de la tabla PRODCUTO.
+	 * @return La lista de objetos Producto, construidos con base a las tuplas de la tabla PRODUCTO.
+	 */
 	public List<Producto> darProductos()
 	{
 		return sqlProducto.darProductos(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla PRODUCTO con el identificador dado.
+	 * @param codigoBarras - Código de barras del producto buscado.
+	 * @return El objeto TipoProducto construido con base en las tuplas de la tabla PRODUCTO.
+	 */
 	public Producto darProducto(String codigoBarras)
 	{
 		return sqlProducto.darProducto(pmf.getPersistenceManager(), codigoBarras);
 	}
 
-
+	/**
+	 * Método que cambia el valor booleano de estaEnPromoción de un producto dado a verdadero.
+	 * @param codigoBarras - Identificador del producto al que se le creo una promoción.
+	 * @return El número de tuplas actualizadas. -1 Si ocurre alguna Exception.
+	 */
 	public long nuevaPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1013,7 +1029,11 @@ public class PersistenciaSuperAndes {
         }
 	}
 
-	
+	/**
+	 * Método que cambia el valor booleano de Esta en promoción de un producto dado a falso.
+	 * @param codigoBarras - Identificador del producto al que se le quito la promoción.
+	 * @return El número de tuplas actualizadas. -1 si ocurre alguna Exception.
+	 */
 	public long terminarPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
