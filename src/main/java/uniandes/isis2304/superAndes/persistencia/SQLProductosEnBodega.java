@@ -111,12 +111,12 @@ class SQLProductosEnBodega {
 	}
 
 	/**
-	 * Crea y ejecuta la sentencia SQL para actualizar las existencias de algún producto en bodega.
-	 * @param pm - Madrugare
-	 * @param idBodega
-	 * @param codigoBarrasProducto
-	 * @param productosPedidos
-	 * @return
+	 * Crea y ejecuta la sentencia SQL para aumentar las existencias de algún producto en bodega.
+	 * @param pm - El manejador de persistencia.
+	 * @param idBodega - El identificador de la bodega a la que eprtenece el producto.
+	 * @param codigoBarrasProducto - El producto del que llegaron existencias. 
+	 * @param productosPedidos - Numero de existencias del producto que llegaron.
+	 * @return El número de tuplas modificadas.
 	 */
 	public long aumentarProductosEnBodega(PersistenceManager pm, long idBodega, String codigoBarrasProducto, int productosPedidos )
 	{
@@ -125,6 +125,14 @@ class SQLProductosEnBodega {
 		return (long) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para disminuir las existencias de algún producto en bodega.
+	 * @param pm - El manejador de persistencia.
+	 * @param idBodega - El identificador de la bodega a la que pertenece el producto
+	 * @param codigoBarrasProducto - El producto a disminuir existencias. 
+	 * @param pasadosAEstante - Cantidad de productos que se pasaron al estante.
+	 * @return El número de tuplas modificadas.
+	 */
 	public long disminuirProductosEnBodega(PersistenceManager pm, long idBodega, String codigoBarrasProducto, int pasadosAEstante)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnBodega() + "SET cantidad = cantidad - ? WHERE bodega = ? AND producto = ?");

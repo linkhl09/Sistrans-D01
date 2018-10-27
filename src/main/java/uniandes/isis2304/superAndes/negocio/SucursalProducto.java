@@ -18,7 +18,7 @@ public class SucursalProducto implements VOSucursalProducto{
 	/**
 	 * Producto asociado a la sucursal.
 	 */
-	private String producto;
+	private String codigoBarrasProducto;
 
     // -----------------------------------------------------------------
     // Constructores.
@@ -30,18 +30,18 @@ public class SucursalProducto implements VOSucursalProducto{
 	public SucursalProducto() 
 	{
 		idSucursal = 0;
-		producto = "";
+		codigoBarrasProducto = "";
 	}
 
 	/**
 	 * Constructor con valores.
 	 * @param idSucursal id de la sucursal a la que pertenece el producto.
-	 * @param producto producto asociado a la sucursal.
+	 * @param codigoBarras producto asociado a la sucursal.
 	 */
-	public SucursalProducto(long idSucursal, String producto) 
+	public SucursalProducto(long idSucursal, String codigoBarras) 
 	{
 		this.idSucursal = idSucursal;
-		this.producto = producto;
+		this.codigoBarrasProducto = codigoBarras;
 	}
    
 	// -----------------------------------------------------------------
@@ -67,17 +67,17 @@ public class SucursalProducto implements VOSucursalProducto{
 	/**
 	 * @return El codigo de barras del producto asociado a la sucursal.
 	 */
-	public String getProducto() 
+	public String getCodigoBarrasProducto() 
 	{
-		return producto;
+		return codigoBarrasProducto;
 	}
 
 	/**
-	 * @param producto - Nuevo producto asociado a la sucursal.
+	 * @param codigoBarrasProducto - Nuevo producto asociado a la sucursal.
 	 */
-	public void setProducto(String producto) 
+	public void setCodigoBarrasProducto(String codigoBarrasProducto) 
 	{	
-		this.producto = producto;
+		this.codigoBarrasProducto = codigoBarrasProducto;
 	}
 
 	/**
@@ -87,6 +87,6 @@ public class SucursalProducto implements VOSucursalProducto{
 	public String toString()
 	{
 		return "SucursalProducto [idSucursal =" + idSucursal 
-				+ ", producto" + producto +"]";
+				+ ", codigoBarrasProducto" + codigoBarrasProducto +"]";
 	}
 }

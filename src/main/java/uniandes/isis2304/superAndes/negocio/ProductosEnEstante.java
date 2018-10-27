@@ -111,6 +111,6 @@ public class ProductosEnEstante implements VOProductosEnEstante {
 	public String toString()
 	{
 		return "ProductosEnEstante [ estante ="+ idEstante +", cantidad =" +cantidad
-				+ "producto =" + codigoBarrasProducto + "]";
+				+ "codigoBarrasProducto =" + codigoBarrasProducto + "]";
 	}
 }
