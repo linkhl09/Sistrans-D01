@@ -113,7 +113,12 @@ class SQLProducto {
 		return (List<Producto>) q.executeList();
 	}
 
-
+	/**
+	 * Crea y ejecuta la sentencia SQL para cambiar el estado de la promoción de un producto a verdadero.
+	 * @param pm - El manejador de persistencia.
+	 * @param codigoBarras - El identificador del producto que se desea modificar.
+	 * @return El número de tuplas modificadas.
+	 */
 	public long nuevaPromocion(PersistenceManager pm, String codigoBarras)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProducto() + "SET promocion = 1 WHERE codigobarras = ?");
@@ -121,7 +126,12 @@ class SQLProducto {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para cambiar el estado de una promición de un producto a falso.
+	 * @param pm - El manejador de persistencia.
+	 * @param codigoBarras - El identificador del producto que se desea modificar.
+	 * @return El número de tuplas modificadas.
+	 */
 	public long terminarPromocion(PersistenceManager pm, String codigoBarras)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProducto() + "SET promocion = 0 WHERE codigobarras = ?");

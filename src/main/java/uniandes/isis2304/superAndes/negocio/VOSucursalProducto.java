@@ -16,7 +16,7 @@ public interface VOSucursalProducto
 	/**
 	 * @return El codigo de barras del producto asociado a la sucursal.
 	 */
-	public String getProducto();
+	public String getCodigoBarrasProducto();
 	
 	/**
 	 * Cadena de caracteres con todos los atributos de SucursalProducto.

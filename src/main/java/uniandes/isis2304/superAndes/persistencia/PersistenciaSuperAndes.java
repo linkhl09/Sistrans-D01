@@ -942,7 +942,22 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
+<<<<<<< HEAD
 
+=======
+	/**
+<<<<<<< HEAD
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PRODUCTO, dado el identificador del producto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param codigoBarras - codigo de barras del producto.
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+=======
+	 * Método que elimina, de manera transaccional la tupla de la tabla Producto.
+	 * @param codigoBarras - codigo de barras del producto a eliminar.
+	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
+	 */
+>>>>>>> 1a2f65bd00d93216459a29d0df09b8d55e669297
 	public long eliminarProducto(String codigoBarras) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -970,18 +985,54 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
+<<<<<<< HEAD
 	
+=======
+	/**
+<<<<<<< HEAD
+	 * Método que consulta todas las tupas de la tabla PRODCUTO.
+	 * @return La lista de objetos Producto, construidos con base a las tuplas de la tabla PRODUCTO.
+=======
+	 * Método que consulta todas las tuplas en la tabla de Producto.
+	 * @return Una lista de objetos Producto, construidos con base en las tuplas de la tabla PRODUCTO.
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
+	 */
+>>>>>>> 1a2f65bd00d93216459a29d0df09b8d55e669297
 	public List<Producto> darProductos()
 	{
 		return sqlProducto.darProductos(pmf.getPersistenceManager());
 	}
 
+<<<<<<< HEAD
 	
+=======
+	/**
+<<<<<<< HEAD
+	 * Método que consulta todas las tuplas en la tabla PRODUCTO con el identificador dado.
+	 * @param codigoBarras - Código de barras del producto buscado.
+	 * @return El objeto TipoProducto construido con base en las tuplas de la tabla PRODUCTO.
+=======
+	 * Método que consulta todas las tuplas en la tabla con un codigo de barras dado.
+	 * @param codigoBarras - codigo de barras del producto.
+	 * @return El objeto Producto, construido con base en la tabla PRODUCTO.
+>>>>>>> 6bad8a60121a55937f258bc2c898b189635e1684
+	 */
+>>>>>>> 1a2f65bd00d93216459a29d0df09b8d55e669297
 	public Producto darProducto(String codigoBarras)
 	{
 		return sqlProducto.darProducto(pmf.getPersistenceManager(), codigoBarras);
 	}
+<<<<<<< HEAD
 public long nuevaPromocion(String codigoBarras)
+=======
+
+	/**
+	 * Método que cambia el valor booleano de estaEnPromoción de un producto dado a verdadero.
+	 * @param codigoBarras - Identificador del producto al que se le creo una promoción.
+	 * @return El número de tuplas actualizadas. -1 Si ocurre alguna Exception.
+	 */
+	public long nuevaPromocion(String codigoBarras)
+>>>>>>> 1a2f65bd00d93216459a29d0df09b8d55e669297
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -1008,6 +1059,11 @@ public long nuevaPromocion(String codigoBarras)
         }
 	}
 
+	/**
+	 * Método que cambia el valor booleano de Esta en promoción de un producto dado a falso.
+	 * @param codigoBarras - Identificador del producto al que se le quito la promoción.
+	 * @return El número de tuplas actualizadas. -1 si ocurre alguna Exception.
+	 */
 	public long terminarPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2394,6 +2450,7 @@ public long nuevaPromocion(String codigoBarras)
 	{
 	
 		return sqlPromDescuento.darTodasPromDescuento(pmf.getPersistenceManager());
+<<<<<<< HEAD
 	}
 	
 	
@@ -2409,3 +2466,7 @@ public long nuevaPromocion(String codigoBarras)
 	
 	
 }
+=======
+	}	
+}
+>>>>>>> 1a2f65bd00d93216459a29d0df09b8d55e669297
