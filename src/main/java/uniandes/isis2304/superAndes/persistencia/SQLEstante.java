@@ -40,7 +40,16 @@ class SQLEstante {
 		this.psa = psa;
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un Estante a la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El id del nuevo Estante.
+	 * @param capacidadVol - Valor numerico de la capacidad de almacenamiento por volumen del nuevo estante.
+	 * @param capacidadPeso - Valor numerico de la capacidad de almacenamiento por volumen del nuevo estante.
+	 * @param tipo - Tipo de productos que puede almacenar el nuevo estante.
+	 * @param idSucursal - Identificador de la sucursal a la que pertenece el nuevo estante.
+	 * @return El número de tuplas insertadas.
+	 */
 	public long adicionarEstante(PersistenceManager pm, long id, double capacidadVol, 
 			double capacidadPeso, String tipo, long idSucursal)
 	{
@@ -49,7 +58,12 @@ class SQLEstante {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar un estante de la base de datos por su identificador.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador del estante a eliminar.
+	 * @return El numero de tuplas eliminadas.
+	 */
 	public long eliminarEstante(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaEstante() + " WHERE id = ?");
@@ -57,7 +71,12 @@ class SQLEstante {
 		return (long) q.executeUnique();
 	}
 	
-
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de un ESTANTE en la base de datos, por su identificador.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador del estante buscado.
+	 * @return El objeto de tipo Estante que tiene el identificador dado. 
+	 */
 	public Estante darEstante(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEstante() + "WHERE id = ?");
@@ -66,6 +85,11 @@ class SQLEstante {
 		return (Estante) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los estantes.
+	 * @param pm - El manejador de persistencia.
+	 * @return Una lista con todos los Estantes de la base de datos.
+	 */
 	public List<Estante> darEstantes(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEstante());
@@ -73,6 +97,12 @@ class SQLEstante {
 		return (List<Estante>) q.executeList();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los estantes dado un id.
+	 * @param pm - EL manejador de persistencia.
+	 * @param idSucursal - El id de la sucursal a la  que pertenecen los estantes.
+	 * @return Una lista de objetos Estante que pertenecen a la sucursal preguntada.
+	 */
 	public List<Estante> darEstantesSucursal(PersistenceManager pm, long idSucursal)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaEstante() + "WHERE idSucursal = ?");

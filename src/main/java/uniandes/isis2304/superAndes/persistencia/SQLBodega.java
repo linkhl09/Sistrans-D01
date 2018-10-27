@@ -102,10 +102,10 @@ class SQLBodega {
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para  
-	 * @param pm
-	 * @param idSucursal
-	 * @return
+	 * Crea y ejecuta la sentencia SQL para  encontrar la información de las bodegas que pertenecen 
+	 * @param pm - El manejador de persistencia.
+	 * @param idSucursal - id de la sucursal a la que pertenecen las bodegas.
+	 * @return Una lista de objetos Bodega que hacen parte de la sucursal identificada con el id dado.
 	 */
 	public List<Bodega> darBodegasSucursal(PersistenceManager pm, long idSucursal)
 	{
