@@ -325,10 +325,10 @@ public class SuperAndes {
 	// Métodos de tabla personaNatural 
 	// -----------------------------------------------------------------
 
-	public PersonaNatural adicionarPersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre, String empresa)
+	public PersonaNatural adicionarPersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre)
 	{
 		log.info ("Adicionando Persona natural : " + nombre);
-		PersonaNatural agregado = psa.adicionarPersonaNatural(documento, tipoDocumento, correoElectronico, nombre, empresa);	
+		PersonaNatural agregado = psa.adicionarPersonaNatural(documento, tipoDocumento, correoElectronico, nombre);	
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -336,7 +336,7 @@ public class SuperAndes {
 	public long[] eliminarPersonaNatural(String documento, String tipoDocumento, String correoElectronico)
 	{
 		log.info ("Eliminando ");
-		long[] resp = psa.eliminarPersonaNatural(documento, tipoDocumento, correoElectronico);
+		long[] resp = psa.eliminarPersonaNatural(documento, correoElectronico);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
@@ -361,10 +361,10 @@ public class SuperAndes {
 		return list;
 	}
 
-	public PersonaNatural darPersonaNatural (String documento, String tipodocumento)
+	public PersonaNatural darPersonaNatural (String documento)
 	{
 		log.info ("Dar información de ");
-		PersonaNatural buscado = psa.darPersonaNatural(documento, tipodocumento);
+		PersonaNatural buscado = psa.darPersonaNatural(documento);
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
@@ -373,10 +373,10 @@ public class SuperAndes {
 	// Métodos de tabla Empresa
 	// -----------------------------------------------------------------
 
-	public Empresa adicionarEmpresa(String nit, String direccion, String correoElectronico, String nombre, String empresa)
+	public Empresa adicionarEmpresa(String nit, String direccion, String correoElectronico, String nombre)
 	{
 		log.info ("Adicionando empresa : " + nit );
-		Empresa agregado = psa.adicionarEmpresa(nit, direccion, correoElectronico, nombre, empresa);
+		Empresa agregado = psa.adicionarEmpresa(nit, direccion, correoElectronico, nombre);
 		log.info ("Adicionado");
 		return agregado;
 	}

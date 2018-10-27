@@ -565,12 +565,7 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Tipo
 	// -----------------------------------------------------------------
 
-	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla Tipo.
-	 * Adiciona entradas al log de la aplicacion.
-	 * @param nombre - El nombre del tipo a adicionar.
-	 * @return El objeto Tipo adicionado. null si ocurre alguna Exception.
-	 */
+	
 	public Tipo adicionarTipo(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -601,12 +596,7 @@ public class PersistenciaSuperAndes {
 		}
 	}
 	
-	/**
-	 * Método que elimina, de manera transaccional, una tupla en la tabla Tipo.
-	 * Adiciona entradas al log de la aplicación.
-	 * @param nombre - El nombre del tipo de bebida.
-	 * @return El número de tuplas eliminadas, -1 si ocurre alguna Exception. 
-	 */
+
 	public long eliminarTipo(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -634,20 +624,13 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	/**
-	 * Método que consulta todas las tuplas en la tabla de Tipo
-	 * @return Una lista de objetos Tipo, construidos con base en las tuplas de la tabla TIPO.
-	 */
+
 	public List<Tipo> darTipos()
 	{
 		return sqlTipo.darTipos(pmf.getPersistenceManager());
 	}
 
-	/**
-	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
-	 * @param nombre - El nombre del tipo.
-	 * @return El objeto de Tipo, construido con base en las tablas de la tabla TIPO.
-	 */
+	
 	public Tipo darTipo(String nombre)
 	{
 		return sqlTipo.darTipo(pmf.getPersistenceManager(), nombre);
@@ -658,11 +641,7 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Categoria
 	// -----------------------------------------------------------------
 
-	/**
-	 * Método que inserta, de manera transaccional, una tupla en la tabla Categoria.
-	 * @param nombre - El nombre de la categoria a adicionar.
-	 * @return el objeto Categoria adicionado. Null si ocurre alguna Exception.
-	 */
+	
 	public Categoria adicionarCategoria(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -693,11 +672,7 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	/**
-	 * Método que elimina, de manera transaccuibakm yba tupla de la tabla Categoria.
-	 * @param nombre - Nombre de la categoria a eliminar.
-	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
-	 */
+	
 	public long eliminarCategoria(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -725,20 +700,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	/**
-	 * Método que consulta todas las tuplas en la tabla de Categoria.
-	 * @return Una lista de objetos Categoria, construidos con base en las tuplas de la tabla CATEGORIA.
-	 */
+	
 	public List<Categoria> darCategorias()
 	{
 		return sqlCategoria.darCategorias(pmf.getPersistenceManager());
 	}
 
-	/**
-	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
-	 * @param nombre - Nombre de la categoria.
-	 * @return El objeto de Categoria, construido con base en la tabla CATEGORIA.
-	 */
 	public Categoria darCategoria(String nombre)
 	{
 		return sqlCategoria.darCategoria(pmf.getPersistenceManager(), nombre);
@@ -975,11 +942,7 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	/**
-	 * Método que elimina, de manera transaccional la tupla de la tabla Producto.
-	 * @param codigoBarras - codigo de barras del producto a eliminar.
-	 * @return El número de tuplas eliminadas, -1 Si ocurre alguna Exception.
-	 */
+
 	public long eliminarProducto(String codigoBarras) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1007,27 +970,18 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	/**
-	 * Método que consulta todas las tuplas en la tabla de Producto.
-	 * @return Una lista de objetos Producto, construidos con base en las tuplas de la tabla PRODUCTO.
-	 */
+	
 	public List<Producto> darProductos()
 	{
 		return sqlProducto.darProductos(pmf.getPersistenceManager());
 	}
 
-	/**
-	 * Método que consulta todas las tuplas en la tabla con un codigo de barras dado.
-	 * @param codigoBarras - codigo de barras del producto.
-	 * @return El objeto Producto, construido con base en la tabla PRODUCTO.
-	 */
+	
 	public Producto darProducto(String codigoBarras)
 	{
 		return sqlProducto.darProducto(pmf.getPersistenceManager(), codigoBarras);
 	}
-
-///////////////////////////////////////////////////////////////
-	public long nuevaPromocion(String codigoBarras)
+public long nuevaPromocion(String codigoBarras)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -1080,10 +1034,7 @@ public class PersistenciaSuperAndes {
             pm.close();
         }
 	}
-	
-	//////////////////////////////////////////////////////////////////77
-	
-	// -----------------------------------------------------------------
+// -----------------------------------------------------------------
 	// Métodos de tabla personaNatural
 	// -----------------------------------------------------------------
 
@@ -1376,8 +1327,8 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Factura
 	// -----------------------------------------------------------------
 
-	
-	public Factura adicionarFactura( String direccion, 
+
+	public Factura adicionarFactura(  String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
 			int puntosCompra, String correoCliente)
 	{
@@ -1438,13 +1389,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
 	public List<Factura> darFacturas()
 	{
 		return sqlFactura.darFacturas(pmf.getPersistenceManager());
 	}
 
-
+	
 	public Factura darFactura(long numero)
 	{
 		return sqlFactura.darFactura(pmf.getPersistenceManager(), numero);
@@ -1455,7 +1405,6 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
 
-	
 	public Sucursal adicionarSucursal(String direccion, String ciudad,
 			 String nombre, String segmentacionMercado, int tamanio)
 	{
@@ -2459,5 +2408,4 @@ public class PersistenciaSuperAndes {
 	
 	
 	
-}
 }
