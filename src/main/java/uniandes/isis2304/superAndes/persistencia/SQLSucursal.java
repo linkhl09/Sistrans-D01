@@ -6,6 +6,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.Sucursal;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto SUCURSAL.
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Andrés Hernández
+ */
 class SQLSucursal {
 
 	// -----------------------------------------------------------------
@@ -40,7 +46,17 @@ class SQLSucursal {
 		this.psa = psa;
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar una SUCURSAL a la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador de la sucursal.
+	 * @param direccion - Dirección de la sucursal.
+	 * @param ciudad - Ciudad de la sucursal.
+	 * @param nombre - Nombre de la sucursal.
+	 * @param segmentacionMercado - Segmentación de mercado de la sucursal.
+	 * @param tamanio - Tamaño de la sucursal.
+	 * @return El número de tuplas insertadas.
+	 */
 	public long adicionarSucursal(PersistenceManager pm, long id, String direccion, String ciudad,
 								 String nombre, String segmentacionMercado, int tamanio)
 	{
@@ -49,7 +65,12 @@ class SQLSucursal {
 		return (long) q.executeUnique();
 	}
 	
-	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar SUCURSAL de la base de datos por su id.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador de la sucursal.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursalPorId(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursal() + " WHERE id = ?");
@@ -57,6 +78,12 @@ class SQLSucursal {
 		return (long) q.executeUnique();
 	}
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para eliminar SUCURSAL de la base de datos por su nombre.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - El nombre de la sucursal a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursalPorNombre(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursal()+ "WHERE nombre = ?");
@@ -64,6 +91,12 @@ class SQLSucursal {
 		return (long) q.executeUnique();
 	}
 
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de una SUCURSAL de la base de datos, por su id.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador de la sucursal.
+	 * @return Objeto de tipo SUCURSAL que tiene el identificador dado.
+	 */
 	public Sucursal darSucursalPorId(PersistenceManager pm, long id)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursal() +" WHERE id = ?");
@@ -71,7 +104,13 @@ class SQLSucursal {
 		q.setParameters(id);
 		return (Sucursal) q.executeUnique();
 	}
-	
+
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de una SUCURSAL de la base de datos, por su nombre.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - El nombre de la sucursal que se quiere encontrar.
+	 * @return Objeto tipo SUCURSAL que tiene el nombre dado por parametro.
+	 */
 	public Sucursal darSucursalPorNombre(PersistenceManager pm, String nombre)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursal() +" WHERE nombre = ?");
@@ -79,7 +118,12 @@ class SQLSucursal {
 		q.setParameters(nombre);
 		return (Sucursal) q.executeUnique();
 	}
-	
+
+	/**
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de todas las SUCURSALES de la base de datos. 
+	 * @param pm - El manejador de persistencia.
+	 * @return Lista de objetos Sucursal.
+	 */
 	public List<Sucursal> darSucursales(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursal());

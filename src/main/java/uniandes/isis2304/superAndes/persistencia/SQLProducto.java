@@ -7,6 +7,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.Producto;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PRODUCTO. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Andrés Hernández
+ */
 class SQLProducto {
 
 	// -----------------------------------------------------------------
@@ -67,7 +73,7 @@ class SQLProducto {
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
 			int nivelReorden, Date fechaVencimiento, String categoria, boolean estaEnPromocion)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProducto() + " (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, promocion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProducto() + " (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, estaenpromocion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 		q.setParameters(nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, 
 						peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento,
 						categoria, estaEnPromocion);

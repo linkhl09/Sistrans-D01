@@ -6,6 +6,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.SucursalProducto;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto SUCURSAL PRODUCTO.
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia.
+ * 
+ * @author Andrés Hernández
+ */
 class SQLSucursalProducto {
 
 	// -----------------------------------------------------------------
@@ -13,8 +19,8 @@ class SQLSucursalProducto {
     // -----------------------------------------------------------------
 	
 	/**
-	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos
-	 * Se renombra acá para facilitar la escritura de las sentencias
+	 * Cadena que representa el tipo de consulta que se va a realizar en las sentencias de acceso a la base de datos.
+	 * Se renombra acá para facilitar la escritura de las sentencias.
 	 */
 	private final static String SQL = PersistenciaSuperAndes.SQL;
 		
@@ -23,7 +29,7 @@ class SQLSucursalProducto {
     // -----------------------------------------------------------------
 	
 	/**
-	 * El manejador de persistencia general de la aplicación
+	 * El manejador de persistencia general de la aplicación.
 	 */
 	private PersistenciaSuperAndes psa;
 	
@@ -45,7 +51,7 @@ class SQLSucursalProducto {
 	 * @param pm - El manejador de persistencia.
 	 * @param idSucursal - La sucutsal dueña del producto.
 	 * @param codigoBarrasProducto - El identificador del producto.
-	 * @return
+	 * @return El número de tuplas insertadas.
 	 */
 	public long adicionarSucursalProducto(PersistenceManager pm, long idSucursal, String codigoBarrasProducto)
 	{
@@ -55,7 +61,7 @@ class SQLSucursalProducto {
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para eliminar UN SUCURSALPRODUCTO de la base de datos por su identificador
+	 * Crea y ejecuta la sentencia SQL para eliminar UN SUCURSALPRODUCTO de la base de datos por su identificador.
 	 * @param pm - El manejador de persistencia .
 	 * @param idSucursal - Identificador de la sucursal .
 	 * @param producto - Identificador del producto.
@@ -69,7 +75,7 @@ class SQLSucursalProducto {
 	}
 
 	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de los SUCURSALPRODUCTO de una sucursal .
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de los SUCURSALPRODUCTO de una sucursal.
 	 * @param pm - El manejador de persistencia.
 	 * @param idSucursal - Id de la sucursal de interes.
 	 * @return Una lista de Objetos SucursalProducto que pertenecen a la sucursal buscada.

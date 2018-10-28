@@ -6,9 +6,13 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.TipoCategoria;
 
-
-
-public class SQLTipoCategoria 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto TIPOCATEGORIA de SuperAndes.
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia.
+ * 
+ * @author Andrés hernández.
+ */
+class SQLTipoCategoria 
 {
 	// -----------------------------------------------------------------
     // Constantes

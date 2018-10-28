@@ -6,6 +6,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.ProveedoresProducto;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROVEEDORES PRODUCTO. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Jenifer Rodriguez y Andrés Hernández
+ */
 class SQLProveedoresProducto {
 
 	// -----------------------------------------------------------------

@@ -10,6 +10,12 @@ import javax.jdo.Query;
 import oracle.net.aso.p;
 import uniandes.isis2304.superAndes.negocio.PromDesc;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROMOCION DESCUENTO. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Jenifer Rodriguez
+ */
 public class SQLPromDescuento 
 {
 	/* ****************************************************************
@@ -30,7 +36,7 @@ public class SQLPromDescuento
 	private PersistenciaSuperAndes pp;
 
 	/* ****************************************************************
-	 * 			MÃ©todos
+	 * 			Métodos
 	 *****************************************************************/
 
 	/**
@@ -77,7 +83,6 @@ public class SQLPromDescuento
         return (long) q.executeUnique();
 	}
 
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de UN PromDescuento de la 
 	 * base de datos de SuperAndes, por su id
@@ -93,8 +98,6 @@ public class SQLPromDescuento
 		return (PromDesc)q.executeUnique();
 	}
 
-
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de LOS PromDescuento de la 
 	 * base de datos de SuperAndes
@@ -107,8 +110,4 @@ public class SQLPromDescuento
 		q.setResultClass(PromDesc.class);
 		return (List<PromDesc>) q.executeList();
 	}
-
-	
-
-
 }

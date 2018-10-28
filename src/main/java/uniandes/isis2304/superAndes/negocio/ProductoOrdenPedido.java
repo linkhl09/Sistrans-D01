@@ -1,7 +1,7 @@
 package uniandes.isis2304.superAndes.negocio;
 
 /**
- * Clase para modelar el concepto de .
+ * Clase para modelar el concepto de ProductoOrdenPedido.
  * @author Andrés Hernández y jenifer Rodriguez
  */
 public class ProductoOrdenPedido implements VOProductoOrdenPedido{
@@ -9,6 +9,7 @@ public class ProductoOrdenPedido implements VOProductoOrdenPedido{
 	// -----------------------------------------------------------------
     // Atributos.
     // -----------------------------------------------------------------
+	
 	/**
 	 * numero identificador de la orden de pedido.
 	 */

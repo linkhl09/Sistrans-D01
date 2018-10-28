@@ -6,6 +6,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.ProductosEnEstante;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PRODUCTO EN ESTANTE. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia.
+ * 
+ * @author Andrés Hernández
+ */
 class SQLProductosEnEstante {
 
 	// -----------------------------------------------------------------

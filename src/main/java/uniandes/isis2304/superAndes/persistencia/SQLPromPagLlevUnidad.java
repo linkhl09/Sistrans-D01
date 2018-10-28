@@ -8,7 +8,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.PromPagueLleveUnid;
 
-
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROM PAG LLEV UNIDAD 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Jenifer Rodriguez
+ */
 public class SQLPromPagLlevUnidad
 {
 	/* ****************************************************************
@@ -64,7 +69,6 @@ public class SQLPromPagLlevUnidad
         return (long) q.executeUnique();
 	}
 
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para eliminar PromPagLlevUnidad de la base de datos de SuperAndes, por su numeroPromo
 	 * @param pm - El manejador de persistencia
@@ -77,7 +81,6 @@ public class SQLPromPagLlevUnidad
         q.setParameters(id);
         return (long) q.executeUnique();
 	}
-
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de UN PromPagLlevUnidad de la 
@@ -94,8 +97,6 @@ public class SQLPromPagLlevUnidad
 		return (PromPagueLleveUnid)q.executeUnique();
 	}
 
-
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de LOS PromPagueLleveUnid de la 
 	 * base de datos de SuperAndes
@@ -108,6 +109,4 @@ public class SQLPromPagLlevUnidad
 		q.setResultClass(PromPagueLleveUnid.class);
 		return (List<PromPagueLleveUnid>) q.executeList();
 	}
-
-
 }

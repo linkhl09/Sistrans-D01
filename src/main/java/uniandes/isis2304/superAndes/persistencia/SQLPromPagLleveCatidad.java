@@ -10,10 +10,14 @@ import com.sun.org.apache.bcel.internal.generic.LLOAD;
 
 import uniandes.isis2304.superAndes.negocio.PromPagueLleveCant;
 
-
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROM PAG LLEVE CANTIDAD  
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Jenifer Rodriguez
+ */
 public class SQLPromPagLleveCatidad 
 {
-
 	/* ****************************************************************
 	 * 			Constantes
 	 *****************************************************************/
@@ -80,7 +84,6 @@ public class SQLPromPagLleveCatidad
         return (long) q.executeUnique();
 	}
 
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de UN PromPagLleveCatidad de la 
 	 * base de datos de SuperAndes, por su numeroPromo
@@ -96,8 +99,6 @@ public class SQLPromPagLleveCatidad
 		return (PromPagueLleveCant)q.executeUnique();
 	}
 
-
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de LOS PromPagLleveCatidad de la 
 	 * base de datos de SuperAndes
@@ -110,7 +111,4 @@ public class SQLPromPagLleveCatidad
 		q.setResultClass(PromPagueLleveCant.class);
 		return (List<PromPagueLleveCant>) q.executeList();
 	}
-
-
-
 }

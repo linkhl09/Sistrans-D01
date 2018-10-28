@@ -6,6 +6,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.Empresa;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto EMPRESA. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Andrés Hernández y Jenifer Rodriguez.
+ */
 class SQLEmpresa {
 
 	// -----------------------------------------------------------------
@@ -23,7 +29,7 @@ class SQLEmpresa {
     // -----------------------------------------------------------------
 	
 	/**
-	 * El manejador de persistencia general de la aplicación
+	 * El manejador de persistencia general de la aplicación.
 	 */
 	private PersistenciaSuperAndes psa;
 	
@@ -53,7 +59,7 @@ class SQLEmpresa {
 	}
 	
 	/**
-	 Elimina la empresa de la tabla "Empresa" cuyo nit es igual al que entra 
+	 * Elimina la empresa de la tabla "Empresa" cuyo nit es igual al que entra 
 	 * por parametro
 	 * @param nit - identificador unico de la empresa a eliminar
 	 */
@@ -79,7 +85,7 @@ class SQLEmpresa {
 	/**
 	 * Devuelve la empresa de la tabla "Empresa" cuyo nit es igual al que entra 
 	 * por parametro
-	 *  * @param nit - identificador unico de la empresa a devolver
+	 * @param nit - identificador unico de la empresa a devolver
 	 */
 	public Empresa darEmpresa(PersistenceManager pm, String nit)
 	{

@@ -6,8 +6,14 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.Cliente;
 
-class SQLCliente {
-
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto CLIENTE. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Andrés Hernández y Jenifer Rodriguez.
+ */
+class SQLCliente 
+{
 	// -----------------------------------------------------------------
     // Constantes
     // -----------------------------------------------------------------
@@ -32,7 +38,7 @@ class SQLCliente {
 	// -----------------------------------------------------------------
 	
 	/**
-	 * Constructor
+	 * Constructor.
 	 * @param psa - El Manejador de persistencia de la aplicación
 	 */
 	public SQLCliente(PersistenciaSuperAndes psa)
@@ -41,7 +47,7 @@ class SQLCliente {
 	}
 	
 	/**
-	 * adiciona un nuevo cliente empresa a la tabla "Clientes"
+	 * Adiciona un nuevo cliente empresa a la tabla "Clientes"
 	 * se incializan los puntos en 0
 	 * @param correoElectronico - correo electronico del cliente es el identificador unico de la tabla clientes
 	 * @param nombre - El nombre del cliente
@@ -55,7 +61,7 @@ class SQLCliente {
 	}
 	
 	/**
-	 * adiciona un nuevo cliente natural a la tabla "Clientes"
+	 * Adiciona un nuevo cliente natural a la tabla "Clientes"
 	 * se incializan los puntos en 0
 	 * @param correoElectronico - correo electronico del cliente es el identificador unico de la tabla clientes
 	 * @param nombre - El nombre del cliente
@@ -69,7 +75,7 @@ class SQLCliente {
 	}
 	
 	/**
-	 * elimina un cliente por su correo electronico
+	 * Elimina un cliente por su correo electronico
      * @param correoElectronico - correo electronico del cliente, es el identificador unico de la tabla clientes
 	*/
 	public long eliminarCliente(PersistenceManager pm, String correoElectronico)
@@ -80,7 +86,7 @@ class SQLCliente {
 	}
 	
 	/**
-	 * devuelve la informacion del cliente 
+	 * Devuelve la informacion del cliente 
      * @param correoElectronico - correo electronico del cliente del cual se quiere la informacion, es el identificador unico de la tabla clientes
 	*/
 	public Cliente darCliente(PersistenceManager pm, String correoElectronico)
@@ -92,7 +98,7 @@ class SQLCliente {
 	}
 	
 	/**
-	 * devuelve la informacion de todos los clientes
+	 * Devuelve la informacion de todos los clientes
 	 **/
 	public List<Cliente> darClientes(PersistenceManager pm)
 	{
@@ -102,15 +108,14 @@ class SQLCliente {
 	}
 
 	/**
-	 * aumenta los puntos de un cliete dado 
-	* @param correoElectronico - correo electronico del cliente del cual se quiere la informacion, es el identificador unico de la tabla clientes
-	* @param puntos - cantidad de puntos q se van a agregar al cleiete
-	*/
+	 * Aumenta los puntos de un cliete dado
+	 * @param correoElectronico - correo electronico del cliente del cual se quiere la informacion, es el identificador unico de la tabla clientes
+	 * @param puntos - cantidad de puntos q se van a agregar al cleiete
+	 */
 	public long aumentarPuntos(PersistenceManager pm, String correoElectronico, int puntos)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaCliente() + "SET puntos = puntos + ? WHERE correoElectronico = ?");
 		q.setParameters(puntos, correoElectronico);
 		return (long) q.executeUnique();
-	}
-	
+	}	
 }

@@ -3,6 +3,12 @@ package uniandes.isis2304.superAndes.persistencia;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto.
+ * Nótese que es una clase que es sólo conocida en el paquete persistencia.
+ * 
+ * @author Andrés Hernández
+ */
 class SQLUtil {
 
 	// -----------------------------------------------------------------
@@ -63,14 +69,11 @@ class SQLUtil {
 		Query qProveedoresProducto		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedoresProducto() );
 		Query qProductoOrdenPedido	 	= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductoOrdenPedido() );
 		Query qFacturaProducto 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFacturaProducto() );
-		Query qClienteSucursal 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaClienteSucursal() );
 		Query qProductosEnBodega 		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnBodega() );
 		Query qProductosEnEstante		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnEstante() );
 		Query qSucursalProducto 		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() );
-		Query qHistorialPromociones		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaHistorialPromociones() );
 		Query qBodega 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaBodega() );
 		Query qEstante 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaEstante() );
-		Query qPromocion 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromocion() );
 		Query qProducto 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProducto() );
 		Query qCategoria 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCategoria() );
 		Query qTipo 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipo() );
@@ -85,14 +88,11 @@ class SQLUtil {
 		long proveedoresProductoEliminados = (long) qProveedoresProducto.executeUnique();
 		long productoOrdenPedidoEliminados = (long) qProductoOrdenPedido.executeUnique();
 		long facturaProductoEliminados = (long) qFacturaProducto.executeUnique();
-		long clienteSucursalEliminados = (long) qClienteSucursal.executeUnique();
 		long productosEnBodegaEliminados = (long) qProductosEnBodega.executeUnique();
 		long productosEnEstanteEliminados = (long) qProductosEnEstante.executeUnique();
 		long sucursalProductoEliminados = (long) qSucursalProducto.executeUnique();
-		long historialPromocionesEliminados = (long) qHistorialPromociones.executeUnique();
 		long bodegaEliminados = (long) qBodega.executeUnique();
 		long estanteEliminados = (long) qEstante.executeUnique();
-		long promocionEliminados = (long) qPromocion.executeUnique();
 		long productoEliminados = (long) qProducto.executeUnique();
 		long categoriaEliminados = (long) qCategoria.executeUnique();
 		long tipoEliminados = (long) qTipo.executeUnique();
@@ -104,9 +104,9 @@ class SQLUtil {
 		long sucursalEliminados = (long) qSucursal.executeUnique();
 		long proveedorEliminados = (long) qProveedor.executeUnique();
 		
-		return new long[] {proveedoresProductoEliminados, productoOrdenPedidoEliminados, facturaProductoEliminados, clienteSucursalEliminados, 
-				productosEnBodegaEliminados, productosEnEstanteEliminados, sucursalProductoEliminados, historialPromocionesEliminados, 
-				bodegaEliminados, estanteEliminados, promocionEliminados, productoEliminados, categoriaEliminados, tipoEliminados,
+		return new long[] {proveedoresProductoEliminados, productoOrdenPedidoEliminados, facturaProductoEliminados,  
+				productosEnBodegaEliminados, productosEnEstanteEliminados, sucursalProductoEliminados, 
+				bodegaEliminados, estanteEliminados, productoEliminados, categoriaEliminados, tipoEliminados,
 				facturaEliminados, personaNaturalEliminados, empresaEliminados, clienteEliminados, ordenPedidoEliminados, sucursalEliminados, proveedorEliminados};
 	}
 }
