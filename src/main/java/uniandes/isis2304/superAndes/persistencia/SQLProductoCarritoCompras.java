@@ -7,12 +7,12 @@ import javax.jdo.Query;
 import uniandes.isis2304.superAndes.negocio.ProductoCarrito;
 
 /**
- * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PRODUCTO CARRITO.
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PRODUCTO CARRITO COMPRAS.
  * Nótese que es una clase que es sólo conocida en el paquete de persistencia.
  * 
  * @author Andrés Hernández
  */
-class SQLProductoCarrito 
+class SQLProductoCarritoCompras 
 {
 	// -----------------------------------------------------------------
     // Constantes
@@ -41,13 +41,13 @@ class SQLProductoCarrito
 	 * Constructor
 	 * @param psa - El Manejador de persistencia de la aplicación
 	 */
-	public SQLProductoCarrito(PersistenciaSuperAndes psa)
+	public SQLProductoCarritoCompras(PersistenciaSuperAndes psa)
 	{
 		this.psa = psa;
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para adicionar un PRODUCTOCARRITO a la base de datos.
+	 * Crea y ejecuta la sentencia SQL para adicionar un PRODUCTOCARRITOCOMPRAS a la base de datos.
 	 * @param pm - El manejador de persistencia.
 	 * @param carrito - Carrito al que se agrego un producto. 
 	 * @param cantidad - Cantidad de productos puestos en el carrito.
@@ -62,7 +62,7 @@ class SQLProductoCarrito
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para eliminar un PRODUCTOCARRITO de la base de datos por su identificador. 
+	 * Crea y ejecuta la sentencia SQL para eliminar un PRODUCTOCARRITOCOMPRAS de la base de datos por su identificador. 
 	 * @param pm - El manejador de persistencia. 
 	 * @param carrito - El carrito del cual se desea borrar el producto.
 	 * @param codigoBarrasProducto - El producto que se quiere eliminar.
@@ -76,7 +76,7 @@ class SQLProductoCarrito
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de un PRODUCTOCARRITO en la base de datos, por su identificador.
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de un PRODUCTOCARRITOCOMPRAS en la base de datos, por su identificador.
 	 * @param pm - El manejador de persistencia.
 	 * @param carrito - El identificador del carrito con el producto buscado.
 	 * @param codigoBarrasProducto - El codigo de barras del producto que esta en el carrito.
@@ -91,7 +91,7 @@ class SQLProductoCarrito
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los PRODUCTOCARRITO en la base de datos que pertenecen a un carrito.
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los PRODUCTOCARRITOCOMPRAS en la base de datos que pertenecen a un carrito.
 	 * @param pm - El manejador de persistencia.
 	 * @param carrito - El carrito que se quiere saber que productos lleva.
 	 * @return Lista de objetos ProductosCarrito que pertenecen al carrito con el identificador dado.
@@ -105,7 +105,7 @@ class SQLProductoCarrito
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los PRODUCTOCARRITO en la base de datos.
+	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los PRODUCTOCARRITOCOMPRAS en la base de datos.
 	 * @param pm - El manejador de persistencia.
 	 * @return Una lista con todos los productoCarrito de la base de datos.
 	 */
