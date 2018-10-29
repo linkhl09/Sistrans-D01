@@ -1,8 +1,11 @@
 package uniandes.isis2304.superAndes.negocio;
 
-public class CarritoCompras implements VOCarritoCompras
-{
-
+/**
+ * Clase para modelar el concepto de CarritoCompras
+ * @author Andrés Hernández y Jenifer Rodriguez.
+ */
+public class CarritoCompras implements VOCarritoCompras {
+	
 	// -----------------------------------------------------------------
     // Atributos.
     // -----------------------------------------------------------------
@@ -11,6 +14,11 @@ public class CarritoCompras implements VOCarritoCompras
 	 * Identificador único del carrito de compras.
 	 */
 	private long id;
+	
+	/**
+	 * Correo eletrónico del cliente dueño del carrito de compras.
+	 */
+	private String cliente;
 
 	// -----------------------------------------------------------------
     // Constructores.
@@ -22,15 +30,17 @@ public class CarritoCompras implements VOCarritoCompras
 	public CarritoCompras()
 	{
 		id= 0;
+		cliente = "";
 	}
 	
 	/**
 	 * Constructor con valores. 
 	 * @param id - El identificador del nuevo carrito de compras.
 	 */
-	public CarritoCompras(long id)
+	public CarritoCompras(long id, String cliente)
 	{
 		this.id = id;
+		this.cliente = cliente;
 	}
 	
 	// -----------------------------------------------------------------
@@ -52,6 +62,23 @@ public class CarritoCompras implements VOCarritoCompras
 	public void setId(long id)
 	{
 		this.id = id;
+	}
+	
+	/**
+	 * @return El identificador del cliente dueño del carrito de compras.
+	 */
+	public String getCliente()
+	{
+		return cliente;
+	}
+	
+	/**
+	 * Asigna el cliente al carrito de compras.
+	 * @param cliente - El nuevo dueño del carrito de compras.
+	 */
+	public void setCliente(String cliente)
+	{
+		this.cliente = cliente;
 	}
 	
 	/**

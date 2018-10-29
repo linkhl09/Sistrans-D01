@@ -3,6 +3,12 @@ package uniandes.isis2304.superAndes.persistencia;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto.
+ * Nótese que es una clase que es sólo conocida en el paquete persistencia.
+ * 
+ * @author Andrés Hernández
+ */
 class SQLUtil {
 
 	// -----------------------------------------------------------------
@@ -83,6 +89,7 @@ class SQLUtil {
 		Query qPromPagueLleveCant 	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromPagLleveCant());
 		Query qPromSegUniDescuento 	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromDescSegUnid());
 		
+<<<<<<< HEAD
 		
 		long proveedoresProductoEliminados   = (long) qProveedoresProducto.executeUnique();
 		long productoOrdenPedidoEliminados   = (long) qProductoOrdenPedido.executeUnique();
@@ -112,5 +119,30 @@ class SQLUtil {
 				bodegaEliminados, estanteEliminados, productoEliminados, categoriaEliminados, tipoEliminados,
 				facturaEliminados, personaNaturalEliminados, empresaEliminados, clienteEliminados, ordenPedidoEliminados, sucursalEliminados, proveedorEliminados,
 				promDescuentoEliminados,promSegUniDescuentoEliminados,promPagLleveUniEliminados, promPagLleveCantEliminados  };
+=======
+		long proveedoresProductoEliminados = (long) qProveedoresProducto.executeUnique();
+		long productoOrdenPedidoEliminados = (long) qProductoOrdenPedido.executeUnique();
+		long facturaProductoEliminados = (long) qFacturaProducto.executeUnique();
+		long productosEnBodegaEliminados = (long) qProductosEnBodega.executeUnique();
+		long productosEnEstanteEliminados = (long) qProductosEnEstante.executeUnique();
+		long sucursalProductoEliminados = (long) qSucursalProducto.executeUnique();
+		long bodegaEliminados = (long) qBodega.executeUnique();
+		long estanteEliminados = (long) qEstante.executeUnique();
+		long productoEliminados = (long) qProducto.executeUnique();
+		long categoriaEliminados = (long) qCategoria.executeUnique();
+		long tipoEliminados = (long) qTipo.executeUnique();
+		long facturaEliminados = (long) qFactura.executeUnique();
+		long personaNaturalEliminados = (long) qPersonaNatural.executeUnique();
+		long empresaEliminados = (long) qEmpresa.executeUnique();
+		long clienteEliminados = (long) qCliente.executeUnique();	
+		long ordenPedidoEliminados = (long) qOrdenPedido.executeUnique();
+		long sucursalEliminados = (long) qSucursal.executeUnique();
+		long proveedorEliminados = (long) qProveedor.executeUnique();
+		
+		return new long[] {proveedoresProductoEliminados, productoOrdenPedidoEliminados, facturaProductoEliminados,  
+				productosEnBodegaEliminados, productosEnEstanteEliminados, sucursalProductoEliminados, 
+				bodegaEliminados, estanteEliminados, productoEliminados, categoriaEliminados, tipoEliminados,
+				facturaEliminados, personaNaturalEliminados, empresaEliminados, clienteEliminados, ordenPedidoEliminados, sucursalEliminados, proveedorEliminados};
+>>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
 	}
 }

@@ -8,10 +8,14 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.PromSegUniDesc;
 
-
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PROM DESC SEG UNID. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia
+ * 
+ * @author Jenifer Rodriguez.
+ */
 public class SQLPromDescSegUnid 
 {
-
 	/* ****************************************************************
 	 * 			Constantes
 	 *****************************************************************/
@@ -77,7 +81,6 @@ public class SQLPromDescSegUnid
         return (long) q.executeUnique();
 	}
 
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de UN PromDescSegUnid de la 
 	 * base de datos de SuperAndes, por su numeroPromo
@@ -93,8 +96,6 @@ public class SQLPromDescSegUnid
 		return (PromSegUniDesc)q.executeUnique();
 	}
 
-
-
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la informaciÃ³n de LOS PromDescSegUnid de la 
 	 * base de datos de SuperAndes
@@ -107,5 +108,4 @@ public class SQLPromDescSegUnid
 		q.setResultClass(PromSegUniDesc.class);
 		return (List<PromSegUniDesc>) q.executeList();
 	}
-
 }

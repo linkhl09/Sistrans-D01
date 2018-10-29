@@ -6,6 +6,12 @@ import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.ProductosEnBodega;
 
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PRODUCTOS EN BODEGA.
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia.
+ * 
+ * @author Andrés Hernández
+ */
 class SQLProductosEnBodega {
 
 	// -----------------------------------------------------------------
@@ -57,7 +63,7 @@ class SQLProductosEnBodega {
 	}
 	
 	/**
-	 * Crea y ejecuta la sentencia sQL para eliminar definitivamente un PRODUCTOENBODEGA de la base de datos.
+	 * Crea y ejecuta la sentencia SQL para eliminar definitivamente un PRODUCTOENBODEGA de la base de datos.
 	 * @param pm - El manejador de persistencia.
 	 * @param idBodega - Id de la bodega donde se almacena el producto.
 	 * @param codigoBarrasProducto - El identificador del producto a eliminar de la bodega.

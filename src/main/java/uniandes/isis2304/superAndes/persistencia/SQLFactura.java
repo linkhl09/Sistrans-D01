@@ -8,7 +8,14 @@ import javax.jdo.Query;
 import oracle.net.aso.v;
 import uniandes.isis2304.superAndes.negocio.Factura;
 
-class SQLFactura {
+/**
+ * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto FACTURA. 
+ * Nótese que es una clase que es sólo conocida en el paquete de persistencia.
+ * 
+ * @author Andrés Hernández
+ */
+class SQLFactura 
+{
 
 	// -----------------------------------------------------------------
     // Constantes

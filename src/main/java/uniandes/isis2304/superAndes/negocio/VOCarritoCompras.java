@@ -3,7 +3,7 @@ package uniandes.isis2304.superAndes.negocio;
 /**
  * Interfaz para los métodos get de Carrito de comrpas.
  * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz.
- * @author Andrés Hernández.
+ * @author Andrés Hernández y Jenifer Rodriguez.
  */
 public interface VOCarritoCompras {
 	
@@ -11,6 +11,11 @@ public interface VOCarritoCompras {
 	 * @return El identificador del carrito de compras.
 	 */
 	public long getId();
+	
+	/**
+	 * @return El identificador del cliente dueño del carrito de compras.
+	 */
+	public String getCliente();
 	
 	/**
 	 * Cadena de caracteres con todos los atributos de la CarritoCompras.
