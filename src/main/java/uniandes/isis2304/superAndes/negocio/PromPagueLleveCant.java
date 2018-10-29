@@ -11,12 +11,12 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 	/**
 	 *cantidad del producto que se esta pagando
 	 */
-	private Integer pague;
+	private double pague;
 
 	/**
 	 * cantidad de producto que se esta llevando
 	 */
-	private Integer lleve;
+	private double lleve;
 	
 	
 	/* ****************************************************************
@@ -47,17 +47,17 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 		 * @param fechaInicio - fecha de inicion de la promocion
 		 * @param fechaFin - fecha de finalizacion de la promocion
 		 * @param poducto - codigo del producto asociado a la promocion
-		 **@param pague -  cantidad del producto que se debe pagar
-		 * @param lleve -  cantidad del producto que se llevara
+		 **@param pague2 -  cantidad del producto que se debe pagar
+		 * @param lleve2 -  cantidad del producto que se llevara
 		**/
 		
 		public PromPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
-				, Date fechaInicio, Date fechaFin, String producto, int pague, int lleve) 
+				, Date fechaInicio, Date fechaFin, String producto, double pague2, double lleve2) 
 		{
 		
 			super(id,descripcion,unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto);
-			this.pague = pague;
-			this.lleve = lleve;
+			this.pague = pague2;
+			this.lleve = lleve2;
 		
 		}
 
@@ -68,7 +68,7 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 	/**
 	 * @return cantidad del producto que se debe pagar.
 	 */
-	public Integer getPague() {
+	public double getPague() {
 		return pague;
 	}
 
@@ -83,7 +83,7 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 	/**
 	 * @return  cantidad del producto que se llevara.
 	 */
-	public Integer getLleve() {
+	public double getLleve() {
 		return lleve;
 	}
 
@@ -104,8 +104,10 @@ public class PromPagueLleveCant extends Promocion implements VOPromPagueLleveCan
 		return "Promocion [identificador de la promocion ="+ id +", descripcion =" + descripcion
 				+ "producto =" + producto + "unidades disponibles =" + unidadesDisponibles 
 				+"unidades vendidas =" + unidadesVendidas + "fecha de inicio =" + fechaInicio
-				+"fecha de finalizacion =" + fechaFin+ "pague=" + pague +"lleve" + lleve +"]";
+				+"fecha de finalizacion =" + fechaFin+ "pague =" + pague +"lleve" + lleve +"]";
 	}
+
+	
 	
 
 	

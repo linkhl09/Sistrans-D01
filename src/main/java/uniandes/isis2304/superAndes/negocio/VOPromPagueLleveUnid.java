@@ -11,7 +11,7 @@ public interface VOPromPagueLleveUnid {
 	/**
 	 * @return unidades del producto que se debe pagar.
 	 */
-	public Integer getPague();
+	public double getPague();
 	/**
 	 * Asigna las unidades que se debe pagar del producto.
 	 * @param unidades del producto a pagar.
@@ -21,7 +21,7 @@ public interface VOPromPagueLleveUnid {
 	/**
 	 * @return unidades del producto que se llevara.
 	 */
-	public Integer getLleve();
+	public double getLleve();
 
 	/**
 	 * Asigna las unidades de producto que se llevara.

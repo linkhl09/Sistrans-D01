@@ -490,7 +490,6 @@ public class SuperAndes {
 	// Métodos de tabla Bodega
 	// -----------------------------------------------------------------
 
-
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Bodega");
@@ -922,11 +921,11 @@ public class SuperAndes {
 		return agregado;
 	}
 
-	public long eliminarCarritoCOmpra(long id)
+	public long eliminarCarritoCompras(long id)
 	{
 		log.info("Eliminando carritoCompras: " + id);
 		long resp = psa.eliminarCarritoCompras(id);
-		log.info("Eliminando CarritoCompras: " + long + " tuplas eliminadas.");
+		log.info("Eliminando CarritoCompras: " + id + " tuplas eliminadas.");
 		return resp;
 	}
 	
@@ -1021,13 +1020,12 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 	// Métodos de tabla Factura
 	// -----------------------------------------------------------------
-
 	public Factura adicionarFactura( String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String cliente)
+			int puntosCompra, String correoCliente, long idSucursal)
 	{
 		log.info ("Adicionando factura: " + fecha.toString() );
-		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, cliente);	
+		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);	
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -1309,10 +1307,10 @@ public class SuperAndes {
 	// Métodos de tabla ProductoOrdenPedido
 	// -----------------------------------------------------------------
 
-	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto)
+	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
 	{
 		log.info ("Adicionando  ProductoOrdenPedido: " );
-		ProductoOrdenPedido agregado = psa.adicionarProductoOrdenPedido(pedido, cantidad, calidad, producto);
+		ProductoOrdenPedido agregado = psa.adicionarProductoOrdenPedido(pedido, cantidad, calidad, producto, fechaAgregado);
 		log.info ("Adicionado");
 		return agregado;
 	}

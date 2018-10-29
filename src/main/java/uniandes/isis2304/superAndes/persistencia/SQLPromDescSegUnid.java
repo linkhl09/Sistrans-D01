@@ -1,6 +1,6 @@
 package uniandes.isis2304.superAndes.persistencia;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -74,7 +74,7 @@ public class SQLPromDescSegUnid
 	 * @param id - El id de PromDescSegUnid
 	 * @return EL número de tuplas eliminadas
 	 */
-	public long eliminarPromDescSegUnidPornumeroPromo (PersistenceManager pm, long id)
+	public long eliminarPromDescSegUnidPorId (PersistenceManager pm, long id)
 	{
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromDescSegUnid() + " WHERE id = ?");
         q.setParameters(id);

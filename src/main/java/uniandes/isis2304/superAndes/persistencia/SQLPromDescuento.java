@@ -1,6 +1,6 @@
 package uniandes.isis2304.superAndes.persistencia;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;

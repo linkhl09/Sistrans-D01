@@ -64,7 +64,7 @@ class SQLFactura
 	 */
 	public long adicionarFactura(PersistenceManager pm, long numero, String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String cliente)
+			int puntosCompra, String cliente, long idSucursal)
 	{
 		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaFactura() + " (numero, direccion, fecha, nombrecajero, valortotal, pagoexitoso, puntoscompra, cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 		q.setParameters(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, cliente);

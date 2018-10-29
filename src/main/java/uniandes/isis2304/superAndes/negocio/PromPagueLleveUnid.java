@@ -11,12 +11,12 @@ public class PromPagueLleveUnid extends Promocion implements VOPromPagueLleveUni
 	/**
 	 * numero de unidades del producto que se debe pagar
 	 */
-	private Integer pague;
+	private double pague;
 
 	/**
 	 * numero de unidades del producto que se llevara
 	 */
-	private Integer lleve;
+	private double lleve;
 	
 	
 	
@@ -49,17 +49,17 @@ public class PromPagueLleveUnid extends Promocion implements VOPromPagueLleveUni
 	 * @param fechaInicio - fecha de inicion de la promocion
 	 * @param fechaFin - fecha de finalizacion de la promocion
 	 * @param poducto - codigo del producto asociado a la promocion
-	 **@param pague -  unidades del producto que se debe pagar
-	 * @param lleve -  unidades del producto que se llevara
+	 **@param pague2 -  unidades del producto que se debe pagar
+	 * @param lleve2 -  unidades del producto que se llevara
 	**/
 	
 	public PromPagueLleveUnid(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
-			, Date fechaInicio, Date fechaFin, String producto, int pague, int lleve) 
+			, Date fechaInicio, Date fechaFin, String producto, double pague2, double lleve2) 
 	{
 	
 		super(id,descripcion,unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto);
-		this.pague = pague;
-		this.lleve = lleve;
+		this.pague = pague2;
+		this.lleve = lleve2;
 	
 	}
 	
@@ -69,7 +69,7 @@ public class PromPagueLleveUnid extends Promocion implements VOPromPagueLleveUni
 	/**
 	 * @return unidades del producto que se debe pagar.
 	 */
-	public Integer getPague() {
+	public double getPague() {
 		return pague;
 	}
 
@@ -84,7 +84,7 @@ public class PromPagueLleveUnid extends Promocion implements VOPromPagueLleveUni
 	/**
 	 * @return  unidades del producto que se llevara.
 	 */
-	public Integer getLleve() {
+	public double getLleve() {
 		return lleve;
 	}
 

@@ -83,30 +83,43 @@ class SQLUtil {
 		Query qCliente 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCliente() );
 		Query qOrdenPedido 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaOrdenPedido() );
 		Query qSucursal 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursal() );	
-		Query qProveedor 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedor() );				
+		Query qProveedor 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedor() );	
+		Query qPromDescuento 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromDescuento());
+		Query qPromPagueLleveUnidad 	= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromPagLleveUnida());
+		Query qPromPagueLleveCant 	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromPagLleveCant());
+		Query qPromSegUniDescuento 	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromDescSegUnid());
 		
-		long proveedoresProductoEliminados = (long) qProveedoresProducto.executeUnique();
-		long productoOrdenPedidoEliminados = (long) qProductoOrdenPedido.executeUnique();
-		long facturaProductoEliminados = (long) qFacturaProducto.executeUnique();
-		long productosEnBodegaEliminados = (long) qProductosEnBodega.executeUnique();
-		long productosEnEstanteEliminados = (long) qProductosEnEstante.executeUnique();
-		long sucursalProductoEliminados = (long) qSucursalProducto.executeUnique();
-		long bodegaEliminados = (long) qBodega.executeUnique();
-		long estanteEliminados = (long) qEstante.executeUnique();
-		long productoEliminados = (long) qProducto.executeUnique();
-		long categoriaEliminados = (long) qCategoria.executeUnique();
-		long tipoEliminados = (long) qTipo.executeUnique();
-		long facturaEliminados = (long) qFactura.executeUnique();
-		long personaNaturalEliminados = (long) qPersonaNatural.executeUnique();
-		long empresaEliminados = (long) qEmpresa.executeUnique();
-		long clienteEliminados = (long) qCliente.executeUnique();	
-		long ordenPedidoEliminados = (long) qOrdenPedido.executeUnique();
-		long sucursalEliminados = (long) qSucursal.executeUnique();
-		long proveedorEliminados = (long) qProveedor.executeUnique();
+
 		
-		return new long[] {proveedoresProductoEliminados, productoOrdenPedidoEliminados, facturaProductoEliminados,  
-				productosEnBodegaEliminados, productosEnEstanteEliminados, sucursalProductoEliminados, 
+		long proveedoresProductoEliminados   = (long) qProveedoresProducto.executeUnique();
+		long productoOrdenPedidoEliminados   = (long) qProductoOrdenPedido.executeUnique();
+		long facturaProductoEliminados       = (long) qFacturaProducto.executeUnique();
+		long productosEnBodegaEliminados     = (long) qProductosEnBodega.executeUnique();
+		long productosEnEstanteEliminados    = (long) qProductosEnEstante.executeUnique();
+		long sucursalProductoEliminados      = (long) qSucursalProducto.executeUnique();
+		long bodegaEliminados                = (long) qBodega.executeUnique();
+		long estanteEliminados               = (long) qEstante.executeUnique();
+		long productoEliminados              = (long) qProducto.executeUnique();
+		long categoriaEliminados             = (long) qCategoria.executeUnique();
+		long tipoEliminados                  = (long) qTipo.executeUnique();
+		long facturaEliminados               = (long) qFactura.executeUnique();
+		long personaNaturalEliminados        = (long) qPersonaNatural.executeUnique();
+		long empresaEliminados               = (long) qEmpresa.executeUnique();
+		long clienteEliminados               = (long) qCliente.executeUnique();	
+		long ordenPedidoEliminados           = (long) qOrdenPedido.executeUnique();
+		long sucursalEliminados              = (long) qSucursal.executeUnique();
+		long proveedorEliminados             = (long) qProveedor.executeUnique();
+		long promDescuentoEliminados         = (long) qPromDescuento.executeUnique();
+		long promSegUniDescuentoEliminados   = (long) qPromSegUniDescuento.executeUnique();
+		long promPagLleveUniEliminados       = (long) qPromPagueLleveUnidad.executeUnique();
+		long promPagLleveCantEliminados       = (long) qPromPagueLleveCant.executeUnique();
+		
+		return new long[] {proveedoresProductoEliminados, productoOrdenPedidoEliminados, facturaProductoEliminados, 
+				productosEnBodegaEliminados, productosEnEstanteEliminados, sucursalProductoEliminados,  
 				bodegaEliminados, estanteEliminados, productoEliminados, categoriaEliminados, tipoEliminados,
-				facturaEliminados, personaNaturalEliminados, empresaEliminados, clienteEliminados, ordenPedidoEliminados, sucursalEliminados, proveedorEliminados};
+				facturaEliminados, personaNaturalEliminados, empresaEliminados, clienteEliminados, ordenPedidoEliminados, sucursalEliminados, proveedorEliminados,
+				promDescuentoEliminados,promSegUniDescuentoEliminados,promPagLleveUniEliminados, promPagLleveCantEliminados  };
+
+		
 	}
 }
