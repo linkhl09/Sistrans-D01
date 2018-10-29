@@ -5,7 +5,7 @@ package uniandes.isis2304.superAndes.negocio;
  *
  * @author Andrés Hernández
  */
-public class ProductoCarrito implements VOProductoCarrito
+public class ProductoCarritoCompras implements VOProductoCarritoCompras
 {
 	// -----------------------------------------------------------------
     // Atributos.
@@ -33,7 +33,7 @@ public class ProductoCarrito implements VOProductoCarrito
 	/**
 	 * Cpnstructor vacio.
 	 */
-	public ProductoCarrito()
+	public ProductoCarritoCompras()
 	{
 		carrito = 0;
 		cantidad = 0;
@@ -44,13 +44,13 @@ public class ProductoCarrito implements VOProductoCarrito
 	 * Constructor con valores. 
 	 * @param carrito - Identificador del carrito de compras.
 	 * @param cantidad - Cantidad del producto en el carrito.
-	 * @param codigoBarras - Identificador del producto puesto en el carrito.
+	 * @param codigoBarrasProducto - Identificador del producto puesto en el carrito.
 	 */
-	public ProductoCarrito(long carrito, int cantidad, String codigoBarras) 
+	public ProductoCarritoCompras(long carrito, int cantidad, String codigoBarrasProducto) 
 	{
 		this.carrito = carrito;
 		this.cantidad = cantidad;
-		this.codigoBarrasProducto = codigoBarras;
+		this.codigoBarrasProducto = codigoBarrasProducto;
 	}
 
 	// -----------------------------------------------------------------

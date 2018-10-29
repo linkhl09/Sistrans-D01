@@ -24,11 +24,11 @@ import uniandes.isis2304.superAndes.negocio.*;
  * Sigue un patrón SINGLETON (Sólo puede haber UN objeto de esta clase) para comunicarse de manera correcta con la base de datos
  * 
  * 
- * Se apoya en las clases SQLTipo, SQLcategoria, SQLproveedor, SQLpromocion, SQLproducto, SQLpersonaNatural,
- * SQLempresa, SQLcliente, SQLfactura, SQLsucursal, SQLordenPedido, SQLbodega, SQLestante, SQLproveedores_producto,
- * SQLproducto_ordenPedido, SQLfactura_producto, SQLcliente_sucursal, SQLproductosEnBodega, SQLProductosEnEstante,
- * SQLSucursalProducto y SQLHistoriaPromociones. 
- * que son las que realizan el acceso a la base de datos
+ * Se apoya en las clases SQLcategoria, SQLTipo, SQLTipoCategoria, SQLproducto, SQLsucursal, SQLSucursalProducto
+ * SQLbodega, SQLestante, SQLproductosEnBodega, SQLProductosEnEstante, SQLpersonaNatural, SQLempresa, SQLcliente, 
+ * SQLcarritoCompas, SQLProducto_CarritoCompras, SQLfactura, SQLfactura_producto, SQLproveedor, SQLproveedores_producto,
+ * SQLordenPedido, SQLproducto_ordenPedido, SQLProm_Descuento, SQLProm_Pag_Lleve_Unid , SQLProm_Desc_Seg_Unid y SQLProm_Pag_lleve_cantidad.
+ * que son las que realizan el acceso a la base de datos.
  * 
  * @author Jenifer Rodriguez y Andrés Herández
  */
@@ -212,9 +212,6 @@ public class PersistenciaSuperAndes {
 	{
 		pmf = JDOHelper.getPersistenceManagerFactory("SuperAndes");
 		crearClasesSQL();
-
-		//TODO Completar después de inicializar las tablas.
-
 		tablas = new LinkedList<String>();
 		tablas.add("superAndes_sequence");
 		tablas.add("CATEGORIA");
@@ -549,7 +546,6 @@ public class PersistenciaSuperAndes {
 		return tablas.get (25);
 	}
 
-
 	/**
 	 * Transacción para el generador de secuencia de SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -617,7 +613,12 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Tipo
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que inserta, de manera transaccional, una tupla de Tipo.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param nombre - nombre del nuevo tipo.
+	 * @return El objeto de tipo Tipo adicionado. Null si ocurre alguna Exception.
+	 */
 	public Tipo adicionarTipo(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -648,7 +649,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla de la tabla TIPO.
+	 * @param nombre - El nombre de la tupla a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarTipo(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -676,24 +681,35 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todos los Tipos de la tabla TIPO.
+	 * @return Una lista de objetos Tipo, construidos con base en las tuplas de la tabla TIPO.
+	 */
 	public List<Tipo> darTipos()
 	{
 		return sqlTipo.darTipos(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla TIPO con el identificador dado.
+	 * @param nombre - El nombre del tipo buscado.
+	 * @return El objeto tipo Tipo construido con base en las tuplas de la tabla TIPO.
+	 */
 	public Tipo darTipo(String nombre)
 	{
 		return sqlTipo.darTipo(pmf.getPersistenceManager(), nombre);
 	}
 
-
 	// -----------------------------------------------------------------
 	// Métodos de tabla Categoria
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que inserta, de manera transaccional, una tupla de Categoria.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param nombre - nombre de la nueva categoria.
+	 * @return El objeto de tipo Categoria adicionado. Null si ocurre alguna Exception.
+	 */
 	public Categoria adicionarCategoria(String nombre)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -724,7 +740,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla de la tabla CATEGORIA, dado su identificador.
+	 * @param nombre - El nombre de la categoria a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarCategoria(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -752,13 +772,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las categorias en la tabla CATEGORIA.
+	 * @return Una lista de objetos Categoria, construidos con base en las tuplas de la tabla CATEGORIA.
+	 */
 	public List<Categoria> darCategorias()
 	{
 		return sqlCategoria.darCategorias(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla CATEGORIA con el identificador dado.
+	 * @param nombre - El nombre de la categoria buscada.
+	 * @return El objeto tipo Categoria construido con base en las tuplas de la tabla CATEGORIA.
+	 */
 	public Categoria darCategoria(String nombre)
 	{
 		return sqlCategoria.darCategoria(pmf.getPersistenceManager(), nombre);
@@ -768,6 +795,13 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla TipoCategoria
 	// -----------------------------------------------------------------
 
+	/**
+	 * Método que inserta, de manera tradicional, una tupla de TipoCategoria.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param nombreTipo - El nombre del tipo.
+	 * @param nombreCategoria - El nombre de la categoria.
+	 * @return El objeto de tipo TipoProducto adicionado. Null si ocurre alguna Exception.
+	 */
 	public TipoCategoria adicionarTipoCategoria(String nombreTipo, String nombreCategoria)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -797,7 +831,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla de la tabla TIPOPRODUCTO, dado su identificador.
+	 * @param nombreTipo - El nombre del tipo a eliminar. 
+	 * @param nombreCategoria - El nombre de la categoria a eliminar.
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
 	public long eliminarTipoCategoria(String nombreTipo, String nombreCategoria)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -825,13 +864,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla TIPOCATEGORIA que pertenecen a una Categoria.
+	 * @param nombreCategoria - El nombre Categoria de interes.
+	 * @return Una lista de objetos TipoCategoria, construidos con base en las tuplas de la tablas TIPOPRODUCTO.
+	 */
 	public List<TipoCategoria> darTiposCategoria(String nombreCategoria)
 	{
 		return sqlTipoCategoria.darTiposCategoria(pmf.getPersistenceManager(), nombreCategoria);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla TIPOCATEGORIA.
+	 * @return Una lista de objetos TipoCategoria, construidos con base en las tuplas de la tabla TIPOPRODUCTO.
+	 */
 	public List<TipoCategoria> darTodosTipoCategoria()
 	{
 		return sqlTipoCategoria.darTodosTipoCategoria(pmf.getPersistenceManager());
@@ -1014,11 +1060,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
 	// -----------------------------------------------------------------
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
 
+	/**
+	 * Método que inserta, de manera transaccional, una tupla de la tabla Sucursal.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param direccion - Dirección de la sucursal.
+	 * @param ciudad - Ciudad de la sucursal.
+	 * @param nombre - Nombre de la sucursal.
+	 * @param segmentacionMercado - Segmentación de mercado de la sucursal.
+	 * @param tamanio - Tamaño de la sucursal.
+	 * @return El objeto tipo Sucursal adicionado. Null si se encuentra alguna Exception.
+	 */
 	public Sucursal adicionarSucursal(String direccion, String ciudad,
 			String nombre, String segmentacionMercado, int tamanio)
 	{
@@ -1051,7 +1106,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla SUCURSAL, dado su nombre.
+	 * @param nombre - El nombre de la sucursal a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursalPorNombre(String nombre) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1079,7 +1138,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla SUCURSAL, dado su identificador.
+	 * @param id - El identificador de la sucursal.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursalPorId(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1107,19 +1170,30 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla SUCURSAL.
+	 * @return Una lista de objetos Sucursal, construidos con base en las tuplas de la tabla SUCURSAL.
+	 */
 	public List<Sucursal> darSucursales()
 	{
 		return sqlSucursal.darSucursales(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla SUCURSAL, con el nombre dado.
+	 * @param nombre - El nombre de la sucursal buscada.
+	 * @return El objeto Sucursal construido con base en las tuplas de la tabla SUCURSAL.
+	 */
 	public Sucursal darSucursalPorNombre(String nombre)
 	{
 		return sqlSucursal.darSucursalPorNombre(pmf.getPersistenceManager(), nombre);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla SUCURSAL, con el identificador dado.
+	 * @param id - Identificador de la sucursal buscada.
+	 * @return El objeto tipo Sucursal construido con base en las tuplas de la tabla SUCURSAL.
+	 */
 	public Sucursal darSucursalPorId(long id)
 	{
 		return sqlSucursal.darSucursalPorId(pmf.getPersistenceManager(), id);
@@ -1130,20 +1204,26 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla SucursalProducto
 	// -----------------------------------------------------------------
 
-
-	public SucursalProducto adicionarSucursalProducto(long idSucursal, String producto)
+	/**
+	 * Método que adiciona, de manera transaccional, una tupla en la tabla SUCURSAL PRODUCTO.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param idSucursal - El id de la sucursal.
+	 * @param codigoBarrasProducto - El identificador del producto.
+	 * @return El objeto tipo SucursalProducto adicionado. Null si se encuentra alguna Exception.
+	 */
+	public SucursalProducto adicionarSucursalProducto(long idSucursal, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlSucursalProducto.adicionarSucursalProducto(pm, idSucursal, producto);
+			long tuplasInsertadas = sqlSucursalProducto.adicionarSucursalProducto(pm, idSucursal, codigoBarrasProducto);
 			tx.commit();
 
-			log.trace("Inserción de asociacion entre sucursal y producto: " + producto + ": " + tuplasInsertadas + " tuplas insertadas."); 
+			log.trace("Inserción de asociacion entre sucursal: " + idSucursal + " y producto: " + codigoBarrasProducto + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new SucursalProducto(idSucursal, producto);
+			return new SucursalProducto(idSucursal, codigoBarrasProducto);
 		}
 		catch (Exception e)
 		{
@@ -1161,15 +1241,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
-	public long eliminarSucursalProducto(long idSucursal, String producto) 
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla SUCURSAL PRODUCTO, dado su identificador.
+	 * @param idSucursal - El id de la sucursal.
+	 * @param codigoBarrasProducto - El producto asociado a esa sucursal.
+	 * @return El número de tuplas eliminadas.
+	 */
+	public long eliminarSucursalProducto(long idSucursal, String codigoBarrasProducto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlSucursalProducto.eliminarSucursalProducto(pm, idSucursal, producto);
+			long resp = sqlSucursalProducto.eliminarSucursalProducto(pm, idSucursal, codigoBarrasProducto);
 			tx.commit();
 			return resp;
 		}
@@ -1189,19 +1274,30 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla SUCURSAL PRODUCTO que pertenecen a una sucursal dada.
+	 * @param idSucursal - Identificador de la sucursal de la que se desean conocer sus productos.
+	 * @return Una lista de objetos SucursalProducto construido con base en las tuplas de la tabla ProductosSucursal.
+	 */
 	public List<SucursalProducto> darProductosSucursal(long idSucursal)
 	{
 		return sqlSucursalProducto.darProductosSucursal(pmf.getPersistenceManager(),idSucursal);
 	}
 
-
-	public List<SucursalProducto> darSucursalesProducto(String producto )
+	/**
+	 * Método que consulta todas las tuplas de la tabla SUCURSAL PRODUCTO que tienen el producto.
+	 * @param codigoBarrasProducto - El producto del que se desean averiguar en que sucursales esta.
+	 * @return El objeto tipo SucursalProducto construido con base en las tuplas de la tabla SucursalProducto.
+	 */
+	public List<SucursalProducto> darSucursalesProducto(String codigoBarrasProducto )
 	{
-		return sqlSucursalProducto.darSucursalesProducto(pmf.getPersistenceManager(), producto);
+		return sqlSucursalProducto.darSucursalesProducto(pmf.getPersistenceManager(), codigoBarrasProducto);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla SUCURSALPRODUCTO.
+	 * @return Una lista de objetos SucursalProducto, construidos con base en las tuplas de la tabla SUCURSALPRODUCTO.
+	 */
 	public List<SucursalProducto> darTodosProductosSucursales()
 	{
 		return sqlSucursalProducto.darTodosProductosSucursales(pmf.getPersistenceManager());
@@ -1212,7 +1308,15 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla bodega
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que adiciona, de manera transaccional, una tupla en la tabla Bodega.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param capacidadVol - El valor numerico de la capacidad en volumen de la bodega.
+	 * @param capacidadPeso - El valor numerico de la capacidad en peso de la bodega.
+	 * @param tipo - El tipo de producto que puede almacenar la bodega.
+	 * @param idSucursal - La sucursal a la que pertenece la Bodega.
+	 * @return El objeto tipo Bodega adicionado. Null si ocurre alguna Exception.
+	 */
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1244,7 +1348,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional una tupla en la tabla BODEGA, dado su identificador.
+	 * @param id - El identificador de la bodega.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarBodega(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1272,19 +1380,30 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla BODEGA de la base de datos.
+	 * @return Una lista de objetos Bodega construido con base en las tuplas de la tabla BODEGA.
+	 */
 	public List<Bodega> darBodegas()
 	{
 		return sqlBodega.darBodegas(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla BODEGA de la base de datos, que hacen parte de una sucursal.
+	 * @param idSucursal - El identificador de la sucursal dueña de las bodegas.
+	 * @return Una lista de objetos Bodega, construidos con base en las tuplas de la tabla BODEGA.
+	 */
 	public List<Bodega> darBodegasSucursal(long idSucursal)
 	{
 		return sqlBodega.darBodegasSucursal(pmf.getPersistenceManager(), idSucursal);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla BODEGA, con el identificador dado.
+	 * @param id - El identificador de la bodega buscada.
+	 * @return El objeto tipo Bodega construido con base en las tuplas de la tabla BODEGA.
+	 */
 	public Bodega darBodega(long id)
 	{
 		return sqlBodega.darBodega(pmf.getPersistenceManager(), id);
@@ -1295,7 +1414,15 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla estante
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que adiciona, de manera transaccional, una tupla en la tabla ESTANTE.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param capacidadVol - El valor numerico de la capacidad en volumen del estante.
+	 * @param capacidadPeso - El valor numerico de la capacidad en peso del estante.
+	 * @param tipo - El tipo de producto que puede almacenar el estante.
+	 * @param idSucursal - La sucursal a la que pertenece el estante.
+	 * @return El objeto tipo Estante adicionado. Null si ocurre alguna Exception.
+	 */
 	public Estante adicionarEstante(double capacidadVolumen, double capacidadPeso, String tipo, long idSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1307,7 +1434,7 @@ public class PersistenciaSuperAndes {
 			long tuplasInsertadas = sqlEstante.adicionarEstante(pm, id, capacidadVolumen, capacidadPeso, tipo, idSucursal);
 			tx.commit();
 
-			log.trace("Inserción de: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
+			log.trace("Inserción de estante con id: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
 			return new Estante(id, capacidadPeso, capacidadVolumen, tipo, idSucursal);
 		}
@@ -1327,7 +1454,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional una tupla en la tabla ESTANTE 
+	 * @param id - El identificador del estante.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarEstante(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1355,19 +1486,30 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla ESTANTES de la base de datos.
+	 * @return Una lista de objetos Estante construido con base en las tuplas de la tabla ESTANTE.
+	 */
 	public List<Estante> darEstantes ()
 	{
 		return sqlEstante.darEstantes(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla ESTANTE de la base de datos, que hacen parte de una sucursal.
+	 * @param idSucursal - El identificador de la sucursal dueña de los Estantes.
+	 * @return Una lista de objetos Estante, construidos con base en las tuplas de la tabla ESTANTE.
+	 */
 	public List<Estante> darEstantesPorSucursal(long idSucursal)
 	{
 		return sqlEstante.darEstantesSucursal(pmf.getPersistenceManager(), idSucursal);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla ESTANTE, con el identificador dado.
+	 * @param id - El identificador de la bodega estante.
+	 * @return El objeto tipo Estante construido con base en las tuplas de la tabla Estante.
+	 */
 	public Estante darEstante(long id)
 	{
 		return sqlEstante.darEstante(pmf.getPersistenceManager(), id );
@@ -1378,7 +1520,15 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla productosEnBodega
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que adiciona, de manera transaccional, una tupla en la tabla PRODUCTOSENBODEGA.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param idBodega - Id de la bodega que almacena el producto.
+	 * @param cantidad - La cantidad de unidades del producto almacenado en la bodega.
+	 * @param nivelAbastecimiento - Nivel de abastecimiento de ese producto en bodega.
+	 * @param codigoBarrasProducto - El identificador del tepmrafo
+	 * @return El objeto tipo ProductosEnBodega adicionado. Null si ocurre alguna Exception.
+	 */
 	public ProductosEnBodega adicionarProductosEnBodega(long idBodega, int cantidad, int nivelAbastecimiento, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1409,7 +1559,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional una tupla en la tabla PRODUCTOSENBODEGA.
+	 * @param idBodega - Id de la bodega.
+	 * @param codigoBarrasProducto - Código de barras del producto eliminado de la bodega.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarProductoEnBodega(long idBodega, String codigoBarrasProducto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1437,25 +1592,42 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla PRODUCTOSENBODEGA de la base de datos, que hacen parte de una bodega.
+	 * @param idBodega - Identificador de la bodega.
+	 * @return Una lista de Objetos ProductosEnBodega, construidos con base en las tuplas de la tabla PRODUCTOSENBODEGA.
+	 */
 	public List<ProductosEnBodega> darProductosEnBodega(long idBodega)
 	{
 		return sqlProductosEnBodega.darProductosEnBodega(pmf.getPersistenceManager(), idBodega);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla PRODUCTOSENBODEGA de la base de datos.
+	 * @return Una lista de objetos ProductosEnBodega construido con base en las tuplas de la tabla Estante.
+	 */
 	public List<ProductosEnBodega> darTodosProductosBodegas()
 	{
 		return sqlProductosEnBodega.darTodosProductosBodegas(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla PRODUCTOSENBODEGA de la base de datos, que tienen almacenado un producto.
+	 * @param codigoBarrasProducto - El identificador del producto del cual se quieren conocer las bodegas que lo almacenan.
+	 * @return Una lista de objetos ProductosEnBodega, construidos con base en las tuplas de la tabla PRODUCTOSENBODEGA.
+	 */
 	public List<ProductosEnBodega> darBodegasProducto(String codigoBarrasProducto)
 	{
 		return sqlProductosEnBodega.darBodegasProducto(pmf.getPersistenceManager(), codigoBarrasProducto);
 	}
-
-
+	
+	/**
+	 * Método que aumenta la cantidad de productos en Bodega de todas las tuplas en la tabla con identificador dado.
+	 * @param idBodega - Identificador de la bodega con el producto que se desean aumentar las unidades.
+	 * @param codigoBarrasProducto - Producto del que se van a aumentar las unidades.
+	 * @param productosPedidos - El número de unidades a aumentar del producto en la bodega dada.
+	 * @return El numero de tuplas modificadas,-1 Si ocurre alguna Exception.
+	 */
 	public long aumentarProductosEnBodega( long idBodega, String codigoBarrasProducto, int productosPedidos )
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1483,15 +1655,21 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
-	public long disminuirProductosEnBodega(long bodega, String producto, int pasadosAEstante )
+	/**
+	 * Método que disminuye la cantidad de productos en Bodega de todas las tuplas en la tabla con el identificador dado.
+	 * @param idBodega - Identificador de la bodega con el producto que se desean disminuir las unidades.
+	 * @param codigoBarrasProducto - Producto del que se van a disminuir las unidades.
+	 * @param cantidadAQuitar - El número de unidades a disminuir del producto en la bodega dada.
+	 * @return El numero de tuplas modificadas,-1 Si ocurre alguna Exception.
+	 */
+	public long disminuirProductosEnBodega(long idBodega, String codigoBarrasProducto, int cantidadAQuitar )
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlProductosEnBodega.disminuirProductosEnBodega(pm, bodega, producto, pasadosAEstante);
+			long resp = sqlProductosEnBodega.disminuirProductosEnBodega(pm, idBodega, codigoBarrasProducto, cantidadAQuitar);
 			tx.commit();
 			return resp;
 		}
@@ -1516,7 +1694,14 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla productosEnEstante
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que adiciona, de manera transaccional, una tupla en la tabla PRODUCTOSENESTANTE.
+ 	 * Adiciona entradas al log de la aplicación.
+	 * @param idEstante - Identificador del estante que almacena el producto.
+	 * @param cantidad - Cantidad de unidades del producto en el estante.
+	 * @param codigoBarrasProducto - Identificador del producto almacenado en el estante.
+	 * @return El objeto tipo ProductosEnEstante adicionado. Null si ocurre alguna Exception.
+	 */
 	public ProductosEnEstante adicionarProductosEnEstante(long idEstante, int cantidad, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1547,7 +1732,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional una tupla en la tabla PRODUCTOSENESTANTE.
+	 * @param idEstante - Identificador del estante que almacena el producto.
+	 * @param codigoBarrasProducto - Identificador del producto almacenado en el estante que se desea eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarProductosEnEstante(long idEstante, String codigoBarrasProducto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -1575,33 +1765,51 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla PRODUCTOSENESTANTE de la base de datos, que hacen parte de un estante.
+	 * @param idEstante - Identificador del estante.
+	 * @return Una lista de objetos ProductosEnEstante, construidos con base en las tuplas de la tabla PRODUCTOSENESTANTE.
+	 */
 	public List<ProductosEnEstante> darProductosEnEstante(long idEstante)
 	{
 		return sqlProductosEnEstante.darProductosEnEstante(pmf.getPersistenceManager(), idEstante);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla PRODUCTOSENESTANTE, con el identificador dado.
+	 * @param idEstante - Identificador del producto en estante.
+	 * @param codigoBarrasProducto - Identificador del producto en estante.
+	 * @return El objeto tipo ProductoEnEstante construido con base en las tuplas de la tabla ProductoEnEstante.
+	 */
 	public ProductosEnEstante darProductoEnEstante (long idEstante,  String codigoBarrasProducto) 
 	{
 		return sqlProductosEnEstante.darProductoEnEstante(pmf.getPersistenceManager(), idEstante, codigoBarrasProducto);
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas de la tabla PRODUCTOSENESTANTE.
+	 * @return Una lista de objetos ProductosEnEstante construido con base en las tuplas de la tabla Productos en estante.
+	 */
 	public List<ProductosEnEstante> darTodosProductosEnEstantes()
 	{
 		return sqlProductosEnEstante.darTodosProductosEnEstantes(pmf.getPersistenceManager());
 	}
 
-
-	public long traerDeBodega(long idEstante, int productosTraidos, String codigoBarrasProducto)
+	/**
+	 * Método que aumenta la cantidad de productos en el estante.
+	 * @param idEstante - Identificador del estante que almacena el producto.
+	 * @param productosAAumentar - Cantidad de productos a aumentar en el estante.
+	 * @param codigoBarrasProducto - Identificador del producto del que se van a aumentar existencias.
+	 * @return El número de tuplas modificadas, -1 si ocurre alguna Exception.
+	 */
+	public long aumentarCantidadProductosEnEstante(long idEstante, int productosAAumentar, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlProductosEnEstante.traerDeBodega(pm, idEstante, productosTraidos, codigoBarrasProducto);
+			long resp = sqlProductosEnEstante.aumentarCantidadProductoEnEstante(pm, idEstante, productosAAumentar, codigoBarrasProducto);
 			tx.commit();
 			return resp;
 		}
@@ -1621,15 +1829,21 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
-	public long quitarProductosEstante(long idEstante, int productosVendidos, String codigoBarrasProducto)
+	/**
+	 * Método que disminuye la cantidad de productos en el estante.
+	 * @param idEstante - Identificador del estante que almacena el producto.
+	 * @param productosADisminuir - Cantidad de productos a disminuir en el estante.
+	 * @param codigoBarrasProducto - Identificador del producto del que se van a disminuir existencias.
+	 * @return El número de tuplas modificadas, -1 si ocurre alguna Exception.
+	 */
+	public long quitarProductosEstante(long idEstante, int productosADisminuir, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlProductosEnEstante.quitarProductosEstante(pm, idEstante, productosVendidos, codigoBarrasProducto);
+			long resp = sqlProductosEnEstante.disminuirProductoEnEstante(pm, idEstante, productosADisminuir, codigoBarrasProducto);
 			tx.commit();
 			return resp;
 		}
@@ -1746,7 +1960,6 @@ public class PersistenciaSuperAndes {
 	{
 		return sqlPersonaNatural.darPersonaNatural(pmf.getPersistenceManager(), documento);
 	}	
-
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla Empresa
@@ -1940,14 +2153,277 @@ public class PersistenciaSuperAndes {
 	// Métodos de CarritoCompras 
 	// -----------------------------------------------------------------
 
-	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla CARRITOCOMPRAS.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param cliente - Cliente del carrito de compras.
+	 * @return El objeto CarritoCompras adicionado. Null si ocurre alguna Exception.
+	 */
+	public CarritoCompras adicionarCarritoCompras(String cliente)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long id = nextval();
+			long tuplasInsertadas = sqlCarritoCompras.adicionarCarritoCompras(pm, id, cliente);
+			tx.commit();
+			
+			log.trace("Inserción del CarritoCompras con el id: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
+			return new CarritoCompras(id, cliente);
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return null;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla CarritoCompras, con el identificador dado.
+	 * @param id - El identificador del carrito de compras.
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
+	public long eliminarCarritoCompras(long id)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlCarritoCompras.eliminarCarritoCompras(pm, id);
+			tx.commit();
+			return resp;
+		}
+		catch (Exception e) 
+		{
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla CarritoCompras con un identificador dado.
+	 * @param id - El identificador del carrito de compras.
+	 * @return El objeto CarritoCompras, construido con base en las tuplas de la tabla CARRITOCOMPRAS con el identificador dao.
+	 */
+	public CarritoCompras darCarritoComprasPorId(long id)
+	{
+		return sqlCarritoCompras.darCarritoComprasPorId(pmf.getPersistenceManager(), id);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla CarritoCompras con el cliente dado.
+	 * @param cliente - El cliente del carrito.
+	 * @return El Objeto CarritoCompras, construido con base en las tuplas de la tabla CARRITOCOMPRAS.
+	 */
+	public CarritoCompras darCarritoComprasPorCliente(String cliente)
+	{
+		return sqlCarritoCompras.darCarritoComprasPorCliente(pmf.getPersistenceManager(), cliente);
+	}
+
+	/**
+	 * Método que consulta todas las tuplas en la tabla CarritoCompras.
+	 * @return La lista de objetos CarritoCompras, construidos con base en las tuplas de la tabla CARRITOSCOMPRA.
+	 */
+	public List<CarritoCompras> darTodosCarritosCompras()
+	{
+		return sqlCarritoCompras.darTodosCarritosCompras(pmf.getPersistenceManager());
+	}
+	
 	// -----------------------------------------------------------------
 	// Métodos de Producto Carrito Compras
 	// -----------------------------------------------------------------
 
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla ProductoCarritoCompas.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param carrito - Identificador del carrito al que se agrega un producto.
+	 * @param cantidad - Cantidad de unidades del producto agregadas al carrito.
+	 * @param codigoBarrasProducto - El producto agregado al carrito.
+	 * @return El objeto ProductoCarritoCompras adicionado. Null si ocurre alguna Exception.
+	 */
+	public ProductoCarritoCompras adicionarProductoCarrito(long carrito, int cantidad, String codigoBarrasProducto)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long tuplasInsertadas = sqlProductoCarritoCompras.adicionarPoductoCarrito(pm, carrito, cantidad, codigoBarrasProducto);
+            tx.commit();
+            
+            log.trace ("Inserción de productoCarritoCompras: carrito->" + carrito + " producto->" + codigoBarrasProducto + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new ProductoCarritoCompras(carrito, cantidad, codigoBarrasProducto);
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla ProductoCarritoCompras, dado su identificador.
+	 * @param carrito - El identificador.
+	 * @param codigoBarrasProducto - El identificador.
+	 * @return Número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
+	public long eliminarProductoCarrito(long carrito, String codigoBarrasProducto)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProductoCarritoCompras.eliminarProductoCarrito(pm, carrito, codigoBarrasProducto);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla ProductoCarritoCompras con un identificador dado.
+	 * @param carrito - Identificador de la tabla.
+	 * @param codigoBarrasProducto - Identificador de la tabla.
+	 * @return El objeto tipo ProductoCarritoCompras, construido con base en las tuplas de la tabla PRODUCTOCARRITOCOMPRAS con el identificador dado.
+	 */
+	public ProductoCarritoCompras darProductoCarrito(long carrito, String codigoBarrasProducto)
+	{
+		return sqlProductoCarritoCompras.darProductoCarrito(pmf.getPersistenceManager(), carrito, codigoBarrasProducto);
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla ProductoCarritoCompras que pertenecen al carrito dado por identificador.
+	 * @param carrito - El identificador del carrito dueño de los productos.
+	 * @return La lista de objetos ProductoCarritoCompras, construidos con base en las tuplas de la tabla PRODUCTOSCARRITOCOMPRAS.
+	 */
+	public List<ProductoCarritoCompras> darTodosProductosDeUnCarrito(long carrito)
+	{
+		return sqlProductoCarritoCompras.darTodosProductosDeUnCarrito(pmf.getPersistenceManager(), carrito);
+	}
+	
+	/**
+	 * Método que consulta todas las tablas de tuplas de la tabla ProductoCarritoCompras.
+	 * @return La lista de objetos ProductosCarritoCompras, construidos con base en las tuplas de la tabla PRODUCTOSCARRITOCOMPRA.
+	 */
+	public List<ProductoCarritoCompras> darTodosProductosCarrito()
+	{
+		return sqlProductoCarritoCompras.darTodosProductosCarrito(pmf.getPersistenceManager());
+	}
+	
+	/**
+	 * Método que aumenta la cantidad del producto en el carrito de compras, de manera transaccional.
+	 * @param carrito - Identificador del productoCarritoComras.
+	 * @param codigoBarrasProducto - Identificador del productoCarritoCompras.
+	 * @param productosAgregados - El número de unidades agregadas al carrito de compras.
+	 * @return El número de tuplas modificadas. -1 si ocurre alguna Exception.
+	 */
+	public long aumentarUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto, int productosAgregados)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProductoCarritoCompras.aumentarUnidadesProductoCarritoCompras(pm, carrito, codigoBarrasProducto, productosAgregados);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+        
+	}
+	
+	/**
+	 * Método que disminuye la cantidad del producto en el carrito de compras, de manera transaccional.
+	 * @param carrito - Identificador del productoCarritoComras.
+	 * @param codigoBarrasProducto - Identificador del productoCarritoCompras.
+	 * @param productosDevueltos - El número de unidades disminuidos al carrito de compras.
+	 * @return El número de tuplas modificadas. -1 si ocurre alguna Exception.
+	 */
+	public long disminuirUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto, int productosDevueltos)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlProductoCarritoCompras.disminuirUnidadesProductoCarritoCompras(pm, carrito, codigoBarrasProducto, productosDevueltos);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla Factura

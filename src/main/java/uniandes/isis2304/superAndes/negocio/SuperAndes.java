@@ -1067,7 +1067,7 @@ public class SuperAndes {
 	public long traerDeBodega(long idEstante, int productosTraidos, String codigoBarrasProducto)
 	{
 		log.info("Traer productos de bodega.");
-		long cambios = psa.traerDeBodega(idEstante, productosTraidos, codigoBarrasProducto);
+		long cambios = psa.aumentarCantidadProductosEnEstante(idEstante, productosTraidos, codigoBarrasProducto);
 		return cambios;
 	}
 	

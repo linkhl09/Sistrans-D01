@@ -119,14 +119,14 @@ class SQLProductosEnEstante {
 	 * Crea y ejecuta la sentencia SQL para aumentar las existencias de un producto en el estante.
 	 * @param pm - El manejador de persistencia.
 	 * @param idEstante - El identificador del estante. 
-	 * @param productosTraidos - Número de unidades a aumentar.
+	 * @param productosAAumentar - Número de unidades a aumentar.
 	 * @param codigoBarrasProducto - El producto del que trajeron unidades de bodega..
 	 * @return El número de tuplas modificadas.
 	 */
-	public long traerDeBodega(PersistenceManager pm, long idEstante, int productosTraidos, String codigoBarrasProducto)
+	public long aumentarCantidadProductoEnEstante(PersistenceManager pm, long idEstante, int productosAAumentar, String codigoBarrasProducto)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnEstante() + "SET cantidad = cantidad + ? WHERE idEstante = ? AND codigoBarrasProducto = ?");
-		q.setParameters(productosTraidos, idEstante, codigoBarrasProducto);
+		q.setParameters(productosAAumentar, idEstante, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
 	
@@ -134,14 +134,14 @@ class SQLProductosEnEstante {
 	 * Crea y ejecuta la sentencia SQL para disminuir los productos del estante.
 	 * @param pm - El manejador de persistencia.
 	 * @param idEstante - EL identificador del estante.
-	 * @param productosVendidos - Número de productos sacados del estante.
+	 * @param productosADisminuir - Número de productos sacados del estante.
 	 * @param codigoBarrasProducto - El identificador del producto.
 	 * @return El número de tuplas modificadas.
 	 */
-	public long quitarProductosEstante(PersistenceManager pm, long idEstante, int productosVendidos, String codigoBarrasProducto)
+	public long disminuirProductoEnEstante(PersistenceManager pm, long idEstante, int productosADisminuir, String codigoBarrasProducto)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProductosEnEstante() + "SET cantidad = cantidad - ? WHERE idEstante = ? AND codigoBarrasProducto = ?");
-		q.setParameters(productosVendidos, idEstante, codigoBarrasProducto);
+		q.setParameters(productosADisminuir, idEstante, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
 }

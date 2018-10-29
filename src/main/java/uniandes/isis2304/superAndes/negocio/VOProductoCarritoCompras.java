@@ -7,7 +7,7 @@ package uniandes.isis2304.superAndes.negocio;
  * 
  * @author Andrés Hernández
  */
-public interface VOProductoCarrito 
+public interface VOProductoCarritoCompras 
 {
 	/**
 	 * @return El identificador del carrito de compras.

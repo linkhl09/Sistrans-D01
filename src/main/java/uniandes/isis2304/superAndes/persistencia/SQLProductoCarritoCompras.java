@@ -4,7 +4,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.superAndes.negocio.ProductoCarrito;
+import uniandes.isis2304.superAndes.negocio.ProductoCarritoCompras;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto PRODUCTO CARRITO COMPRAS.
@@ -82,12 +82,12 @@ class SQLProductoCarritoCompras
 	 * @param codigoBarrasProducto - El codigo de barras del producto que esta en el carrito.
 	 * @return El objeto de tipo ProductoCarrito que tiene el identificador dado.
 	 */
-	public ProductoCarrito darProductoCarrito(PersistenceManager pm, long carrito, String codigoBarrasProducto)
+	public ProductoCarritoCompras darProductoCarrito(PersistenceManager pm, long carrito, String codigoBarrasProducto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoCarritoCompras() + " WHERE carrito = ? AND codigoBarrasProducto =?");
 		q.setParameters(carrito, codigoBarrasProducto);
-		q.setResultClass(ProductoCarrito.class);
-		return (ProductoCarrito) q.executeUnique();
+		q.setResultClass(ProductoCarritoCompras.class);
+		return (ProductoCarritoCompras) q.executeUnique();
 	}
 	
 	/**
@@ -96,12 +96,12 @@ class SQLProductoCarritoCompras
 	 * @param carrito - El carrito que se quiere saber que productos lleva.
 	 * @return Lista de objetos ProductosCarrito que pertenecen al carrito con el identificador dado.
 	 */
-	public List<ProductoCarrito> darTodosProductosDeUnCarrito(PersistenceManager pm, long carrito)
+	public List<ProductoCarritoCompras> darTodosProductosDeUnCarrito(PersistenceManager pm, long carrito)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoCarritoCompras() + " WHERE carrito = ?");
 		q.setParameters(carrito);
-		q.setResultClass(ProductoCarrito.class);
-		return (List<ProductoCarrito>) q.executeList();
+		q.setResultClass(ProductoCarritoCompras.class);
+		return (List<ProductoCarritoCompras>) q.executeList();
 	}
 	
 	/**
@@ -109,11 +109,11 @@ class SQLProductoCarritoCompras
 	 * @param pm - El manejador de persistencia.
 	 * @return Una lista con todos los productoCarrito de la base de datos.
 	 */
-	public List<ProductoCarrito> darTodosProductosCarrito(PersistenceManager pm)
+	public List<ProductoCarritoCompras> darTodosProductosCarrito(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoCarritoCompras());
-		q.setResultClass(ProductoCarrito.class);
-		return (List<ProductoCarrito>) q.executeList();
+		q.setResultClass(ProductoCarritoCompras.class);
+		return (List<ProductoCarritoCompras>) q.executeList();
 	}
 	
 	/**
