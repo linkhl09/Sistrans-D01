@@ -490,22 +490,15 @@ public class SuperAndes {
 	// Métodos de tabla Bodega
 	// -----------------------------------------------------------------
 
-<<<<<<< HEAD
-	public Factura adicionarFactura( String direccion, 
-			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String correoCliente, long idSucursal)
-	{
-		log.info ("Adicionando factura: " + fecha.toString() );
-		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);	
-		log.info ("Adicionado");
-=======
+
+	
+
 
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Bodega");
 		Bodega agregado = psa.adicionarBodega(capacidadVol, capacidadPeso, tipo, idSucursal);	
 		log.info ("Bodega adicionada");
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
 		return agregado;
 	}
 
@@ -923,12 +916,8 @@ public class SuperAndes {
 	// Métodos de tabla CarritoCompras
 	// -----------------------------------------------------------------
 
-<<<<<<< HEAD
-	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
-	{
-		log.info ("Adicionando  ProductoOrdenPedido: " );
-		ProductoOrdenPedido agregado = psa.adicionarProductoOrdenPedido(pedido, cantidad, calidad, producto, fechaAgregado);
-=======
+
+
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla Producto Carrito Compras
@@ -940,13 +929,17 @@ public class SuperAndes {
 	// Métodos de tabla Factura
 	// -----------------------------------------------------------------
 
+	
+	
+
+
 	public Factura adicionarFactura( String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String cliente)
+			int puntosCompra, String correoCliente, long idSucursal)
 	{
 		log.info ("Adicionando factura: " + fecha.toString() );
-		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, cliente);	
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
+		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);	
+
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -1228,10 +1221,11 @@ public class SuperAndes {
 	// Métodos de tabla ProductoOrdenPedido
 	// -----------------------------------------------------------------
 
-	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto)
+
+	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
 	{
 		log.info ("Adicionando  ProductoOrdenPedido: " );
-		ProductoOrdenPedido agregado = psa.adicionarProductoOrdenPedido(pedido, cantidad, calidad, producto);
+		ProductoOrdenPedido agregado = psa.adicionarProductoOrdenPedido(pedido, cantidad, calidad, producto, fechaAgregado);
 		log.info ("Adicionado");
 		return agregado;
 	}
