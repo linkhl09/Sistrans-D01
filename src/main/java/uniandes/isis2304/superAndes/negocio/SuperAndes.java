@@ -490,10 +490,6 @@ public class SuperAndes {
 	// Métodos de tabla Bodega
 	// -----------------------------------------------------------------
 
-
-	
-
-
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Bodega");
@@ -879,29 +875,29 @@ public class SuperAndes {
 
 	public List<Cliente> darClientes()
 	{
-		log.info ("Consultando ");
+		log.info ("Consultando Clientes: ");
 		List<Cliente> list = psa.darClientes();	
-		log.info ("Consultando : " + list.size() + " existentes");
+		log.info ("Consultando Clientes: " + list.size() + " existentes");
 		return list;
 	}
 
 	public List<VOCliente> darVOCliente()
 	{
-		log.info ("Generando los VO de ");        
+		log.info ("Generando los VO de Clientes");        
 		List<VOCliente> list = new LinkedList<VOCliente> ();
 		for (Cliente tb : psa.darClientes())
 		{
 			list.add (tb);
 		}
-		log.info ("Generando los VO de : " + list.size() + " existentes");
+		log.info ("Generando los VO de Clientes: " + list.size() + " existentes");
 		return list;
 	}
 
 	public Cliente darCliente (String correoElectronico)
 	{
-		log.info ("Dar información de ");
+		log.info ("Dar información de Cliente");
 		Cliente buscado = psa.darCliente(correoElectronico);
-		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		log.info ("Buscando Cliente: " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
 
@@ -909,6 +905,7 @@ public class SuperAndes {
 	{
 		log.info("Aumentar puntos del cliente.");
 		long cambios = psa.aumentarPuntos(correoElectronico, puntos);
+		log.info("Se aumentaron en "+ puntos + " los puntos del cliente.");
 		return cambios;
 	}
 
@@ -916,30 +913,120 @@ public class SuperAndes {
 	// Métodos de tabla CarritoCompras
 	// -----------------------------------------------------------------
 
+	public CarritoCompras adicionarCarritoCompras(String cliente)
+	{
+		log.info("Adicionando carrito compras al cliente: " + cliente);
+		CarritoCompras agregado = psa.adicionarCarritoCompras(cliente);
+		log.info("Adicionado carritoCompras");
+		return agregado;
+	}
 
-
-
+	public long eliminarCarritoCompras(long id)
+	{
+		log.info("Eliminando carritoCompras: " + id);
+		long resp = psa.eliminarCarritoCompras(id);
+		log.info("Eliminando CarritoCompras: " + id + " tuplas eliminadas.");
+		return resp;
+	}
+	
+	public CarritoCompras darCarritoComprasPorId(long id)
+	{
+		log.info("Dar información de CarritoCompras con id: " + id);
+		CarritoCompras buscado = psa.darCarritoComprasPorId(id);
+		log.info("Buscando CarritoComrpas: " + buscado != null ? buscado.toString() : "NO EXISTE.");
+		return buscado;
+	}
+	
+	
+	public CarritoCompras darCarritoComprasPorCliente(String cliente)
+	{
+		log.info("Dar información de carrito de compras con cliente: " + cliente);
+		CarritoCompras buscado = psa.darCarritoComprasPorCliente(cliente);
+		log.info("Buscando CarritoComrpas: " + buscado != null ? buscado.toString() : "NO EXISTE.");
+		return buscado;		
+	}
+	
+	public List<CarritoCompras> darTodosCarritosCompras()
+	{
+		log.info("Consultando todos CarritosCompras.");
+		List<CarritoCompras> list = psa.darTodosCarritosCompras();
+		log.info("Consultando CarritosCompras: " + list.size() + " existentes." );
+		return list;
+	}
+	
+	public List<VOCarritoCompras> darVOCarritoCompras()
+	{
+		log.info("Generando los VO de CarritoCompras");
+		List<VOCarritoCompras> list = new LinkedList<VOCarritoCompras>();
+		for(CarritoCompras tb : psa.darTodosCarritosCompras())
+			list.add(tb);
+		log.info("Generando los VO de CarritoCompras: " + list.size() +" existentes.");
+		return list;
+	}
+	
 	// -----------------------------------------------------------------
 	// Métodos de tabla Producto Carrito Compras
 	// -----------------------------------------------------------------
 
-
+	public ProductoCarritoCompras adicionarProductoCarrito(long carrito, int cantidad, String codigoBarrasProducto)
+	{
+		log.info("Adicionando ProductoCarritoCompras: " + carrito);
+		ProductoCarritoCompras agregado = psa.adicionarProductoCarrito(carrito, cantidad, codigoBarrasProducto);
+		log.info("Adicionado ProductoCarritoCompras.");
+		return agregado;
+	}
+	
+	public long eliminarProductoCarrito(long carrito, String codigoBarrasProducto)
+	{
+		log.info("Eliminando CarritoCompras: carrito-"+carrito + " producto-" + codigoBarrasProducto);
+		long resp = psa.eliminarProductoCarrito(carrito, codigoBarrasProducto);
+		log.info("Eliminando CarritoCompras: " + resp + " tuplas eliminadas");
+		return resp;
+	}
+	
+	public ProductoCarritoCompras darProductoCarrito(long carrito, String codigoBarrasProducto)
+	{
+		log.info("Consultando ProductoCarritoCompras: carrito-" + carrito + " producto-" + codigoBarrasProducto);
+		ProductoCarritoCompras buscado = psa.darProductoCarrito(carrito, codigoBarrasProducto);
+		log.info("Consultando carrito de compras" + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
+	
+	public List<ProductoCarritoCompras> darTodosProductosDeUnCarrito(long carrito)
+	{
+		log.info("Consultando todos ProductoCarritoCompras");
+		List<ProductoCarritoCompras> list = psa.darTodosProductosCarrito();
+		log.info("Consultando todos ProductoCarritoCompras: " + list.size() + " existentes.");
+		return list;
+	}
+	
+	public long aumentarUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto , int productosAgregados)
+	{
+		log.info("Aumentando unidades del producto: " + codigoBarrasProducto + " en el carrito: " + carrito);
+		long resp = psa.aumentarUnidadesProductoCarritoCompras(carrito, codigoBarrasProducto, productosAgregados);
+		log.info("Aumentadas las unidades del producto en el carrito.");
+		return resp;
+	}
+	
+	
+	public long disminuirUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto, int productosDevueltos)
+	{
+		log.info("Disminuyendo unidades del producto: " + codigoBarrasProducto + " en el carrito: " + carrito);
+		long resp = psa.disminuirUnidadesProductoCarritoCompras(carrito, codigoBarrasProducto, productosDevueltos);
+		log.info("Disminuidas las unidades del producto en el carrito.");
+		return resp;
+	}
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla Factura
 	// -----------------------------------------------------------------
-
-	
-	
-
 
 	public Factura adicionarFactura( String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
 			int puntosCompra, String correoCliente, long idSucursal)
 	{
 		log.info ("Adicionando factura: " + fecha.toString() );
-		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);	
-
+		Factura agregado = psa.adicionarFactura(direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -1220,7 +1307,6 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 	// Métodos de tabla ProductoOrdenPedido
 	// -----------------------------------------------------------------
-
 
 	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
 	{
