@@ -1868,12 +1868,8 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla personaNatural
 	// -----------------------------------------------------------------
 
-<<<<<<< HEAD
 
-	public Factura adicionarFactura(  String direccion, 
-			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String correoCliente, long idSucursal)
-=======
+
 	/**
 	 * Método que inserta, de manera transaccional, una tupla en la tabla PersonaNatural.
 	 * Adiciona entradas al log de la aplicacion.
@@ -1884,32 +1880,23 @@ public class PersistenciaSuperAndes {
 	 * @return El objeto PersonaNatural adicionado. null si ocurre alguna Exception.
 	 */
 	public PersonaNatural adicionarPersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre)
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-<<<<<<< HEAD
-			long numero = nextval();
-			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
-			tx.commit();
-=======
+			
 			long tuplasInsertadas = sqlPersonaNatural.adicionarPersonaNatural(pm, documento, tipoDocumento);
 			long tuplasInsertadas2 = sqlCliente.adicionarClientePersonaNatural(pm, correoElectronico, nombre,documento);
 			tx.commit();			
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
 
 			log.trace("Inserción de la persona natural con documento: " + documento + ": " + tuplasInsertadas + " tuplas insertadas.");
 			log.trace("Inserción del cliente con correoElectronico: " + correoElectronico + ": " + tuplasInsertadas2 + " tuplas insertadas."); 
 
-<<<<<<< HEAD
-			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
-=======
+
 			return new PersonaNatural(documento, tipoDocumento, correoElectronico, nombre, 0);
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
-		}
+	}
 		catch (Exception e)
 		{
 			//        	e.printStackTrace();
@@ -2448,9 +2435,10 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 
+
 	public Factura adicionarFactura(  String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String correoCliente)
+			int puntosCompra, String correoCliente, long idSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -2458,12 +2446,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numero = nextval();
-			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente);
+			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
 			tx.commit();
 
 			log.trace("Inserción de la factura con el numero: " + numero + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente);
+			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
 		}
 		catch (Exception e)
 		{
@@ -2636,10 +2624,9 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
 
-<<<<<<< HEAD
+
 	
-	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
-=======
+
 	/**
 	 * Método que inserta, de manera transaccional, una tupla en la tabla Proveedor.
 	 * Adiciona entradas al log de la aplicacion.
@@ -2649,28 +2636,22 @@ public class PersistenciaSuperAndes {
 	 * @return El objeto Proveedor adicionado. null si ocurre alguna Exception.
 	 */
 	public Proveedor adicionarProveedor(String nit, String nombre, double calificacion)
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
+
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-<<<<<<< HEAD
-			long tuplasInsertadas = sqlProductoOrdenPedido.adicionarProductoOrdenPedido(pm, pedido, cantidad, calidad, producto, fechaAgregado);
-=======
-			long tuplasInsertadas = sqlProveedor.adicionarProveedor(pm, nit, nombre, calificacion);
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
+
+		long tuplasInsertadas = sqlProveedor.adicionarProveedor(pm, nit, nombre, calificacion);
+
 			tx.commit();
 
 			log.trace("Inserción de Proveedor con nit: " + nit + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-<<<<<<< HEAD
-			return new ProductoOrdenPedido(pedido, cantidad, calidad, producto, fechaAgregado) ;
-=======
 			return new Proveedor(nit, nombre, calificacion);
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
-		}
+	}
 		catch (Exception e)
 		{
 			//        	e.printStackTrace();
@@ -2997,19 +2978,18 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 
-	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto)
-	{
+	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado){
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlProductoOrdenPedido.adicionarProductoOrdenPedido(pm, pedido, cantidad, calidad, producto);
+			long tuplasInsertadas = sqlProductoOrdenPedido.adicionarProductoOrdenPedido(pm, pedido, cantidad, calidad, producto,fechaAgregado);
 			tx.commit();
 
 			log.trace("Inserción de asociacion de producto: " + producto + " al pedido: "+ pedido+ " : " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new ProductoOrdenPedido(pedido, cantidad, calidad, producto) ;
+			return new ProductoOrdenPedido(pedido, cantidad, calidad, producto, fechaAgregado) ;
 		}
 		catch (Exception e)
 		{
@@ -3070,7 +3050,7 @@ public class PersistenciaSuperAndes {
 	public PromDesc adicionarPromocionDescuento(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento)
 	{
-<<<<<<< HEAD
+
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
         try
@@ -3225,6 +3205,7 @@ public class PersistenciaSuperAndes {
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar las PROMOCIONES (DESCUENTO SEGUNDA UNIDAD)
+	 *                                  PromDescSegUnidad
 	 *****************************************************************/
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
@@ -3273,9 +3254,8 @@ public class PersistenciaSuperAndes {
             }
             pm.close();
         }
-=======
-		return sqlPromDescuento.darTodasPromDescuento(pmf.getPersistenceManager());
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
+
+		
 	}
 	
 	/**
@@ -3313,9 +3293,10 @@ public class PersistenciaSuperAndes {
 
 
 	
-<<<<<<< HEAD
+
 	/* ****************************************************************
 	 * 			Métodos para manejar las PROMOCIONES (pague n lleve m cantidad)
+	 *                            PromPagLleveCantidad
 	 *****************************************************************/
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
@@ -3331,11 +3312,7 @@ public class PersistenciaSuperAndes {
 	 **@param lleve -  cantidad del producto que se llevara 
 	 * @return El nÃºmero de tuplas insertadas
 	 */
-=======
-	// -----------------------------------------------------------------
-	// Métodos de tabla PromPagLleveUnid 
-	// -----------------------------------------------------------------
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
+
 	
 	public PromPagueLleveCant adicionarPromocionPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve )
@@ -3374,7 +3351,7 @@ public class PersistenciaSuperAndes {
         
 	}
 	
-<<<<<<< HEAD
+
 	/**
 	 * Método que elimina, de manera transaccional, una tupla en la tabla PromDesc, dado el numero de la promocion
 	 * Adiciona entradas al log de la aplicación
@@ -3384,44 +3361,33 @@ public class PersistenciaSuperAndes {
 	public long eliminarPromPagueLleveCant(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
-        Transaction tx=pm.currentTransaction();
-        try
-        {
-            tx.begin();
-            long resp = sqlPromPagLleveCatidad.eliminarPromPagLleveCatidadPornumeroPromo(pm, id);
-            tx.commit();
-            return resp;
-        }
-        catch (Exception e)
-        {
-//        	e.printStackTrace();
-        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-            return -1;
-        }
-        finally
-        {
-            if (tx.isActive())
-            {
-                tx.rollback();
-            }
-            pm.close();
-        }
-	}
-}
-	
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlPromPagLleveCatidad.eliminarPromPagLleveCatidadPornumeroPromo(pm, id);
+			tx.commit();
+			return resp;
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	} 
 
-=======
-	
-	// -----------------------------------------------------------------
-	// Métodos de tabla PromDescSegUnidad
-	// -----------------------------------------------------------------
-	
-	
-	
-	// -----------------------------------------------------------------
-	// Métodos de tabla PromPagLleveCantidad
-	// -----------------------------------------------------------------
+
+
 	
 	
 }
->>>>>>> e60b7ca48d70183da40d3becd6f4d3b77474b91f
+
