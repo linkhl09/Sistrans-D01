@@ -1,5 +1,6 @@
 package uniandes.isis2304.superAndes.persistencia;
 
+
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -1414,7 +1415,7 @@ public class PersistenciaSuperAndes {
 
 	public Factura adicionarFactura(  String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
-			int puntosCompra, String correoCliente)
+			int puntosCompra, String correoCliente, long idSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -1422,12 +1423,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numero = nextval();
-			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente);
+			long tuplasInsertadas = sqlFactura.adicionarFactura(pm, numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
 			tx.commit();
 
 			log.trace("Inserción de la factura con el numero: " + numero + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente);
+			return new Factura(numero, direccion, fecha, nombreCajero, valorTotal, pagoExitoso, puntosCompra, correoCliente, idSucursal);
 		}
 		catch (Exception e)
 		{
@@ -1955,19 +1956,19 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	
-	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto)
+	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlProductoOrdenPedido.adicionarProductoOrdenPedido(pm, pedido, cantidad, calidad, producto);
+			long tuplasInsertadas = sqlProductoOrdenPedido.adicionarProductoOrdenPedido(pm, pedido, cantidad, calidad, producto, fechaAgregado);
 			tx.commit();
 
 			log.trace("Inserción de asociacion de producto: " + producto + " al pedido: "+ pedido+ " : " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new ProductoOrdenPedido(pedido, cantidad, calidad, producto) ;
+			return new ProductoOrdenPedido(pedido, cantidad, calidad, producto, fechaAgregado) ;
 		}
 		catch (Exception e)
 		{
@@ -2474,24 +2475,345 @@ public class PersistenciaSuperAndes {
 		return sqlSucursalProducto.darTodosProductosSucursales(pmf.getPersistenceManager());
 	}
 	
-	public List<PromDesc> darTodasPromDescuento()
-	{
+	/* ****************************************************************
+	 * 			Métodos para manejar las PROMOCIONES (DESCUENTO)
+	 *****************************************************************/
+	/**@param pFechaInicio fecha en la cual se inicia la promocion
+	/**@param fechaFin fecha en la cual se finaliza la promocion
+	/**@param producto  producto que esta en promocion
+	 * @param tipoProm tipo de promocion 1: PromPagLleveUni , 2: PronDesc , 3: PronSegunUnidDesc, 4 : PromPagueLleveCant
+	 *   @param   descuento   porcentaje del descuento a  realizar
+    **/
 	
-		return sqlPromDescuento.darTodasPromDescuento(pmf.getPersistenceManager());
+	public PromDesc adicionarPromocionDescuento(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, int descuento)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long numeroPromo = nextval ();
+            long tuplasInsertadas = sqlPromDescuento.adicionarPromDescuento(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento); 
+            tx.commit();
+            
+            log.trace ("Inserción de promocion descuento: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromDesc(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+            
+            
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PromDesc, dado el numero de la promocion
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El numero de la promocion a eliinar
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromDesc (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromDescuento.eliminarPromDescuentoPorId(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
+	/* ****************************************************************
+	 * 			Métodos para manejar las PROMOCIONES (pague n lleve m unidades)
+	 *****************************************************************/
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
+	 * @param pm - El manejador de persistencia
+	 * @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param pague -  unidades del producto que se debe pagar  
+	 **@param lleve - unidades del producto que se llevara 
+	 * @return El objeto promPagueLleveUnidad adicionado
+	 */
+	
+	public PromPagueLleveUnid adicionarPromocionPagueLleveUnid (long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long numeroPromo = nextval ();
+            long tuplasInsertadas = sqlPromPagLlevUnidad.adicionarPromPagueLleveUnid(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+            tx.commit();
+            
+            log.trace ("Inserción de promocion pague n lleve m unidades: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromPagueLleveUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+            
+            
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PromDesc, dado el numero de la promocion
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El numero de la promocion a eliinar
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromPagueLleveUnidad (long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromPagLlevUnidad.eliminarPromPagLlevUnidadPorId(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
 
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar las PROMOCIONES (DESCUENTO SEGUNDA UNIDAD)
+	 *****************************************************************/
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
+	 * @param pm - El manejador de persistencia
+	 * @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param descuento -  porcentaje del descuento a  realizar   
+	 * @return El nÃºmero de tuplas insertadas
+	 */
 	
+	public PromSegUniDesc adicionarPromocionSegUnidDesc(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, int descuento)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long numeroPromo = nextval ();
+            long tuplasInsertadas = sqlPromDescSegUnid.adicionarPromDescSegUnid(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+            		
+            tx.commit();
+            
+            log.trace ("Inserción de promocion segunda unidad descuento: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromSegUniDesc(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+            
+            
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PromDesc, dado el numero de la promocion
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El numero de la promocion a eliinar
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromSegUniDesc(long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromDescSegUnid.eliminarPromDescSegUnidPorId(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
+
+
 	
+	/* ****************************************************************
+	 * 			Métodos para manejar las PROMOCIONES (pague n lleve m cantidad)
+	 *****************************************************************/
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
+	 * @param pm - El manejador de persistencia
+	 * @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param pague -  cantidad del producto que se debe pagar  
+	 **@param lleve -  cantidad del producto que se llevara 
+	 * @return El nÃºmero de tuplas insertadas
+	 */
 	
+	public PromPagueLleveCant adicionarPromocionPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve )
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long numeroPromo = nextval ();
+            long tuplasInsertadas = sqlPromPagLleveCatidad.adicionarPromPagueLleveCantidad(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+            tx.commit();
+            
+            log.trace ("Inserción de proveedor: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
+            
+            return new PromPagueLleveCant(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+            		
+            
+            
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+        	return null;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+        
+        
+	}
 	
-	
-	
-	
-	
-	
-	
-	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla PromDesc, dado el numero de la promocion
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El numero de la promocion a eliinar
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
+	 */
+	public long eliminarPromPagueLleveCant(long id) 
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+        Transaction tx=pm.currentTransaction();
+        try
+        {
+            tx.begin();
+            long resp = sqlPromPagLleveCatidad.eliminarPromPagLleveCatidadPornumeroPromo(pm, id);
+            tx.commit();
+            return resp;
+        }
+        catch (Exception e)
+        {
+//        	e.printStackTrace();
+        	log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+            return -1;
+        }
+        finally
+        {
+            if (tx.isActive())
+            {
+                tx.rollback();
+            }
+            pm.close();
+        }
+	}
 }
-	}	
+	
 

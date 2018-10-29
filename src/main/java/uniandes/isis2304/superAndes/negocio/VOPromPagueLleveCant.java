@@ -11,7 +11,7 @@ public interface VOPromPagueLleveCant {
 	/**
 	 * @return cantidad del producto que se debe pagar.
 	 */
-	public Integer getPague();
+	public double getPague();
 	/**
 	 * Asigna la cantidad que se debe pagar del producto.
 	 * @param cantidad a pagar.
@@ -21,7 +21,7 @@ public interface VOPromPagueLleveCant {
 	/**
 	 * @return  cantidad del producto que se llevara.
 	 */
-	public Integer getLleve();
+	public double getLleve();
 
 	/**
 	 * Asigna la cantidad de producto que se llevara.

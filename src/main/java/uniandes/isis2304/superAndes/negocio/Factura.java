@@ -76,6 +76,7 @@ public class Factura implements VOFactura {
 		this.pagoExitoso = false;
 		this.puntosCompra = 0;
 		this.correoCliente = "";
+		this.setIdSucursal((long) 0);
 	}
 
 	/**
@@ -90,7 +91,7 @@ public class Factura implements VOFactura {
 	 * @param cliente CLiente que realiza la compra.
 	 */
 	public Factura(long numero, String direccion, Date fecha, String nombreCajero, double valorTotal,
-			boolean pagoExitoso, int puntosCompra, String correoCliente) 
+			boolean pagoExitoso, int puntosCompra, String correoCliente, long idSucursal) 
 	{
 		this.numero = numero;
 		this.direccion = direccion;
@@ -100,6 +101,7 @@ public class Factura implements VOFactura {
 		this.pagoExitoso = pagoExitoso;
 		this.puntosCompra = puntosCompra;
 		this.correoCliente = correoCliente;
+		this.setIdSucursal(idSucursal);
 	}
     // -----------------------------------------------------------------
     // Métodos.
@@ -248,5 +250,13 @@ public class Factura implements VOFactura {
 		return "Factura [numero =" + numero + ", direccion =" + direccion + ", fecha =" + fecha.toString() 
 				+ ", valorTotal =" + valorTotal + ", pagoExitoso =" + pagoExitoso + ", puntosCompra =" + puntosCompra 
 				+ ", correo del cliente =" + correoCliente + "]";
+	}
+
+	public Long getIdSucursal() {
+		return idSucursal;
+	}
+
+	public void setIdSucursal(Long idSucursal) {
+		this.idSucursal = idSucursal;
 	}	
 }

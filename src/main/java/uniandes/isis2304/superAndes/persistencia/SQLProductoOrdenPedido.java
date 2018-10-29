@@ -1,5 +1,6 @@
 package uniandes.isis2304.superAndes.persistencia;
 
+import java.util.Date;
 import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -47,10 +48,10 @@ class SQLProductoOrdenPedido {
 	 * @param calidad - calidad de los productos asociados 
 	 * @param producto - codigo del producto
 	 */
-	public long adicionarProductoOrdenPedido(PersistenceManager pm, long pedido, int cantidad, double calidad, String producto)
+	public long adicionarProductoOrdenPedido(PersistenceManager pm, long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProductoOrdenPedido() + " (pedido, cantidad, calidad, producto) VALUES (?, ?, ?, ?)");
-		q.setParameters(pedido, cantidad, calidad, producto);
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProductoOrdenPedido() + " (pedido, cantidad, calidad, producto, fechaAgregado) VALUES (?, ?, ?, ?, ?)");
+		q.setParameters(pedido, cantidad, calidad, producto, fechaAgregado);
 		return (long) q.executeUnique();
 	}
 	

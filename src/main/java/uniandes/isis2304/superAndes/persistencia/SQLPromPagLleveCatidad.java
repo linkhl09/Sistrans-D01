@@ -1,6 +1,6 @@
 package uniandes.isis2304.superAndes.persistencia;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import javax.jdo.PersistenceManager;
@@ -58,7 +58,7 @@ public class SQLPromPagLleveCatidad
 	 **@param lleve -  cantidad del producto que se llevara 
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarPromDescuento (PersistenceManager pm,long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public long adicionarPromPagueLleveCantidad (PersistenceManager pm,long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  ) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromDescuento() + "(id, descripcion, unidadesDisponibles, uniadadesVendidas,"
