@@ -3007,7 +3007,6 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
 	public List<ProductoOrdenPedido> darProductosOrdenPedidos()
 	{
 		return sqlProductoOrdenPedido.darProductosOrdenPedidos(pmf.getPersistenceManager());
