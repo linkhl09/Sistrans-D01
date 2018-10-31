@@ -4,7 +4,7 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import uniandes.isis2304.superAndes.negocio.TipoCategoria;
+import uniandes.isis2304.superAndes.negocio.TipoProducto;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto TIPOPRODUCTO de SuperAndes.
@@ -67,7 +67,7 @@ class SQLTipoProducto
 	 * @param nombreTipo - Tipo del producto.
 	 * @return El número de tuplas eliminadas
 	 */
-	public long eliminarTipoCategoria(PersistenceManager pm, String codigoBarrasProducto, String nombreTipo)
+	public long eliminarTipoProducto(PersistenceManager pm, String codigoBarrasProducto, String nombreTipo)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipoProducto() + "WHERE codigoBarrasProducto = ? AND nombreTipo = ?");
 		q.setParameters(codigoBarrasProducto, nombreTipo);
@@ -80,12 +80,12 @@ class SQLTipoProducto
 	 * @param codigoBarrasProducto - Producto del que se quieren conocer sus tipos.
 	 * @return Lista con los TIPOPRODUCTO que cumplan con la especificación.
 	 */
-	public List<TipoCategoria> darTiposDelProducto(PersistenceManager pm, String codigoBarrasProducto)
+	public List<TipoProducto> darTiposDelProducto(PersistenceManager pm, String codigoBarrasProducto)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipoProducto() + "WHERE codigoBarrasProducto = ?");
 		q.setParameters(codigoBarrasProducto);
-		q.setResultClass(TipoCategoria.class);
-		return (List<TipoCategoria>) q.executeList();
+		q.setResultClass(TipoProducto.class);
+		return (List<TipoProducto>) q.executeList();
 	}
 	
 	/**
@@ -93,10 +93,10 @@ class SQLTipoProducto
 	 * @param pm - El manejador de persistencia.
 	 * @return Una lista de objetos TIPOCATEGORIA.
 	 */
-	public List<TipoCategoria> darTodosTipoCategoria(PersistenceManager pm)
+	public List<TipoProducto> darTodosTipoProducto(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaTipoProducto());
-		q.setResultClass(TipoCategoria.class);
-		return (List<TipoCategoria>) q.executeList();
+		q.setResultClass(TipoProducto.class);
+		return (List<TipoProducto>) q.executeList();
 	}
 }

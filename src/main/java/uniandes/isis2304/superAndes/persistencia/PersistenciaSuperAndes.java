@@ -797,25 +797,25 @@ public class PersistenciaSuperAndes {
 	// -----------------------------------------------------------------
 
 	/**
-	 * Método que inserta, de manera tradicional, una tupla de TipoCategoria.
+	 * Método que inserta, de manera tradicional, una tupla de TipoProducto.
  	 * Adiciona entradas al log de la aplicación.
 	 * @param nombreTipo - El nombre del tipo.
-	 * @param nombreCategoria - El nombre de la categoria.
+	 * @param codigoBarrasProducto - El identificador del producto dueño del pragama.
 	 * @return El objeto de tipo TipoProducto adicionado. Null si ocurre alguna Exception.
 	 */
-	public TipoCategoria adicionarTipoCategoria(String nombreTipo, String nombreCategoria)
+	public TipoProducto adicionarTipoProducto(String nombreTipo, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlTipoProducto.adicionarTipoProducto(pm, nombreCategoria, nombreTipo);
+			long tuplasInsertadas = sqlTipoProducto.adicionarTipoProducto(pm, codigoBarrasProducto, nombreTipo);
 			tx.commit();
 
-			log.trace("Inserción de TipoCategoria con la categoria: " + nombreCategoria + " y el tipo: " + nombreTipo+ ". Con " + tuplasInsertadas + " tuplas Insertadas");
+			log.trace("Inserción de TipoCategoria con la categoria: " + codigoBarrasProducto + " y el tipo: " + nombreTipo+ ". Con " + tuplasInsertadas + " tuplas Insertadas");
 
-			return new TipoCategoria(nombreCategoria, nombreTipo);
+			return new TipoProducto(codigoBarrasProducto, nombreTipo);
 		}
 		catch(Exception e)
 		{
@@ -835,17 +835,17 @@ public class PersistenciaSuperAndes {
 	/**
 	 * Método que elimina, de manera transaccional, una tupla de la tabla TIPOPRODUCTO, dado su identificador.
 	 * @param nombreTipo - El nombre del tipo a eliminar. 
-	 * @param nombreCategoria - El nombre de la categoria a eliminar.
+	 * @param codigoBarrasProducto - El identificador del producto dueño del tipo.
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
 	 */
-	public long eliminarTipoCategoria(String nombreTipo, String nombreCategoria)
+	public long eliminarTipoProducto(String nombreTipo, String codigoBarrasProducto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlTipoProducto.eliminarTipoCategoria(pm, nombreCategoria, nombreTipo);
+			long resp = sqlTipoProducto.eliminarTipoProducto(pm, codigoBarrasProducto, nombreTipo);
 			tx.commit();
 			return resp;
 		}
@@ -866,22 +866,22 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla TIPOCATEGORIA que pertenecen a una Categoria.
-	 * @param nombreCategoria - El nombre Categoria de interes.
-	 * @return Una lista de objetos TipoCategoria, construidos con base en las tuplas de la tablas TIPOPRODUCTO.
+	 * Método que consulta todas las tuplas en la tabla TIPOPRODUCTO que pertenecen a un Producto.
+	 * @param codigoBarrasProducto - Identificador del producto de interes..
+	 * @return Una lista de objetos TipoProducto, construidos con base en las tuplas de la tablas TIPOPRODUCTO.
 	 */
-	public List<TipoCategoria> darTiposCategoria(String nombreCategoria)
+	public List<TipoProducto> darTiposDelProducto(String codigoBarrasProducto)
 	{
-		return sqlTipoProducto.darTiposDelProducto(pmf.getPersistenceManager(), nombreCategoria);
+		return sqlTipoProducto.darTiposDelProducto(pmf.getPersistenceManager(), codigoBarrasProducto);
 	}
 
 	/**
-	 * Método que consulta todas las tuplas en la tabla TIPOCATEGORIA.
+	 * Método que consulta todas las tuplas en la tabla TIPOPRODUCTO.
 	 * @return Una lista de objetos TipoCategoria, construidos con base en las tuplas de la tabla TIPOPRODUCTO.
 	 */
-	public List<TipoCategoria> darTodosTipoCategoria()
+	public List<TipoProducto> darTodosTipoProducto()
 	{
-		return sqlTipoProducto.darTodosTipoCategoria(pmf.getPersistenceManager());
+		return sqlTipoProducto.darTodosTipoProducto(pmf.getPersistenceManager());
 	}
 
 	// -----------------------------------------------------------------
