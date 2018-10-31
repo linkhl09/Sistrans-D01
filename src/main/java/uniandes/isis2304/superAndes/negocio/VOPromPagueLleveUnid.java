@@ -1,12 +1,15 @@
 package uniandes.isis2304.superAndes.negocio;
 
+/**
+ * Interfaz para los métodos get de promPagueLleveUnidad.
+ * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz.
+ * @author Andrés Hernández y Jenifer Rodriguez */
+
 public interface VOPromPagueLleveUnid {
 
-	/**
-	 * Interfaz para los métodos get de promPagueLleveUnidad.
-	 * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz.
-	 * @author Andrés Hernández y Jenifer Rodriguez */
-
+	// -----------------------------------------------------------------
+    // Métodos.
+    // -----------------------------------------------------------------
 	
 	/**
 	 * @return unidades del producto que se debe pagar.

@@ -1,12 +1,17 @@
 package uniandes.isis2304.superAndes.negocio;
 
+
+/**
+ * Interfaz para los métodos get de promocion.
+ * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz.
+ * @author Andrés Hernández y Jenifer Rodriguez */
+
 public interface VOPromDesc {
 
-	/**
-	 * Interfaz para los métodos get de promocion.
-	 * Sirve para proteger la información del negocio de posibles manipulaciones desde la interfaz.
-	 * @author Andrés Hernández y Jenifer Rodriguez */
-
+	// -----------------------------------------------------------------
+    // Métodos.
+    // -----------------------------------------------------------------
+	
 	
 	/**
 	 * @return porcentaje de descuento a realizar.

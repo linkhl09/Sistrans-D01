@@ -196,6 +196,12 @@ public class PersistenciaSuperAndes {
 	 * Atributo para el acceso a la tabla "PromPagLleveCatidad" de la base de datos
 	 */
 	private SQLPromPagLleveCatidad sqlPromPagLleveCatidad;
+	
+	/**
+	 * Atributo para el acceso a la tabla "PromocionSucursal" de la base de datos
+	 */
+	private SQLPromPagLleveCatidad sqlPromocionSucursal;
+
 
 	/**
 	 * Atributo con métodos utiles para el manejo de la base de datos.
@@ -239,7 +245,9 @@ public class PersistenciaSuperAndes {
 		tablas.add("PROM_DESCUENTO");
 		tablas.add("PROM_PAG_LLEVE_UNID");
 		tablas.add("PROM_DESC_SEG_UNIDAD");
-		tablas.add("PROM_PAG_LLEVE_CANT");			
+		tablas.add("PROM_PAG_LLEVE_CANT");
+		tablas.add("PROMOCION_SUCURSAL");
+		
 	}
 
 	/**
@@ -545,6 +553,14 @@ public class PersistenciaSuperAndes {
 	public String darTablaPromPagLleveCant()
 	{
 		return tablas.get (25);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de PromocionSucursal de parranderos
+	 */
+	public String darTablaPromocionSucursal()
+	{
+		return tablas.get (26);
 	}
 
 	/**

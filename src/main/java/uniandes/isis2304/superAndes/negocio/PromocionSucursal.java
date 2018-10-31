@@ -4,7 +4,7 @@ package uniandes.isis2304.superAndes.negocio;
  * Clase para modelar el concepto de la relacion promocion sucursal.
  * @author Andrés Hernández y jenifer Rodriguez
  */
-public class PromocionSucursal {
+public class PromocionSucursal  implements VOPromocionSucursal {
 	
 	// -----------------------------------------------------------------
 	// Atributos.
