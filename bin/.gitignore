@@ -1,6 +1,5 @@
 /META-INF/
 /config/
 /hbase-site.xml
-/log.properties
-/uniandes/
 /log4j.properties
+/uniandes/
