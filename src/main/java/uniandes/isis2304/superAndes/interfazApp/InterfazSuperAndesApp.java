@@ -237,7 +237,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
     	//TODO lo del JComboBox.
     }
     
-    
     // -----------------------------------------------------------------
     // Métodos administrativos.
     // -----------------------------------------------------------------

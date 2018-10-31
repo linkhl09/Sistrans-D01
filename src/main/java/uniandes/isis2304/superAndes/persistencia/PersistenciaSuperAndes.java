@@ -223,7 +223,7 @@ public class PersistenciaSuperAndes {
 		tablas.add("superAndes_sequence");
 		tablas.add("CATEGORIA");
 		tablas.add("TIPO");
-		tablas.add("TIPO_CATEGORIA");
+		tablas.add("TIPO_PRODUCTO");
 		tablas.add("PRODUCTO");
 		tablas.add("SUCURSAL");
 		tablas.add("SUCURSAL_PRODUCTO");
@@ -372,7 +372,7 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de TipoCategoria de SuperAndes.
+	 * @return La cadena de caracteres con el nombre de la tabla de TipoProducto de SuperAndes.
 	 */
 	public String darTablaTipoProducto() 
 	{
@@ -1884,8 +1884,6 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla personaNatural
 	// -----------------------------------------------------------------
 
-
-
 	/**
 	 * Método que inserta, de manera transaccional, una tupla en la tabla PersonaNatural.
 	 * Adiciona entradas al log de la aplicacion.
@@ -2369,7 +2367,7 @@ public class PersistenciaSuperAndes {
 	}
 	
 	/**
-	 * Método que consulta todas las tablas de tuplas de la tabla ProductoCarritoCompras.
+	 * Método que consulta todas las tuplas en la tabla ProductoCarritoCompras.
 	 * @return La lista de objetos ProductosCarritoCompras, construidos con base en las tuplas de la tabla PRODUCTOSCARRITOCOMPRA.
 	 */
 	public List<ProductoCarritoCompras> darTodosProductosCarrito()
@@ -2450,8 +2448,21 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Factura
 	// -----------------------------------------------------------------
 
-
-
+	// -----------------------------------------------------------------
+	
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla Factura.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param direccion - La dirección de la sucursal.
+	 * @param fecha - La fecha de la compra.
+	 * @param nombreCajero - El nombre del cajero que atendió la compra.
+	 * @param valorTotal - el valor total de la compra.
+	 * @param pagoExitoso - Si el pago fue exitoso o no.
+	 * @param puntosCompra - Puntos que gana el cliente por esa compra.
+	 * @param correoCliente - Correo electronico del cliente.
+	 * @param idSucursal - Identificador de la sucursal a la que pertenece la factura.
+	 * @return El objeto tipo Factura adicionado. Null si ocurre alguna Exception.
+	 */
 	public Factura adicionarFactura(  String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
 			int puntosCompra, String correoCliente, long idSucursal)
@@ -2484,8 +2495,12 @@ public class PersistenciaSuperAndes {
 			pm.close();
 		}
 	}
-
-
+	
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla Factura, dado su identificador.
+	 * @param numero - El identificador único de la factura.
+	 * @return Número de tuplas eliminadas. -1 si ocurre algún error.
+	 */
 	public long eliminarFactura(long numero) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2513,13 +2528,20 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla Factura.
+	 * @return La lista de objetos Factura, construidos con base en las tuplas de la FACTURA.
+	 */
 	public List<Factura> darFacturas()
 	{
 		return sqlFactura.darFacturas(pmf.getPersistenceManager());
 	}
 
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla Factura, con el identificador dado.
+	 * @param numero - Identificador único de la factura.
+	 * @return El objeto tipo Factura, construido con base en las tuplas de la tabla FACTURA.
+	 */
 	public Factura darFactura(long numero)
 	{
 		return sqlFactura.darFactura(pmf.getPersistenceManager(), numero);
@@ -2530,7 +2552,13 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla Factura_Prodcuto
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla FACTURA_PRODUCTO.
+	 * @param factura - Identificador único de la factura.
+	 * @param cantidad - Cantidad de unidades vendidas del producto.
+	 * @param producto - Identificador único del producto.
+	 * @return El objeto tipo FacturaProducto adicionado. Null si ocurre alguna Exception.
+	 */
 	public FacturaProducto adicionarFacturaProducto(long factura, int cantidad, String producto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2561,7 +2589,11 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, las tuplas pertenecientes a una factura en la tabla FACTURA_PRODUCTO.
+	 * @param factura - Identificador único de la factura.
+	 * @return Número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
 	public long eliminarProductosDeFactura(long factura) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2589,7 +2621,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, las tuplas en la tabla FACTURA_PRODUCTO, con el identificador dado.
+	 * @param factura - Identificador de la tabla.
+	 * @param producto - Identificador de la tabla.
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
 	public long eliminarProductoDeFactura(long factura, String producto) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2617,31 +2654,39 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-	
+	/**
+	 * Método que consulta todas las tuplas en la tabla FACTURA_PRODUCTO, con el identificador dado.
+	 * @param factura - Identificador de la tabla.
+	 * @param producto - Identificador de la tabla.
+	 * @return El objeto tipo FacturaProducto, construido con base en las tuplas de la tabla FACTURA_PRODUCTO.
+	 */
 	public FacturaProducto darProductoDeFactura( long factura, String producto)
 	{
 		return sqlFacturaProducto.darProductoDeFactura(pmf.getPersistenceManager(), factura, producto );
 	}
 	
-
+	/**
+	 * Método que consulta todas las tuplas en la tabla Factura_Producto que pertenecen a la factura dada.
+	 * @param factura - Identificador de la factura.
+	 * @return La lista de objetos tipo ProductoFactura, construidos con base en las tuplas de la tabla FACTURA_PRODUCTO.
+	 */
 	public List<FacturaProducto> darProductosFactura(long factura)
 	{
 		return sqlFacturaProducto.darProductosFactura(pmf.getPersistenceManager() , factura);
 	}
 	
-	
+	/**
+	 * Método que consulta todas las tuplas en la tabla Factura_Producto.
+	 * @return La lista de objetos FacturaProducto, construidos con base en las tuplas de Factura_Producto.
+	 */
 	public List<FacturaProducto> darProductosFacturas()
 	{
 		return sqlFacturaProducto.darProductosFacturas(pmf.getPersistenceManager());
 	}
 
-	
 	// -----------------------------------------------------------------
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
-
-
-	
 
 	/**
 	 * Método que inserta, de manera transaccional, una tupla en la tabla Proveedor.
@@ -2805,7 +2850,12 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla proveedoresProducto 
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Método que inserta, de manera transaccional, una tupla en la tabla ProveedoresProducto.
+	 * @param proveedor - El proveedor del producto.
+	 * @param producto - El producto asociado al proveedor
+	 * @return El objeto tipo ProveedoresProducto adicionado. Null si ocurre alguna Exception.
+	 */
 	public ProveedoresProducto adicionarProveedoresProducto(String proveedor, String producto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -2836,7 +2886,12 @@ public class PersistenciaSuperAndes {
 		}
 	}
 
-
+	/**
+	 * Método que elimina, de manera transaccional, una tupla en la tabla ProveedorProducto.
+	 * @param proveedor - El proveedor del producto. Identificador de la clase. 
+	 * @param producto - El producto del proveedor. Identificador de la clase.
+	 * @return El número de 
+	 */
 	public long eliminarProveedoresProducto(String proveedor, String producto)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
