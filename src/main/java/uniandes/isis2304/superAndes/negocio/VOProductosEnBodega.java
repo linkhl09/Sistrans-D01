@@ -7,9 +7,6 @@ package uniandes.isis2304.superAndes.negocio;
  */
 public interface VOProductosEnBodega 
 {
-	// -----------------------------------------------------------------
-    // Métodos.
-    // -----------------------------------------------------------------
 	
 	/**
 	 * @return  id de la bodega donde esta almacenado el producto.
