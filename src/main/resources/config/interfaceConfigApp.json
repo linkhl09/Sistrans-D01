@@ -1,28 +1,114 @@
 {
-	"title": "Aplicación transaccional de Parranderos Uniandes",
+	"title": "Aplicación transaccional de SuperAndes Uniandes",
 	"frameH": 600,
 	"frameW": 800,
-	"bannerPath": "./src/main/resources/config/logo.png",
+	"bannerPath": "./src/main/resources/config/carrito.jpg",
 	"menuBar":
 	[
-		{ "menuTitle": "TipoBebida",
+		{ "menuTitle": "Proveedores",
 		  "options":
 			[
 				{
 					"label": "Adicionar",
-					"event": "adicionarTipoBebida"
+					"event": "adicionarProveedor"
+				}
+			]
+		},
+		{
+			"menuTitle":"Productos",
+			"options":
+			[
+				{
+					"label":"Adicionar Producto",
+					"event":"adicionarProducto"
 				},
 				{
-					"label": "Listar",
-					"event": "listarTipoBebida"
+					"label":"Adicionar Promoción",
+					"event":"adicionarPromocion"
+				}
+			]
+		},
+		{
+			"menuTitle":"Clientes",
+			"options":
+			[
+				{
+					"label":"Adicionar Persona Natural",
+					"event":"adicionarPersonaNatural"
 				},
 				{
-					"label": "Borrar por Id",
-					"event": "eliminarTipoBebidaPorId"
+					"label":"Adicionar Empresa",
+					"event":"adicionarEmpresa"
+				}
+			]
+		},
+		{
+			"menuTitle":"CarritoCompras",
+			"options":
+			[
+				{
+					"label":"Solicitar",
+					"event":"adicionarCarritoCompras"
 				},
 				{
-					"label": "Buscar por Nombre",
-					"event": "buscarTipoBebidaPorNombre"
+					"label":"Abandonar",
+					"event":"abandonarCarritoCompras"
+				},
+				{
+					"label":"Agregar Producto",
+					"event":"adicionarProductoCarrito"
+				},
+				{
+					"label":"Devolver producto",
+					"event":"devolverProductoCarritoCompras"
+				},
+				{
+					"label":"Pagar",
+					"event":"pagarCarritoCompras"
+				}
+			]
+		},
+		{
+			"menuTitle":"Sucursal",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarSucursal"
+				}
+			]
+		},
+		{
+			"menuTitle":"Bodega",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarBodega"
+				}
+			]
+		},
+		{
+			"menuTitle":"Estante",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarEstante"
+				}	
+			]
+		},
+		{
+			"menuTitle":"Orden Pedido",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarOrdenPedido"
+				},
+				{
+					"label":"Registrar llegada pedido",
+					"event":"registrarFechaLlegada"
 				}
 			]
 		},
@@ -30,16 +116,16 @@
 		  "options":
 			[
 				{
-					"label": "Mostrar log Parranderos",
-					"event": "mostrarLogParranderos"
+					"label": "Mostrar log SuperAndes",
+					"event": "mostrarLogSuperAndes"
 				},
 				{
 					"label": "Mostrar log datanucleus",
 					"event": "mostrarLogDatanuecleus"
 				},
 				{
-					"label": "Limpiar log de parranderos",
-					"event": "limpiarLogParranderos"
+					"label": "Limpiar log de SuperAndes",
+					"event": "limpiarLogSuperAndes"
 				},
 				{
 					"label": "Limpiar log de datanucleus",
@@ -51,6 +137,49 @@
 				}
 			]
 		},		
+		{
+			"menuTitle":"RFC",
+			"options":
+			[
+				{
+					"label":"RFC1",
+					"event":"dineroDeVentas"
+				},
+				{
+					"label":"RFC2",
+					"event":"darPromocionesMasPopulares"
+				},
+				{
+					"label":"RFC3.1",
+					"event":"indiceOcupacionBodegas"
+				},
+				{
+					"label":"RFC4",
+					"event":"informacionProducto"
+				},
+				{
+					"label":"RFC5",
+					"event":"mostrarComprasAProveedores"
+				},
+				{
+					"label":"RFC6",
+					"event":"mostrarVentasAUsuario"
+				},
+				{
+					"label":"RFC7",
+					"event":"analizarOperacionSuperAndes"
+				},
+				{
+					"label":"RFC8",
+					"event":"encontrarClientesFrecuentes"
+				},
+				{
+					"label":"RFC9",
+					"event":"productosConPocaDemanda"
+				}
+
+			]
+		},
 		{ "menuTitle": "Documentación",
 		  "options":
 			[
@@ -75,21 +204,11 @@
 					"event": "mostrarArqRef"
 				},
 				{
-					"label": "Javadoc Parranderos",
+					"label": "Javadoc SuperAndes",
 					"event": "mostrarJavadoc"
 				}
 			]
-		},		
-		{ "menuTitle": "Acerca de ...",
-		  "options":
-			[
-				{
-					"label": "Acerca de ...",
-					"event": "acercaDe"
-				}
-			]
-		}		
-		
+		}
 	]
 }
 	
