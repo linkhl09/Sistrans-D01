@@ -1,28 +1,50 @@
 {
-	"title": "Aplicación transaccional de Parranderos Uniandes",
+	"title": "Aplicación transaccional de SuperAndes Uniandes",
 	"frameH": 600,
 	"frameW": 800,
-	"bannerPath": "./src/main/resources/config/logo.png",
+	"bannerPath": "./src/main/resources/config/carrito.jpg",
 	"menuBar":
 	[
-		{ "menuTitle": "TipoBebida",
+		{ "menuTitle": "Proveedores",
 		  "options":
 			[
 				{
 					"label": "Adicionar",
-					"event": "adicionarTipoBebida"
+					"event": "adicionarProveedor"
+				}
+			]
+		},
+		{
+			"menuTitle":"Productos",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarProducto"
+				}
+			]
+		},
+		{
+			"menuTitle":"Clientes",
+			"options":
+			[
+				{
+					"label":"Adicionar Persona Natural",
+					"event":"adicionarPersonaNatural"
 				},
 				{
-					"label": "Listar",
-					"event": "listarTipoBebida"
-				},
+					"label":"Adicionar Empresa",
+					"event":"adicionarEmpresa"
+				}
+			]
+		},
+		{
+			"menuTitle":"Sucursal",
+			"options":
+			[
 				{
-					"label": "Borrar por Id",
-					"event": "eliminarTipoBebidaPorId"
-				},
-				{
-					"label": "Buscar por Nombre",
-					"event": "buscarTipoBebidaPorNombre"
+					"label":"Adicionar",
+					"event":"adicionarSucursal"
 				}
 			]
 		},
@@ -30,16 +52,16 @@
 		  "options":
 			[
 				{
-					"label": "Mostrar log Parranderos",
-					"event": "mostrarLogParranderos"
+					"label": "Mostrar log SuperAndes",
+					"event": "mostrarLogSuperAndes"
 				},
 				{
 					"label": "Mostrar log datanucleus",
 					"event": "mostrarLogDatanuecleus"
 				},
 				{
-					"label": "Limpiar log de parranderos",
-					"event": "limpiarLogParranderos"
+					"label": "Limpiar log de SuperAndes",
+					"event": "limpiarLogSuperAndes"
 				},
 				{
 					"label": "Limpiar log de datanucleus",
@@ -75,21 +97,11 @@
 					"event": "mostrarArqRef"
 				},
 				{
-					"label": "Javadoc Parranderos",
+					"label": "Javadoc SuperAndes",
 					"event": "mostrarJavadoc"
 				}
 			]
-		},		
-		{ "menuTitle": "Acerca de ...",
-		  "options":
-			[
-				{
-					"label": "Acerca de ...",
-					"event": "acercaDe"
-				}
-			]
-		}		
-		
+		}
 	]
 }
 	

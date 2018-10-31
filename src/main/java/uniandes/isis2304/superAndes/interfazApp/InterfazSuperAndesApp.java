@@ -117,10 +117,13 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
         
     	String path = guiConfig.get("bannerPath").getAsString();
         panelDatos = new PanelDatos ( );
-
+        
+        setBackground(Color.white);
         setLayout (new BorderLayout());
-        add (new JLabel (new ImageIcon (path)), BorderLayout.NORTH );          
-        add( panelDatos, BorderLayout.CENTER );   
+        JLabel labelImagen =new JLabel (new ImageIcon (path));
+        labelImagen.setBackground(Color.WHITE);
+        add (labelImagen, BorderLayout.NORTH );          
+        add( panelDatos, BorderLayout.CENTER );  
     }
     
 	// -----------------------------------------------------------------
@@ -149,7 +152,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		{
 //			e.printStackTrace ();
 			log.info ("NO se encontró un archivo de configuración válido");			
-			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "Parranderos App", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(null, "No se encontró un archivo de configuración de interfaz válido: " + tipo, "SuperAndes App", JOptionPane.ERROR_MESSAGE);
 		}	
         return config;
     }
@@ -166,7 +169,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
     	if ( guiConfig == null )
     	{
     		log.info ( "Se aplica configuración por defecto" );			
-			titulo = "Parranderos APP Default";
+			titulo = "SuperAndes APP Default";
 			alto = 300;
 			ancho = 500;
     	}
@@ -224,4 +227,290 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
         setJMenuBar ( menuBar );	
     }
     
+    
+    // -----------------------------------------------------------------
+    // Métodos REQUERIMIENTOS FUNCIONALES.
+    // -----------------------------------------------------------------
+    
+    public void adicionarPromocion()
+    {
+    	//TODO lo del JComboBox.
+    }
+    
+    
+    // -----------------------------------------------------------------
+    // Métodos administrativos.
+    // -----------------------------------------------------------------
+        
+	/**
+	 * Muestra el log de superAndes
+	 */
+	public void mostrarLogSuperAndes ()
+	{
+		mostrarArchivo ("superAndes.log");
+	}
+	
+	/**
+	 * Muestra el log de datanucleus
+	 */
+	public void mostrarLogDatanuecleus ()
+	{
+		mostrarArchivo ("datanucleus.log");
+	}
+	
+	/**
+	 * Limpia el contenido del log de superAndes
+	 * Muestra en el panel de datos la traza de la ejecución
+	 */
+	public void limpiarLogSuperAndes ()
+	{
+		// Ejecución de la operación y recolección de los resultados
+		boolean resp = limpiarArchivo ("superAndes.log");
+
+		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
+		String resultado = "\n\n************ Limpiando el log de superAndes ************ \n";
+		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
+		resultado += "\nLimpieza terminada";
+
+		panelDatos.actualizarInterfaz(resultado);
+	}
+	
+	/**
+	 * Limpia el contenido del log de datanucleus
+	 * Muestra en el panel de datos la traza de la ejecución
+	 */
+	public void limpiarLogDatanucleus ()
+	{
+		// Ejecución de la operación y recolección de los resultados
+		boolean resp = limpiarArchivo ("datanucleus.log");
+
+		// Generación de la cadena de caracteres con la traza de la ejecución de la demo
+		String resultado = "\n\n************ Limpiando el log de datanucleus ************ \n";
+		resultado += "Archivo " + (resp ? "limpiado exitosamente" : "NO PUDO ser limpiado !!");
+		resultado += "\nLimpieza terminada";
+
+		panelDatos.actualizarInterfaz(resultado);
+	}
+	
+	/**
+	 * Limpia todas las tuplas de todas las tablas de la base de datos de parranderos
+	 * Muestra en el panel de datos el número de tuplas eliminadas de cada tabla
+	 */
+	public void limpiarBD ()
+	{
+		
+		//TODO
+		
+		try 
+		{
+    		// Ejecución de la demo y recolección de los resultados
+			long eliminados [] = superAndes.limpiarSuperAndes();
+			
+			// Generación de la cadena de caracteres con la traza de la ejecución de la demo
+			String resultado = "\n\n************ Limpiando la base de datos ************ \n";
+			resultado += eliminados [0] + "  eliminados\n";
+			resultado += eliminados [1] + "  eliminados\n";
+			resultado += eliminados [2] + "  eliminados\n";
+			resultado += eliminados [3] + "  eliminadas\n";
+			resultado += eliminados [4] + "  eliminados\n";
+			resultado += eliminados [5] + "  eliminados\n";
+			resultado += eliminados [7] + "  eliminados\n";
+			resultado += eliminados [8] + "  eliminados\n";
+			resultado += eliminados [9] + "  eliminados\n";
+			resultado += eliminados [10] + "  eliminados\n";
+			resultado += eliminados [11] + "  eliminados\n";
+			resultado += eliminados [12] + "  eliminados\n";
+			resultado += eliminados [13] + "  eliminados\n";
+			resultado += eliminados [14] + "  eliminados\n";
+			resultado += eliminados [15] + "  eliminados\n";
+			resultado += eliminados [16] + "  eliminados\n";
+			resultado += eliminados [17] + "  eliminados\n";
+			resultado += eliminados [18] + "  eliminados\n";
+			resultado += eliminados [19] + "  eliminados\n";
+			resultado += eliminados [20] + "  eliminados\n";
+			resultado += eliminados [21] + "  eliminados\n";
+			resultado += eliminados [22] + "  eliminados\n";
+			
+			resultado += "\nLimpieza terminada";
+   
+			panelDatos.actualizarInterfaz(resultado);
+		} 
+		catch (Exception e) 
+		{
+//			e.printStackTrace();
+			String resultado = generarMensajeError(e);
+			panelDatos.actualizarInterfaz(resultado);
+		}
+	}
+	
+	/**
+	 * Muestra la presentación general del proyecto
+	 */
+	public void mostrarPresentacionGeneral ()
+	{
+		//TODO
+		mostrarArchivo ("data/");
+	}
+	
+	/**
+	 * Muestra el modelo conceptual de SuperAndes
+	 */
+	public void mostrarModeloConceptual ()
+	{
+		//TODO 
+		mostrarArchivo ("data/");
+	}
+	
+	/**
+	 * Muestra el esquema de la base de datos de SuperAndes
+	 */
+	public void mostrarEsquemaBD ()
+	{
+		//TODO
+		mostrarArchivo ("data/");
+	}
+	
+	/**
+	 * Muestra el script de creación de la base de datos
+	 */
+	public void mostrarScriptBD ()
+	{
+		//TODO 
+		mostrarArchivo ("data/");
+	}
+	
+	/**
+	 * Muestra la arquitectura de referencia para SuperAndes
+	 */
+	public void mostrarArqRef ()
+	{
+		//TODO
+		mostrarArchivo ("data/");
+	}
+	
+	/**
+	 * Muestra la documentación Javadoc del proyectp
+	 */
+	public void mostrarJavadoc ()
+	{
+		mostrarArchivo ("doc/index.html");
+	}
+	
+    // -----------------------------------------------------------------
+    // Métodos privados.
+    // -----------------------------------------------------------------
+
+    /**
+     * Genera una cadena de caracteres con la descripción de la excepcion e, haciendo énfasis en las excepcionsde JDO
+     * @param e - La excepción recibida
+     * @return La descripción de la excepción, cuando es javax.jdo.JDODataStoreException, "" de lo contrario
+     */
+	private String darDetalleException(Exception e) 
+	{
+		String resp = "";
+		if (e.getClass().getName().equals("javax.jdo.JDODataStoreException"))
+		{
+			JDODataStoreException je = (javax.jdo.JDODataStoreException) e;
+			return je.getNestedExceptions() [0].getMessage();
+		}
+		return resp;
+	}
+
+	/**
+	 * Genera una cadena para indicar al usuario que hubo un error en la aplicación
+	 * @param e - La excepción generada
+	 * @return La cadena con la información de la excepción y detalles adicionales
+	 */
+	private String generarMensajeError(Exception e) 
+	{
+		String resultado = "************ Error en la ejecución\n";
+		resultado += e.getLocalizedMessage() + ", " + darDetalleException(e);
+		resultado += "\n\nRevise datanucleus.log y parranderos.log para más detalles";
+		return resultado;
+	}
+
+	/**
+	 * Limpia el contenido de un archivo dado su nombre
+	 * @param nombreArchivo - El nombre del archivo que se quiere borrar
+	 * @return true si se pudo limpiar
+	 */
+	private boolean limpiarArchivo(String nombreArchivo) 
+	{
+		BufferedWriter bw;
+		try 
+		{
+			bw = new BufferedWriter(new FileWriter(new File (nombreArchivo)));
+			bw.write ("");
+			bw.close ();
+			return true;
+		} 
+		catch (IOException e) 
+		{
+			return false;
+		}
+	}
+
+	/**
+	 * Abre el archivo dado como parámetro con la aplicación por defecto del sistema
+	 * @param nombreArchivo - El nombre del archivo que se quiere mostrar
+	 */
+	private void mostrarArchivo (String nombreArchivo)
+	{
+		try
+		{
+			Desktop.getDesktop().open(new File(nombreArchivo));
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	// -----------------------------------------------------------------
+    // Métodos de interacción
+    // -----------------------------------------------------------------
+	
+	/**
+     * Método para la ejecución de los eventos que enlazan el menú con los métodos de negocio
+     * Invoca al método correspondiente según el evento recibido
+     * @param pEvento - El evento del usuario
+     */
+    @Override
+	public void actionPerformed(ActionEvent pEvento)
+	{
+		String evento = pEvento.getActionCommand( );		
+        try 
+        {
+			Method req = InterfazSuperAndesApp.class.getMethod ( evento );			
+			req.invoke ( this );
+		} 
+        catch (Exception e) 
+        {
+			e.printStackTrace();
+		} 
+	}
+	
+    // -----------------------------------------------------------------
+    // Programa principal.
+    // -----------------------------------------------------------------
+    
+    /**
+     * Este método ejecuta la aplicación, creando una nueva interfaz
+     * @param args Arreglo de argumentos que se recibe por línea de comandos
+     */
+    public static void main( String[] args )
+    {
+        try
+        {
+        	
+            // Unifica la interfaz para Mac y para Windows.
+            UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName( ) );
+            InterfazSuperAndesApp interfaz = new InterfazSuperAndesApp( );
+            interfaz.setVisible( true );
+        }
+        catch( Exception e )
+        {
+            e.printStackTrace( );
+        }
+    }
 }
