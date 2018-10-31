@@ -77,7 +77,7 @@ public class SQLPromPagLleveCatidad
 	 * @param id - El id de la promocion PromPagLleveCatidad
 	 * @return EL número de tuplas eliminadas
 	 */
-	public long eliminarPromPagLleveCatidadPornumeroPromo (PersistenceManager pm, long id)
+	public long eliminarPromPagLleveCatidadPorId (PersistenceManager pm, long id)
 	{
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromPagLleveCant() + " WHERE id = ?");
         q.setParameters(id);
@@ -91,7 +91,7 @@ public class SQLPromPagLleveCatidad
 	 * @param numeroPromo - El identificador del PromPagLleveCatidad
 	 * @return El objeto PromPagLleveCatidad que tiene el numeroPromo dado
 	 */
-	public  PromPagueLleveCant darPromPagLleveCatidadPornumeroPromo (PersistenceManager pm, long id) 
+	public  PromPagueLleveCant darPromPagueLleveCantPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromPagLleveCant() + " WHERE id = ?");
 		q.setResultClass(PromPagueLleveCant.class);

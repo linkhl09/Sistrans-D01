@@ -1363,19 +1363,246 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Descuento
 	// -----------------------------------------------------------------
-	
+	/**
+
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
+	* @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param descuento -  porcentaje del descuento a  realizar 
+	 **/
+	public PromDesc adicionarPromDescuento( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, int descuento )
+	{
+		log.info ("Adicionando PromDescuento "  );
+		PromDesc agregado = psa.adicionarPromocionDescuento(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+		log.info ("Adicionado");
+		return agregado;
+	}
+
+	public long eliminarPromDescuento(long id)
+	{
+		log.info ("Eliminando ");
+		long resp = psa.eliminarPromDesc(id);
+		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		return resp;
+	}
+
+	public List<PromDesc> darPromDescuento()
+	{
+		log.info ("Consultando ");
+		List<PromDesc> list = psa.darPromDescuento();	
+		log.info ("Consultando : " + list.size() + " existentes");
+		return list;
+	}
+
+	public List<VOPromDesc> darVOPromDesc()
+	{
+		log.info ("Generando los VO de ");        
+		List<VOPromDesc> list = new LinkedList<VOPromDesc>();
+		for (PromDesc tb : psa.darPromDescuento())
+		{
+			list.add (tb);
+		}
+		log.info ("Generando los VO de : " + list.size() + " existentes");
+		return list;
+	}
+
+	public PromDesc darPromDescuentoPorId(long id)
+	{
+		log.info ("Dar información de ");
+		PromDesc buscado = psa.darPromDescuentoPorId(id); 
+		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
+
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Pag Lleve unid
 	// -----------------------------------------------------------------
 	
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromPagueLleveUnid a la base de datos de SuperAndes
+	 * @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param pague -  unidades del producto que se debe pagar  
+	 **@param lleve - unidades del producto que se llevara 
+	**/
+	public PromPagueLleveUnid adicionarPromPagueLleveUnid( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
+	{
+		log.info ("Adicionando PromPagueLleveUnid "  );
+		PromPagueLleveUnid agregado = psa.adicionarPromocionPagueLleveUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+		log.info ("Adicionado");
+		return agregado;
+	}
+
+	public long eliminarPromPagLlevUnidadPorId(long id)
+	{
+		log.info ("Eliminando ");
+		long resp = psa.eliminarPromPagLleveUnidad(id);
+		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		return resp;
+	}
+
+	public PromPagueLleveUnid darPromPagLlevUnidadPorId(long id)
+	{
+		log.info ("Dar información de ");
+		PromPagueLleveUnid buscado = psa.darPromPagLlevUnidadPorId(id); 
+		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
+
+	public List<VOPromPagueLleveUnid> darVOPromPagueLleveUnid ()
+	{
+		log.info ("Generando los VO de ");        
+		List<VOPromPagueLleveUnid> list = new LinkedList<VOPromPagueLleveUnid>();
+		for (VOPromPagueLleveUnid tb : psa.darPromPagueLleveUnid())
+		{
+			list.add (tb);
+		}
+		log.info ("Generando los VO de : " + list.size() + " existentes");
+		return list;
+	}
+
+	public List<PromPagueLleveUnid> darPromPagueLleveUnid()
+	{
+		log.info ("Consultando ");
+		List<PromPagueLleveUnid> list = psa.darPromPagueLleveUnid();	
+		log.info ("Consultando : " + list.size() + " existentes");
+		return list;
+	}
+
 	
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Desc Seg Unidad
 	// -----------------------------------------------------------------
 	
+	/**
+
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
+	* @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param descuento -  porcentaje del descuento a  realizar   
+	 **/
+	public PromSegUniDesc adicionarPromDescSegUnid( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, int descuento )
+	{
+		log.info ("Adicionando PromDescuento "  );
+		PromSegUniDesc agregado = psa.adicionarPromDescSegUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+		log.info ("Adicionado");
+		return agregado;
+	}
+
+	public long eliminarPromDescSegUnidPorId(long id)
+	{
+		log.info ("Eliminando ");
+		long resp = psa.eliminarPromDescSegUnidPorId(id);
+		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		return resp;
+	}
+
+	public List<PromSegUniDesc> darPromDescSegUnid()
+	{
+		log.info ("Consultando ");
+		List<PromSegUniDesc> list = psa.darPromDescSegUnid();	
+		log.info ("Consultando : " + list.size() + " existentes");
+		return list;
+	}
+
+	public List<VOPromSegUniDesc> darVOPromSegUniDesc()
+	{
+		log.info ("Generando los VO de ");        
+		List<VOPromSegUniDesc> list = new LinkedList<VOPromSegUniDesc>();
+		for (PromSegUniDesc tb : psa.darPromDescSegUnid())
+		{
+			list.add (tb);
+		}
+		log.info ("Generando los VO de : " + list.size() + " existentes");
+		return list;
+	}
+
+	public PromSegUniDesc darPromDescSegUnidPorId(long id)
+	{
+		log.info ("Dar información de ");
+		PromSegUniDesc buscado = psa.darPromDescSegUnidPorId(id); 
+		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
+
 	
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Pag Lleve Cantidad
 	// -----------------------------------------------------------------
+	/**
+	 * Crea y ejecuta la sentencia SQL para adicionar un PromPagueLleveUnid a la base de datos de SuperAndes
+	 * @param id - identificador de la promocion
+	 * @param descripcion - descripcion de la promocion
+	 * @param unidadesDisponibles - unidades disponibles de la promocion
+	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
+	 * @param fechaInicio - fecha de inicion de la promocion
+	 * @param fechaFin - fecha de finalizacion de la promocion
+	 * @param poducto - codigo del producto asociado a la promocion
+	 **@param pague -  cantidad del producto que se debe pagar  
+	 **@param lleve -  cantidad del producto que se llevara 
+	 **/
+	public PromPagueLleveCant adicionarPromPagueLleveCantidad( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
+	{
+		log.info ("Adicionando PromPagueLleveCant "  );
+		PromPagueLleveCant agregado = psa.adicionarPromPagueLleveCant(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+		log.info ("Adicionado");
+		return agregado;
+	}
+
+	public long eliminarPromPagLleveCatidadPorId(long id)
+	{
+		log.info ("Eliminando ");
+		long resp = psa.eliminarPromPagLleveCatidadPorId(id);
+		log.info ("Eliminando : " + resp + " tuplas eliminadas");
+		return resp;
+	}
+
+	public PromPagueLleveCant darPromPagueLleveCantPorId(long id)
+	{
+		log.info ("Dar información de ");
+		PromPagueLleveCant buscado = psa.darPromPagueLleveCantPorId(id); 
+		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
+
+	public List<VOPromPagueLleveCant> darVOPromPagueLleveCant ()
+	{
+		log.info ("Generando los VO de ");        
+		List<VOPromPagueLleveCant> list = new LinkedList<VOPromPagueLleveCant>();
+		for (VOPromPagueLleveCant tb : psa.darPromPagLleveCatidad())
+		{
+			list.add (tb);
+		}
+		log.info ("Generando los VO de : " + list.size() + " existentes");
+		return list;
+	}
+
+	public List<PromPagueLleveCant> darPromPagLleveCatidad()
+	{
+		log.info ("Consultando ");
+		List<PromPagueLleveCant> list = psa.darPromPagLleveCatidad();	
+		log.info ("Consultando : " + list.size() + " existentes");
+		return list;
+	}
+
 }

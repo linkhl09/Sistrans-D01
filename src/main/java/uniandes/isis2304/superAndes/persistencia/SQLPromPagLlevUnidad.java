@@ -89,7 +89,7 @@ public class SQLPromPagLlevUnidad
 	 * @param id - El identificador del PromPagLlevUnidad
 	 * @return El objeto PromPagLlevUnidad que tiene el id dado
 	 */
-	public  PromPagueLleveUnid darPromPagLlevUnidadPornumeroPromo (PersistenceManager pm, long id) 
+	public  PromPagueLleveUnid darPromPagLlevUnidadPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromPagLleveUnida() + " WHERE numero_promo = ?");
 		q.setResultClass(PromPagueLleveUnid.class);

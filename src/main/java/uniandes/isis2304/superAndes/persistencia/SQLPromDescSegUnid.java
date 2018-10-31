@@ -88,7 +88,7 @@ public class SQLPromDescSegUnid
 	 * @param id - El identificador del PromDescSegUnid
 	 * @return El objeto PromDescSegUnid que tiene el numeroPromo dado
 	 */
-	public  PromSegUniDesc darPromDescSegUnidPornumeroPromo (PersistenceManager pm, long id) 
+	public  PromSegUniDesc darPromDescSegUnidPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromDescSegUnid() + " WHERE id = ?");
 		q.setResultClass(PromSegUniDesc.class);

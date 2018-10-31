@@ -87,10 +87,10 @@ public class SQLPromDescuento
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de UN PromDescuento de la 
 	 * base de datos de SuperAndes, por su id
 	 * @param pm - El manejador de persistencia
-	 * @param numeroPromo - El identificador del PromDescuento
+	 * @param id - El identificador del PromDescuento
 	 * @return El objeto PromDescuento que tiene el numeroPromo dado
 	 */
-	public  PromDesc darPromDescuentoPorid (PersistenceManager pm, long id) 
+	public  PromDesc darPromDescuentoPorId (PersistenceManager pm, long id) 
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromDescuento() + " WHERE id = ?");
 		q.setResultClass(PromDesc.class);
@@ -104,7 +104,7 @@ public class SQLPromDescuento
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos PromDescuento
 	 */
-	public List<PromDesc> darTodasPromDescuento (PersistenceManager pm)
+	public List<PromDesc> darPromDescuento (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromDescuento());
 		q.setResultClass(PromDesc.class);

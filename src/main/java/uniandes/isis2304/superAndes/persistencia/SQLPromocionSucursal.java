@@ -56,7 +56,7 @@ public class SQLPromocionSucursal {
 	 * @param idSucursal - identificador de la sucursal
 	 * @return El número de tuplas insertadas
 	 */
-	public long adicionarPromDescuento (PersistenceManager pm,long idPromocion,long idSucursal ) 
+	public long adicionarPromocionSucursal (PersistenceManager pm,long idPromocion,long idSucursal ) 
 	{
         Query q = pm.newQuery(SQL, "INSERT INTO " + pp.darTablaPromocionSucursal() + "(idPromocion, idSucursal"
         		+ ") values (?, ?)");
@@ -72,7 +72,7 @@ public class SQLPromocionSucursal {
 	 * @param idSucursal- El identificador de la sucursal
 	 * @return EL número de tuplas eliminadas
 	 */
-	public long eliminarPromDescuentoPorId (PersistenceManager pm, long idPromocion, long idSucursal)
+	public long eliminarPromocionDescuento (PersistenceManager pm, long idPromocion, long idSucursal)
 	{
         Query q = pm.newQuery(SQL, "DELETE FROM " + pp.darTablaPromocionSucursal() + " WHERE idPromocion = ? AND idSucursal = ? ");
         q.setParameters(idPromocion, idSucursal);
@@ -115,7 +115,7 @@ public class SQLPromocionSucursal {
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos PromocionSucursal
 	 */
-	public List<PromocionSucursal> darTodasPromDescuento (PersistenceManager pm)
+	public List<PromocionSucursal> darTodasPromocionDescuento (PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromocionSucursal());
 		q.setResultClass(PromocionSucursal.class);

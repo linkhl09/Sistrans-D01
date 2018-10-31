@@ -200,7 +200,7 @@ public class PersistenciaSuperAndes {
 	/**
 	 * Atributo para el acceso a la tabla "PromocionSucursal" de la base de datos
 	 */
-	private SQLPromPagLleveCatidad sqlPromocionSucursal;
+	private SQLPromocionSucursal sqlPromocionSucursal;
 
 
 	/**
@@ -3130,6 +3130,24 @@ public class PersistenciaSuperAndes {
         }
 	}
 
+	/**
+	 * Método que consulta la PromDescuento con el id dado.
+	 * @param id - El identificador del PromDescuento
+	 * @return el objeto PromDesc con el identificador dado
+	 */
+	public PromDesc darPromDescuentoPorId(long id)
+	{
+		return sqlPromDescuento.darPromDescuentoPorId(pmf.getPersistenceManager(), id);
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla de PromDescuento.
+	 * @return Una lista de objetos ProDescuento, construidos con base en las tuplas de la tabla PROM_DESCUENTO.
+	 */
+	public List<PromDesc> darPromDescuento()
+	{
+		return sqlPromDescuento.darPromDescuento(pmf.getPersistenceManager());
+	}
 
 	/* ****************************************************************
 	 * 			Métodos para manejar las PROMOCIONES (pague n lleve m unidades)
@@ -3189,7 +3207,7 @@ public class PersistenciaSuperAndes {
 	 * @param id - El numero de la promocion a eliinar
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
 	 */
-	public long eliminarPromPagueLleveUnidad (long id) 
+	public long eliminarPromPagLleveUnidad (long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -3216,7 +3234,24 @@ public class PersistenciaSuperAndes {
         }
 	}
 
-
+	/**
+	 * Método que consulta la PromPagueLleveUnid con el id dado.
+	 * @param id - El identificador del PromPagueLleveUnid
+	 * @return el objeto PromPagueLleveUnid con el identificador dado
+	 */
+	public PromPagueLleveUnid darPromPagLlevUnidadPorId(long id)
+	{
+		return sqlPromPagLlevUnidad.darPromPagLlevUnidadPorId(pmf.getPersistenceManager(), id);
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla de PromPagueLleveUnid.
+	 * @return Una lista de objetos PromPagueLleveUnid, construidos con base en las tuplas de la tabla PROM_PAGLLEVEUNID.
+	 */
+	public List<PromPagueLleveUnid> darPromPagueLleveUnid()
+	{
+		return sqlPromPagLlevUnidad.darPromPagueLleveUnid(pmf.getPersistenceManager());
+	}
 	
 	/* ****************************************************************
 	 * 			Métodos para manejar las PROMOCIONES (DESCUENTO SEGUNDA UNIDAD)
@@ -3236,7 +3271,7 @@ public class PersistenciaSuperAndes {
 	 * @return El nÃºmero de tuplas insertadas
 	 */
 	
-	public PromSegUniDesc adicionarPromocionSegUnidDesc(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromSegUniDesc adicionarPromDescSegUnid(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -3279,7 +3314,7 @@ public class PersistenciaSuperAndes {
 	 * @param id - El numero de la promocion a eliinar
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
 	 */
-	public long eliminarPromSegUniDesc(long id) 
+	public long eliminarPromDescSegUnidPorId(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
         Transaction tx=pm.currentTransaction();
@@ -3306,6 +3341,24 @@ public class PersistenciaSuperAndes {
         }
 	}
 
+	/**
+	 * Método que consulta la PromDescSegUnid con el id dado.
+	 * @param id - El identificador del PromDescSegUnid
+	 * @return el objeto PromDescSegUnid con el identificador dado
+	 */
+	public PromSegUniDesc darPromDescSegUnidPorId(long id)
+	{
+		return sqlPromDescSegUnid.darPromDescSegUnidPorId(pmf.getPersistenceManager(), id);
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla de PromPagueLleveUnid.
+	 * @return Una lista de objetos PromPagueLleveUnid, construidos con base en las tuplas de la tabla PROM_PAGLLEVEUNID.
+	 */
+	public List<PromSegUniDesc> darPromDescSegUnid()
+	{
+		return sqlPromDescSegUnid.darPromDescSegUnid(pmf.getPersistenceManager());
+	}
 
 	
 
@@ -3329,7 +3382,7 @@ public class PersistenciaSuperAndes {
 	 */
 
 	
-	public PromPagueLleveCant adicionarPromocionPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromPagueLleveCant adicionarPromPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve )
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -3373,14 +3426,14 @@ public class PersistenciaSuperAndes {
 	 * @param id - El numero de la promocion a eliinar
 	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Excepción
 	 */
-	public long eliminarPromPagueLleveCant(long id) 
+	public long eliminarPromPagLleveCatidadPorId(long id) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlPromPagLleveCatidad.eliminarPromPagLleveCatidadPornumeroPromo(pm, id);
+			long resp = sqlPromPagLleveCatidad.eliminarPromPagLleveCatidadPorId(pm, id);
 			tx.commit();
 			return resp;
 		}
@@ -3400,8 +3453,68 @@ public class PersistenciaSuperAndes {
 		}
 	} 
 
+	/**
+	 * Método que consulta la PromPagueLleveCant con el id dado.
+	 * @param id - El identificador del PromPagueLleveCant
+	 * @return el objeto PromPagueLleveCant con el identificador dado
+	 */
+	public PromPagueLleveCant darPromPagueLleveCantPorId(long id)
+	{
+		return sqlPromPagLleveCatidad.darPromPagueLleveCantPorId(pmf.getPersistenceManager(), id);
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla de darPromPagueLleveCantPorId.
+	 * @return Una lista de objetos darPromPagueLleveCantPorId, construidos con base en las tuplas de la tabla PROM_PAGLLEVECANT.
+	 */
+	public List<PromPagueLleveCant> darPromPagLleveCatidad()
+	{
+		return sqlPromPagLleveCatidad.darPromPagLleveCatidad(pmf.getPersistenceManager());
+	}
+	
 
+	// -----------------------------------------------------------------
+		// Métodos de tabla PromcionSucursal
+		// -----------------------------------------------------------------
 
+		/**
+		 * Método que adiciona, de manera transaccional, una tupla en la tabla PROMOCION SUCURSAL.
+	 	 * Adiciona entradas al log de la aplicación.
+		 * @param idSucursal - El id de la sucursal.
+		 * @param idPromocion - El identificador de la promocion.
+		 * @return El objeto tipo PromocionSucursal adicionado. Null si se encuentra alguna Exception.
+		 */
+		public PromocionSucursal adicionarPromocionSucursal(long idSucursal, long idPromocion)
+		{
+			PersistenceManager pm = pmf.getPersistenceManager();
+			Transaction tx=pm.currentTransaction();
+			try
+			{
+				tx.begin();
+				long tuplasInsertadas = sqlPromocionSucursal.adicionarPromocionSucursal(pm, idSucursal, idPromocion);
+				tx.commit();
+
+				log.trace("Inserción de asociacion entre sucursal: " + idSucursal + " y promocion: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas."); 
+
+				return new PromocionSucursal(idPromocion, idSucursal);
+			}
+			catch (Exception e)
+			{
+				//        	e.printStackTrace();
+				log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+				return null;
+			}
+			finally
+			{
+				if (tx.isActive())
+				{
+					tx.rollback();
+				}
+				pm.close();
+			}
+		}
+
+		
 	
 	
 }
