@@ -85,7 +85,7 @@ public class PersistenciaSuperAndes {
 	/**
 	 * Atributo para el acceso a la tabla "TipoCategoria" de la base de datos
 	 */
-	private SQLTipoCategoria sqlTipoCategoria;
+	private SQLTipoProducto sqlTipoProducto;
 
 	/**
 	 * Atributo para el acceso a la tabla "Producto" de la base de datos
@@ -313,7 +313,7 @@ public class PersistenciaSuperAndes {
 	{
 		sqlCategoria = new SQLCategoria(this);
 		sqlTipo = new SQLTipo(this);		
-		sqlTipoCategoria = new SQLTipoCategoria(this);
+		sqlTipoProducto = new SQLTipoProducto(this);
 		sqlProducto = new SQLProducto(this);
 		sqlSucursal = new SQLSucursal(this);
 		sqlSucursalProducto  = new SQLSucursalProducto(this);
@@ -366,7 +366,7 @@ public class PersistenciaSuperAndes {
 	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de TipoCategoria de SuperAndes.
 	 */
-	public String darTablaTipoCategoria() 
+	public String darTablaTipoProducto() 
 	{
 		return tablas.get(3);
 	}
@@ -810,7 +810,7 @@ public class PersistenciaSuperAndes {
 		try
 		{
 			tx.begin();
-			long tuplasInsertadas = sqlTipoCategoria.adicionarTipoCategoria(pm, nombreCategoria, nombreTipo);
+			long tuplasInsertadas = sqlTipoProducto.adicionarTipoProducto(pm, nombreCategoria, nombreTipo);
 			tx.commit();
 
 			log.trace("Inserción de TipoCategoria con la categoria: " + nombreCategoria + " y el tipo: " + nombreTipo+ ". Con " + tuplasInsertadas + " tuplas Insertadas");
@@ -845,7 +845,7 @@ public class PersistenciaSuperAndes {
 		try
 		{
 			tx.begin();
-			long resp = sqlTipoCategoria.eliminarTipoCategoria(pm, nombreCategoria, nombreTipo);
+			long resp = sqlTipoProducto.eliminarTipoCategoria(pm, nombreCategoria, nombreTipo);
 			tx.commit();
 			return resp;
 		}
@@ -872,7 +872,7 @@ public class PersistenciaSuperAndes {
 	 */
 	public List<TipoCategoria> darTiposCategoria(String nombreCategoria)
 	{
-		return sqlTipoCategoria.darTiposCategoria(pmf.getPersistenceManager(), nombreCategoria);
+		return sqlTipoProducto.darTiposDelProducto(pmf.getPersistenceManager(), nombreCategoria);
 	}
 
 	/**
@@ -881,7 +881,7 @@ public class PersistenciaSuperAndes {
 	 */
 	public List<TipoCategoria> darTodosTipoCategoria()
 	{
-		return sqlTipoCategoria.darTodosTipoCategoria(pmf.getPersistenceManager());
+		return sqlTipoProducto.darTodosTipoCategoria(pmf.getPersistenceManager());
 	}
 
 	// -----------------------------------------------------------------

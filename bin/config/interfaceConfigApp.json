@@ -19,8 +19,12 @@
 			"options":
 			[
 				{
-					"label":"Adicionar",
+					"label":"Adicionar Producto",
 					"event":"adicionarProducto"
+				},
+				{
+					"label":"Adicionar Promoción",
+					"event":"adicionarPromocion"
 				}
 			]
 		},
@@ -39,12 +43,72 @@
 			]
 		},
 		{
+			"menuTitle":"CarritoCompras",
+			"options":
+			[
+				{
+					"label":"Solicitar",
+					"event":"adicionarCarritoCompras"
+				},
+				{
+					"label":"Abandonar",
+					"event":"abandonarCarritoCompras"
+				},
+				{
+					"label":"Agregar Producto",
+					"event":"adicionarProductoCarrito"
+				},
+				{
+					"label":"Devolver producto",
+					"event":"devolverProductoCarritoCompras"
+				},
+				{
+					"label":"Pagar",
+					"event":"pagarCarritoCompras"
+				}
+			]
+		},
+		{
 			"menuTitle":"Sucursal",
 			"options":
 			[
 				{
 					"label":"Adicionar",
 					"event":"adicionarSucursal"
+				}
+			]
+		},
+		{
+			"menuTitle":"Bodega",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarBodega"
+				}
+			]
+		},
+		{
+			"menuTitle":"Estante",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarEstante"
+				}	
+			]
+		},
+		{
+			"menuTitle":"Orden Pedido",
+			"options":
+			[
+				{
+					"label":"Adicionar",
+					"event":"adicionarOrdenPedido"
+				},
+				{
+					"label":"Registrar llegada pedido",
+					"event":"registrarFechaLlegada"
 				}
 			]
 		},
@@ -73,6 +137,49 @@
 				}
 			]
 		},		
+		{
+			"menuTitle":"RFC",
+			"options":
+			[
+				{
+					"label":"RFC1",
+					"event":"dineroDeVentas"
+				},
+				{
+					"label":"RFC2",
+					"event":"darPromocionesMasPopulares"
+				},
+				{
+					"label":"RFC3.1",
+					"event":"indiceOcupacionBodegas"
+				},
+				{
+					"label":"RFC4",
+					"event":"informacionProducto"
+				},
+				{
+					"label":"RFC5",
+					"event":"mostrarComprasAProveedores"
+				},
+				{
+					"label":"RFC6",
+					"event":"mostrarVentasAUsuario"
+				},
+				{
+					"label":"RFC7",
+					"event":"analizarOperacionSuperAndes"
+				},
+				{
+					"label":"RFC8",
+					"event":"encontrarClientesFrecuentes"
+				},
+				{
+					"label":"RFC9",
+					"event":"productosConPocaDemanda"
+				}
+
+			]
+		},
 		{ "menuTitle": "Documentación",
 		  "options":
 			[
