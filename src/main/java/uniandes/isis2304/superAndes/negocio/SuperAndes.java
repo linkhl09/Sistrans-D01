@@ -231,10 +231,10 @@ public class SuperAndes {
 	 * @param nombreCategoria - Nombre de la categoria.
 	 * @return El objeto TipoCategoria adicionado. Null si ocurre alguna Exception.
 	 */
-	public TipoCategoria adicionarTipoCategoria(String nombreTipo, String nombreCategoria)
+	public TipoProducto adicionarTipoCategoria(String nombreTipo, String nombreCategoria)
 	{
 		log.info("Adicionando TipoCategoria: nombreTipo->" + nombreTipo +" nombreCategoria->" + nombreCategoria);
-		TipoCategoria agregado = psa.adicionarTipoCategoria(nombreTipo, nombreCategoria);
+		TipoProducto agregado = psa.adicionarTipoProducto(nombreTipo, nombreCategoria);
 		log.info("Adicionado TipoCategoria");
 		return agregado;
 	}
@@ -248,7 +248,7 @@ public class SuperAndes {
 	public long eliminarTipoCategoria(String nombreTipo, String nombreCategoria)
 	{
 		log.info("Eliminando TipoCategoria");
-		long resp = psa.eliminarTipoCategoria(nombreTipo, nombreCategoria);
+		long resp = psa.eliminarTipoProducto(nombreTipo, nombreCategoria);
 		log.info("Eliminada: " + resp + " tuplas eliminadas.");
 		return resp;
 	}
@@ -258,10 +258,10 @@ public class SuperAndes {
 	 * @param nombreCategoria
 	 * @return
 	 */
-	public List<TipoCategoria> darTiposCategoria(String nombreCategoria)
+	public List<TipoProducto> darTiposCategoria(String nombreCategoria)
 	{
 		log.info("Consultando TiposCategoria.");
-		List<TipoCategoria> list = psa.darTiposCategoria(nombreCategoria);
+		List<TipoProducto> list = psa.darTiposDelProducto(nombreCategoria);
 		log.info("Consultando TiposCategoria: " + list.size() + " existentes.");
 		return list;
 	}
@@ -270,10 +270,10 @@ public class SuperAndes {
 	 * 
 	 * @return
 	 */
-	public List<TipoCategoria> darTodosTipoCategoria()
+	public List<TipoProducto> darTodosTipoCategoria()
 	{
 		log.info("Consultando todos los tipoCategoria.");
-		List<TipoCategoria> list = psa.darTodosTipoCategoria();
+		List<TipoProducto> list = psa.darTodosTipoProducto();
 		log.info("Consultando todos los tipoCategoria: " + list.size() + " existentes.");
 		return list;
 	}
@@ -282,11 +282,11 @@ public class SuperAndes {
 	 * 
 	 * @return
 	 */
-	public List<VOTipoCategoria> darVOTipoCategoria()
+	public List<VOTipoProducto> darVOTipoCategoria()
 	{
 		log.info("Generando los VO de TipoCategoria");
-		List<VOTipoCategoria> list = new LinkedList<VOTipoCategoria>();
-		for(TipoCategoria tb: psa.darTodosTipoCategoria())
+		List<VOTipoProducto> list = new LinkedList<VOTipoProducto>();
+		for(TipoProducto tb: psa.darTodosTipoProducto())
 		{
 			list.add(tb);
 		}

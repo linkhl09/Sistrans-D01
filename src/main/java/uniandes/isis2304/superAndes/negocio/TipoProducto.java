@@ -4,7 +4,7 @@ package uniandes.isis2304.superAndes.negocio;
  * Clase para modelar el concepto de TipoCategoria.
  * @author Andrés Hernández
  */
-public class TipoCategoria implements VOTipoCategoria
+public class TipoProducto implements VOTipoProducto
 {
 	
 	// -----------------------------------------------------------------
@@ -12,12 +12,12 @@ public class TipoCategoria implements VOTipoCategoria
     // -----------------------------------------------------------------
 	
 	/**
-	 * Nombre de la categoria.
+	 * Indentificador del producto.
 	 */
-	private String nombreCategoria;
+	private String codigoBarrasProducto;
 
 	/**
-	 * Tipo de la categoria.
+	 * Tipo del producto.
 	 */
 	private String nombreTipo;
 	
@@ -28,21 +28,21 @@ public class TipoCategoria implements VOTipoCategoria
 	/**
 	 * Constructor vacio.
 	 */
-	public TipoCategoria()
+	public TipoProducto()
 	{
-		nombreCategoria = "";
+		codigoBarrasProducto = "";
 		nombreTipo =""; 
 	}
 	
 	
 	/**
 	 * Constructor con valores. 
-	 * @param nombreCategoria Nombre de la categoria.
-	 * @param nombreTipo Tipo de la categoria.
+	 * @param codigoBarrasProducto - Identificador del producto.
+	 * @param nombreTipo Tipo del producto.
 	 */
-	public TipoCategoria(String nombreCategoria, String nombreTipo) 
+	public TipoProducto(String codigoBarrasProducto, String nombreTipo) 
 	{
-		this.nombreCategoria = nombreCategoria;
+		this.codigoBarrasProducto = codigoBarrasProducto;
 		this.nombreTipo = nombreTipo;
 	}
 	
@@ -51,7 +51,7 @@ public class TipoCategoria implements VOTipoCategoria
     // -----------------------------------------------------------------	
 	
 	/**
-	 * @return Nombre del tipo de la categoria.
+	 * @return Nombre del tipo del producto.
 	 */
 	public String getNombreTipo() 
 	{
@@ -59,7 +59,7 @@ public class TipoCategoria implements VOTipoCategoria
 	}
 
 	/**
-	 * Set del tipo de la categoria.
+	 * Set del tipo del producto.
 	 * @param nombreTipo Nuevo tipo.
 	 */
 	public void setNombreTipo(String nombreTipo) 
@@ -68,25 +68,25 @@ public class TipoCategoria implements VOTipoCategoria
 	}
 
 	/**
-	 * @return Nombre de la categoria.
+	 * @return Identificador del producto.
 	 */
-	public String getNombreCategoria() 
+	public String getCodigoBarrasProducto() 
 	{
-		return nombreCategoria;
+		return codigoBarrasProducto;
 	}
 
 	/**
-	 * Set de la categoria.
-	 * @param categoria nueva categoria.
+	 * Set del producto 
+	 * @param codigoBarrasProducto - nuevo producto asociado.
 	 */
-	public void setNombreCategoria(String categoria) 
+	public void setNombreCategoria(String codigoBarrasProducto) 
 	{
-		this.nombreCategoria = categoria;
+		this.codigoBarrasProducto = codigoBarrasProducto;
 	}
 	
 	@Override
 	public String toString()
 	{
-		return "TipoCategoria [nombreCategoria=" +nombreCategoria +", nombreTipo=" + nombreTipo +"]";
+		return "TipoCategoria [codigoBarrasProducto=" +codigoBarrasProducto +", nombreTipo=" + nombreTipo +"]";
 	}
 }
