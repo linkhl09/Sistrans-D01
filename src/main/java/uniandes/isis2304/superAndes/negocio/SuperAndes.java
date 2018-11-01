@@ -566,7 +566,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
-
+	/**
+	 * Elimina una bodega por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El id de la bodega a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarBodega(long id) 
 	{
 		log.info ("Eliminando Bodega con el id: " + id);
@@ -636,7 +641,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
-
+	/**
+	 * Elimina un estante por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El id  del estantea a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarEstante(long id)
 	{
 		log.info ("Eliminando Estante con id: " + id + ".");
@@ -707,7 +717,13 @@ public class SuperAndes {
 		return agregado;
 	}
 
-
+	/**
+	 * Elimina un producto de una bodega
+	 * Adiciona entradas al log de la aplicación
+	 * @param idBodega - El id de la bodega a la cual se le eliminara el producto
+	 * @param codigoBarras - El codigo de barras del producto a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarProductoEnBodega(long idBodega, String codigoBarrasProducto) 
 	{
 		log.info ("Eliminando ProductosEnBodega: producto: " + codigoBarrasProducto + " de la bodega: " + idBodega);
@@ -791,7 +807,13 @@ public class SuperAndes {
 		return agregado;
 	}
 
-
+	/**
+	 * Elimina un producto de un estante
+	 * Adiciona entradas al log de la aplicación
+	 * @param idEstante - El id del estante a la cual se le eliminara el producto
+	 * @param codigoBarras - El codigo de barras del producto a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarProductosEnEstante(long idEstante, String codigoBarrasProducto)
 	{
 		log.info ("Eliminando ProductosEnEstante: producto: " + codigoBarrasProducto + " del estante: " + idEstante);
@@ -879,8 +901,14 @@ public class SuperAndes {
 		log.info ("Adicionada Persona natural.");
 		return agregado;
 	}
-
-	public long[] eliminarPersonaNatural(String documento, String tipoDocumento, String correoElectronico)
+	/**
+	 * Elimina una persona natural por su documento y su correo electronico
+	 * Adiciona entradas al log de la aplicación
+	 * @param documento - El numero de documento de la persona natural a eliminar
+	 * @param correoElectronico - El correo electronico de la persona natural a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
+	public long[] eliminarPersonaNatural(String documento, String correoElectronico)
 	{
 		log.info ("Eliminando Persona Natural con el documento: " + documento + " y correo: " + correoElectronico);
 		long[] resp = psa.eliminarPersonaNatural(documento, correoElectronico);
@@ -938,6 +966,13 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una empresa por su nit y su correo electronico
+	 * Adiciona entradas al log de la aplicación
+	 * @param nit - El numero de identificacion de la empresa a eliminar
+	 * @param correoElectronico - El correo electronico de la empresa a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long[] eliminarEmpresaPorNit(String nit, String correoElectronico)
 	{
 		log.info ("Eliminando Empresa con el NIT: " + nit);
@@ -946,6 +981,13 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Elimina una empresa por su direccion y su correo electronico
+	 * Adiciona entradas al log de la aplicación
+	 * @param direccion - la direccion de la empresa a eliminar
+	 * @param correoElectronico - El correo electronico de la empresa a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long[] eliminarEmpresaPorDireccion(String direccion, String correoElectronico) 
 	{
 		log.info ("Eliminando empresa por dirección: " + direccion);
@@ -1041,6 +1083,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina un carrito de compras por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el id del carrito de compras a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarCarritoCompras(long id)
 	{
 		log.info("Eliminando carritoCompras: " + id);
@@ -1104,6 +1152,13 @@ public class SuperAndes {
 		return agregado;
 	}
 	
+	/**
+	 * Elimina un producto del carrito de compras
+	 * Adiciona entradas al log de la aplicación
+	 * @param carrito - el id del carrito de compras del cual se eliminara el producto
+	 * @param codigoBarrasProducto - el codigo de barras del producto a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarProductoCarrito(long carrito, String codigoBarrasProducto)
 	{
 		log.info("Eliminando CarritoCompras: carrito-"+carrito + " producto-" + codigoBarrasProducto);
@@ -1172,6 +1227,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una factura por su numero
+	 * Adiciona entradas al log de la aplicación
+	 * @param numero - el id de la factura a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarFactura(long numero)
 	{
 		log.info ("Eliminando ");
@@ -1228,16 +1289,27 @@ public class SuperAndes {
 		return agregado;
 	}
 
-	
+	/**
+	 * Elimina todos los productos de una factura
+	 * Adiciona entradas al log de la aplicación
+	 * @param factura - el numero de la factura a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarProductosDeFactura(long factura)
 	{
 		log.info ("Eliminando FacturaProducto");
-		long resp = psa.eliminarProductosDeFactura(factura);
+		long resp = psa.eliminarFacturaProductos(factura);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
-	
+	/**
+	 * Elimina un producto de una factura
+	 * Adiciona entradas al log de la aplicación
+	 * @param factura - el numero de la factura  de la cual se eliminara el producto
+	 * @param producto - el codigo del producto a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarProductoDeFactura(long factura, String producto) 
 	{
 		log.info ("Eliminando FacturaProducto");
@@ -1478,6 +1550,15 @@ public class SuperAndes {
 	// Métodos de tabla ProductoOrdenPedido
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un producto a un Orden Pedido.
+	 * Adiciona entradas al log de la aplicación
+	 * @param pedido - identificador del pedido
+	 * @param cantidad - cantidad del producto asociado a la orden
+	 * @param calidad - calidad de los productos asociados 
+	 * @param producto - codigo del producto
+	 * @return El objeto ProductoOrdenPedido adicionado. null si ocurre alguna Excepción
+	 */
 	public ProductoOrdenPedido adicionarProductoOrdenPedido(long pedido, int cantidad, double calidad, String producto, Date fechaAgregado)
 	{
 		log.info ("Adicionando  ProductoOrdenPedido: " );

@@ -2590,14 +2590,14 @@ public class PersistenciaSuperAndes {
 	 * @param factura - Identificador único de la factura.
 	 * @return Número de tuplas eliminadas. -1 si ocurre alguna Exception.
 	 */
-	public long eliminarProductosDeFactura(long factura) 
+	public long eliminarFacturaProductos(long factura) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlFacturaProducto.eliminarProductosDeFactura(pm, factura);
+			long resp = sqlFacturaProducto.eliminarFacturaProductos(pm, factura);
 			tx.commit();
 			return resp;
 		}
