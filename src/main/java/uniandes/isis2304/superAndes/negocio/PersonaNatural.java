@@ -33,11 +33,11 @@ public class PersonaNatural extends Cliente implements VOPersonaNatural {
 	
 	/**
 	 * Constructor con valores.
-	 * @param documento
-	 * @param tipoDocumento
-	 * @param correoElectronico
-	 * @param nombre
-	 * @param puntos
+	 * @param documento - numero de documento del cleinte
+	 * @param tipoDocumento - tipo de documenrto del cleiente
+	 * @param correoElectronico -correo electronico del cleinte
+	 * @param nombre - nombre del cliente 
+	 * @param puntos - puntod que lleva acumulados el cliente
 	 */
 	public PersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre, int puntos) {
 		super(correoElectronico, nombre, puntos);

@@ -299,20 +299,46 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 
 	
+	/**
+	 * Adiciona de manera persistente un producto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @param codigoBarras codigo de barras del producto.
+	 * @param nombre nombre del producto.
+	 * @param marca marca del producto.
+	 * @param precioUnitario precio unitario del producto.
+	 * @param presentacion presentacion del producto.
+	 * @param precioUnidadMedida precio por unidad de medida del producto.
+	 * @param cantidadPresentacion cantidad en la presentacion del producto.
+	 * @param peso peso del producto.
+	 * @param unidadMedidaPeso unidad de medida del peso del producto.
+	 * @param volumen volumen del producto.
+	 * @param unidadMedidaVolumen unidad de medida del volumen del producto.
+	 * @param calidad calidad del producto.
+	 * @param nivelReorden nivel de re orden del producto.
+	 * @param fechaVencimiento fecha de vencimiento del producto.
+	 * @param categoria categoria del producto.
+	 * @param promocion boolean que indica si el producto esta en promocion.
+	 * @return El objeto Producto adicionado. Null si ocurre alguna Exception.
+	 */
 	public  Producto adicionarProducto(String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
 			int nivelReorden, Date fechaVencimiento, String categoria, boolean promocion)
 	{
-		log.info ("Adicionando producto: " + nombre);
+		log.info ("Adicionando producto: " + nombre  );
 		Producto agregado = psa.adicionarProducto(codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, promocion);
 		log.info ("Adicionado el producto.");
 		return agregado;
 	}
 
+	/**
+	 * Elimina un producto por su codigo de barras.
+	 * @param codigoBarras - codigo de barras del producto a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarProducto(String codigoBarras) 
 	{
-		log.info ("Eliminando Producto");
+		log.info ("Eliminando Producto con codigo de barras :" + codigoBarras);
 		long resp = psa.eliminarProducto(codigoBarras);
 		log.info ("Eliminando Producto: " + resp + " tuplas eliminadas");
 		return resp;
@@ -364,6 +390,17 @@ public class SuperAndes {
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente una sucursal.
+	 * Adiciona entradas al log de la aplicación
+	 * @param id id generado por el sistema para la sucursal.
+	 * @param direccion dirección de la nueva sucursal.
+	 * @param ciudad Ciudad de la nueva sucursal.
+	 * @param nombre Nombre de la nueva sucursal.
+	 * @param segmentacionMercado Segmentación de mercado de la nueva sucursal.
+	 * @param tamanio Tamaño de la nueva sucursal.
+	 * @return El objeto Sucursal adicionado. null si ocurre alguna Excepción
+	 */
 	public Sucursal adicionarSucursal(String direccion, String ciudad,
 			String nombre, String segmentacionMercado, int tamanio)
 	{
@@ -373,6 +410,11 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una Sucursal por su nombre.
+	 * @param nombre - nombre del tipo asociado a la categoria.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursal(String nombre) 
 	{
 		log.info ("Eliminando Sucursal por nombre.");
@@ -381,6 +423,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Elimina una sucursal por su id.
+	 * @param id - id de la sucursal a eliminar.
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursalPorId(long id) 
 	{
 		log.info ("Eliminando Sucursal por id.");
@@ -429,15 +476,27 @@ public class SuperAndes {
 	// Métodos de tabla SucursalProducto
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un objeto a la clase relacion sucursalProducto.
+	 * Adiciona entradas al log de la aplicación
+	 * @param idSucursal id de la sucursal a la que pertenece el producto.
+	 * @param codigoBarras producto asociado a la sucursal.
+	 * @return El objeto SucursalProducto adicionado. null si ocurre alguna Excepción
+	 */
 	public SucursalProducto adicionarSucursalProducto(long idSucursal, String codigoBarrasProducto)
 	{
-		log.info ("Adicionando SucursalProducto: " + idSucursal);
+		log.info ("Adicionando SucursalProducto: id de la sucursal" + idSucursal + "codigo de barras del produucto" + codigoBarrasProducto);
 		SucursalProducto agregado = psa.adicionarSucursalProducto(idSucursal, codigoBarrasProducto);	
 		log.info ("Adicionado SucursalProducto.");
 		return agregado;
 	}
 
-
+	/**
+	 * Elimina una sucursalProducto por su idSucursal y su codigo de producto.
+	 * @param idSucursal - id de la sucursal .
+	 * @param producto - codigo de barras del producto .
+	 * @return El número de tuplas eliminadas.
+	 */
 	public long eliminarSucursalProducto(long idSucursal, String producto)
 	{
 		log.info ("Eliminando SucursalProducto");
@@ -490,6 +549,15 @@ public class SuperAndes {
 	// Métodos de tabla Bodega
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un objeto Bodega.
+	 * Adiciona entradas al log de la aplicación
+	 * @param capacidadPeso - capacidad en peso de la bodega, por defecto en Kg.
+	 * @param capacidadVolumen - Capacidad en volumen de la bodega, por defecto en m^3.
+	 * @param tipo - Tipo de la bodega.
+	 * @param idSucursal - identificador de la surcursal .
+	* @return El objeto Bodega adicionado. null si ocurre alguna Excepción
+	 */
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Bodega");
@@ -551,7 +619,15 @@ public class SuperAndes {
 	// Métodos de tabla estante
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Adiciona de manera persistente un objeto Estante.
+	 * Adiciona entradas al log de la aplicación
+	 * @param capacidadPeso - capacidad en peso del estante, por defecto en Kg.
+	 * @param capacidadVolumen - Capacidad en volumen del estante, por defecto en m^3.
+	 * @param tipo - Tipo del estante. 
+	 * @param idSucursal - id de la surcursal del estante.
+	 * @return El objeto Estante adicionado. null si ocurre alguna Excepción
+	 */
 	public Estante adicionarEstante(double capacidadVolumen, double capacidadPeso, String tipo, long idSucursal)
 	{
 		log.info ("Adicionando Estante.");
@@ -613,7 +689,16 @@ public class SuperAndes {
 	// Métodos de tabla productosEnBodega
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Adiciona de manera persistente un objeto en la clase relacion productosEnBodega.
+	 * Adiciona entradas al log de la aplicación
+	 * Constructor con valores.
+	 * @param idBodega id de la bodega donde se almacenará el producto.
+	 * @param cantidad Cantidad de unidades del producto almacenado en bodega.
+	 * @param nivelAbastecimiento nivel de abastecimiento de ese producto en la bodega.
+	 * @param codigoBarrasProducto
+	 * @return El objeto ProductosEnBodega adicionado. null si ocurre alguna Excepción
+	 */
 	public ProductosEnBodega adicionarProductosEnBodega(long idBodega, int cantidad, int nivelAbastecimiento, String codigoBarrasProducto)
 	{
 		log.info ("Adicionando ProductosEnBodega: producto: "+ codigoBarrasProducto + " y bodega con id: "+ idBodega);
@@ -689,7 +774,15 @@ public class SuperAndes {
 	// Métodos de tabla productosEnEstante
 	// -----------------------------------------------------------------
 
-
+	/**
+	 * Adiciona de manera persistente un objeto en la clase relacion productosEnEstante.
+	 * Adiciona entradas al log de la aplicación
+	 * Constructor con valores.
+	  * @param idEstante Id del estante donde se almacena el producto.
+	 * @param cantidad Cantidad de productos que se almacenan en el estante.
+	 * @param codigoBarrasProducto Codigo de barras del producto almacenado en el estante.
+	 * @return El objeto ProductosEnEstante adicionado. null si ocurre alguna Excepción
+	 */
 	public ProductosEnEstante adicionarProductosEnEstante(long idEstante, int cantidad, String codigoBarrasProducto)
 	{
 		log.info ("Adicionando ProductosEnEstante: producto: " + codigoBarrasProducto + " al estante con id: " + idEstante);
@@ -769,6 +862,16 @@ public class SuperAndes {
 	// Métodos de tabla personaNatural 
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un objeto PersonaNatural.
+	 * Adiciona entradas al log de la aplicación
+	 * @param documento - numero de documento del cleinte
+	 * @param tipoDocumento - tipo de documenrto del cleiente
+	 * @param correoElectronico -correo electronico del cleinte
+	 * @param nombre - nombre del cliente 
+	 * @param puntos - puntod que lleva acumulados el cliente
+	 * @return El objeto PersonaNatural adicionado. null si ocurre alguna Excepción
+	 */
 	public PersonaNatural adicionarPersonaNatural(String documento, String tipoDocumento, String correoElectronico, String nombre)
 	{
 		log.info ("Adicionando Persona natural: " + nombre);
@@ -817,6 +920,16 @@ public class SuperAndes {
 	// Métodos de tabla Empresa
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un objeto Empresa.
+	 * Adiciona entradas al log de la aplicación
+	 * @param nit - numero de identificacion unico de la empresa
+	 * @param direccion - direccion de la empresa
+	 * @param correoElectronico - correo electronico del cliente
+	 * @param nombre - nombre de la empresa
+	 * @param puntos - numero de puntos de  la empresa
+	 * @return El objeto Empresa adicionado. null si ocurre alguna Excepción
+	 */
 	public Empresa adicionarEmpresa(String nit, String direccion, String correoElectronico, String nombre)
 	{
 		log.info ("Adicionando empresa con NIT: " + nit );
@@ -913,6 +1026,13 @@ public class SuperAndes {
 	// Métodos de tabla CarritoCompras
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un  Carrito de Compras.
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - El identificador del nuevo carrito de compras.
+	 * @param cliente -Correo eletrónico del cliente dueño del carrito de compras.
+	 * @return El objeto CarritoCompras adicionado. null si ocurre alguna Excepción
+	 */
 	public CarritoCompras adicionarCarritoCompras(String cliente)
 	{
 		log.info("Adicionando carrito compras al cliente: " + cliente);
@@ -968,6 +1088,14 @@ public class SuperAndes {
 	// Métodos de tabla Producto Carrito Compras
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un  producto a un carrito de compras.
+	 * Adiciona entradas al log de la aplicación
+	 * @param carrito - Identificador del carrito de compras.
+	 * @param cantidad - Cantidad del producto en el carrito.
+	 * @param codigoBarrasProducto - Identificador del producto puesto en el carrito.
+	 * @return El objeto CarritoCompras adicionado. null si ocurre alguna Excepción
+	 */
 	public ProductoCarritoCompras adicionarProductoCarrito(long carrito, int cantidad, String codigoBarrasProducto)
 	{
 		log.info("Adicionando ProductoCarritoCompras: " + carrito);
@@ -1021,6 +1149,19 @@ public class SuperAndes {
 	// Métodos de tabla Factura
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente una factura.
+	 * Adiciona entradas al log de la aplicación
+	 * @param direccion direccion de la factura
+	 * @param fecha Fecha de la factura.
+	 * @param nombreCajero nombre del cajero de la factura.
+	 * @param valorTotal valor total de la factura.
+	 * @param pagoExitoso pago exitoso de la compra.
+	 * @param puntosCompra puntos de la factura.
+	 * @param correoCliente CLiente que realiza la compra.
+	 * @param idSucursal identificador de la sucursal donde se realiza la compra
+	 * @return El objeto Factura adicionado. null si ocurre alguna Excepción
+	 */
 	public Factura adicionarFactura( String direccion, 
 			Date fecha, String nombreCajero, double valorTotal, boolean pagoExitoso, 
 			int puntosCompra, String correoCliente, long idSucursal)
@@ -1071,9 +1212,17 @@ public class SuperAndes {
 	// Métodos de tabla Factura_Prodcuto
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente unprducto a una factura.
+	 * Adiciona entradas al log de la aplicación
+	 * @param numero de la factura a  la que esta asociado el producto
+	 * @param cantidad del producto
+	 * @param codigo del producto asociado a la factura 
+	 * @return El objeto FacturaProducto adicionado. null si ocurre alguna Excepción
+	 */
 	public FacturaProducto adicionarFacturaProducto(long factura, int cantidad, String producto)
 	{
-		log.info ("Adicionando FacturaProducto: " + factura);
+		log.info ("Adicionando FacturaProducto: numero de la factura -> " + factura + " producto ->" + producto);
 		FacturaProducto agregado = psa.adicionarFacturaProducto(factura, cantidad, producto);	
 		log.info ("Adicionado");
 		return agregado;
@@ -1133,11 +1282,19 @@ public class SuperAndes {
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un proveedor.
+	 * Adiciona entradas al log de la aplicación
+	 * @param nit - numero unico de identificacion del proveedor.
+	 * @param nombre - nombre del proveedor. 
+	 * @param calificacion de calidad -  calificacion de calidad de el proveedor 
+	 * @return El objeto Proveedor adicionado. null si ocurre alguna Excepción
+	 */
 	public Proveedor adicionarProveedor(String nit, String nombre, double calificacion)
 	{
 		log.info ("Adicionando proveedor: " + nombre);
 		Proveedor agregado = psa.adicionarProveedor(nit, nombre, calificacion);	
-		log.info ("Adicionado");
+		log.info ("Adicionado Proveedor");
 		return agregado;
 	}
 
@@ -1196,14 +1353,20 @@ public class SuperAndes {
 	// Métodos de tabla proveedoresProducto 
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un producto a un proveedor.
+	 * Adiciona entradas al log de la aplicación
+	 * @param proveedor - numero de identificacion del proveedor
+	 * @param producto - codigo del producto
+	 * @return El objeto ProveedoresProducto adicionado. null si ocurre alguna Excepción
+	 */
 	public ProveedoresProducto adicionarProveedoresProducto(String proveedor, String producto)
 	{
-		log.info ("Adicionando ProveedoresProducto: " + proveedor + "-" +producto );
+		log.info ("Adicionando ProveedoresProducto: nit del proveedor" + proveedor + "codigo del producto" +producto );
 		ProveedoresProducto agregado = psa.adicionarProveedoresProducto(proveedor, producto);
-		log.info ("Adicionado");
+		log.info ("Adicionado ProveedorProducto ");
 		return agregado;
 	}
-
 	public long eliminarProveedoresProducto(String proveedor, String producto)
 	{
 		log.info ("Eliminando ProveedoresProducto");
@@ -1252,6 +1415,13 @@ public class SuperAndes {
 	// Métodos de tabla ordenPedido
 	// -----------------------------------------------------------------
 
+	/**
+	 * Adiciona de manera persistente un producto a un proveedor.
+	 * Adiciona entradas al log de la aplicación
+	 * @param proveedor - numero de identificacion del proveedor
+	 * @param producto - codigo del producto
+	 * @return El objeto ProveedoresProducto adicionado. null si ocurre alguna Excepción
+	 */
 	public OrdenPedido adicionarOrdenPedido( Date fechaEsperadaEntrega
 			, String proveedor, long idSucursal, String estado)
 	{

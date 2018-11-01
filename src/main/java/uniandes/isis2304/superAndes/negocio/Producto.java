@@ -136,7 +136,7 @@ public class Producto implements VOProducto{
 	 * @param nivelReorden nivel de re orden del producto.
 	 * @param fechaVencimiento fecha de vencimiento del producto.
 	 * @param categoria categoria del producto.
-	 * @param promocion promocion del producto.
+	 * @param promocion boolean que indica si el producto esta en promocion.
 	 */
 	public Producto(String codigoBarras, String nombre, String marca, double precioUnitario, String presentacion,
 			double precioUnidadMedida, int cantidadPresentacion, double peso, String unidadMedidaPeso, double volumen,

@@ -36,6 +36,7 @@ public class CarritoCompras implements VOCarritoCompras {
 	/**
 	 * Constructor con valores. 
 	 * @param id - El identificador del nuevo carrito de compras.
+	 * @param cliente -Correo eletrónico del cliente dueño del carrito de compras.
 	 */
 	public CarritoCompras(long id, String cliente)
 	{

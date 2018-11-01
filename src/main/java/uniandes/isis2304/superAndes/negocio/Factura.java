@@ -88,7 +88,8 @@ public class Factura implements VOFactura {
 	 * @param valorTotal valor total de la factura.
 	 * @param pagoExitoso pago exitoso de la compra.
 	 * @param puntosCompra puntos de la factura.
-	 * @param cliente CLiente que realiza la compra.
+	 * @param correoCliente CLiente que realiza la compra.
+	 * @param idSucursal identificador de la sucursal donde se realiza la compra
 	 */
 	public Factura(long numero, String direccion, Date fecha, String nombreCajero, double valorTotal,
 			boolean pagoExitoso, int puntosCompra, String correoCliente, long idSucursal) 

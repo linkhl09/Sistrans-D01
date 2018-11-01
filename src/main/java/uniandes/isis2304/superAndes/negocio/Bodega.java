@@ -53,12 +53,11 @@ public class Bodega implements VOBodega{
 	
 	/**
 	 * Constructor con valores.
-	 * @param id id generado por el sistema para la bodega.
-	 * @param capacidadPeso capacidad en peso de la bodega, por defecto en Kg.
-	 * @param capacidadVolumen Capacidad en volumen de la bodega, por defecto en m^3.
-	 * @param tipo Tipo de la bodega.
-	 * @param direccionSucursal direccion de la surcursal de la bodega.
-	 * @param ciudadSucursal ciudad de la sucursal de la bodega.
+	 * @param id - id generado por el sistema para la bodega.
+	 * @param capacidadPeso - capacidad en peso de la bodega, por defecto en Kg.
+	 * @param capacidadVolumen - Capacidad en volumen de la bodega, por defecto en m^3.
+	 * @param tipo - Tipo de la bodega.
+	 * @param idSucursal - identificador de la surcursal .
 	 */
 	public Bodega(long id, double capacidadPeso, double capacidadVolumen, 
 			String tipo, Long idSucursal) 
