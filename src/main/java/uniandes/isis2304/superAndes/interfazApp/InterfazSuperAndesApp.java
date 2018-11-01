@@ -232,6 +232,16 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
     // Métodos REQUERIMIENTOS FUNCIONALES.
     // -----------------------------------------------------------------
     
+    public void adicionarProveedor()
+    {
+    	String nit = JOptionPane.showInputDialog("Inserte el nit del proveedor.");
+    	String nombre = JOptionPane.showInputDialog("Inserte el nombre del proveedor.");
+    	String calificacionString = JOptionPane.showInputDialog("Inserte la calificación inicial del proveedor.");
+    	double calificacion = Double.parseDouble(calificacionString);
+    	superAndes.adicionarProveedor(nit, nombre, calificacion);
+    }
+    
+    
     public void adicionarPromocion()
     {
     	//TODO lo del JComboBox.

@@ -3159,11 +3159,6 @@ public class PersistenciaSuperAndes {
 	// Métodos de tabla PromDescuento
 	// -----------------------------------------------------------------
 
-
-	/* ****************************************************************
-	 * 			Métodos para manejar las PROMOCIONES (DESCUENTO)
-	 *****************************************************************/
-
 	/**@param pFechaInicio fecha en la cual se inicia la promocion
 	/**@param fechaFin fecha en la cual se finaliza la promocion
 	/**@param producto  producto que esta en promocion
