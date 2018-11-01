@@ -1327,7 +1327,7 @@ public class SuperAndes {
 	public List<ProductoOrdenPedido> darProductosDelPedido(long pedido)
 	{
 		log.info ("Consultando ");
-		List<ProductoOrdenPedido> list = psa.dardarProductosDelPedido(pedido);
+		List<ProductoOrdenPedido> list = psa.darProductosDelPedido(pedido);
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
