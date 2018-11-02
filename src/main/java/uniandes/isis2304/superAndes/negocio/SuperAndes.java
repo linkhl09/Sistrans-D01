@@ -90,7 +90,7 @@ public class SuperAndes {
 	 * Adiciona de manera persistente un tipo.
 	 * Adiciona entradas al log de la aplicación
 	 * @param nombre - El nombre del tipo.
-	 * @return El objeto TipoBebida adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Tipo adicionado. null si ocurre alguna Excepción
 	 */
 	public Tipo adicionarTipo (String nombre)
 	{
@@ -103,7 +103,7 @@ public class SuperAndes {
 	/**
 	 * Elimina un tipo por su nombre
 	 * Adiciona entradas al log de la aplicación
-	 * @param nombre - El nombre del tipo de bebida a eliminar
+	 * @param nombre - El nombre del tipo a eliminar
 	 * @return El número de tuplas eliminadas
 	 */
 	public long eliminarTipo(String nombre)
@@ -254,21 +254,24 @@ public class SuperAndes {
 	}
 	
 	/**
-	 * 
-	 * @param nombreCategoria
-	 * @return
+	 * Encuentra todos las tipos del producto SuperAndes.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos TipoProducto con todos los tipos-prodcuto que conoce la aplicación.
+	 * Llenos con su información básica.
 	 */
-	public List<TipoProducto> darTiposCategoria(String nombreCategoria)
+	public List<TipoProducto> darTiposProducto(String codigoBarrasProducto)
 	{
-		log.info("Consultando TiposCategoria.");
-		List<TipoProducto> list = psa.darTiposDelProducto(nombreCategoria);
-		log.info("Consultando TiposCategoria: " + list.size() + " existentes.");
+		log.info("Consultando los tipos de un producto.");
+		List<TipoProducto> list = psa.darTiposDelProducto(codigoBarrasProducto);
+		log.info("Consultando TiposProducto: " + list.size() + " existentes.");
 		return list;
 	}
 
 	/**
-	 * 
-	 * @return
+	 * Encuentra todas los productos con su tipo de SuperAndes.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos TipoProducto con todas las productos con sus tipo que conoce la aplicación.
+	 * Llenos con su información básica.
 	 */
 	public List<TipoProducto> darTodosTipoCategoria()
 	{
@@ -279,8 +282,10 @@ public class SuperAndes {
 	}
 	
 	/**
-	 * 
-	 * @return
+	 * Encuentra todas los TipoProducto de SuperAndes y las devuelve como una lista de VOTipoProducto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOTipoProducto con todas los productos con sus tipos que conoce la aplicación.
+	 * Llenos con su información básica.
 	 */
 	public List<VOTipoProducto> darVOTipoCategoria()
 	{
@@ -344,6 +349,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todos los productos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Producto con todos los productos que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Producto> darProductos()
 	{
 		log.info ("Consultando productos");
@@ -352,6 +362,11 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas los producto de SuperAndes y las devuelve como una lista de VOProducto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOProducto con todas los productos que conoce la aplicación.
+	 */
 	public List<VOProducto> darVOProducto ()
 	{
 		log.info ("Generando los VO de Productos");        
@@ -364,6 +379,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra el Producto de SuperAndes con el codido de barras solicitado.
+	 * @param codigoBarras - El codigo de barars  del producto.
+	 * @return Un objeto producto con el codigo de barras solicitado que conoce la aplicacion.
+	 * Lleno con su información básica.
+	 */
 	public Producto darProducto(String codigoBarras)
 	{
 		log.info ("Dar información de Producto con codigo de barras: "+ codigoBarras);
@@ -372,6 +393,11 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * actualiza el estado del producto con el codigo de barras ingresado y lo coloca como "en promocion" 
+	 * @param codigoBarras - El codigo de barras del producto.
+	 * @return el numero de tuplas actualizadas
+	 */
 	public long nuevaPromocion(String codigoBarras)
 	{
 		log.info("Se cambio el estado del producto a en promoción.");
@@ -379,6 +405,11 @@ public class SuperAndes {
 		return cambios;
 	}
 
+	/**
+	 * actualiza el estado del producto con el codigo de barras ingresado y lo coloca como "fuera de promocion" 
+	 * @param codigoBarras - El codigo de barras del producto.
+	 * @return el numero de tuplas actualizadas
+	 */
 	public long terminarPromocion(String codigoBarras)
 	{
 		log.info("Se cambio el estado del producto fuera de promoción.");
@@ -435,7 +466,12 @@ public class SuperAndes {
 		log.info ("Eliminando sucursal por id: " + resp + " tuplas eliminadas");
 		return resp;
 	}
-
+	
+	/**
+	 * Encuentra todos las sucursales  en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Sucursal con todos las sucursales  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Sucursal> darSucursales()
 	{
 		log.info ("Consultando Sucursales.");
@@ -444,6 +480,11 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas las sucursales de SuperAndes y las devuelve como una lista de VOSucursal.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOSucursal con todas las  sucursales que conoce la aplicación.
+	 */
 	public List<VOSucursal> darVOSucursal ()
 	{
 		log.info ("Generando los VO de Sucursal");        
@@ -456,6 +497,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la sucursal de SuperAndes con el nombre solicitado.
+	 * @param nombre - El nombre de la sucursal.
+	 * @return Un objeto Sucursal con la sucursal con ese nombre que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Sucursal  darSucursalPorNombre(String nombre)
 	{
 		log.info ("Dar información de Sucursal con nombre: " + nombre + ".");
@@ -464,6 +511,12 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Encuentra la sucursal de SuperAndes con el id solicitado.
+	 * @param id - El identificador de la sucursal.
+	 * @return Un objeto Sucursal con la sucursal con ese id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Sucursal  darSucursalPorId(long id)
 	{
 		log.info ("Dar información de Sucursal con el id: "+ id +".");
@@ -505,7 +558,11 @@ public class SuperAndes {
 		return resp;
 	}
 
-
+	/**
+	 * Encuentra todas los productos de la sucursal  cuyo cidentificador es igual al ingresado por parametro en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos SucursalProducto con todas los productos de la sucursal  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<SucursalProducto> darProductosSucursal(long idSucursal)
 	{
 		log.info ("Consultando SucursalProducto de una sucursal.");
@@ -514,7 +571,11 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas las sucursales que tienen el producto cuyo codigo de barras es igual al ingresado por parametro en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos SucursalProducto con todas las sucursales que tienen el producto  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<SucursalProducto> darSucursalesProducto(String codigoBarrasProducto )
 	{
 		log.info ("Consultando SucursalProducto de un producto.");
@@ -523,7 +584,11 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todos los productos de todas la sucursales en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos SucursalProducto con todos los productos de todas la sucursales que conoce la aplicación, llenos con su información básica
+	 */
 	public List<SucursalProducto> darTodosProductosSucursales()
 	{
 		log.info ("Consultando todos los SucursalProducto");
@@ -532,7 +597,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas las sucursales con todos sus productos de SuperAndes y las devuelve como una lista de VOSucursalProducto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOSucursalProducto
+     * con todas las sucursales con  sus productos  que conoce la aplicación.
+	 */
 	public List<VOSucursalProducto> darVOSucursalProducto ()
 	{
 		log.info ("Generando los VO de SucursalProducto");        
@@ -580,7 +650,11 @@ public class SuperAndes {
 		return resp;
 	}
 
-
+	/**
+	 * Encuentra todos las bodegas en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Bodega con todos las Bodegas que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Bodega> darBodegas ()
 	{
 		log.info ("Consultando Bodegas.");
@@ -588,8 +662,13 @@ public class SuperAndes {
 		log.info ("Consultando Bodegas: " + list.size() + " existentes");
 		return list;
 	}
-
-
+	
+	/**
+	 * Encuentra todos las bodegas de una sucursal en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Bodega con todas las bodegas de una sucursal que conoce la aplicación, llenos con su información básica
+	 * @param idSucursal - El id de la sucursal de la cual se quieren conocer las bodegas
+	 */
 	public List<Bodega> darBodegasSucursal(long idSucursal)
 	{
 		log.info ("Consultando Bodegas por sucursal.");
@@ -598,7 +677,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas las bodegas de SuperAndes y las devuelve como una lista de VOBodega.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOBodega
+     * con todas las bodegas que conoce la aplicación.
+	 */
 	public List<VOBodega> darVOBodega()
 	{
 		log.info ("Generando los VO de Bodega");        
@@ -611,7 +695,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra la bodega de SuperAndes con el id solicitado.
+	 * @param id - El id de la bodega.
+	 * @return Un objeto Bodega con la bodega de ese id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Bodega darBodega(long id)
 	{
 		log.info ("Dar información de Bodega por id.");
@@ -655,7 +744,11 @@ public class SuperAndes {
 		return resp;
 	}
 
-
+	/**
+	 * Encuentra todos los Estantes  en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Estante con todos los estantes que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Estante> darEstantes()
 	{
 		log.info ("Consultando todos los Estantes");
@@ -664,7 +757,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas los estantes de SuperAndes y las devuelve como una lista de VOEstante.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOEstante
+     * con todas los estantes que conoce la aplicación.
+	 */
 	public List<VOEstante> darVOEstante ()
 	{
 		log.info ("Generando los VO de Estante");        
@@ -677,7 +775,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra el estante de SuperAndes con el id solicitado.
+	 * @param id - El id del estante.
+	 * @return Un objeto Estante con el estante de ese id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Estante darEstante(long id)
 	{
 		log.info ("Dar información del Estante con id: " + id + ".");
@@ -686,7 +789,12 @@ public class SuperAndes {
 		return buscado;
 	}
 
-
+	/**
+	 * Encuentra todos los estantes de una sucursal en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Estante con todos los estantes de una sucursal que conoce la aplicación, llenos con su información básica
+	 * @param idSucursal - El id de la sucursal de la cual se quieren conocer los estantes
+	 */
 	public List<Estante> darEstantePorSucursal(long idSucursal)
 	{
 		log.info ("Consultando Estantes por sucursal.");
@@ -732,7 +840,12 @@ public class SuperAndes {
 		return resp;
 	}
 
-
+	/**
+	 * Encuentra todos los productos de una bodega en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param idBdega - El id de la bodega de la cual se quieren conocer sus productos
+	 * @return Una lista de objetos ProductosEnBodega con todos los productos de la bodega que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductosEnBodega> darProductosEnBodega(long idBodega)
 	{
 		log.info ("Consultando ProductosEnBodega con id: " + idBodega);
@@ -741,7 +854,11 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas las bodegas con todos sus productos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos ProductosEnBodega con todas las bodegas con todos sus productos que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductosEnBodega> darTodosProductosBodegas()
 	{
 		log.info ("Consultando todos los ProductosEnBodega.");
@@ -750,7 +867,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todos las bodegas que tienen un producto en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param codigoBarrasProducto - El codigo de  barras del producto 
+	 * @return Una lista de objetos ProductosEnBodega con todas las bodegas que tienen el producto que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductosEnBodega> darBodegasProducto(String codigoBarrasProducto)
 	{
 		log.info ("Consultando ProductosEnBodega bodegas con el producto: " + codigoBarrasProducto);
@@ -759,7 +881,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas las bodegas y todos sus productos de SuperAndes y las devuelve como una lista de VOProductosEnBodega.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOProductosEnBodega
+     * con todas las bodegas y todos sus productos que conoce la aplicación.
+	 */
 	public List<VOProductosEnBodega> darVOProductosEnBodega()
 	{
 		log.info ("Generando los VO de ProductosEnBodega");        
@@ -772,18 +899,38 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Aumenta la cantidad del producto en la bodega SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param bodega - El id de la bodega 
+	 * @param producto - El codigo de barras del producto
+	 * @param productosPedidos - La cantidad de productos a adicionar
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long aumentarProductosEnBodega( long bodega, String producto, int productosPedidos )
 	{
 		//TODO aumentar productos en Bodega.
-		return 0;
+		log.info ("Aumentando la cantidad del producto en la bodega: producto: " + producto + " de la bodega: " + bodega);
+		long resp = psa.aumentarProductosEnBodega(bodega, producto, productosPedidos);
+		log.info ("Aumentada la cantidad del producto en bodega: " + resp + " tuplas actualizadas");
+		return resp;
 	}
-
-
+	
+	/**
+	 * Disminuye la cantidad del producto en la bodega SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param bodega - El id de la bodega 
+	 * @param producto - El codigo de barras del producto
+	 * @param productosPedidos - La cantidad de productos a disminuir
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long disminuirProductosEnBodega(long bodega, String producto, int pasadosAEstante )
 	{
 		//TODO disminuir productos en Bodega.
-		return 0;
+		log.info ("Disminuyendo la cantidad del producto en la bodega: producto: " + producto + " de la bodega: " + bodega);
+		long resp = psa.disminuirProductosEnBodega(bodega, producto, pasadosAEstante);
+		log.info ("Disminuaida la cantidad del producto en bodega: " + resp + " tuplas actualizadas");
+		return resp;
 	}
 
 	// -----------------------------------------------------------------
@@ -822,7 +969,12 @@ public class SuperAndes {
 		return resp;
 	}
 
-
+	/**
+	 * Encuentra todos los productos de un estante en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param idEstante - El id del estante del cual se quieren conocer sus productos
+	 * @return Una lista de objetos ProductosEnEstante con todos los productos del estante que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductosEnEstante> darProductosEnEstante(long idEstante)
 	{
 		log.info ("Consultando ProductosEnEstante productos del estante: " + idEstante );
@@ -831,7 +983,11 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todos los estantes con todos sus productos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos ProductosEnEstante con todas los estantes con todos sus productos que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductosEnEstante>  darTodosProductosEnEstantes()
 	{
 		log.info ("Consultando todos los ProductosEnEstante.");
@@ -840,7 +996,12 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra todas los estantes y todos sus productos de SuperAndes y las devuelve como una lista de VOProductosEnEstante.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOProductosEnEstante
+     * con todos los estantes y todos sus productos que conoce la aplicación.
+	 */
 	public List<VOProductosEnEstante> darVOProductosEnEstante ()
 	{
 		log.info ("Generando los VO de ProductosEnEstante:");        
@@ -853,7 +1014,13 @@ public class SuperAndes {
 		return list;
 	}
 
-
+	/**
+	 * Encuentra el producto en el estante de SuperAndes con el id y el codigo de barras solicitado.
+	 * @param idEstante - El id del estante del cual se quieren conocer sus productos
+	 * @param codigoBarras -codigo de barras del producto
+	 * @return Un objeto ProductosEnEstante con el producto en el estante de esos identificadores que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public ProductosEnEstante darProductoEnEstante (long idEstante,  String codigoBarrasProducto)
 	{
 		log.info ("Dar información de ProductosEnEstante del producto: " + codigoBarrasProducto + " en el estante: " + idEstante);
@@ -862,7 +1029,14 @@ public class SuperAndes {
 		return buscado;
 	}
 
-
+	/**
+	 * Aumenta la cantidad del producto en el estante SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param estante - El id del estante
+	 * @param producto - El codigo de barras del producto
+	 * @param productosTraidos - La cantidad de productos a adicionar
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long aumentarCantidadProductosEnEstante(long idEstante, int productosTraidos, String codigoBarrasProducto)
 	{
 		log.info("Aumentar cantidad de Productos en el estante: " + idEstante);
@@ -871,7 +1045,14 @@ public class SuperAndes {
 		return cambios;
 	}
 
-
+	/**
+	 * Disminuye la cantidad del producto en el estante SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param estante - El id del estante 
+	 * @param producto - El codigo de barras del producto
+	 * @param productosAQuitar - La cantidad de productos a disminuir
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long quitarProductosEstante(long estante, int productosAQuitar, String producto)
 	{
 		log.info("Quitar productos del estante: " + estante);
@@ -916,6 +1097,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todos las personas naturales en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos PersonaNatural con todos laspersonas naturales que conoce la aplicación, llenos con su información básica
+	 */
 	public List<PersonaNatural>darPersonasNaturales ()
 	{
 		log.info ("Consultando todas las personas naturales.");
@@ -924,6 +1110,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas las personas naturales de SuperAndes y las devuelve como una lista de VOPersonaNatural.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOPersonaNatural
+    * con todas las personas naturales que conoce la aplicación.
+	 */
 	public List<VOPersonaNatural> darVOPersonaNatural()
 	{
 		log.info ("Generando los VO de PersonaNatural");        
@@ -936,6 +1128,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la persona natural de SuperAndes con el documento solicitado.
+	 * @param documento - El documento de la persona natural.
+	 * @return Un objeto PersonaNatural con la persona natural de ese numero de documento que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public PersonaNatural darPersonaNatural (String documento)
 	{
 		log.info ("Dar información de Persona natural con el documento: " + documento);
@@ -996,6 +1194,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todos las empresas en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Empresa con todas las empresas que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Empresa> darEmpresas()
 	{
 		log.info ("Consultando todas las empresas.");
@@ -1004,6 +1207,13 @@ public class SuperAndes {
 		return list;
 	}
 
+
+	/**
+	 * Encuentra todas las empresas de SuperAndes y las devuelve como una lista de VOEmpresa.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOEmpresa
+     * con todas las empresas que conoce la aplicación.
+	 */
 	public List<VOEmpresa> darVOEmpresa ()
 	{
 		log.info ("Generando los VO de Empresa");        
@@ -1016,6 +1226,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la empresa de SuperAndes con el nit solicitado.
+	 * @param nit - El numerod e identificacion de la empresa.
+	 * @return Un objeto Empresa con la empresa de ese nit que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Empresa darEmpresa(String nit)
 	{
 		log.info ("Dar información de Empresa con el NIT: " + nit);
@@ -1028,6 +1244,11 @@ public class SuperAndes {
 	// Métodos de tabla Cliente
 	// -----------------------------------------------------------------
 
+	/**
+	 * Encuentra todos los clientes en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Cliente con todos los clientes que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Cliente> darClientes()
 	{
 		log.info ("Consultando Clientes: ");
@@ -1036,6 +1257,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todos las clientes de SuperAndes y las devuelve como una lista de VOCliente.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOCliente
+     * con todos los clientes que conoce la aplicación.
+	 */
 	public List<VOCliente> darVOCliente()
 	{
 		log.info ("Generando los VO de Clientes");        
@@ -1048,6 +1275,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra el cliente de SuperAndes con el correo electronico solicitado.
+	 * @param correoEelctronico - El correoElectronico del cliente.
+	 * @return Un objeto Cliente con el cliente de ese corrreoElectronico que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Cliente darCliente (String correoElectronico)
 	{
 		log.info ("Dar información de Cliente");
@@ -1056,6 +1289,13 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Aumenta los puntos del cliente en  SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param correo - El correo del cliente 
+	 * @param puntos - La cantidad de puntos a adicionar
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long aumentarPuntos(String correoElectronico, int puntos)
 	{
 		log.info("Aumentar puntos del cliente.");
@@ -1097,6 +1337,12 @@ public class SuperAndes {
 		return resp;
 	}
 	
+	/**
+	 * Encuentra el carrito de compras de SuperAndes con el id solicitado.
+	 * @param id - El id del carrito de compras.
+	 * @return Un objeto CarritoCompras con el carrito de compras de ese id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public CarritoCompras darCarritoComprasPorId(long id)
 	{
 		log.info("Dar información de CarritoCompras con id: " + id);
@@ -1105,7 +1351,12 @@ public class SuperAndes {
 		return buscado;
 	}
 	
-	
+	/**
+	 * Encuentra el carrito de compras de SuperAndes con el cliete solicitado.
+	 * @param cliente - El correo electronico del cliente 
+	 * @return Un objeto CarritoCompras con el carrito de compras que tiene el cliente pasado por parametro  que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public CarritoCompras darCarritoComprasPorCliente(String cliente)
 	{
 		log.info("Dar información de carrito de compras con cliente: " + cliente);
@@ -1113,7 +1364,12 @@ public class SuperAndes {
 		log.info("Buscando CarritoComrpas: " + buscado != null ? buscado.toString() : "NO EXISTE.");
 		return buscado;		
 	}
-	
+
+	/**
+	 * Encuentra todos los carritos de compras en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos CarritoCompras con todos los carritos de compras que conoce la aplicación, llenos con su información básica
+	 */
 	public List<CarritoCompras> darTodosCarritosCompras()
 	{
 		log.info("Consultando todos CarritosCompras.");
@@ -1122,6 +1378,12 @@ public class SuperAndes {
 		return list;
 	}
 	
+	/**
+	 * Encuentra todos los carritos de compras de SuperAndes y las devuelve como una lista de VOCarritoCompras.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOCarritoCompras
+     * con todos los carritos de compras que conoce la aplicación.
+	 */
 	public List<VOCarritoCompras> darVOCarritoCompras()
 	{
 		log.info("Generando los VO de CarritoCompras");
@@ -1167,6 +1429,13 @@ public class SuperAndes {
 		return resp;
 	}
 	
+	/**
+	 * Encuentra el productoCarrito de SuperAndes con el id de carrito y codigo de barras de producto solicitado.
+	 * @param carrito - El id del carrito.
+	 * @param codigoBarrasProducto - El codigo de  barras del producto.
+	 * @return Un objeto ProductoCarritoCompras con el productoCarrito de ese id de carrito y codigo de barras de producto que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public ProductoCarritoCompras darProductoCarrito(long carrito, String codigoBarrasProducto)
 	{
 		log.info("Consultando ProductoCarritoCompras: carrito-" + carrito + " producto-" + codigoBarrasProducto);
@@ -1175,6 +1444,12 @@ public class SuperAndes {
 		return buscado;
 	}
 	
+	/**
+	 * Encuentra todos los productos de un carrito de compras SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param carrito - El id del carrito.
+	 * @return Una lista de objetos ProductoCarritoCompras con todos los productos de un carrito dado que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductoCarritoCompras> darTodosProductosDeUnCarrito(long carrito)
 	{
 		log.info("Consultando todos ProductoCarritoCompras");
@@ -1183,6 +1458,14 @@ public class SuperAndes {
 		return list;
 	}
 	
+	/**
+	 * Aumenta la cantidad del producto en el carrito de compras SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param carrito - El id del carrito 
+	 * @param producto - El codigo de barras del producto
+	 * @param productosAgregados - La cantidad de productos a adicionar
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long aumentarUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto , int productosAgregados)
 	{
 		log.info("Aumentando unidades del producto: " + codigoBarrasProducto + " en el carrito: " + carrito);
@@ -1191,7 +1474,14 @@ public class SuperAndes {
 		return resp;
 	}
 	
-	
+	/**
+	 * Disminuye la cantidad del producto en el carrito en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param carrito - El id del producto 
+	 * @param producto - El codigo de barras del producto
+	 * @param productosPedidos - La cantidad de productos a disminuir
+	 * @return el numero de tuplas actualizadas
+	  */
 	public long disminuirUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto, int productosDevueltos)
 	{
 		log.info("Disminuyendo unidades del producto: " + codigoBarrasProducto + " en el carrito: " + carrito);
@@ -1241,6 +1531,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todas las facturas  en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Factura con todos las facturas que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Factura> darFacturas()
 	{
 		log.info ("Consultando ");
@@ -1249,6 +1544,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas las facturas de SuperAndes y las devuelve como una lista de VOFactura.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOFactura
+     * con todas las facturas que conoce la aplicación.
+	 */
 	public List<VOFactura> darVOFactura ()
 	{
 		log.info ("Generando los VO de ");        
@@ -1261,6 +1562,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la factura de SuperAndes con el numero solicitado.
+	 * @param numero - El numero de la factura.
+	 * @return Un objeto Fatura con la factura de ese numero que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Factura darFactura(long numero)
 	{
 		log.info ("Dar información de ");
@@ -1318,7 +1625,11 @@ public class SuperAndes {
 		return resp;
 	}
 
-	
+	/**
+	 * Encuentra todas las facturas con todos sus productos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos FacturaProducto todas las facturas con todos sus productos que conoce la aplicación, llenos con su información básica
+	 */
 	public List<FacturaProducto> darProductosFacturas()
 	{
 		log.info ("Consultando FacturasProductos");
@@ -1327,7 +1638,12 @@ public class SuperAndes {
 		return list;
 	}
 
-	
+	/**
+	 * Encuentra todas las facturas con todos sus productos en SuperAndesy las devuelve como una lista de VOFacturaProducto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOFacturaProducto
+     * con todas as facturas con todos sus productos que conoce la aplicación.
+	 */
 	public List<VOFacturaProducto> darVOFacturaProducto ()
 	{
 		log.info ("Generando los VO de FacturaProducto");        
@@ -1340,7 +1656,13 @@ public class SuperAndes {
 		return list;
 	}
 
-	
+	/**
+	 * Encuentra la factura producto de SuperAndes con el numero de factura y codigo de barras de producto solicitado.
+	 * @param numero - El numero de la factura.
+	 * @param producto - El codigo de barras del producto. 
+	 * @return Un objeto FacturaProducto con el FacturaProducto de ese  numero de factura y codigo de barras de producto  que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public FacturaProducto darProductoDeFactura( long factura, String producto)
 	{
 		log.info ("Dar información deProductoDeFactura");
@@ -1398,6 +1720,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todos los proveedores en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Proveedor con todos los proveedores que conoce la aplicación, llenos con su información básica
+	 */
 	public List<Proveedor> darProveedores ()
 	{
 		log.info ("Consultando ");
@@ -1406,6 +1733,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas los proveedores de SuperAndes y las devuelve como una lista de VOProveedor.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOProveedor
+     * con todas los proveedores que conoce la aplicación.
+	 */
 	public List<VOProveedor> darVOProveedor ()
 	{
 		log.info ("Generando los VO de ");        
@@ -1418,6 +1751,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra el proveedor de SuperAndes con el nit solicitado.
+	 * @param nit - El nidentificador del proveedor 
+	 * @return Un objeto Proveedor con el proveedor de ese nit que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public Proveedor darProveedor(String nit)
 	{
 		log.info ("Dar información de ");
@@ -1426,6 +1765,13 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Modifica la calificacion  del proveedor de SuperAndes con el nit ingresado por parametro .
+	 * @param nit - El identificador  del proveedor.
+	 * @param nuevaCalificacion - la nueva calificacion que se le asignara al proveedor del proveedor.
+	 * @return Un objeto Tipo con el tipo de ese nombre que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public long updateCalificacionProveedor(String nit, double nuevaCalificacion)
 	{
 		log.info("Actualizanco calificacion del proveedor");
@@ -1465,7 +1811,13 @@ public class SuperAndes {
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
-
+	
+	/**
+	 * Encuentra todos los proveedores que tienen el producto ingresado por parametro en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param producto - el codigo de barras del producto 
+	 * @return Una lista de objetos ProveedoresProducto con todos los proveedores que tienen el producto pasado por parametro que conoce la aplicación, llenos con su información básica
+	 */	
 	public List<ProveedoresProducto> darProveedoresProducto(String producto)
 	{
 		log.info ("Consultando ProveedoresProducto");
@@ -1474,6 +1826,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todos los productos de un proveedor en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @param proveedor - el identificador del proveedor 
+	 * @return Una lista de objetos ProveedoresProducto los productos de un proveedor  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProveedoresProducto> darProductosProveedor(String proveedor)
 	{
 		log.info ("Consultando Productos Proveedor");
@@ -1482,6 +1840,7 @@ public class SuperAndes {
 		return list;
 	}
 
+	
 	public List<ProveedoresProducto> darTodosProveedoresProductos()
 	{
 		log.info ("Consultando Productos Proveedor");
