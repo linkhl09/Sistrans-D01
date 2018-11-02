@@ -41,3 +41,6 @@ ORA-01438: valor mayor que el que permite la precisión especificada para esta co
 08:03:01,208 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
 08:03:53,450 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando proveedor: Colombina
 08:03:53,654 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado Proveedor
+08:24:16,943 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+08:24:16,944 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+08:24:16,960 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD

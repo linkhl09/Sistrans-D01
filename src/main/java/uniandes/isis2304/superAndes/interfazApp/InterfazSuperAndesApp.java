@@ -23,6 +23,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import javax.swing.UIManager;
 
 import org.apache.log4j.Logger;
@@ -268,6 +269,78 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		{
 			panelDatos.actualizarInterfaz("Exception: " + e.getMessage());
 		}
+	}
+
+	public void adicionarProducto()
+	{
+		String [] array = new String[18];
+		JTextField codigoBarras = new JTextField();
+		JTextField nombre = new JTextField();
+		JTextField marca = new JTextField();
+		JTextField precioUnitario = new JTextField();
+		JTextField presentacion = new JTextField();
+		JTextField precioUnidadMedida = new JTextField();
+		JTextField cantidadPresentacion = new JTextField();
+		JTextField peso = new JTextField();
+		JTextField unidadMedidaPeso = new JTextField();
+		JTextField volumen = new JTextField();
+		JTextField unidadMedidaVolumen = new JTextField();
+		JTextField calidad = new JTextField();
+		JTextField nivelReorden = new JTextField();
+		JTextField fechaVencimiento = new JTextField();
+		JTextField Categoria = new JTextField();
+		JTextField categoria = new JTextField();
+		JTextField estaPromocion = new JTextField();
+		Object[] message = 
+			{
+				"Codigo Barras:", codigoBarras,
+				"Nombre:", nombre,
+				"Marca:", marca,
+				"Precio Unitario:", precioUnitario,
+				"Presentación:", presentacion,
+				"Precio Unidad de medida:", precioUnidadMedida,
+				"Cantidad presentacion:", cantidadPresentacion,
+				"Peso (unidades):", peso,
+				"Unidad de medida Peso:", unidadMedidaPeso,
+				"Volumen (unidades):", volumen,
+				"Unidad de medida volumen:", unidadMedidaVolumen,
+				"Calidad:", calidad,
+				"Nivel de reorden:", nivelReorden,
+				"Fecha de vencimiento (opcional):", fechaVencimiento,
+				"Categoria:", categoria,
+				"¿Esta en promocion? (Y/N)", estaPromocion
+			};
+		int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
+		if(option == JOptionPane.OK_OPTION)
+		{
+			array[0]=codigoBarras.getText();
+			array[1]=nombre.getText();
+			array[2]=marca.getText();
+			array[3]=precioUnitario.getText();
+			array[4]=presentacion.getText();
+			array[5]=precioUnitario.getText();
+			array[6]=presentacion.getText();
+			array[7]=precioUnidadMedida.getText();
+			array[8]=cantidadPresentacion.getText();
+			array[9]=peso.getText();
+			array[10]=unidadMedidaPeso.getText();
+			array[11]=volumen.getText();
+			array[12]=unidadMedidaVolumen.getText();
+			array[13]=calidad.getText();
+			array[14]=nivelReorden.getText();
+			array[15]=fechaVencimiento.getText();
+			array[16]=categoria.getText();
+			array[17]=estaPromocion.getText();
+		
+			for(String a :array)
+				System.out.println(a);
+			
+		}
+		else
+		{
+			
+		}
+		
 	}
 
 	public void adicionarPromocion()
