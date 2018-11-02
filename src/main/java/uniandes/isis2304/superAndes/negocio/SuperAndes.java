@@ -1370,14 +1370,26 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina un proveedor  por su nit
+	 * Adiciona entradas al log de la aplicación
+	 * @param nit - el numero de identificacion del proveedor a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarProveedorPorNit (String nit)
 	{
-		log.info ("Eliminando proveedor");
+		log.info ("Eliminando proveedor: nit :" + nit);
 		long resp = psa.eliminarProveedorPorNit(nit);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
 
+	/**
+	 * Elimina un proveedor  por su nit
+	 * Adiciona entradas al log de la aplicación
+	 * @param nombre - el nombre del proveedor a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarProveedorPorNombre(String nombre) 
 	{
 		log.info ("Eliminando proveedor");
@@ -1439,9 +1451,16 @@ public class SuperAndes {
 		log.info ("Adicionado ProveedorProducto ");
 		return agregado;
 	}
+	/**
+	 * Elimina producto de un proveedor  
+	 * Adiciona entradas al log de la aplicación
+	 * @param proveedor - el nit del proveedor a eliminar
+	 * @param producto - el codigo de barras del producto a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarProveedoresProducto(String proveedor, String producto)
 	{
-		log.info ("Eliminando ProveedoresProducto");
+		log.info ("Eliminando ProveedoresProducto: producto ->" + producto + "proveedor ->" + proveedor );
 		long resp = psa.eliminarProveedoresProducto(proveedor, producto);
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
@@ -1503,6 +1522,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una orden de pedido  por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el numero de identificacion de la orden pedido a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarOrdenPedido(long id)
 	{
 		log.info ("Eliminando OrdenPedido ");
@@ -1635,6 +1660,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una promDescuento  por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el numero de identificacion de la promDescuento a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarPromDescuento(long id)
 	{
 		log.info ("Eliminando ");
@@ -1697,6 +1728,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una promocion pague lleve unidad  por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el numero de identificacion de la PromPagueLleveUnid a eliminar
+	 * @return El número de tuplas eliminadas
+	 */	
 	public long eliminarPromPagLlevUnidadPorId(long id)
 	{
 		log.info ("Eliminando ");
@@ -1759,6 +1796,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una promocion descuento segunda unidad por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el numero de identificacion de la PromSegUniDesc a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarPromDescSegUnidPorId(long id)
 	{
 		log.info ("Eliminando ");
@@ -1820,6 +1863,12 @@ public class SuperAndes {
 		return agregado;
 	}
 
+	/**
+	 * Elimina una promocion pague lleve cantidad por su id
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el numero de identificacion de la PromPagueLleveCant a eliminar
+	 * @return El número de tuplas eliminadas
+	 */
 	public long eliminarPromPagLleveCatidadPorId(long id)
 	{
 		log.info ("Eliminando ");
