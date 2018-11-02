@@ -115,7 +115,9 @@ public class SQLPromocionSucursal {
 	 * @param pm - El manejador de persistencia
 	 * @return Una lista de objetos PromocionSucursal
 	 */
-	public List<PromocionSucursal> darTodasPromocionDescuento (PersistenceManager pm)
+	public List<PromocionSucursal> darTodasPromocionSucursal
+	
+	(PersistenceManager pm)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + pp.darTablaPromocionSucursal());
 		q.setResultClass(PromocionSucursal.class);

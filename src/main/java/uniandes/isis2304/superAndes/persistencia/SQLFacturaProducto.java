@@ -64,7 +64,7 @@ class SQLFacturaProducto
 	 * Elimina las factura-producto cuyo numero de factura es el ingresado por parametro
 	 * @param factura - numero de la factura ,identificador unico de la factura
 	 */
-	public long eliminarProductosDeFactura(PersistenceManager pm, long factura)
+	public long eliminarFacturaProductos(PersistenceManager pm, long factura)
 	{
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFacturaProducto() + " WHERE factura = ?");
 		q.setParameters(factura);

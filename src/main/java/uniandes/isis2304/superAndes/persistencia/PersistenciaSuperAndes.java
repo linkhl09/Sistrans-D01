@@ -223,8 +223,8 @@ public class PersistenciaSuperAndes {
 		tablas.add("superAndes_sequence");
 		tablas.add("CATEGORIA");
 		tablas.add("TIPO");
-		tablas.add("TIPO_PRODUCTO");
 		tablas.add("PRODUCTO");
+		tablas.add("TIPO_PRODUCTO");
 		tablas.add("SUCURSAL");
 		tablas.add("SUCURSAL_PRODUCTO");
 		tablas.add("BODEGA");
@@ -372,17 +372,17 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de TipoProducto de SuperAndes.
-	 */
-	public String darTablaTipoProducto() 
-	{
-		return tablas.get(3);
-	}
-
-	/**
 	 * @return La cadena de caracteres con el nombre de la tabla de Producto de SuperAndes
 	 */
 	public String darTablaProducto()
+	{
+		return tablas.get(3);
+	}
+	
+	/**
+	 * @return La cadena de caracteres con el nombre de la tabla de TipoProducto de SuperAndes.
+	 */
+	public String darTablaTipoProducto() 
 	{
 		return tablas.get(4);
 	}
@@ -2590,14 +2590,14 @@ public class PersistenciaSuperAndes {
 	 * @param factura - Identificador único de la factura.
 	 * @return Número de tuplas eliminadas. -1 si ocurre alguna Exception.
 	 */
-	public long eliminarProductosDeFactura(long factura) 
+	public long eliminarFacturaProductos(long factura) 
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
 		try
 		{
 			tx.begin();
-			long resp = sqlFacturaProducto.eliminarProductosDeFactura(pm, factura);
+			long resp = sqlFacturaProducto.eliminarFacturaProductos(pm, factura);
 			tx.commit();
 			return resp;
 		}
