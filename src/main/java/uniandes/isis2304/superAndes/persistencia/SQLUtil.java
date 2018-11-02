@@ -7,7 +7,7 @@ import javax.jdo.Query;
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto.
  * Nótese que es una clase que es sólo conocida en el paquete persistencia.
  * 
- * @author Andrés Hernández
+ * @author Andrés Hernández y Jenifer Rodriguez
  */
 class SQLUtil {
 
@@ -65,14 +65,16 @@ class SQLUtil {
 	 */
 	public long[] limpiarSuperAndes(PersistenceManager pm)
 	{
-		// TODO revisar nuevo orden de borrado para las tablas e implementar.
 		Query qProveedoresProducto		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedoresProducto() );
 		Query qProductoOrdenPedido	 	= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductoOrdenPedido() );
 		Query qFacturaProducto 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFacturaProducto() );
 		Query qProductosEnBodega 		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnBodega() );
 		Query qProductosEnEstante		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnEstante() );
 		Query qSucursalProducto 		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() );
+		Query qProductoCarritoCompras	= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductoCarritoCompras());
 		Query qPromocionSucursal	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromocionSucursal());
+		Query qTipoProducto				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipoProducto());
+		Query qCarritoCompras 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCarritoCompras() );
 		Query qFactura 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFactura() );
 		Query qCliente 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCliente() );
 		Query qBodega 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaBodega() );
@@ -97,7 +99,10 @@ class SQLUtil {
 		long productosEnBodegaEliminados     = (long) qProductosEnBodega.executeUnique();
 		long productosEnEstanteEliminados    = (long) qProductosEnEstante.executeUnique();
 	    long sucursalProductoEliminados      = (long) qSucursalProducto.executeUnique();
+	    long productoCarritoComprasEliminados= (long) qProductoCarritoCompras.executeUnique();
 	    long promocionSucursal               = (long) qPromocionSucursal.executeUnique();
+	    long tipoProductoEliminados			 = (long) qTipoProducto.executeUnique();
+	    long carritoComprasEliminados		 = (long) qCarritoCompras.executeUnique();
 	    long facturaEliminados               = (long) qFactura.executeUnique();
 	    long clienteEliminados               = (long) qCliente.executeUnique();	
 	    long bodegaEliminados                = (long) qBodega.executeUnique();
@@ -115,12 +120,10 @@ class SQLUtil {
 		long promPagLleveCantEliminados      = (long) qPromPagueLleveCant.executeUnique();
 		long productoEliminados              = (long) qProducto.executeUnique();
 			
-		return new long[] {proveedoresProductoEliminados,productoOrdenPedidoEliminados, 
-		 facturaProductoEliminados ,productosEnBodegaEliminados, productosEnEstanteEliminados , sucursalProductoEliminados, promocionSucursal , facturaEliminados 
-		, clienteEliminados, bodegaEliminados , estanteEliminados, categoriaEliminados, tipoEliminados, personaNaturalEliminados , empresaEliminados 
-		, ordenPedidoEliminados , sucursalEliminados, proveedorEliminados, promDescuentoEliminados, promSegUniDescuentoEliminados , promPagLleveUniEliminados 
-		,promPagLleveCantEliminados,productoEliminados };
-
-		
+		return new long[] {proveedoresProductoEliminados,productoOrdenPedidoEliminados, facturaProductoEliminados ,productosEnBodegaEliminados, 
+				productosEnEstanteEliminados , sucursalProductoEliminados, productoCarritoComprasEliminados, promocionSucursal, tipoProductoEliminados, 
+				carritoComprasEliminados, facturaEliminados , clienteEliminados, bodegaEliminados , estanteEliminados, categoriaEliminados, tipoEliminados, 
+				personaNaturalEliminados , empresaEliminados, ordenPedidoEliminados , sucursalEliminados, proveedorEliminados, promDescuentoEliminados,
+				promSegUniDescuentoEliminados , promPagLleveUniEliminados, promPagLleveCantEliminados, productoEliminados };
 	}
 }

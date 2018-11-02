@@ -54,7 +54,7 @@ class SQLProveedor {
 	 */
 	public long adicionarProveedor(PersistenceManager pm, String nit, String nombre, double calificacion)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProveedor() + " (nit, nombre, calificacion) VALUES (?, ? , ?)");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProveedor() + " (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)");
 		q.setParameters(nit, nombre, calificacion);
 		return (long) q.executeUnique();
 	}
@@ -64,7 +64,7 @@ class SQLProveedor {
 	 * @param nit - numero de identificacion unico del proveedor
 	 * */
 	public long eliminarProveedorPorNit(PersistenceManager pm, String nit)
-	{
+	{ 
 		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProveedor() + " WHERE nit = ?");
 		q.setParameters(nit);
 		return (long) q.executeUnique();
@@ -111,7 +111,7 @@ class SQLProveedor {
 	 */
 	public long updateCalificacion(PersistenceManager pm, String nit, double calificacion)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProveedor() + "SET valor = ? WHERE nit = ?");
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaProveedor() + "SET calificacionCalidad = ? WHERE nit = ?");
 		q.setParameters(calificacion, nit);
 		return (long) q.executeUnique();
 	}
