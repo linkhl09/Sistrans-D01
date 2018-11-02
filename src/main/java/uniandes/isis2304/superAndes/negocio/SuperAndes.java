@@ -1840,7 +1840,11 @@ public class SuperAndes {
 		return list;
 	}
 
-	
+	/**
+	 * Encuentra todos los proveedores con todos sus productos en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos ProveedoresProducto con todos los proveedores con todos sus producto que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProveedoresProducto> darTodosProveedoresProductos()
 	{
 		log.info ("Consultando Productos Proveedor");
@@ -1849,6 +1853,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 *Encuentra todos los proveedores con todos sus productos en SuperAndes  y las devuelve como una lista de VOProveedoresProducto.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOProveedoresProducto
+         * con todos los proveedores con todos sus productos que conoce la aplicación.
+	 */
 	public List<VOProveedoresProducto> darVOProveedoresProducto ()
 	{
 		log.info ("Generando los VO de ");        
@@ -1895,6 +1905,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todas las ordenes de pedido en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos OrdenPedido con todas las ordenes de pedido que conoce la aplicación, llenos con su información básica
+	 */
 	public List<OrdenPedido> darOrdenesPedidos()
 	{
 		log.info ("Consultando OrdenesPedidos");
@@ -1903,6 +1918,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas las odenes de pedido de SuperAndes y las devuelve como una lista de VOOrdenPedido.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOOrdenPedido
+     * con todas las odenes de pedido que conoce la aplicación.
+	 */
 	public List<VOOrdenPedido> darVOOrdenPedido ()
 	{
 		log.info ("Generando los VO de OrdenPedido");        
@@ -1915,6 +1936,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la OrdenPedido de SuperAndes con el id solicitado.
+	 * @param id - El id de la orden pedido.
+	 * @return Un objeto OrdenPedido con la orden pedido de ese id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public OrdenPedido darOrdenPedido (long id)
 	{
 		log.info ("Dar información de OrdenPedido");
@@ -1923,6 +1950,13 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 *Actualza la fecha de llegada de la orden de pedido y la calificacion de calidad de la orden 
+	 * @param id - El id de la orden de pedido.
+	 * @param fechaEntrega - La fecha en la que se registra la entrega de la orden de pedido.
+	 * @param nuevaCalificacion - La calificacion de calidad  de la orden de pedido.
+	 * @return el numero de tuplas actualizadas.
+	 */
 	public long registrarFechaLlegada(long id, Date fechaEntrega, double nuevaCalificacion)
 	{
 		log.info("Registrar fecha de llega del pedido.");
@@ -1950,7 +1984,11 @@ public class SuperAndes {
 		log.info ("Adicionado");
 		return agregado;
 	}
-
+	/**
+	 * Encuentra todos los productos de todas las ordenes de pedido en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos ProductoOrdenPedido con todos los productos de todas las ordenes de pedido que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductoOrdenPedido> darProductosOrdenPedidos()
 	{
 		log.info ("Consultando ");
@@ -1959,6 +1997,11 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas los productos de la orden pedido  cuyo identificador es igual al ingresado por parametro en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos ProductoOrdenPedido con todas los productos de la orden  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductoOrdenPedido> darProductosDelPedido(long pedido)
 	{
 		log.info ("Consultando ");
@@ -1967,6 +2010,11 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra  el historial de ordenes de pedido en las que se pidio el producto ingresado por parametro en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos ProductoOrdenPedido en los cuales se pidio el producto ingresado por parametro  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<ProductoOrdenPedido> darHistorialPedidosProducto(String producto)
 	{
 		log.info ("Consultando ");
@@ -1975,6 +2023,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todos los productos de todas las ordenes de pedido en SuperAndes y las devuelve como una lista de VOProductoOrdenPedido.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOProductoOrdenPedido
+     * con todos los productos de todas las ordenes de pedido que conoce la aplicación.
+	 */
 	public List<VOProductoOrdenPedido> darVOProductoOrdenPedido ()
 	{
 		log.info ("Generando los VO de ProductoOrdenPedido");        
@@ -1987,6 +2041,13 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra el ProductoOrdenPedido de SuperAndes con el id de pedido y codigo de barras del producto solicitado.
+	 * @param pedido - El id de la orden de pedido.
+	 * @param producto - El codigo de barras del producto.
+	 * @return Un objeto ProductoOrdenPedido con el ProductoOrdenPedido de ese id pedido y codigo de barras de producto que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public ProductoOrdenPedido darProductoOrdenPedido (long pedido, String producto)
 	{
 		log.info ("Dar información de ProductoOrdenPedido");
@@ -2033,6 +2094,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todos las promociones descuento en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos PromDesc con todas las promociones descuento que conoce la aplicación, llenos con su información básica
+	 */
 	public List<PromDesc> darPromDescuento()
 	{
 		log.info ("Consultando ");
@@ -2040,7 +2106,13 @@ public class SuperAndes {
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
-
+	
+	/**
+	 * Encuentra todas las promDescuento de SuperAndes y las devuelve como una lista de VOPromDesc.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOPromDesc
+     * con todas las promDescuento que conoce la aplicación.
+	 */
 	public List<VOPromDesc> darVOPromDesc()
 	{
 		log.info ("Generando los VO de ");        
@@ -2053,6 +2125,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la promocion descuento de SuperAndes con el id solicitado.
+	 * @param id - El id de la promocion descuento.
+	 * @return Un objeto PromDesc con la promocion descuento de esa id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public PromDesc darPromDescuentoPorId(long id)
 	{
 		log.info ("Dar información de ");
@@ -2101,6 +2179,12 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra la promocion pague lleve unidad de SuperAndes con el id solicitado.
+	 * @param id - El id de la promocion pague lleve unidad.
+	 * @return Un objeto PromPagueLleveUnid con la promocion pague lleve unidad de esa id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public PromPagueLleveUnid darPromPagLlevUnidadPorId(long id)
 	{
 		log.info ("Dar información de ");
@@ -2109,6 +2193,12 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Encuentra todas las promPagueLleveUnid de SuperAndes y las devuelve como una lista de VOPromPagueLleveUnid.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOPromPagueLleveUnid
+     * con todas las promPagueLleveUnidad que conoce la aplicación.
+	 */
 	public List<VOPromPagueLleveUnid> darVOPromPagueLleveUnid ()
 	{
 		log.info ("Generando los VO de ");        
@@ -2121,6 +2211,11 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todos las promociones pague lleve unidad en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos PromPagueLleveUnid con todas las promociones pague lleve unidad  que conoce la aplicación, llenos con su información básica
+	 */
 	public List<PromPagueLleveUnid> darPromPagueLleveUnid()
 	{
 		log.info ("Consultando ");
@@ -2169,6 +2264,11 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra todos las promociones descuento segunda unidad en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos PromSegUniDesc con todas las promociones descuento segunda unidad que conoce la aplicación, llenos con su información básica
+	 */
 	public List<PromSegUniDesc> darPromDescSegUnid()
 	{
 		log.info ("Consultando ");
@@ -2177,6 +2277,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todas las promSegUniDescuento de SuperAndes y las devuelve como una lista de VOPromSegUniDesc.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOPromSegUniDesc
+     * con todas las promSegUniDescuento que conoce la aplicación.
+	 */
 	public List<VOPromSegUniDesc> darVOPromSegUniDesc()
 	{
 		log.info ("Generando los VO de ");        
@@ -2189,6 +2295,12 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra la promocion descuento segunda unidad de SuperAndes con el id solicitado.
+	 * @param id - El id de la promocion descuento.
+	 * @return Un objeto PromSegUniDesc con la promocion descuento segunda unidad descuento de esa id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public PromSegUniDesc darPromDescSegUnidPorId(long id)
 	{
 		log.info ("Dar información de ");
@@ -2236,6 +2348,12 @@ public class SuperAndes {
 		return resp;
 	}
 
+	/**
+	 * Encuentra la promocion pague lleve cantidad de SuperAndes con el id solicitado.
+	 * @param id - El id de la promocion pague lleve cantidad.
+	 * @return Un objeto PromPagueLleveCant con la promocion pague lleve cantidad de esa id que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
 	public PromPagueLleveCant darPromPagueLleveCantPorId(long id)
 	{
 		log.info ("Dar información de ");
@@ -2244,6 +2362,12 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Encuentra todas las PromPagueLleveCant de SuperAndes y las devuelve como una lista de VOPromPagueLleveCant.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de objetos VOPromPagueLleveCant
+     * con todas las PromPagueLleveCant que conoce la aplicación.
+	 */
 	public List<VOPromPagueLleveCant> darVOPromPagueLleveCant ()
 	{
 		log.info ("Generando los VO de ");        
@@ -2256,6 +2380,11 @@ public class SuperAndes {
 		return list;
 	}
 
+	/**
+	 * Encuentra todos las promociones pague lleve cantidad en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos PromPagueLleveCant con todas las promociones pague lleve cantidad que conoce la aplicación, llenos con su información básica
+	 */	
 	public List<PromPagueLleveCant> darPromPagLleveCatidad()
 	{
 		log.info ("Consultando ");
