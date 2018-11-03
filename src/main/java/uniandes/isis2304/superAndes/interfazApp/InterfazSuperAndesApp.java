@@ -250,9 +250,9 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			JTextField calificacionString = new JTextField();
 			Object[] message =
 				{
-					"Inserte nit:" , nit,
-					"Inserte nombre:", nombre,
-					"Calificación", calificacionString
+						"Inserte nit:" , nit,
+						"Inserte nombre:", nombre,
+						"Calificación", calificacionString
 				};
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del proveedor a adicionar", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
@@ -264,15 +264,13 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				if(!datosProveedor[0].equals("") || !datosProveedor[1].equals("") || !datosProveedor[2].equals(""))
 				{
 					double calificacionSinFormato = Double.parseDouble(datosProveedor[2]);
-					System.out.println("sin: " + calificacionSinFormato);
 					NumberFormat formatter = new DecimalFormat("#0.0");
 					String strDouble = formatter.format(calificacionSinFormato).trim().replace(',', '.');
 					double calificacion = Double.parseDouble(strDouble);
-					System.out.println("con: " + calificacion);
 					VOProveedor tb = superAndes.adicionarProveedor(datosProveedor[0], datosProveedor[1] , calificacion);
 					if(tb == null)
 						throw new Exception("No se pudo crear el proveedor con nit: " + nit);
-					
+
 					resultado += "Proveedor adicionado correctamente: " + tb.toString();
 					resultado += "\n Operación terminada.";
 				}
@@ -280,7 +278,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				{
 					resultado += "No se pueden dejar campos vacios.";
 				}
-					panelDatos.actualizarInterfaz(resultado);
+				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
@@ -300,72 +298,88 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	{
 		try
 		{
-		String [] array = new String[16];
-		JTextField codigoBarras = new JTextField();
-		JTextField nombre = new JTextField();
-		JTextField marca = new JTextField();
-		JTextField precioUnitario = new JTextField();
-		JTextField presentacion = new JTextField();
-		JTextField precioUnidadMedida = new JTextField();
-		JTextField cantidadPresentacion = new JTextField();
-		JTextField peso = new JTextField();
-		JTextField unidadMedidaPeso = new JTextField();
-		JTextField volumen = new JTextField();
-		JTextField unidadMedidaVolumen = new JTextField();
-		JTextField calidad = new JTextField();
-		JTextField nivelReorden = new JTextField();
-		JTextField fechaVencimiento = new JTextField();
-		JTextField categoria = new JTextField();
-		JTextField estaPromocion = new JTextField();
-		Object[] message = 
+			String [] array = new String[16];
+			JTextField codigoBarras = new JTextField();
+			JTextField nombre = new JTextField();
+			JTextField marca = new JTextField();
+			JTextField precioUnitario = new JTextField();
+			JTextField presentacion = new JTextField();
+			JTextField precioUnidadMedida = new JTextField();
+			JTextField cantidadPresentacion = new JTextField();
+			JTextField peso = new JTextField();
+			JTextField unidadMedidaPeso = new JTextField();
+			JTextField volumen = new JTextField();
+			JTextField unidadMedidaVolumen = new JTextField();
+			JTextField calidad = new JTextField();
+			JTextField nivelReorden = new JTextField();
+			JTextField fechaVencimiento = new JTextField();
+			JTextField categoria = new JTextField();
+			JTextField estaPromocion = new JTextField();
+			Object[] message = 
+				{
+						"Codigo Barras:", codigoBarras,
+						"Nombre:", nombre,
+						"Marca:", marca,
+						"Precio Unitario:", precioUnitario,
+						"Presentación:", presentacion,
+						"Precio Unidad de medida:", precioUnidadMedida,
+						"Cantidad presentacion:", cantidadPresentacion,
+						"Peso (unidades):", peso,
+						"Unidad de medida Peso:", unidadMedidaPeso,
+						"Volumen (unidades):", volumen,
+						"Unidad de medida volumen:", unidadMedidaVolumen,
+						"Calidad:", calidad,
+						"Nivel de reorden:", nivelReorden,
+						"Fecha de vencimiento (opcional):", fechaVencimiento,
+						"Categoria:", categoria,
+						"¿Esta en promocion? (Y/N)", estaPromocion
+				};
+			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
 			{
-				"Codigo Barras:", codigoBarras,
-				"Nombre:", nombre,
-				"Marca:", marca,
-				"Precio Unitario:", precioUnitario,
-				"Presentación:", presentacion,
-				"Precio Unidad de medida:", precioUnidadMedida,
-				"Cantidad presentacion:", cantidadPresentacion,
-				"Peso (unidades):", peso,
-				"Unidad de medida Peso:", unidadMedidaPeso,
-				"Volumen (unidades):", volumen,
-				"Unidad de medida volumen:", unidadMedidaVolumen,
-				"Calidad:", calidad,
-				"Nivel de reorden:", nivelReorden,
-				"Fecha de vencimiento (opcional):", fechaVencimiento,
-				"Categoria:", categoria,
-				"¿Esta en promocion? (Y/N)", estaPromocion
-			};
-		int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
-		if(option == JOptionPane.OK_OPTION)
-		{
-			array[0]=codigoBarras.getText();
-			array[1]=nombre.getText();
-			array[2]=marca.getText();
-			array[3]=precioUnitario.getText();
-			array[4]=presentacion.getText();
-			array[5]=precioUnidadMedida.getText();
-			array[6]=cantidadPresentacion.getText();
-			array[7]=peso.getText();
-			array[8]=unidadMedidaPeso.getText();
-			array[9]=volumen.getText();
-			array[10]=unidadMedidaVolumen.getText();
-			array[11]=calidad.getText();
-			array[12]=nivelReorden.getText();
-			array[13]=fechaVencimiento.getText();
-			array[14]=categoria.getText();
-			array[15]=estaPromocion.getText();			
-		}
-		else
-		{
-			panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
-		}
+				String resultado = "En adicionar Proveedor \n\n";
+				array[0]=codigoBarras.getText();
+				array[1]=nombre.getText();
+				array[2]=marca.getText();
+				array[3]=precioUnitario.getText();
+				array[4]=presentacion.getText();
+				array[5]=precioUnidadMedida.getText();
+				array[6]=cantidadPresentacion.getText();
+				array[7]=peso.getText();
+				array[8]=unidadMedidaPeso.getText();
+				array[9]=volumen.getText();
+				array[10]=unidadMedidaVolumen.getText();
+				array[11]=calidad.getText();
+				array[12]=nivelReorden.getText();
+				array[13]=fechaVencimiento.getText();
+				array[14]=categoria.getText();
+				array[15]=estaPromocion.getText();
+				if(array[0].length() == 13 && !array[0].equals("") && !array[1].equals("") && !array[2].equals("") && !array[3].equals("")
+						&& !array[4].equals("") && !array[6].equals("") && !array[11].equals("") && !array[12].equals("")
+						&& !array[14].equals("") && !array[15].equals(""))
+				{
+					double calidadSinFormato = Double.parseDouble(array[11]);
+					NumberFormat formatter = new DecimalFormat("#0.0");
+					String strDouble = formatter.format(calidadSinFormato).trim().replace(',', '.');
+					double calidadDouble = Double.parseDouble(strDouble);
+					
+					
+				}
+				else
+				{
+					resultado += "No se llenaron los campos correctamente.";
+				}
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
 		}
 		catch(Exception e)
 		{
 			panelDatos.actualizarInterfaz("Exception!!!!: " + e.getMessage());
 		}
-		
+
 	}
 
 	public void adicionarPromocion()

@@ -28,3 +28,45 @@ ORA-01438: valor mayor que el que permite la precisión especificada para esta co
 ORA-01438: valor mayor que el que permite la precisión especificada para esta columna
 
 00:35:59,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado Proveedor
+01:11:17,726 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+01:11:17,727 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+01:11:17,740 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+01:11:30,108 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando proveedor: s
+01:11:30,559 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)".
+ORA-01438: valor mayor que el que permite la precisión especificada para esta columna
+
+01:11:30,598 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado Proveedor
+01:15:12,923 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+01:15:12,965 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+01:15:15,296 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+01:15:15,578 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+01:15:15,579 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+01:15:15,579 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+01:15:15,958 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+01:15:15,991 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+01:15:16,029 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+01:15:16,030 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+01:15:16,186 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+01:15:16,186 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+01:15:16,187 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+01:15:16,188 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+01:15:17,580 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+01:15:17,580 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+01:15:17,581 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+01:15:17,581 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+01:15:17,991 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+01:15:17,991 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+01:15:18,004 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
