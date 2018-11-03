@@ -4755,3 +4755,825 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
 11:35:29,188 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@f151a2 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@99eacd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
 11:35:29,190 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 10 ms
 11:35:29,192 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@196b209" se cerró
+00:25:02,862 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+00:25:02,896 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+00:25:02,911 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+00:25:02,918 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+00:25:02,920 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+00:25:02,927 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+00:25:02,934 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+00:25:02,954 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+00:25:02,971 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+00:25:03,027 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+00:25:03,027 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+00:25:03,067 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+00:25:03,068 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+00:25:03,069 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+00:25:03,070 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+00:25:03,070 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+00:25:03,070 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+00:25:03,070 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+00:25:03,070 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+00:25:03,070 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+00:25:03,072 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+00:25:03,326 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+00:25:03,327 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+00:25:03,327 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+00:25:03,353 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+00:25:04,819 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:25:05,151 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:25:05,152 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304B151820
+00:25:05,182 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+00:25:05,183 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:25:05,183 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+00:25:05,184 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+00:25:05,186 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+00:25:05,192 (main) DEBUG [DataNucleus.Persistence] - ================================================
+00:25:18,074 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@a283ed" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@18ddf6d" con transaccion="org.datanucleus.TransactionImpl@14e6117"
+00:25:18,081 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=54579241-1, enlisted resources=[]]
+00:25:18,081 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@a283ed (optimistic=false)
+00:25:18,096 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)"
+00:25:18,370 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@2ad969 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@12b085, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+00:25:18,373 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@10763f0, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=54579241-1, enlisted resources=[]]
+00:25:18,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@d48ef1" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@12b085"
+00:25:18,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (<'100'>, <'Doria'> , <1.0>)
+00:25:18,494 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@d48ef1"
+00:25:18,507 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@a283ed
+00:25:18,510 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=54579241-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@10763f0]]
+00:25:18,510 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@2ad969 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@12b085, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+00:25:18,525 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@2ad969 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@12b085, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+00:25:18,547 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 40 ms
+00:25:18,549 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@a283ed" se cerró
+00:28:40,359 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+00:28:40,388 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+00:28:40,402 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+00:28:40,409 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+00:28:40,411 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+00:28:40,417 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+00:28:40,420 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+00:28:40,439 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+00:28:40,454 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+00:28:40,497 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+00:28:40,497 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+00:28:40,529 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+00:28:40,530 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+00:28:40,531 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+00:28:40,532 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+00:28:40,532 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+00:28:40,532 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+00:28:40,532 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+00:28:40,532 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+00:28:40,532 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+00:28:40,532 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+00:28:40,532 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+00:28:40,532 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+00:28:40,534 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+00:28:40,673 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+00:28:40,673 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+00:28:40,674 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+00:28:40,693 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+00:28:42,278 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,597 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:28:42,598 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:28:42,621 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+00:28:42,622 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304B151820
+00:28:42,623 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+00:28:42,624 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+00:28:42,625 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+00:28:42,625 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+00:28:42,625 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+00:28:42,625 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+00:28:42,625 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+00:28:42,625 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+00:28:42,626 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:28:42,626 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+00:28:42,627 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+00:28:42,632 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+00:28:42,646 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+00:28:42,646 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+00:28:42,646 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+00:28:42,646 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+00:28:42,646 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+00:28:42,647 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+00:28:42,647 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+00:28:42,647 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+00:28:42,647 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+00:28:42,647 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+00:28:42,647 (main) DEBUG [DataNucleus.Persistence] - ================================================
+00:28:53,905 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@936f3c" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@1843a02" con transaccion="org.datanucleus.TransactionImpl@1213b76"
+00:28:53,911 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-969704811-1, enlisted resources=[]]
+00:28:53,911 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@936f3c (optimistic=false)
+00:28:53,918 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)"
+00:28:54,207 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@19a7fcb [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+00:28:54,210 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2dc9c9, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-969704811-1, enlisted resources=[]]
+00:28:54,299 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@107b252" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a"
+00:28:54,300 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (<'100'>, <'Doria'> , <1.5>)
+00:28:54,344 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@107b252"
+00:28:54,356 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@936f3c
+00:28:54,359 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=-969704811-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2dc9c9]]
+00:28:54,359 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@19a7fcb [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+00:28:54,377 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@19a7fcb [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+00:28:54,398 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 42 ms
+00:28:54,400 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@936f3c" se cerró
+00:31:17,749 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+00:31:17,774 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+00:31:17,788 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+00:31:17,795 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+00:31:17,797 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+00:31:17,803 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+00:31:17,806 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+00:31:17,825 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+00:31:17,840 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+00:31:17,883 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+00:31:17,883 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+00:31:17,916 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+00:31:17,917 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+00:31:17,918 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+00:31:17,918 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+00:31:17,919 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+00:31:17,921 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+00:31:18,052 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+00:31:18,052 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+00:31:18,052 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+00:31:18,072 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+00:31:19,370 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,706 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:31:19,707 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:19,734 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+00:31:19,734 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+00:31:19,734 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+00:31:19,734 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:31:19,735 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:31:19,736 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304B151820
+00:31:19,736 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+00:31:19,737 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:31:19,738 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+00:31:19,739 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+00:31:19,741 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+00:31:19,747 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+00:31:19,747 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+00:31:19,747 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+00:31:19,748 (main) DEBUG [DataNucleus.Persistence] - ================================================
+00:31:23,680 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+00:31:23,710 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+00:31:23,725 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+00:31:23,732 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+00:31:23,735 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+00:31:23,740 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+00:31:23,744 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+00:31:23,763 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+00:31:23,778 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+00:31:23,825 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+00:31:23,825 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+00:31:23,862 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:31:23,863 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+00:31:23,864 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+00:31:23,864 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+00:31:23,865 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+00:31:23,867 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+00:31:24,083 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+00:31:24,083 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+00:31:24,084 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+00:31:24,121 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+00:31:25,761 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+00:31:26,117 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+00:31:26,117 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:31:26,117 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+00:31:26,118 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:31:26,118 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,118 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,118 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+00:31:26,118 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:31:26,118 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,119 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+00:31:26,120 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+00:31:26,120 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:31:26,120 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:31:26,120 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:31:26,160 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+00:31:26,160 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+00:31:26,160 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+00:31:26,160 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+00:31:26,161 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+00:31:26,161 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+00:31:26,161 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+00:31:26,161 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:31:26,161 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+00:31:26,161 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+00:31:26,162 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+00:31:26,162 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:31:26,162 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:31:26,162 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304B151820
+00:31:26,162 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+00:31:26,163 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+00:31:26,163 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+00:31:26,164 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+00:31:26,164 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+00:31:26,164 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+00:31:26,164 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+00:31:26,164 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+00:31:26,164 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:31:26,165 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+00:31:26,166 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+00:31:26,171 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+00:31:26,184 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+00:31:26,184 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+00:31:26,184 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+00:31:26,184 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+00:31:26,184 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+00:31:26,185 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+00:31:26,185 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+00:31:26,185 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+00:31:26,185 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+00:31:26,185 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+00:31:26,185 (main) DEBUG [DataNucleus.Persistence] - ================================================
+00:34:18,425 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+00:34:18,456 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+00:34:18,471 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+00:34:18,480 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+00:34:18,483 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+00:34:18,489 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+00:34:18,493 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+00:34:18,512 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+00:34:18,530 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+00:34:18,587 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+00:34:18,587 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+00:34:18,620 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+00:34:18,621 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+00:34:18,622 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+00:34:18,622 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+00:34:18,622 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+00:34:18,625 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+00:34:18,783 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+00:34:18,783 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+00:34:18,784 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+00:34:18,802 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+00:34:20,139 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+00:34:20,394 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+00:34:20,394 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:34:20,395 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304B151820
+00:34:20,416 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+00:34:20,417 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:34:20,418 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+00:34:20,418 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+00:34:20,420 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+00:34:20,425 (main) DEBUG [DataNucleus.Persistence] - ================================================
+00:34:29,916 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@936f3c" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@1843a02" con transaccion="org.datanucleus.TransactionImpl@1213b76"
+00:34:29,927 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=-2073945661-1, enlisted resources=[]]
+00:34:29,927 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@936f3c (optimistic=false)
+00:34:29,933 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)"
+00:34:30,251 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@19a7fcb [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+00:34:30,254 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2dc9c9, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=-2073945661-1, enlisted resources=[]]
+00:34:30,315 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@107b252" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a"
+00:34:30,316 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (<'100'>, <'Aaa'> , <3.0>)
+00:34:30,432 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@107b252"
+00:34:30,445 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@936f3c
+00:34:30,447 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=-2073945661-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@2dc9c9]]
+00:34:30,448 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@19a7fcb [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+00:34:30,479 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@19a7fcb [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@13b6e0a, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+00:34:30,515 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 71 ms
+00:34:30,517 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@936f3c" se cerró
+00:35:46,152 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+00:35:46,181 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+00:35:46,197 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+00:35:46,204 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+00:35:46,206 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+00:35:46,212 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+00:35:46,215 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+00:35:46,234 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+00:35:46,249 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+00:35:46,296 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+00:35:46,296 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+00:35:46,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+00:35:46,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+00:35:46,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+00:35:46,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+00:35:46,332 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+00:35:46,333 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+00:35:46,334 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+00:35:46,335 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+00:35:46,335 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+00:35:46,335 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+00:35:46,337 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+00:35:46,550 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+00:35:46,550 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+00:35:46,550 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+00:35:46,575 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+00:35:48,165 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+00:35:48,432 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+00:35:48,433 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:35:48,433 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+00:35:48,433 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+00:35:48,433 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,434 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+00:35:48,435 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+00:35:48,472 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+00:35:48,473 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:35:48,473 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+00:35:48,473 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304B151820
+00:35:48,473 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+00:35:48,474 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+00:35:48,474 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+00:35:48,475 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+00:35:48,478 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+00:35:48,486 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+00:35:48,486 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+00:35:48,486 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+00:35:48,486 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+00:35:48,486 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+00:35:48,487 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+00:35:48,487 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+00:35:48,487 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+00:35:48,487 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+00:35:48,487 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+00:35:48,487 (main) DEBUG [DataNucleus.Persistence] - ================================================
+00:35:59,454 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@10aa3a0" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@8de4b6" con transaccion="org.datanucleus.TransactionImpl@19db9f1"
+00:35:59,465 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=447570740-1, enlisted resources=[]]
+00:35:59,465 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@10aa3a0 (optimistic=false)
+00:35:59,471 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)"
+00:35:59,758 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a68e4c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@16710c0, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+00:35:59,761 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@334edb, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=447570740-1, enlisted resources=[]]
+00:35:59,822 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1ca00bc" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@16710c0"
+00:35:59,823 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (<'A'>, <'A'> , <1.0>)
+00:35:59,867 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1ca00bc"
+00:35:59,879 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo rollback de la transacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@10aa3a0
+00:35:59,881 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Rolling back [DataNucleus Transaction, ID=447570740-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@334edb]]
+00:35:59,882 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A ROLLBACK : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a68e4c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@16710c0, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+00:35:59,897 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a68e4c [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@16710c0, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+00:35:59,911 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción rolled back en 32 ms
+00:35:59,913 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@10aa3a0" se cerró

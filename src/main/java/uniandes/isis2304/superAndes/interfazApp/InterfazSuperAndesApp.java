@@ -257,21 +257,30 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del proveedor a adicionar", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
 			{
+				String resultado = "En adicionar Proveedor \n\n";
 				datosProveedor[0] = nit.getText();
 				datosProveedor[1] = nombre.getText();
 				datosProveedor[2] = calificacionString.getText();
-				
-				double calificacionSinFormato = Double.parseDouble(datosProveedor[2]);
-				NumberFormat formatter = new DecimalFormat("#0.0");
-				String strDouble = formatter.format(calificacionSinFormato).trim().replace(',', '.');
-				double calificacion = Double.parseDouble(strDouble);
-				VOProveedor tb = superAndes.adicionarProveedor(datosProveedor[0], datosProveedor[1] , calificacion);
-				if(tb == null)
-					throw new Exception("No se pudo crear el proveedor con nit: " + nit);
-				String resultado = "En adicionar Proveedor \n\n";
-				resultado += "Proveedor adicionado correctamente: " + tb.toString();
-				resultado += "\n Operación terminada.";
-				panelDatos.actualizarInterfaz(resultado);
+				if(!datosProveedor[0].equals("") || !datosProveedor[1].equals("") || !datosProveedor[2].equals(""))
+				{
+					double calificacionSinFormato = Double.parseDouble(datosProveedor[2]);
+					System.out.println("sin: " + calificacionSinFormato);
+					NumberFormat formatter = new DecimalFormat("#0.0");
+					String strDouble = formatter.format(calificacionSinFormato).trim().replace(',', '.');
+					double calificacion = Double.parseDouble(strDouble);
+					System.out.println("con: " + calificacion);
+					VOProveedor tb = superAndes.adicionarProveedor(datosProveedor[0], datosProveedor[1] , calificacion);
+					if(tb == null)
+						throw new Exception("No se pudo crear el proveedor con nit: " + nit);
+					
+					resultado += "Proveedor adicionado correctamente: " + tb.toString();
+					resultado += "\n Operación terminada.";
+				}
+				else
+				{
+					resultado += "No se pueden dejar campos vacios.";
+				}
+					panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
@@ -280,12 +289,17 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		}
 		catch(Exception e)
 		{
-			panelDatos.actualizarInterfaz("Exception: " + e.getMessage());
+			panelDatos.actualizarInterfaz("Exception!!!!!!!!: " + e.getMessage());
 		}
 	}
 
+	/**
+	 * Adiciona un producto con la información dada por el usuario.
+	 */
 	public void adicionarProducto()
 	{
+		try
+		{
 		String [] array = new String[16];
 		JTextField codigoBarras = new JTextField();
 		JTextField nombre = new JTextField();
@@ -344,7 +358,12 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		}
 		else
 		{
-			
+			panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+		}
+		}
+		catch(Exception e)
+		{
+			panelDatos.actualizarInterfaz("Exception!!!!: " + e.getMessage());
 		}
 		
 	}

@@ -94,28 +94,28 @@ INSERT INTO TIPO values('Mujer');
 
 --Poblando Tabla PRODUCTO.
 --superAndes_sequence.NEXTVAL PARA USAR EL SECUENCIADOR DESDE DEVELOPER.
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA1', 'Zanahoria', 'Delta', 4.710, 'Por gramos', 9.4, 1 , 500, 'G', 0.05, 'm3', 4.3, 100, NULL, 'Vegetales', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA2', 'Espinaca', 'Delta', 1290, 'Por gramos', 4.3, 1, 300, 'G', 0.05, 'm3', 3.5, 30, NULL, 'Vegetales', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA3', 'Mora', 'BlueBerry',5340, 'Por gramos', 10.7, 1, 500, 'G', 0.06, 'm3', 4, 15, NULL, 'Frutas y verduras', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA4', 'Naranja', 'BlueBerry',4170, 'Por Kilogramos', 1.3, 1, 3, 'KG', 0.35, 'm3', 3.5, 25, NULL, 'Frutas y verduras', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA5', 'Arroz', 'Diana',9430, 'Premium', 3.77, 1, 2500, 'G', 0.6, 'm3', 4.7, 70, NULL, 'Cereales', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA6', 'Trigo', 'Haz de oros',1860, 'Paquete', 3.7, 1, 500, 'G', 0.1, 'm3', 4.7, 25, '30/11/2018', 'Cereales', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA7', 'Aceite de oliva', 'Olivetto',51000, 'Botella', 51, 1, 200, 'G', 1000, 'cm3', 4, 5, NULL, 'Lipidos', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA8', 'Mantequilla', 'La fina',8010, 'Unidad', 16.02, 1, 500, 'G', 0.01, 'm3', 3.8, 20, '30/11/2018', 'Lipidos', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAAA9', 'Carne de res molida', 'SIN MARCA',8950, 'En bandeja', 17.9, 1, 500, 'G', 0.004, 'm3', 3.9, 5, '30/11/2018', 'Congelados', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA10', 'Pizza', 'Zenú',10880, 'Unidad', 10880, 1, 250, 'G', 0.002, 'm3', 3, 5,' 30/11/2018', 'Congelados', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA11', 'Trapero', 'Dekoratto',19210, 'Unidad', 19210, 1, 250, 'G', NULL, NULL, 4.1, 7, NULL, 'Aseo', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA12', 'Quitagrasa Verde Pistola', 'Mr Musculo',9070, 'CBL', 9070, 1, NULL,NULL, 500, 'cm3', 4, 30, NULL, 'Aseo', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA13', 'Cepillo dental 360', 'Colgate',21200, 'BTR', 10600, 2, NULL, NULL, NULL, NULL, 4.2, 20, NULL, 'Cuidado Personal', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA14', 'Pañales', 'Huggies',14150, 'Paquete', 14150, 1, NULL, NULL, NULL, NULL, 4.6, 20, NULL, 'Cuidado Personal', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA15', 'Croquetas', 'Dog Chow', 13300, 'Unidad', 13.3, 1, 1000, 'G', 1, 'm3', 4.8, 15, '30/11/2018', 'Mascotas', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA16', 'Mix para aves', 'VITURA', 3120, 'Unidad', 10.4, 1, 300, 'G', NULL, NULL, 3, 10, NULL, 'Mascotas', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA17', 'Coca Cola Mega', 'Coca-Cola', 5170, 'Unidad', 2.1, 1, NULL, NULL, 2.5, 'L', 4, 70, '30/11/2018', 'Bebidas', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA18', 'Jugo Hit pet', 'Postobon',1800, 'Unidad', 3.6, 1,NULL , NULL, 500, 'ML', 3.7, 100, '30/11/2018', 'Bebidas', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA19', 'Jenga', 'Hasbro Gaming',66200, 'Unidad', 66200, 1, NULL, NULL, NULL, NULL, 4, 4, NULL, 'Juguetes', 0);               
-INSERT INTO PRODUCTO values('AAAAAAAAAAA20', 'Nerf Dual N-Strike', 'Hasbro',180000, 'Unidad', 18000, 1, NULL, NULL, NULL, NULL, 4, 3, NULL, 'Juguetes', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA21', 'Buzo', 'Vans', 65000, 'Unidad', 65000, 1, NULL, NULL, NULL, NULL, 4.7, 4, NULL, 'Ropa', 0);
-INSERT INTO PRODUCTO values('AAAAAAAAAAA22', 'Falda Nike Tenis', 'Nike', 175000, 'Unidad', 175000, 1, NULL, NULL, NULL, NULL, 4, 20, NULL, 'Ropa', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA1', 'Zanahoria',                   'Delta',            4710, 'Por gramos',     9.4,    1, 500, 'G', 0.05,  'm3',   4.3,    100,    NULL,           'Vegetales', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA2', 'Espinaca',                    'Delta',            1290, 'Por gramos',     4.3,    1, 300, 'G', 0.05,  'm3',   3.5,    30,     NULL,           'Vegetales', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA3', 'Mora',                        'BlueBerry',        5340, 'Por gramos',     10.7,   1, 500, 'G', 0.06,  'm3',   4,      15,     NULL,           'Frutas y verduras', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA4', 'Naranja',                     'BlueBerry',        4170, 'Por Kilogramos', 1.3,    1, 3,   'KG', 0.35, 'm3',   3.5,    25,     NULL,           'Frutas y verduras', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA5', 'Arroz',                       'Diana',            9430, 'Premium',        3.77,   1, 2500,'G', 0.6,   'm3',   4.7,    70,     NULL,           'Cereales', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA6', 'Trigo',                       'Haz de oros',      1860, 'Paquete',        3.7,    1, 500, 'G', 0.1,   'm3',   4.7,    25,     '30/11/2018',   'Cereales', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA7', 'Aceite de oliva',             'Olivetto',         51000, 'Botella',       51,     1, 200, 'G', 1000,  'cm3',  4,      5,      NULL,           'Lipidos', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA8', 'Mantequilla',                 'La fina',          8010, 'Unidad',         16.02,  1, 500, 'G', 0.01,  'm3',   3.8,    20,     '30/11/2018',   'Lipidos', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAAA9', 'Carne de res molida',         'SIN MARCA',        8950, 'En bandeja',     17.9,   1, 500, 'G', 0.004, 'm3',   3.9,    5,      '30/11/2018',   'Congelados', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA10', 'Pizza',                       'Zenú',             10880, 'Unidad',        10880,  1, 250, 'G', 0.002, 'm3',   3,      5,      '30/11/2018',   'Congelados', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA11', 'Trapero',                     'Dekoratto',        19210, 'Unidad',        19210,  1, 250, 'G', NULL,  NULL,   4.1,    7,      NULL,           'Aseo', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA12', 'Quitagrasa Verde Pistola',    'Mr Musculo',       9070, 'CBL',            9070,   1, NULL,NULL, 500, 'cm3',   4,      30,     NULL,           'Aseo', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA13', 'Cepillo dental 360',          'Colgate',          21200, 'BTR',           10600,  2, NULL,NULL, NULL, NULL,   4.2,    20,     NULL,           'Cuidado Personal', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA14', 'Pañales',                     'Huggies',          14150, 'Paquete',       14150,  1, NULL,NULL, NULL, NULL,   4.6,    20,     NULL,           'Cuidado Personal', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA15', 'Croquetas',                   'Dog Chow',         13300, 'Unidad',        13.3,   1, 1000,'G', 1,     'm3',   4.8,    15,     '30/11/2018',   'Mascotas', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA16', 'Mix para aves',               'VITURA',           3120, 'Unidad',         10.4,   1, 300, 'G', NULL,  NULL,   3,      10,     NULL,           'Mascotas', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA17', 'Coca Cola Mega',              'Coca-Cola',        5170, 'Unidad',         2.1,    1, NULL,NULL, 2.5,  'L',    4,      70,     '30/11/2018',   'Bebidas', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA18', 'Jugo Hit pet',                'Postobon',         1800, 'Unidad',         3.6,    1, NULL,NULL, 500,  'ML',   3.7,    100,    '30/11/2018',   'Bebidas', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA19', 'Jenga',                       'Hasbro Gaming',    66200, 'Unidad',        66200,  1, NULL,NULL, NULL, NULL,   4,      4,      NULL,           'Juguetes', 0);               
+INSERT INTO PRODUCTO values('AAAAAAAAAAA20', 'Nerf Dual N-Strike',          'Hasbro',           180000, 'Unidad',       18000,  1, NULL,NULL, NULL, NULL,   4,      3,      NULL,           'Juguetes', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA21', 'Buzo',                        'Vans',             65000, 'Unidad',        65000,  1, NULL,NULL, NULL, NULL,   4.7,    4,      NULL,           'Ropa', 0);
+INSERT INTO PRODUCTO values('AAAAAAAAAAA22', 'Falda Nike Tenis',            'Nike',             175000, 'Unidad',       175000, 1, NULL,NULL, NULL, NULL,   4,      20,     NULL,           'Ropa', 0);
                
 --Poblando Tabla TIPO_PRODUCTO.
 INSERT INTO TIPO_PRODUCTO values();
