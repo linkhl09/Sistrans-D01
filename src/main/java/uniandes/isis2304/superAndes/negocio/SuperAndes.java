@@ -3,6 +3,11 @@ package uniandes.isis2304.superAndes.negocio;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+
+import static java.util.concurrent.TimeUnit.*;
 
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
@@ -2392,6 +2397,58 @@ public class SuperAndes {
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
+	
+	// -----------------------------------------------------------------
+    // Métodos de requerimientos
+	// -----------------------------------------------------------------
+
+	  private final ScheduledExecutorService scheduler =   Executors.newScheduledThreadPool(1);
+
+	  public void verificarPromociones()
+	  {
+		  final Runnable verificador = new Runnable() 
+		  {
+			  public void run()
+			  {
+		//aqui se pone el metodo 
+				  
+			  }
+		  };
+		  
+		  final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 16, 24, HOURS);
+		 
+		  scheduler.schedule(new Runnable() {
+			  public void run()  {	  beeperHandle.cancel(true); }  }  , 60 * 60, HOURS); }
+	/**
+	 * Finaliza una promocion , ya sea por q se agotaron las existencias o por llego la fecha de finalizacion 
+	 * Adiciona entradas al log de la aplicación
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
