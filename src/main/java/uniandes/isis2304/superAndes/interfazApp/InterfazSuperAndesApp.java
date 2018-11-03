@@ -34,6 +34,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import jdk.nashorn.internal.scripts.JO;
 import uniandes.isis2304.superAndes.negocio.*;
 
 /**
@@ -243,16 +244,28 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	{
 		try
 		{
-			String nit = JOptionPane.showInputDialog(this, "Inserte el nit del proveedor." , "Nombre del proveedor", JOptionPane.QUESTION_MESSAGE);
-			String nombre = JOptionPane.showInputDialog("Inserte el nombre del proveedor.");
-			String calificacionString = JOptionPane.showInputDialog("Inserte la calificación inicial del proveedor.");
-			if(nit!= null && nombre != null && calificacionString != null && !nit.equals("") && !nombre.equals("") && !calificacionString.equals(""))
+			String[] datosProveedor = new String[3];
+			JTextField nit = new JTextField();
+			JTextField nombre = new JTextField();
+			JTextField calificacionString = new JTextField();
+			Object[] message =
+				{
+					"Inserte nit:" , nit,
+					"Inserte nombre:", nombre,
+					"Calificación", calificacionString
+				};
+			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del proveedor a adicionar", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
 			{
-				double calificacionSinFormato = Double.parseDouble(calificacionString);
+				datosProveedor[0] = nit.getText();
+				datosProveedor[1] = nombre.getText();
+				datosProveedor[2] = calificacionString.getText();
+				
+				double calificacionSinFormato = Double.parseDouble(datosProveedor[2]);
 				NumberFormat formatter = new DecimalFormat("#0.0");
 				String strDouble = formatter.format(calificacionSinFormato).trim().replace(',', '.');
 				double calificacion = Double.parseDouble(strDouble);
-				VOProveedor tb = superAndes.adicionarProveedor(nit, nombre, calificacion);
+				VOProveedor tb = superAndes.adicionarProveedor(datosProveedor[0], datosProveedor[1] , calificacion);
 				if(tb == null)
 					throw new Exception("No se pudo crear el proveedor con nit: " + nit);
 				String resultado = "En adicionar Proveedor \n\n";
@@ -273,7 +286,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 	public void adicionarProducto()
 	{
-		String [] array = new String[18];
+		String [] array = new String[16];
 		JTextField codigoBarras = new JTextField();
 		JTextField nombre = new JTextField();
 		JTextField marca = new JTextField();
@@ -288,7 +301,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		JTextField calidad = new JTextField();
 		JTextField nivelReorden = new JTextField();
 		JTextField fechaVencimiento = new JTextField();
-		JTextField Categoria = new JTextField();
 		JTextField categoria = new JTextField();
 		JTextField estaPromocion = new JTextField();
 		Object[] message = 
@@ -318,23 +330,17 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			array[2]=marca.getText();
 			array[3]=precioUnitario.getText();
 			array[4]=presentacion.getText();
-			array[5]=precioUnitario.getText();
-			array[6]=presentacion.getText();
-			array[7]=precioUnidadMedida.getText();
-			array[8]=cantidadPresentacion.getText();
-			array[9]=peso.getText();
-			array[10]=unidadMedidaPeso.getText();
-			array[11]=volumen.getText();
-			array[12]=unidadMedidaVolumen.getText();
-			array[13]=calidad.getText();
-			array[14]=nivelReorden.getText();
-			array[15]=fechaVencimiento.getText();
-			array[16]=categoria.getText();
-			array[17]=estaPromocion.getText();
-		
-			for(String a :array)
-				System.out.println(a);
-			
+			array[5]=precioUnidadMedida.getText();
+			array[6]=cantidadPresentacion.getText();
+			array[7]=peso.getText();
+			array[8]=unidadMedidaPeso.getText();
+			array[9]=volumen.getText();
+			array[10]=unidadMedidaVolumen.getText();
+			array[11]=calidad.getText();
+			array[12]=nivelReorden.getText();
+			array[13]=fechaVencimiento.getText();
+			array[14]=categoria.getText();
+			array[15]=estaPromocion.getText();			
 		}
 		else
 		{
