@@ -9,6 +9,7 @@ import javax.jdo.JDODataStoreException;
 import javax.jdo.JDOHelper;
 import javax.jdo.PersistenceManager;
 import javax.jdo.PersistenceManagerFactory;
+import javax.jdo.Query;
 import javax.jdo.Transaction;
 
 import org.apache.log4j.Logger;
@@ -197,12 +198,7 @@ public class PersistenciaSuperAndes {
 	 */
 	private SQLPromPagLleveCatidad sqlPromPagLleveCatidad;
 
-	/**
-	 * Atributo para el acceso a la tabla "PromocionSucursal" de la base de datos
-	 */
-	private SQLPromocionSucursal sqlPromocionSucursal;
-
-
+	
 	/**
 	 * Atributo con métodos utiles para el manejo de la base de datos.
 	 */
@@ -246,7 +242,6 @@ public class PersistenciaSuperAndes {
 		tablas.add("PROM_PAG_LLEVE_UNID");
 		tablas.add("PROM_DESC_SEG_UNIDAD");
 		tablas.add("PROM_PAG_LLEVE_CANT");
-		tablas.add("PROMOCION_SUCURSAL");
 
 	}
 
@@ -555,13 +550,6 @@ public class PersistenciaSuperAndes {
 		return tablas.get (25);
 	}
 
-	/**
-	 * @return La cadena de caracteres con el nombre de la tabla de PromocionSucursal de parranderos
-	 */
-	public String darTablaPromocionSucursal()
-	{
-		return tablas.get (26);
-	}
 
 	/**
 	 * Transacción para el generador de secuencia de SuperAndes
@@ -3163,7 +3151,7 @@ public class PersistenciaSuperAndes {
 	/**@param fechaFin fecha en la cual se finaliza la promocion
 	/**@param producto  producto que esta en promocion
 	 * @param tipoProm tipo de promocion 1: PromPagLleveUni , 2: PronDesc , 3: PronSegunUnidDesc, 4 : PromPagueLleveCant
-	 *   @param   descuento   porcentaje del descuento a  realizar
+	 * @param   descuento   porcentaje del descuento a  realizar
 	 **/
 	public PromDesc adicionarPromocionDescuento(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento)
@@ -3176,10 +3164,11 @@ public class PersistenciaSuperAndes {
 			tx.begin();
 			long numeroPromo = nextval ();
 			long tuplasInsertadas = sqlPromDescuento.adicionarPromDescuento(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento); 
+			
 			tx.commit();
 
 			log.trace ("Inserción de promocion descuento: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
-
+			
 			return new PromDesc(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 
 
@@ -3280,10 +3269,11 @@ public class PersistenciaSuperAndes {
 			tx.begin();
 			long numeroPromo = nextval ();
 			long tuplasInsertadas = sqlPromPagLlevUnidad.adicionarPromPagueLleveUnid(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+			
 			tx.commit();
 
 			log.trace ("Inserción de promocion pague n lleve m unidades: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
-
+			
 			return new PromPagueLleveUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
 
 
@@ -3383,11 +3373,11 @@ public class PersistenciaSuperAndes {
 			tx.begin();
 			long numeroPromo = nextval ();
 			long tuplasInsertadas = sqlPromDescSegUnid.adicionarPromDescSegUnid(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
-
+			
 			tx.commit();
 
 			log.trace ("Inserción de promocion segunda unidad descuento: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
-
+			
 			return new PromSegUniDesc(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 
 
@@ -3566,44 +3556,5 @@ public class PersistenciaSuperAndes {
 	}
 
 
-	// -----------------------------------------------------------------
-	// Métodos de tabla PromcionSucursal
-	// -----------------------------------------------------------------
-
-	/**
-	 * Método que adiciona, de manera transaccional, una tupla en la tabla PROMOCION SUCURSAL.
-	 * Adiciona entradas al log de la aplicación.
-	 * @param idSucursal - El id de la sucursal.
-	 * @param idPromocion - El identificador de la promocion.
-	 * @return El objeto tipo PromocionSucursal adicionado. Null si se encuentra alguna Exception.
-	 */
-	public PromocionSucursal adicionarPromocionSucursal(long idSucursal, long idPromocion)
-	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long tuplasInsertadas = sqlPromocionSucursal.adicionarPromocionSucursal(pm, idSucursal, idPromocion);
-			tx.commit();
-
-			log.trace("Inserción de asociacion entre sucursal: " + idSucursal + " y promocion: " + idPromocion + ": " + tuplasInsertadas + " tuplas insertadas."); 
-
-			return new PromocionSucursal(idPromocion, idSucursal);
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return null;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
-	}	
+	
 }

@@ -72,7 +72,6 @@ class SQLUtil {
 		Query qProductosEnEstante		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductosEnEstante() );
 		Query qSucursalProducto 		= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() );
 		Query qProductoCarritoCompras	= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProductoCarritoCompras());
-		Query qPromocionSucursal	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromocionSucursal());
 		Query qTipoProducto				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipoProducto());
 		Query qCarritoCompras 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCarritoCompras() );
 		Query qFactura 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaFactura() );
@@ -100,7 +99,6 @@ class SQLUtil {
 		long productosEnEstanteEliminados    = (long) qProductosEnEstante.executeUnique();
 	    long sucursalProductoEliminados      = (long) qSucursalProducto.executeUnique();
 	    long productoCarritoComprasEliminados= (long) qProductoCarritoCompras.executeUnique();
-	    long promocionSucursal               = (long) qPromocionSucursal.executeUnique();
 	    long tipoProductoEliminados			 = (long) qTipoProducto.executeUnique();
 	    long carritoComprasEliminados		 = (long) qCarritoCompras.executeUnique();
 	    long facturaEliminados               = (long) qFactura.executeUnique();
@@ -121,7 +119,7 @@ class SQLUtil {
 		long productoEliminados              = (long) qProducto.executeUnique();
 			
 		return new long[] {proveedoresProductoEliminados,productoOrdenPedidoEliminados, facturaProductoEliminados ,productosEnBodegaEliminados, 
-				productosEnEstanteEliminados , sucursalProductoEliminados, productoCarritoComprasEliminados, promocionSucursal, tipoProductoEliminados, 
+				productosEnEstanteEliminados , sucursalProductoEliminados, productoCarritoComprasEliminados, tipoProductoEliminados, 
 				carritoComprasEliminados, facturaEliminados , clienteEliminados, bodegaEliminados , estanteEliminados, categoriaEliminados, tipoEliminados, 
 				personaNaturalEliminados , empresaEliminados, ordenPedidoEliminados , sucursalEliminados, proveedorEliminados, promDescuentoEliminados,
 				promSegUniDescuentoEliminados , promPagLleveUniEliminados, promPagLleveCantEliminados, productoEliminados };
