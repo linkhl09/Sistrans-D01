@@ -19,6 +19,11 @@ public class CarritoCompras implements VOCarritoCompras {
 	 * Correo eletrónico del cliente dueño del carrito de compras.
 	 */
 	private String cliente;
+	
+	/**
+	 * Id de la sucursal donde esta carrito de compras.
+	 */
+	private long idSucursal;
 
 	// -----------------------------------------------------------------
     // Constructores.
@@ -31,6 +36,7 @@ public class CarritoCompras implements VOCarritoCompras {
 	{
 		id= 0;
 		cliente = "";
+		setIdSucursal(0);
 	}
 	
 	/**
@@ -38,10 +44,11 @@ public class CarritoCompras implements VOCarritoCompras {
 	 * @param id - El identificador del nuevo carrito de compras.
 	 * @param cliente -Correo eletrónico del cliente dueño del carrito de compras.
 	 */
-	public CarritoCompras(long id, String cliente)
+	public CarritoCompras(long id, String cliente,long idSucursal)
 	{
 		this.id = id;
 		this.cliente = cliente;
+		this.idSucursal = idSucursal;
 	}
 	
 	// -----------------------------------------------------------------
@@ -82,12 +89,28 @@ public class CarritoCompras implements VOCarritoCompras {
 		this.cliente = cliente;
 	}
 	
+	
+	/**
+	 * @return El identificador de la sucursal donde esta el carrito de compras.
+	 */
+	public long getIdSucursal() {
+		return idSucursal;
+	}
+
+	/**
+	 * Asigna una nueva sucursal al carrito de compras.
+	 * @param idSucursal - El nuevo id de la sucursal donde se encuentra el carrito de compras.
+	 */
+	public void setIdSucursal(long idSucursal) {
+		this.idSucursal = idSucursal;
+	}
+	
 	/**
 	 * Cadena de caracteres con todos los atributos de la CarritoCompras.
 	 */
 	@Override
 	public String toString()
 	{
-		return "CarritoCompras [id=" + id +"]";
-	}	
+		return "CarritoCompras [id=" + id + "sucursal" + idSucursal +"]";
+	}
 }

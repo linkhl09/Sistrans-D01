@@ -51,12 +51,13 @@ class SQLCarritoCompras {
 	 * @param pm - El manejador de persistencia.
 	 * @param id - El identificador del carrito de compras.
 	 * @param cliente - El identificador del cliente dueño del carrito de comrpas.
+	 *  @param idSucursal - El identificador de la sucursal donde se encuentra el carrito de comrpas.
 	 * @return El número de tuplas insertadas.
 	 */
-	public long adicionarCarritoCompras(PersistenceManager pm, long id, String cliente)
+	public long adicionarCarritoCompras(PersistenceManager pm, long id, String cliente, long idSucursal)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCarritoCompras() + "(id, cliente) values (?, ?)");
-		q.setParameters(id, cliente);
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCarritoCompras() + "(id, cliente,idSucursal) values (?, ?,?)");
+		q.setParameters(id, cliente, idSucursal);
 		return (long) q.executeUnique();
 	}
 	

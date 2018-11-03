@@ -18,6 +18,12 @@ public interface VOCarritoCompras {
 	public String getCliente();
 	
 	/**
+	 * @return El identificador de la sucursal donde esta el carrito de compras.
+	 */
+	public long getIdSucursal();
+
+	
+	/**
 	 * Cadena de caracteres con todos los atributos de la CarritoCompras.
 	 */
 	@Override

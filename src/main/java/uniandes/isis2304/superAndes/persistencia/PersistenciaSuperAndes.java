@@ -2160,9 +2160,10 @@ public class PersistenciaSuperAndes {
 	 * Método que inserta, de manera transaccional, una tupla en la tabla CARRITOCOMPRAS.
 	 * Adiciona entradas al log de la aplicación.
 	 * @param cliente - Cliente del carrito de compras.
+     * @param idSucursal - el identificador de la sucursal donde se encuentra el carrito de compras.
 	 * @return El objeto CarritoCompras adicionado. Null si ocurre alguna Exception.
 	 */
-	public CarritoCompras adicionarCarritoCompras(String cliente)
+	public CarritoCompras adicionarCarritoCompras(String cliente, long idSucursal)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx=pm.currentTransaction();
@@ -2170,12 +2171,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long id = nextval();
-			long tuplasInsertadas = sqlCarritoCompras.adicionarCarritoCompras(pm, id, cliente);
+			long tuplasInsertadas = sqlCarritoCompras.adicionarCarritoCompras(pm, id, cliente, idSucursal);
 			tx.commit();
 
 			log.trace("Inserción del CarritoCompras con el id: " + id + ": " + tuplasInsertadas + " tuplas insertadas."); 
 
-			return new CarritoCompras(id, cliente);
+			return new CarritoCompras(id, cliente, idSucursal);
 		}
 		catch (Exception e)
 		{

@@ -9,6 +9,9 @@ import java.util.concurrent.ScheduledFuture;
 
 import static java.util.concurrent.TimeUnit.*;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 import org.apache.log4j.Logger;
 import com.google.gson.JsonObject;
 
@@ -309,6 +312,10 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 
 	
+	// -----------------------------------------------------------------
+    // RF2. REGISTRAR PRODUCTO
+	// -----------------------------------------------------------------
+		
 	/**
 	 * Adiciona de manera persistente un producto.
 	 * Adiciona entradas al log de la aplicación.
@@ -426,6 +433,10 @@ public class SuperAndes {
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
 
+	// -----------------------------------------------------------------
+    // RF4. REGISTRAR UNA PROMOCION
+	// -----------------------------------------------------------------
+		
 	/**
 	 * Adiciona de manera persistente una sucursal.
 	 * Adiciona entradas al log de la aplicación
@@ -718,6 +729,10 @@ public class SuperAndes {
 	// Métodos de tabla estante
 	// -----------------------------------------------------------------
 
+	// -----------------------------------------------------------------
+    // RF6. REGISTRAR UN ESTANTE EN UNA SUCURSAL
+	// -----------------------------------------------------------------
+		
 	/**
 	 * Adiciona de manera persistente un objeto Estante.
 	 * Adiciona entradas al log de la aplicación
@@ -1316,14 +1331,14 @@ public class SuperAndes {
 	/**
 	 * Adiciona de manera persistente un  Carrito de Compras.
 	 * Adiciona entradas al log de la aplicación
-	 * @param id - El identificador del nuevo carrito de compras.
 	 * @param cliente -Correo eletrónico del cliente dueño del carrito de compras.
+	 * @param idSucursal - el identificador de la sucursal donde se encuentra el carrito de compras.
 	 * @return El objeto CarritoCompras adicionado. null si ocurre alguna Excepción
 	 */
-	public CarritoCompras adicionarCarritoCompras(String cliente)
+	public CarritoCompras adicionarCarritoCompras(String cliente, long idSucursal)
 	{
-		log.info("Adicionando carrito compras al cliente: " + cliente);
-		CarritoCompras agregado = psa.adicionarCarritoCompras(cliente);
+		log.info("Adicionando carrito compras al cliente: " + cliente + "en al sucursal " + idSucursal);
+		CarritoCompras agregado = psa.adicionarCarritoCompras(cliente, idSucursal);
 		log.info("Adicionado carritoCompras");
 		return agregado;
 	}
@@ -1955,19 +1970,24 @@ public class SuperAndes {
 		return buscado;
 	}
 
-	/**
-	 *Actualza la fecha de llegada de la orden de pedido y la calificacion de calidad de la orden 
-	 * @param id - El id de la orden de pedido.
-	 * @param fechaEntrega - La fecha en la que se registra la entrega de la orden de pedido.
-	 * @param nuevaCalificacion - La calificacion de calidad  de la orden de pedido.
-	 * @return el numero de tuplas actualizadas.
-	 */
-	public long registrarFechaLlegada(long id, Date fechaEntrega, double nuevaCalificacion)
-	{
-		log.info("Registrar fecha de llega del pedido.");
-		long cambios = psa.registrarFechaLlegada(id, fechaEntrega, nuevaCalificacion);
-		return cambios;
-	}	
+	// -----------------------------------------------------------------
+    // RF10. REGISTRAR LA LLEGADA DE UNA ORDEN PEDIDO
+	// -----------------------------------------------------------------
+	
+	  /**
+		 *Actualza la fecha de llegada de la orden de pedido y la calificacion de calidad de la orden 
+		 * @param id - El id de la orden de pedido.
+		 * @param fechaEntrega - La fecha en la que se registra la entrega de la orden de pedido.
+		 * @param nuevaCalificacion - La calificacion de calidad  de la orden de pedido.
+		 * @return el numero de tuplas actualizadas.
+		 */
+		public long registrarFechaLlegada(long id, Date fechaEntrega, double nuevaCalificacion)
+		{
+			log.info("Registrar fecha de llega del pedido.");
+			long cambios = psa.registrarFechaLlegada(id, fechaEntrega, nuevaCalificacion);
+			return cambios;
+		}	
+	
 	
 	// -----------------------------------------------------------------
 	// Métodos de tabla ProductoOrdenPedido
@@ -2402,10 +2422,15 @@ public class SuperAndes {
     // Métodos de requerimientos
 	// -----------------------------------------------------------------
 
+	
+	// -----------------------------------------------------------------
+    // RF8. FINALIZAR UNA PROMOCION
+	// -----------------------------------------------------------------
+
 	  private final ScheduledExecutorService scheduler =   Executors.newScheduledThreadPool(1);
 
 	  /**
-		 * Finaliza una promocion , ya sea por q se agotaron las existencias o por llego la fecha de finalizacion 
+		 * Finaliza una promocion , ya sea por q se agotaron las existencias o por que llego la fecha de finalizacion 
 		 * Adiciona entradas al log de la aplicación
 		 */
 	  public void verificarPromociones()
@@ -2414,28 +2439,139 @@ public class SuperAndes {
 		  {
 			  public void run()
 			  {
-		//aqui se pone el metodo 
+				  //aqui se pone el metodo 
+				  for(int i=0; i<darPromDescuento().size() ; i ++)
+				  {
+					  Date fecha = new Date();
+					 
+					  if(darPromDescuento().get(i).getFechaFin().after( fecha )  )
+					  {
+						  eliminarPromDescuento(darPromDescuento().get(i).getId());
+					  }
+				  }
 				  
+				  for(int i=0; i<darPromDescSegUnid().size() ; i ++)
+				  {
+					  Date fecha = new Date();
+					 
+					  if(darPromDescSegUnid().get(i).getFechaFin().after( fecha ))
+					  {
+						  eliminarPromDescSegUnidPorId(darPromDescSegUnid().get(i).getId());
+					  }
+				  }
 				  
+				  for(int i=0; i<darPromPagLleveCatidad().size() ; i ++)
+				  {
+					  Date fecha = new Date();
+					 
+					  if(darPromPagLleveCatidad().get(i).getFechaFin().after( fecha ))
+					  {
+						  eliminarPromPagLleveCatidadPorId(darPromPagLleveCatidad().get(i).getId());
+					  }
+				  }
+				  
+				  for(int i=0; i<darPromPagueLleveUnid().size() ; i ++)
+				  {
+					  Date fecha = new Date();
+					
+					  if(darPromPagueLleveUnid().get(i).getFechaFin().after( fecha ))
+					  {
+						  eliminarPromPagLlevUnidadPorId(darPromPagueLleveUnid().get(i).getId());
+					  }
+				  }
+
+			  }
+		  };
+
+		  final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 0 , 24, HOURS);
+
+		  //no se que son esos (60*60) hay q mirar q se supone debe ir hay
+		  scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, HOURS); 
+		  }
+
+
+	  
+	  
+	  /**
+		 * Verifica si los carritos no han sido abandonados,si lo fueron devuelve los productos al estante
+		 * Adiciona entradas al log de la aplicación
+		 */
+	  private final ScheduledExecutorService scheduler2 =   Executors.newScheduledThreadPool(1);
+
+	  public void verificarCarritosAbandonados()
+	  {
+		  final Runnable verificador = new Runnable() 
+		  {
+			  public void run()
+			  {
+		//aqui se pone el metodo
+				  for(int i =0; i< darTodosCarritosCompras().size(); i++){
+					  if(darTodosCarritosCompras().get(i).getCliente()==null)
+					  {
+						  devolverTodosProductosAlEstante(darTodosCarritosCompras().get(i).getId());
+						  eliminarCarritoCompras(darTodosCarritosCompras().get(i).getId());
+						  
+					  }
+				  }
 			  }
 		  };
 		  
-		  final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 16, 24, HOURS);
-		 
-		  scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, HOURS); }
-	/**
-	 * Finaliza una promocion , ya sea por q se agotaron las existencias o por llego la fecha de finalizacion 
+		  
+		  final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 10, 10, SECONDS);
+		  scheduler2.schedule(new Runnable() {
+			  public void run() 
+			  {
+				  beeperHandle.cancel(true);
+			  }
+		  }, 60 * 60, SECONDS);
+	  }
+	
+	
+	  /**
+		 * Devuelve todos los productos de un carrito de compras a los respectivos estantes donde se encontraban
+		 * @param idCarrito - El id del carrito de compras del cual vamos a devolver los productos.
+		 * Adiciona entradas al log de la aplicación
+		 */
+	public void devolverTodosProductosAlEstante(long idCarrito)
+	{
+		//devueve todos los prodcutos en un carrito
+		List<ProductoCarritoCompras> productos = darTodosProductosDeUnCarrito(idCarrito);
+		for( int i=0; i> productos.size(); i++)
+		{
+			//encuentra el id del estante donde se encontraba el producto
+			long idEstante = darEstanteProductoSucursal(darCarritoComprasPorId(idCarrito).getIdSucursal(), productos.get(i).getCodigoBarrasProducto());
+		
+			//aumenta la cantidad de productos en el estante y elimina el producto del carrito
+			aumentarCantidadProductosEnEstante(idEstante, productos.get(i).getCantidad(), productos.get(i).getCodigoBarrasProducto());
+			eliminarProductoCarrito(idCarrito,  productos.get(i).getCodigoBarrasProducto());
+		}
+	}
+	
+	
+	 /**
+	 * Encuentra el id del estante  de la sucursal donde esta almacenado el producto
+	 * @param idSucursal - El id de la sucursal.
+	 * @param codigoBarrasProducto - El codigo de barras del prodcuto.
 	 * Adiciona entradas al log de la aplicación
 	 */
+	public long darEstanteProductoSucursal(long idSucursal, String codigoBarrasProducto)
+	{	
+		//devuelve todos los estantes de las sucursal
+		long idEstante =0;
+		List<Estante> estantes = darEstantePorSucursal(idSucursal);
+		 
+		for(int i=0; i< estantes.size() ; i ++)
+		{
+		// por cada estante se verifica si el producto estaba en dicho estante, si si se guarda le id
+		if( darProductoEnEstante(estantes.get(i).getId(), codigoBarrasProducto) != null)
+		{
+			idEstante = estantes.get(i).getId();
+		}
+		
+		}
 	
-	
-	
-	
-	
-	
-	
-	
-	
+		return idEstante;
+	}
 	
 	
 	
