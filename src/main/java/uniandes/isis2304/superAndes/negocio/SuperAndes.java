@@ -2404,6 +2404,10 @@ public class SuperAndes {
 
 	  private final ScheduledExecutorService scheduler =   Executors.newScheduledThreadPool(1);
 
+	  /**
+		 * Finaliza una promocion , ya sea por q se agotaron las existencias o por llego la fecha de finalizacion 
+		 * Adiciona entradas al log de la aplicación
+		 */
 	  public void verificarPromociones()
 	  {
 		  final Runnable verificador = new Runnable() 
@@ -2412,13 +2416,13 @@ public class SuperAndes {
 			  {
 		//aqui se pone el metodo 
 				  
+				  
 			  }
 		  };
 		  
 		  final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 16, 24, HOURS);
 		 
-		  scheduler.schedule(new Runnable() {
-			  public void run()  {	  beeperHandle.cancel(true); }  }  , 60 * 60, HOURS); }
+		  scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, HOURS); }
 	/**
 	 * Finaliza una promocion , ya sea por q se agotaron las existencias o por llego la fecha de finalizacion 
 	 * Adiciona entradas al log de la aplicación
