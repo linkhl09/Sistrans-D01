@@ -11,6 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.sql.Date;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
@@ -34,7 +35,6 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
-import jdk.nashorn.internal.scripts.JO;
 import uniandes.isis2304.superAndes.negocio.*;
 
 /**
@@ -302,77 +302,118 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	{
 		try
 		{
-			String [] array = new String[16];
-			JTextField codigoBarras = new JTextField();
-			JTextField nombre = new JTextField();
-			JTextField marca = new JTextField();
-			JTextField precioUnitario = new JTextField();
-			JTextField presentacion = new JTextField();
-			JTextField precioUnidadMedida = new JTextField();
-			JTextField cantidadPresentacion = new JTextField();
-			JTextField peso = new JTextField();
-			JTextField unidadMedidaPeso = new JTextField();
-			JTextField volumen = new JTextField();
-			JTextField unidadMedidaVolumen = new JTextField();
-			JTextField calidad = new JTextField();
-			JTextField nivelReorden = new JTextField();
-			JTextField fechaVencimiento = new JTextField();
-			JTextField categoria = new JTextField();
-			JTextField estaPromocion = new JTextField();
+			String [] info = new String[16];
+			JTextField tFCodigoBarras = new JTextField();
+			JTextField tFNombre = new JTextField();
+			JTextField tFMarca = new JTextField();
+			JTextField tFPrecioUnitario = new JTextField();
+			JTextField tFPresentacion = new JTextField();
+			JTextField tFPrecioUnidadMedida = new JTextField();
+			JTextField tFCantidadPresentacion = new JTextField();
+			JTextField tFPeso = new JTextField();
+			JTextField tFUnidadMedidaPeso = new JTextField();
+			JTextField tFVolumen = new JTextField();
+			JTextField tFUnidadMedidaVolumen = new JTextField();
+			JTextField tFCalidad = new JTextField();
+			JTextField tFNivelReorden = new JTextField();
+			JTextField tFFechaVencimiento = new JTextField();
+			JTextField TFcategoria = new JTextField();
+			JTextField tFEstaPromocion = new JTextField();
 			Object[] message = 
 				{
-						"Codigo Barras:", codigoBarras,
-						"Nombre:", nombre,
-						"Marca:", marca,
-						"Precio Unitario:", precioUnitario,
-						"Presentación:", presentacion,
-						"Precio Unidad de medida:", precioUnidadMedida,
-						"Cantidad presentacion:", cantidadPresentacion,
-						"Peso (unidades):", peso,
-						"Unidad de medida Peso:", unidadMedidaPeso,
-						"Volumen (unidades):", volumen,
-						"Unidad de medida volumen:", unidadMedidaVolumen,
-						"Calidad:", calidad,
-						"Nivel de reorden:", nivelReorden,
-						"Fecha de vencimiento (opcional):", fechaVencimiento,
-						"Categoria:", categoria,
-						"¿Esta en promocion? (Y/N)", estaPromocion
+						"Codigo Barras:", tFCodigoBarras,
+						"Nombre:", tFNombre,
+						"Marca:", tFMarca,
+						"Precio Unitario:", tFPrecioUnitario,
+						"Presentación:", tFPresentacion,
+						"Precio Unidad de medida:", tFPrecioUnidadMedida,
+						"Cantidad presentacion:", tFCantidadPresentacion,
+						"Peso (unidades):", tFPeso,
+						"Unidad de medida Peso:", tFUnidadMedidaPeso,
+						"Volumen (unidades):", tFVolumen,
+						"Unidad de medida volumen:", tFUnidadMedidaVolumen,
+						"Calidad:", tFCalidad,
+						"Nivel de reorden:", tFNivelReorden,
+						"Fecha de vencimiento 'dd/mm/yyyy' (opcional):", tFFechaVencimiento,
+						"Categoria:", TFcategoria,
+						"¿Esta en promocion? (Y/N)", tFEstaPromocion
 				};
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
 			{
 				String resultado = "En adicionar Proveedor \n\n";
-				array[0]=codigoBarras.getText();
-				array[1]=nombre.getText();
-				array[2]=marca.getText();
-				array[3]=precioUnitario.getText();
-				array[4]=presentacion.getText();
-				array[5]=precioUnidadMedida.getText();
-				array[6]=cantidadPresentacion.getText();
-				array[7]=peso.getText();
-				array[8]=unidadMedidaPeso.getText();
-				array[9]=volumen.getText();
-				array[10]=unidadMedidaVolumen.getText();
-				array[11]=calidad.getText();
-				array[12]=nivelReorden.getText();
-				array[13]=fechaVencimiento.getText();
-				array[14]=categoria.getText();
-				array[15]=estaPromocion.getText();
-				if(array[0].length() == 13 && !array[0].equals("") && !array[1].equals("") && !array[2].equals("") && !array[3].equals("")
-						&& !array[4].equals("") && !array[6].equals("") && !array[11].equals("") && !array[12].equals("")
-						&& !array[14].equals("") && !array[15].equals(""))
+				info[0]		=tFCodigoBarras.getText();
+				info[1]		=tFNombre.getText();
+				info[2]		=tFMarca.getText();
+				info[3]		=tFPrecioUnitario.getText();
+				info[4]		=tFPresentacion.getText();
+				info[5]		=tFPrecioUnidadMedida.getText();
+				info[6]		=tFCantidadPresentacion.getText();
+				info[7]		=tFPeso.getText();
+				info[8]		=tFUnidadMedidaPeso.getText();
+				info[9]		=tFVolumen.getText();
+				info[10]	=tFUnidadMedidaVolumen.getText();
+				info[11]	=tFCalidad.getText();
+				info[12]	=tFNivelReorden.getText();
+				info[13]	=tFFechaVencimiento.getText();
+				info[14]	=TFcategoria.getText();
+				info[15]	=tFEstaPromocion.getText();
+				
+				
+				
+				if(!info[0].equals("") && !info[1].equals("") && !info[2].equals("") && !info[3].equals("")
+						&& !info[4].equals("") && !info[6].equals("") && !info[11].equals("") && !info[12].equals("")
+						&& !info[14].equals("") && !info[15].equals(""))
 				{
-					double calidadSinFormato = Double.parseDouble(array[11]);
+					//Algunas transformaciones para persistir la info recibida a la bdd.
+					double calidadSinFormato = Double.parseDouble(info[11]);
 					NumberFormat formatter = new DecimalFormat("#0.0");
 					String strDouble = formatter.format(calidadSinFormato).trim().replace(',', '.');
 					double calidadDouble = Double.parseDouble(strDouble);
+					boolean estaEnPromocion = false;
+					if(info[15].equals("Y"))
+						estaEnPromocion = true;
 					
 					
+					double precioUnitario = Double.parseDouble(info[3]);
+					double precioUnidadMedida = Double.parseDouble(info[5]);
+					int cantidadPresentacion = Integer.parseInt(info[6]);
+					double peso = Double.parseDouble(info[7]);
+					double volumen = Double.parseDouble(info[9]);
+					int nivelReorden = Integer.parseInt(info[12]);
+					Date fechaVencimiento; 
+					if(info[13].equals(""))
+						fechaVencimiento= null;
+					else
+					{
+						int year = Integer.parseInt(info[13].split("/")[2]);
+						int month = Integer.parseInt(info[13].split("/")[1]);
+						int day = Integer.parseInt(info[13].split("/")[0]);
+						fechaVencimiento = new Date(year, month, day);
+					}
+					
+					
+					
+					System.out.println("valores-> precio: " + precioUnitario + " precioUM: " + precioUnidadMedida + " cantidadPr: " + cantidadPresentacion 
+							+ "\n peso: " + peso + " volumen: " + volumen + " calidad:" + calidadDouble + " nivelRO: " + nivelReorden +  " fecha: " + fechaVencimiento);
+					
+					VOProducto productoAdicionado= superAndes.adicionarProducto(info[0], info[1], info[2], precioUnitario, info[4], precioUnidadMedida, cantidadPresentacion, peso, 
+							info[8], volumen, info[10], calidadDouble, nivelReorden, fechaVencimiento, info[14], estaEnPromocion);
+					
+					if(productoAdicionado == null)
+						throw new Exception("No se pudo crear el producto con el nombre: " + info[1]);
+					else
+					{
+						resultado += "En adicionar producto\n\n";
+						resultado += "Producto adicionado exitosamente: " + productoAdicionado.toString();
+						resultado += "\n Operación terminada";
+					}
 				}
 				else
 				{
 					resultado += "No se llenaron los campos correctamente.";
 				}
+				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
 			{
@@ -512,7 +553,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	public void mostrarModeloConceptual ()
 	{
 		//TODO 
-		mostrarArchivo ("data/");
+		mostrarArchivo ("data/Iteracion2/superAndes.jpeg");
 	}
 
 	/**
@@ -521,7 +562,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	public void mostrarEsquemaBD ()
 	{
 		//TODO
-		mostrarArchivo ("data/");
+		mostrarArchivo ("data/Iteracion2/ModeloRelacional.xlsx");
 	}
 
 	/**

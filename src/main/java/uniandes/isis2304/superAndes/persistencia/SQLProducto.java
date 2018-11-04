@@ -65,18 +65,18 @@ class SQLProducto {
 	 * @param nivelReorden - Nivel de reorden del nuevo producto.
 	 * @param fechaVencimiento - fehca de vencimiento del producto. Null si no es un producto perecedero.
 	 * @param categoria - Categoria del producto.
-	 * @param estaEnPromocion - Booleano que indica si el nuevo producto esta en promoción.
+	 * @param estaPromocion - Booleano que indica si el nuevo producto esta en promoción.
 	 * @return El número de tuplas insertadas.
 	 */
 	public long adicionarProducto(PersistenceManager pm, String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
-			int nivelReorden, Date fechaVencimiento, String categoria, boolean estaEnPromocion)
+			int nivelReorden, Date fechaVencimiento, String categoria, boolean estaPromocion)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProducto() + " (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, estaenpromocion) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-		q.setParameters(nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, 
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaProducto() + " (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, ESTAPROMOCION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+		q.setParameters(codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, 
 						peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento,
-						categoria, estaEnPromocion);
+						categoria, estaPromocion);
 		return (long) q.executeUnique();
 	}
 	

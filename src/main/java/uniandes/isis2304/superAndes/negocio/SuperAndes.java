@@ -334,16 +334,16 @@ public class SuperAndes {
 	 * @param nivelReorden nivel de re orden del producto.
 	 * @param fechaVencimiento fecha de vencimiento del producto.
 	 * @param categoria categoria del producto.
-	 * @param promocion boolean que indica si el producto esta en promocion.
+	 * @param estaEnPromocion boolean que indica si el producto esta en promocion.
 	 * @return El objeto Producto adicionado. Null si ocurre alguna Exception.
 	 */
 	public  Producto adicionarProducto(String codigoBarras, String nombre, String marca, 
 			double precioUnitario, String presentacion, double precioUnidadMedida, int cantidadPresentacion, 
 			double peso, String unidadMedidaPeso, double volumen, String unidadMedidaVolumen, double calidad, 
-			int nivelReorden, Date fechaVencimiento, String categoria, boolean promocion)
+			int nivelReorden, Date fechaVencimiento, String categoria, boolean estaEnPromocion)
 	{
 		log.info ("Adicionando producto: " + nombre  );
-		Producto agregado = psa.adicionarProducto(codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, promocion);
+		Producto agregado = psa.adicionarProducto(codigoBarras, nombre, marca, precioUnitario, presentacion, precioUnidadMedida, cantidadPresentacion, peso, unidadMedidaPeso, volumen, unidadMedidaVolumen, calidad, nivelReorden, fechaVencimiento, categoria, estaEnPromocion);
 		log.info ("Adicionado el producto.");
 		return agregado;
 	}
@@ -431,10 +431,6 @@ public class SuperAndes {
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla sucursal
-	// -----------------------------------------------------------------
-
-	// -----------------------------------------------------------------
-    // RF4. REGISTRAR UNA PROMOCION
 	// -----------------------------------------------------------------
 		
 	/**
