@@ -1,55 +1,80 @@
-07:05:44,632 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
-07:05:44,872 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM PROM_DESCUENTO".
-ORA-00942: la tabla o vista no existe
-
-07:05:44,880 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
-07:05:48,243 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
-07:05:48,269 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM PROM_DESCUENTO".
-ORA-00942: la tabla o vista no existe
-
-07:05:48,275 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
-07:16:41,611 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-07:16:41,612 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-07:16:41,625 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-07:16:45,316 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
-07:16:45,434 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 11 existentes
-07:17:22,886 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: a
-07:17:23,009 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
-07:17:23,010 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal
-07:17:23,021 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal: 4 existentes
-07:17:26,942 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando SucursalProducto: id de la sucursal3codigo de barras del produuctoAAAAAAAAAAAAA
-07:17:26,954 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO SUCURSAL_PRODUCTO (idsucursal, codigoBarrasProdcuto) VALUES (?, ?)".
-ORA-00904: "CODIGOBARRASPRODCUTO": identificador no válido
-
-07:17:26,956 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado SucursalProducto.
-07:21:12,273 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-07:21:12,274 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-07:21:12,287 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-07:21:19,354 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
-07:21:19,469 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 11 existentes
-07:21:36,300 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: 1
-07:21:36,415 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
-07:21:36,415 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal
-07:21:36,424 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal: 4 existentes
-07:21:43,342 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando SucursalProducto: id de la sucursal2codigo de barras del produuctoAAAAAAAAAAAAA
-07:21:43,350 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado SucursalProducto.
-07:54:58,534 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-07:54:58,534 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-07:54:58,547 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-07:55:35,117 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando Persona natural: Martha León
-07:55:35,319 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : SQL query tiene parametro "4" pero no existe en el query : INSERT INTO CLIENTE (correoelectronico, nombre, puntos, documentopn) VALUES (?, ?, 0, ?, ? )
-
-07:55:35,324 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionada Persona natural.
-07:56:58,078 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-07:56:58,078 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-07:56:58,091 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-07:57:29,532 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando Persona natural: Martha León
-07:57:29,739 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionada Persona natural.
-08:00:26,001 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-08:00:26,002 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-08:00:26,015 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-08:10:10,352 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-08:10:10,353 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-08:10:10,367 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-08:10:26,287 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando empresa con NIT: Prueba
-08:10:26,496 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionada empresa.
+09:22:03,588 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Clientes
+09:22:03,592 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Clientes: 0 existentes
+09:27:31,535 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:27:31,536 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:27:31,548 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:27:36,138 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de PersonaNatural
+09:27:36,256 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Personas naturales: 10 existentes.
+09:37:02,600 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:37:02,601 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:37:02,615 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:37:12,694 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:37:12,694 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:37:12,707 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:37:14,045 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Clientes
+09:37:14,150 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Clientes: 0 existentes
+09:37:44,268 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:37:44,268 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:37:44,282 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:37:45,640 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Clientes
+09:37:45,749 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Clientes: 0 existentes
+09:41:57,351 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:41:57,351 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:41:57,365 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:41:58,719 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de PersonaNatural
+09:41:58,828 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Personas naturales: 10 existentes.
+09:41:58,828 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Empresa
+09:41:58,837 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Empresa: 10 existentes
+09:49:30,695 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:49:30,696 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:49:30,710 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:49:32,055 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+09:49:32,166 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+09:50:48,375 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:50:48,376 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:50:48,389 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:50:49,725 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+09:50:49,827 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+09:51:06,092 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:51:06,093 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:51:06,106 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:51:07,442 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+09:51:07,545 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+09:53:29,607 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:53:29,608 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:53:29,630 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:53:31,070 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+09:53:31,208 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+09:53:58,392 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:53:58,392 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:53:58,406 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:53:59,750 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+09:53:59,854 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+09:59:09,701 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:59:09,702 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:59:09,715 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:59:25,324 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:59:25,324 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:59:25,337 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:59:26,676 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+09:59:26,781 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+10:00:42,889 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:00:42,890 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+10:00:42,903 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:00:44,212 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+10:00:44,316 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+10:00:49,171 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:00:49,171 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+10:00:49,185 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:00:50,511 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+10:00:50,611 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+10:01:15,753 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:01:15,754 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+10:01:15,776 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:01:17,148 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+10:01:17,275 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+10:01:26,232 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:01:26,233 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+10:01:26,246 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:01:27,598 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+10:01:27,702 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes

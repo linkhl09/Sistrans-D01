@@ -2119,6 +2119,15 @@ public class PersistenciaSuperAndes {
 	}
 
 	/**
+	 * Método que consulta todas las tuplas en la tabla Cliente, y retorna sus correos.
+	 * @return Una lista de String con todos los correos de la base de datos.
+	 */
+	public List<String> darTodosLosCorreos()
+	{
+		return sqlCliente.darTodosLosCorreos(pmf.getPersistenceManager());
+	}
+	
+	/**
 	 * Método que modifica todas las tuplas en la tabla con un correo electronico dado aumentado la
 	 * cantidad de puntos .
 	 * @param correoElectronco - correo electronico del cliente.

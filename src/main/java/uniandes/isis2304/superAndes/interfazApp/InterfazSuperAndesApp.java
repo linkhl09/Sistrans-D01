@@ -46,6 +46,7 @@ import uniandes.isis2304.superAndes.negocio.*;
 @SuppressWarnings("serial")
 public class InterfazSuperAndesApp extends JFrame implements ActionListener
 {
+	
 	// -----------------------------------------------------------------
 	// Constantes.
 	// -----------------------------------------------------------------
@@ -78,6 +79,11 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 * Asociación a la clase principal del negocio.
 	 */
 	private SuperAndes superAndes;
+	
+	/**
+	 * Cliente que esta usando la aplicación.
+	 */
+	private String clienteActual;
 
 	// -----------------------------------------------------------------
 	// Atributos de interfaz
@@ -133,7 +139,8 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		JLabel labelImagen =new JLabel (new ImageIcon (path));
 		labelImagen.setBackground(Color.WHITE);
 		add (labelImagen, BorderLayout.NORTH );          
-		add( panelDatos, BorderLayout.CENTER );  
+		add( panelDatos, BorderLayout.CENTER );
+		identificarCliente();
 	}
 
 	// -----------------------------------------------------------------
@@ -446,11 +453,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 	}
 
-	public void adicionarPromocion()
-	{
-		//TODO lo del JComboBox.
-	}
-
 	/**
 	 * Adiciona un cliente persona natural con la información dada por el usuario.
 	 * Se crea una nueva tupla de Persona natural en la base de datos, si se cumple todo lo necesario.
@@ -566,6 +568,128 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	// -----------------------------------------------------------------
 
 
+	/**
+	 * Adiciona una sucursal con la información dada por el usuario.
+	 * Se crea una nueva tupla de Sucursal en la base de datos. Si no existia una con el nombre dado.
+	 */
+	public void adicionarSucursal()
+	{
+		
+	}
+	
+	/**
+	 * Adiciona una Bodega con la información dada por el usuario.
+	 * Se crea una nueva tupla de Bodega en la base de datos. Si se cumplen las condiciones necesarias.
+	 */
+	public void adicionarBodega()
+	{
+		
+	}
+	
+	/**
+	 * Adiciona una Estante con la información dada por el usuario.
+	 * Se crea una nueva tupla de Estante en la base de datos. Si se cumplen las condiciones necesarias.
+	 */
+	public void adicionarEstante()
+	{
+		
+	}
+	
+	
+	public void adicionarPromocion()
+	{
+		
+	}
+	
+	/**
+	 * Adiciona una OrdenPedido manual con la información dada por el usuario.
+	 * Se crea una nueva tupla de OrdenPedido en la base de datos. Si se cumplen las condiciones necesarias.
+	 * En caso de tener una OrdenPedido activa para el proveedor, no se crea una tupla sino que se actualiza. 
+	 */
+	public void adicionarOrdenPedido()
+	{
+		
+	}
+		
+	
+	public void registrarFechaLlegada()
+	{
+		
+	}
+	
+	/**
+	 * Adiciona un CarritoCompras con la información dada por el usuario.
+	 * Se crea una nueva tupla de CarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
+	 */
+	public void adicionarCarritoCompras()
+	{
+		
+	}
+	
+	public void abandonarCarritoCompras()
+	{
+		
+	}
+	
+	/**
+	 * Adiciona una ProductoCarritoCompras con la información dada por el usuario.
+	 * Se crea una nueva tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
+	 */
+	public void agregarProductoCarrito()
+	{
+		
+	}
+	
+	/**
+	 * Adiciona una ProductoCarritoCompras con la información dada por el usuario.
+	 * Se crea una nueva tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
+	 */
+	public void devolverProductoCarritoCompras()
+	{
+		
+	}
+	
+	
+	public void pagarCarritoCompras()
+	{
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	public void identificarCliente()
+	{
+		List<String> correos = superAndes.darTodosLosCorreos();
+		String[] clientes = new String[correos.size() + 3];
+		clientes[0] = "ADMINISTRADOR";
+		int i = 1;
+		for(String correo: correos)
+		{
+			clientes[i] = correo;
+			i++;
+		}
+		clientes[clientes.length-2] = "adicionarPersonaNatural";
+		clientes[clientes.length-1] = "adicionarEmpresa";
+		JComboBox<String> cbClientes = new JComboBox<String>(clientes);
+		Object[] message = 
+			{
+				"Seleccione su identificador", cbClientes
+			};
+		int resp = JOptionPane.showConfirmDialog(null, message, "Confirme su identidad", JOptionPane.OK_CANCEL_OPTION);
+		if(resp == JOptionPane.CANCEL_OPTION)
+			System.exit(0);
+		clienteActual = cbClientes.getSelectedItem().toString();
+		if(!clienteActual.equals("ADMINISTRADOR"))
+		{
+			menuBar.getComponentAtIndex(0).setEnabled(false);
+			menuBar.getComponentAtIndex(1).setEnabled(false);
+			menuBar.getComponentAtIndex(2).setEnabled(false);
+			menuBar.getComponentAtIndex(4).setEnabled(false);
+			menuBar.getComponentAtIndex(5).setEnabled(false);
+			menuBar.getComponentAtIndex(6).setEnabled(false);
+			menuBar.getComponentAtIndex(7).setEnabled(false);
+			
+		}
+	}
 	
 	// -----------------------------------------------------------------
 	// Métodos administrativos

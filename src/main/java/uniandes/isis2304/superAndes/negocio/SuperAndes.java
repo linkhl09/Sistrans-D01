@@ -1298,10 +1298,11 @@ public class SuperAndes {
 	public List<VOCliente> darVOCliente()
 	{
 		log.info ("Generando los VO de Clientes");        
-		List<VOCliente> list = new LinkedList<VOCliente> ();
-		for (Cliente tb : psa.darClientes())
+		List<VOCliente> list = new LinkedList<VOCliente>();
+		for (int i = 0; i<psa.darClientes().size(); i++)
 		{
-			list.add (tb);
+			Cliente tb = psa.darClientes().get(i);
+			list.add(tb);
 		}
 		log.info ("Generando los VO de Clientes: " + list.size() + " existentes");
 		return list;
@@ -1321,6 +1322,19 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Encuentra todos los correos de SuperAndes y las devuelve en una lista.
+	 * Adiciona entradas al log de la aplicación.
+	 * @return Una lista de String con todos los correos de la base de datos.
+	 */
+	public List<String> darTodosLosCorreos()
+	{
+		log.info("Consultando todos los correos: ");
+		List<String> list = psa.darTodosLosCorreos();
+		log.info("Consultados todos los correos: " + list.size() + " existentes");
+		return list;
+	}
+	
 	/**
 	 * Aumenta los puntos del cliente en  SuperAndes
 	 * Adiciona entradas al log de la aplicación
