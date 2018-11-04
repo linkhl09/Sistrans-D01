@@ -335,6 +335,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			JTextField tFCalidad = new JTextField();
 			JTextField tFNivelReorden = new JTextField();
 			JTextField tFFechaVencimiento = new JTextField();
+
 			JCheckBox cbPromocion = new JCheckBox();
 			Object[] message = 
 				{
@@ -353,7 +354,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						"Nivel de reorden:", tFNivelReorden,
 						"Fecha de vencimiento 'dd/mm/yyyy' (opcional):", tFFechaVencimiento,
 						"Categoria:", cbCategorias,
-						"¿Esta en promocion? (Y/N)", cbPromocion,
+						"¿Esta en promocion? ", cbPromocion,
 						"Tipos Disponibles:", "TODO" 
 				};
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
@@ -404,6 +405,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						int day = Integer.parseInt(info[13].split("/")[0]);
 						fechaVencimiento = new Date(year, month, day);
 					}
+	
 					boolean estaEnPromocion = cbPromocion.isSelected();
 
 					VOProducto productoAdicionado= superAndes.adicionarProducto(info[0], info[1], info[2], precioUnitario, info[4], precioUnidadMedida, cantidadPresentacion, peso, 

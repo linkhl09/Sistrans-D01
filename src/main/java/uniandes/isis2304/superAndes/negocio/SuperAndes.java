@@ -1,5 +1,6 @@
 package uniandes.isis2304.superAndes.negocio;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -2454,12 +2455,44 @@ public class SuperAndes {
 		return list;
 	}
 	
+	
+	/**
+	 * Encuentra todos las promociones  en SuperAndes
+	 * Adiciona entradas al log de la aplicación
+	 * @return Una lista de objetos Promocion con todas las promociones  que conoce la aplicación, llenos con su información básica
+	 */	
+	public List<Promocion> darPromociones()
+	{
+		log.info ("Consultando ");
+		List<Promocion> list = new ArrayList<Promocion>();
+		
+		for (int i =0; i< darPromDescuento().size(); i++)
+		{
+			list.add(darPromDescuento().get(i));
+		}
+		
+		for (int i =0; i< darPromDescSegUnid().size(); i++)
+		{
+			list.add(darPromDescSegUnid().get(i));
+		}
+		for (int i =0; i< darPromPagLleveCatidad().size(); i++)
+		{
+			list.add(darPromPagLleveCatidad().get(i));
+		}
+		for (int i =0; i< darPromPagueLleveUnid().size(); i++)
+		{
+			list.add(darPromDescSegUnid().get(i));
+		}
+		
+		log.info ("Consultando : " + list.size() + " existentes");
+		return list;
+	}
+	
+	
 	// -----------------------------------------------------------------
-    // METODOS DE REQUERIMIENTOS
+    // METODOS DE REQUERIMIENTOS FUNCIONALES
 	// -----------------------------------------------------------------
 
-	
-	
 	// -----------------------------------------------------------------
     // RF8. FINALIZAR UNA PROMOCION, (EXPIRO LA FEHA)
 	// -----------------------------------------------------------------
@@ -2668,8 +2701,52 @@ public class SuperAndes {
 	  }, 60*60, SECONDS);
   }
 	
-	
-	
+
+  //-----------------------------------------------------------------
+  // METODOS DE CONSULTA
+  // -----------------------------------------------------------------
+
+  public List<Promocion> dar20promocionesMasPopulares()
+  {
+	  List<Promocion> temp = darPromociones();
+	  int inicial= temp.size();
+
+	  List<Promocion> populares = new ArrayList<Promocion>();
+	  Promocion masPopular = null;
+
+	  double mayor=0;
+
+	  for(int j = 0; j< temp.size(); j++)
+	  {
+		  for(int i = 0; i< temp.size(); i++)
+		  {
+			  Date inicio = temp.get(i).getFechaInicio();
+			  Date fecha = new Date();
+
+			  long minutos = ((Math.abs(fecha.getTime() - inicio.getTime())) / 1000) / 60;
+
+			  int vendidas = temp.get(i).getUnidadesVendidas();
+
+			  double relacion = (vendidas /minutos);
+
+			  if( mayor< relacion)
+			  {
+				  mayor=relacion;
+				  masPopular = temp.get(i);
+			  }
+		  }
+		  populares.add(masPopular);
+		  temp.remove(masPopular);
+
+		  if(temp.size()== inicial-20)
+		  {
+			  break;
+		  }
+	  }
+
+return populares;
+
+}
 	
 	
 	
