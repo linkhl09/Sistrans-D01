@@ -553,7 +553,24 @@ public class SuperAndes {
 		log.info ("Buscando Sucursal: " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
+	
+	/**
+	 * RFC1 MUESTRA EL DINERO RECOLECTADO POR VENTAS EN CADA SUCURSAL DURANTE UN PERIODO 
+	  DE TIEMPO Y EN EL AÑO CORRIDO
+	 * @return La lista de parejas de objetos, construidos con base en las tuplas de la tabla BEBEDOR y VISITAN. 
+	 * El primer elemento de la pareja es un el valor total pagado por la sucursal; 
+	 * el segundo elemento es el identificador de la sucursal
+	 */
+	public List<long[]>  darDineroRecolectadoSucursales(  Date fechaInicio, Date fechaFin)
+	{
+		log.info ("Consultar el dinero recolectado por las sucursales en el periodo: "+ fechaInicio +"-" + fechaFin);
+		List<long[]> buscado =  psa.darDineroRecolectadoSucursales(fechaInicio, fechaFin); 
+		log.info ("Buscando Sucursal: " + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
 
+	
+	
 	// -----------------------------------------------------------------
 	// Métodos de tabla SucursalProducto
 	// -----------------------------------------------------------------

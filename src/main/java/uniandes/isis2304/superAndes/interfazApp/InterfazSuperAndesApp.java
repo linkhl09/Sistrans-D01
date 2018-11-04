@@ -17,6 +17,7 @@ import java.text.NumberFormat;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
+import javax.jdo.PersistenceManager;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
@@ -576,16 +577,128 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarSucursal()
 	{
-		
+		try
+		{
+			String[] infoPN = new String[6];
+			JTextField id = new JTextField();
+			JTextField direccion = new JTextField();
+			JTextField ciudad = new JTextField();
+			JTextField nombre = new JTextField();
+			JTextField segmentacionMercado = new JTextField();
+			JTextField tamanio = new JTextField();
+			
+			Object[] message = {
+					"id de la sucursal:", id,
+					"Dirección:", direccion,
+					"Ciudad:", ciudad,
+					"Nombre de la sucursal:", nombre,
+					"Segmentacion de mercado:", segmentacionMercado,
+					"tamanño de la sucursal:", tamanio
+					
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Sucursal: \n\n";
+				infoPN[0] = id.getText();
+				infoPN[1] = direccion.getText();
+				infoPN[2] = ciudad.getText();
+				infoPN[3] = nombre.getText();
+				infoPN[4] = segmentacionMercado.getText();
+				infoPN[5] = tamanio.getText();
+				if(!infoPN[0].equals("") && !infoPN[1].equals("") && !infoPN[2].equals("") && !infoPN[3].equals("")&& !infoPN[4].equals("") && !infoPN[5].equals(""))
+				{
+					VOSucursal sucursal = superAndes.adicionarSucursal(infoPN[1], infoPN[2], infoPN[3], infoPN[4], Integer.parseInt(infoPN[5]));
+					if(sucursal == null)
+						throw new Exception("No se pudo agregar la sucursal  con nombre: " + nombre);
+					resultado += "Sucursal adicionada correctamente: " + sucursal.toString();
+					resultado += "\n Operación terminada.";
+
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
 	
 	/**
 	 * Adiciona una Bodega con la información dada por el usuario.
+	 * * @param pm - El manejador de persistencia.
+	 * @param id - El identificador de la bodega.
+	 * @param capacidadVol - Capacidad númerica del volumen de la bodega.
+	 * @param capacidadPeso - Capacidad númerica del peso de la bodega.
+	 * @param tipo - Tipo de los objetos que puede almacenar la bodega.
+	 * @param idSucursal - id de la sucursal a la que pertenece la bodega.
+	 PersistenceManager pm, long id, double capacidadVol, 
+			double capacidadPeso, String tipo, long idSucursal
 	 * Se crea una nueva tupla de Bodega en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void adicionarBodega()
 	{
-		
+		try
+		{
+			String[] infoPN = new String[5];
+			JTextField id = new JTextField();
+			JTextField capacidadVol = new JTextField();
+			JTextField capacidadPeso = new JTextField();
+			JTextField tipo = new JTextField();
+			JTextField idSucursal = new JTextField();
+			
+			Object[] message = {
+					"id de la bodega:", id,
+					"Capacidad en volumen de la bodega:", capacidadVol,
+					"Capacidad en Peso de la bodega:", capacidadPeso,
+					"Tipo de la bodega:", tipo,
+					"id de la sucursal dueña de la bodega:", idSucursal,
+					
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Sucursal: \n\n";
+				infoPN[0] = id.getText();
+				infoPN[1] = capacidadVol.getText();
+				infoPN[2] = capacidadPeso.getText();
+				infoPN[3] = tipo.getText();
+				infoPN[4] = idSucursal.getText();
+				
+				if(!infoPN[0].equals("") && !infoPN[1].equals("") && !infoPN[2].equals("") && !infoPN[3].equals("")&& !infoPN[4].equals("") )
+				{
+					// PersistenceManager pm, long id, double capacidadVol, 
+					//double capacidadPeso, String tipo, long idSucursal
+					VOBodega Bodega = superAndes.adicionarBodega(Double.parseDouble(infoPN[1]), Double.parseDouble(infoPN[2]), infoPN[3], Long.parseLong(infoPN[4]));
+					if(Bodega == null)
+						throw new Exception("No se pudo agregar la bodega  con Sucursal: " + infoPN[4]);
+					resultado += "Bodega adicionada correctamente: " + Bodega.toString();
+					resultado += "\n Operación terminada.";
+
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
 	
 	/**
@@ -594,6 +707,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarEstante()
 	{
+		
 		
 	}
 	

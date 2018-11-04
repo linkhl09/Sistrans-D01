@@ -1,9 +1,11 @@
 package uniandes.isis2304.superAndes.persistencia;
 
+import java.sql.Date;
 import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
+import uniandes.isis2304.superAndes.negocio.Proveedor;
 import uniandes.isis2304.superAndes.negocio.Sucursal;
 
 /**
@@ -129,6 +131,21 @@ class SQLSucursal {
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursal());
 		q.setResultClass(Sucursal.class);
 		return (List<Sucursal>) q.executeList();
+	}
+	
+	/**
+	 * RFC1 MUESTRA EL DINERO RECOLECTADO POR VENTAS EN CADA SUCURSAL DURANTE UN PERIODO 
+	  DE TIEMPO Y EN EL AÑO CORRIDO
+	 * @param psa - El Manejador de persistencia de la aplicació
+	 *
+	 */
+	public  List<Object[]>  darDineroRecolectadoSucursales(PersistenceManager pm , java.util.Date fechaInicio, java.util.Date fechaFin)
+	{
+		Query q = pm.newQuery(SQL, "SELECT SUM(VALORTOTAL) AS VALORTOTAL, IDSUCURSAL FROM FACTURA" + pm
+				+ "WHERE EXTRACT(YEAR FROM FECHA) = EXTRACT(YEAR FROM (SELECT SYSDATE FROM DUAL))"
+				+ " AND FECHA BETWEEN " + fechaInicio + "AND " + fechaFin + "GROUP BY factura.idsucursal");
+		q.setResultClass(Proveedor.class);
+		return (List<Object[]>) q.executeList();
 	}
 	
 }
