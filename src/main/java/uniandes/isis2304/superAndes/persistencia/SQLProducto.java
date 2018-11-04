@@ -144,4 +144,6 @@ class SQLProducto {
 		q.setParameters(codigoBarras);
 		return (long) q.executeUnique();
 	}
+	
+	
 }

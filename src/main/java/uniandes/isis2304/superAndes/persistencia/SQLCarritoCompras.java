@@ -103,6 +103,20 @@ class SQLCarritoCompras {
 	}
 	
 	/**
+	 * Crea y ejecuta la sentencia SQL para "abandonar" el CARRITOCOMPRAS de la base de datos, por su identificador.
+	 * @param pm - El manejador de persistencia.
+	 * @param id - El identificador del carrito de compras.
+	 * @return El número de tuplas actualizadas.
+	 */
+	public long abandonarCarrito(PersistenceManager pm, long id)
+	{
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaCarritoCompras() + "  SET cliente = null - ? WHERE carrito =? ");
+		q.setParameters(id);
+		return (long) q.executeUnique();
+	}
+	
+	
+	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información los CARRITOCOMPRAS de la base de datos.
 	 * @param pm - El manejador de persistencia.
 	 * @return Una lista de objetos CarritoCompras.
@@ -113,4 +127,6 @@ class SQLCarritoCompras {
 		q.setResultClass(CarritoCompras.class);
 		return (List<CarritoCompras>) q.executeList();
 	}
+	
+	
 }

@@ -1418,6 +1418,12 @@ public class SuperAndes {
 	// Métodos de tabla Producto Carrito Compras
 	// -----------------------------------------------------------------
 
+	
+	// -----------------------------------------------------------------
+	// RF.13 ADICIONAR PRODUCTOS AL CARRITO DE COMPRAS 
+	// -----------------------------------------------------------------
+		  
+	
 	/**
 	 * Adiciona de manera persistente un  producto a un carrito de compras.
 	 * Adiciona entradas al log de la aplicación
@@ -1433,6 +1439,10 @@ public class SuperAndes {
 		log.info("Adicionado ProductoCarritoCompras.");
 		return agregado;
 	}
+	
+	// -----------------------------------------------------------------
+	// RF.14 ELIMINAR PRODUCTOS DEL	CARRITO DE COMPRAS 
+	// -----------------------------------------------------------------	
 	
 	/**
 	 * Elimina un producto del carrito de compras
@@ -2419,12 +2429,13 @@ public class SuperAndes {
 	}
 	
 	// -----------------------------------------------------------------
-    // Métodos de requerimientos
+    // METODOS DE REQUERIMIENTOS
 	// -----------------------------------------------------------------
 
 	
+	
 	// -----------------------------------------------------------------
-    // RF8. FINALIZAR UNA PROMOCION
+    // RF8. FINALIZAR UNA PROMOCION, (EXPIRO LA FEHA)
 	// -----------------------------------------------------------------
 
 	  private final ScheduledExecutorService scheduler =   Executors.newScheduledThreadPool(1);
@@ -2447,6 +2458,8 @@ public class SuperAndes {
 					  if(darPromDescuento().get(i).getFechaFin().after( fecha )  )
 					  {
 						  eliminarPromDescuento(darPromDescuento().get(i).getId());
+						// cambia el estado del producto
+						  terminarPromocion(darPromDescuento().get(i).getProducto());
 					  }
 				  }
 				  
@@ -2457,6 +2470,8 @@ public class SuperAndes {
 					  if(darPromDescSegUnid().get(i).getFechaFin().after( fecha ))
 					  {
 						  eliminarPromDescSegUnidPorId(darPromDescSegUnid().get(i).getId());
+						// cambia el estado del producto
+						  terminarPromocion(darPromDescSegUnid().get(i).getProducto());
 					  }
 				  }
 				  
@@ -2467,6 +2482,8 @@ public class SuperAndes {
 					  if(darPromPagLleveCatidad().get(i).getFechaFin().after( fecha ))
 					  {
 						  eliminarPromPagLleveCatidadPorId(darPromPagLleveCatidad().get(i).getId());
+						// cambia el estado del producto
+						  terminarPromocion(darPromPagLleveCatidad().get(i).getProducto());	  
 					  }
 				  }
 				  
@@ -2477,6 +2494,8 @@ public class SuperAndes {
 					  if(darPromPagueLleveUnid().get(i).getFechaFin().after( fecha ))
 					  {
 						  eliminarPromPagLlevUnidadPorId(darPromPagueLleveUnid().get(i).getId());
+						// cambia el estado del producto
+						  terminarPromocion(darPromPagLleveCatidad().get(i).getProducto());
 					  }
 				  }
 
@@ -2485,12 +2504,14 @@ public class SuperAndes {
 
 		  final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 0 , 24, HOURS);
 
-		  //no se que son esos (60*60) hay q mirar q se supone debe ir hay
-		  scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, HOURS); 
+		  scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, SECONDS); 
 		  }
-
-
 	  
+	   
+	// -----------------------------------------------------------------
+    // VERIFICA SI LOS CARRITOS ESTAN ABANDONADOS
+    // -----------------------------------------------------------------
+  
 	  
 	  /**
 		 * Verifica si los carritos no han sido abandonados,si lo fueron devuelve los productos al estante
@@ -2517,7 +2538,7 @@ public class SuperAndes {
 		  };
 		  
 		  
-		  final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 10, 10, SECONDS);
+		  final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 4, 4, MINUTES);
 		  scheduler2.schedule(new Runnable() {
 			  public void run() 
 			  {
@@ -2526,7 +2547,28 @@ public class SuperAndes {
 		  }, 60 * 60, SECONDS);
 	  }
 	
-	
+	// -----------------------------------------------------------------
+	// RF.16 ABANDONAR CARRITO DE COMPRAS
+	// -----------------------------------------------------------------
+		
+	  /**
+		 * Abandona el carrito de compras cuyo id es igual al ingresado por parametro
+		 * Adiciona entradas al log de la aplicación
+		 * @param id - el numero de identificacion del carrito a abandonar
+		 * @return El número de tuplas actualizadas
+		 */	
+		public long abandonarCarrito(long idCarrito)
+		{
+			log.info ("Abandonando carrito :" + idCarrito);
+			long resp = psa.abandonarCarrito(idCarrito);
+			log.info ("El carrito : "+ idCarrito + "ha sido abandonado" + resp + " tuplas actualizadas");
+			return resp;
+		}
+
+	// -----------------------------------------------------------------
+	// RF.17 RECOLECTAR PRODUCTOS ABANDONADOS
+	// -----------------------------------------------------------------
+	  
 	  /**
 		 * Devuelve todos los productos de un carrito de compras a los respectivos estantes donde se encontraban
 		 * @param idCarrito - El id del carrito de compras del cual vamos a devolver los productos.
@@ -2576,7 +2618,32 @@ public class SuperAndes {
 	
 	
 	
-	
+	/**
+	 * prueba 1
+	 * Adiciona entradas al log de la aplicación
+	 */
+  private final ScheduledExecutorService scheduler3 =   Executors.newScheduledThreadPool(1);
+
+  public void prueba()
+  {
+	  final Runnable verificador = new Runnable() 
+	  {
+		  public void run()
+		  {
+	//aqui se pone el metodo
+			 System.out.println("estoy funcionando");
+				  }
+			
+	  };
+	  
+	  final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 1 , 1 , MINUTES);
+	  scheduler2.schedule(new Runnable() {
+		  public void run() 
+		  {
+			  beeperHandle.cancel(true);
+		  }
+	  }, 60*60, SECONDS);
+  }
 	
 	
 	

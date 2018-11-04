@@ -2254,6 +2254,38 @@ public class PersistenciaSuperAndes {
 	{
 		return sqlCarritoCompras.darTodosCarritosCompras(pmf.getPersistenceManager());
 	}
+	
+	/**
+	 * Método que "abandona" el carrito de manera transaccional, de  una tupla en la tabla CarritoCompras, con el identificador dado.
+	 * @param id - El identificador del carrito de compras.
+	 * @return El número de tuplas eliminadas. -1 si ocurre alguna Exception.
+	 */
+	public long abandonarCarrito(long id)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx = pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlCarritoCompras.abandonarCarrito(pm, id);
+			tx.commit();
+			return resp;
+		}
+		catch (Exception e) 
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
 
 	// -----------------------------------------------------------------
 	// Métodos de Producto Carrito Compras

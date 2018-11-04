@@ -115,10 +115,14 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		{
 			crearMenu( guiConfig.getAsJsonArray("menuBar") );
 		}
+		
 
 		tableConfig = openConfig ("Tablas BD", CONFIG_TABLAS);
 		superAndes = new SuperAndes(tableConfig);
 
+// corre la prueba del timer
+		superAndes.prueba();
+		
 		String path = guiConfig.get("bannerPath").getAsString();
 		panelDatos = new PanelDatos ( );
 
