@@ -55,7 +55,7 @@ class SQLSucursalProducto {
 	 */
 	public long adicionarSucursalProducto(PersistenceManager pm, long idSucursal, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaSucursalProducto() + " (idsucursal, codigoBarrasProdcuto) VALUES (?, ?)");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaSucursalProducto() + " (idsucursal, codigoProducto) VALUES (?, ?)");
 		q.setParameters(idSucursal, codigoBarrasProducto);
 		return (long) q.executeUnique();
 	}
@@ -69,7 +69,7 @@ class SQLSucursalProducto {
 	 */
 	public long eliminarSucursalProducto(PersistenceManager pm, long idSucursal, String producto)
 	{
-		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() + " WHERE idSucursal = ? AND codigoBarrasProdcuto = ?");
+		Query q = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaSucursalProducto() + " WHERE idSucursal = ? AND codigoProducto = ?");
 		q.setParameters(idSucursal, producto);
 		return (long) q.executeUnique();
 	}
@@ -96,7 +96,7 @@ class SQLSucursalProducto {
 	 */
 	public List<SucursalProducto> darSucursalesProducto(PersistenceManager pm, String producto)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursalProducto() + " WHERE codigoBarrasProdcuto = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaSucursalProducto() + " WHERE codigoProdcuto = ?");
 		q.setParameters(producto);
 		q.setResultClass(SucursalProducto.class);
 		return (List<SucursalProducto>) q.executeList();

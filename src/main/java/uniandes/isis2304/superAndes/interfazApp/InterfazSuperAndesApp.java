@@ -18,6 +18,7 @@ import java.util.List;
 
 import javax.jdo.JDODataStoreException;
 import javax.swing.ImageIcon;
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -312,7 +313,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			JComboBox<String> cbCategorias = new JComboBox<String>(categoriasDisponibles);
 			cbCategorias.addActionListener(this);
 			
-			String [] info = new String[16];
+			String [] info = new String[15];
 			JTextField tFCodigoBarras = new JTextField();
 			JTextField tFNombre = new JTextField();
 			JTextField tFMarca = new JTextField();
@@ -327,7 +328,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			JTextField tFCalidad = new JTextField();
 			JTextField tFNivelReorden = new JTextField();
 			JTextField tFFechaVencimiento = new JTextField();
-			JTextField tFEstaPromocion = new JTextField();
+			JCheckBox cbPromocion = new JCheckBox();
 			Object[] message = 
 				{
 						"Codigo Barras:", tFCodigoBarras,
@@ -345,13 +346,13 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						"Nivel de reorden:", tFNivelReorden,
 						"Fecha de vencimiento 'dd/mm/yyyy' (opcional):", tFFechaVencimiento,
 						"Categoria:", cbCategorias,
-						"¿Esta en promocion? (Y/N)", tFEstaPromocion,
+						"¿Esta en promocion? (Y/N)", cbPromocion,
 						"Tipos Disponibles:", "TODO" 
 				};
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
 			{
-				String resultado = "En adicionar Proveedor \n\n";
+				String resultado = "En adicionar Producto \n\n";
 				info[0]		=tFCodigoBarras.getText();
 				info[1]		=tFNombre.getText();
 				info[2]		=tFMarca.getText();
@@ -367,13 +368,10 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				info[12]	=tFNivelReorden.getText();
 				info[13]	=tFFechaVencimiento.getText();
 				info[14]	=cbCategorias.getSelectedItem().toString();
-				info[15]	=tFEstaPromocion.getText();
-				
-				System.out.println(info[14]);
 				
 				if(!info[0].equals("") && !info[1].equals("") && !info[2].equals("") && !info[3].equals("")
 						&& !info[4].equals("") && !info[6].equals("") && !info[11].equals("") && !info[12].equals("")
-						&& !info[14].equals("") && !info[15].equals(""))
+						&& !info[14].equals("") )
 				{
 					//Algunas transformaciones para persistir la info recibida a la bdd.
 					double calidadSinFormato = Double.parseDouble(info[11]);
@@ -399,13 +397,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						int day = Integer.parseInt(info[13].split("/")[0]);
 						fechaVencimiento = new Date(year, month, day);
 					}
-					
-					boolean estaEnPromocion = false;
-					if(info[15].equals("Y"))
-						estaEnPromocion = true;
-					
-					System.out.println("valores-> precio: " + precioUnitario + " precioUM: " + precioUnidadMedida + " cantidadPr: " + cantidadPresentacion 
-							+ "\n peso: " + peso + " volumen: " + volumen + " calidad:" + calidadDouble + " nivelRO: " + nivelReorden +  " fecha: " + fechaVencimiento);
+					boolean estaEnPromocion = cbPromocion.isSelected();
 					
 					VOProducto productoAdicionado= superAndes.adicionarProducto(info[0], info[1], info[2], precioUnitario, info[4], precioUnidadMedida, cantidadPresentacion, peso, 
 							info[8], volumen, info[10], calidadDouble, nivelReorden, fechaVencimiento, info[14], estaEnPromocion);
@@ -413,16 +405,33 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					if(productoAdicionado == null)
 						throw new Exception("No se pudo crear el producto con el nombre: " + info[1]);
 					else
+						resultado += "Producto adicionado exitosamente: " + productoAdicionado.toString()+ "\n";
+					
+					List<VOSucursal> sucursales = superAndes.darVOSucursal();
+					String[] sucursalesDisponibles = new String[sucursales.size()];
+					for(int i = 0; i < sucursalesDisponibles.length; i++)
+						sucursalesDisponibles[i]=sucursales.get(i).getId()+"";
+					JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
+					cbCategorias.addActionListener(this);
+					
+					int option2 = JOptionPane.showConfirmDialog(null, cbSucursales, "Inserte Sucursal del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
+					if(option2 == JOptionPane.OK_OPTION)
 					{
-						resultado += "En adicionar producto\n\n";
-						resultado += "Producto adicionado exitosamente: " + productoAdicionado.toString();
-						resultado += "\n Operación terminada";
+						VOSucursalProducto sucursalProducto = superAndes.adicionarSucursalProducto(Long.parseLong(cbSucursales.getSelectedItem().toString()), info[0]);
+						if(sucursalProducto == null)
+							throw new Exception("No se pudo asociar el producto: " + info[1] + " a una sucursal.");
+						else
+							resultado+= "En adicionar Sucursal Producto: \n\n SucursalProducto adicionado exitosamente: " + sucursalProducto.toString() + "\n";
 					}
+					
 				}
 				else
 				{
 					resultado += "No se llenaron los campos correctamente.";
 				}
+				
+				
+				
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
@@ -523,18 +532,18 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			resultado += eliminados [12] + " clientes eliminados\n";
 			resultado += eliminados [13] + " bodegas eliminados\n";
 			resultado += eliminados [14] + " estantes eliminados\n";
-			resultado += eliminados [15] + " categoria eliminados\n";
-			resultado += eliminados [16] + " tipo eliminados\n";
-			resultado += eliminados [17] + " personaNatural eliminados\n";
-			resultado += eliminados [18] + " empresas eliminados\n";
-			resultado += eliminados [19] + " Ordenpedidos eliminados\n";
-			resultado += eliminados [20] + " sucursal eliminados\n";
-			resultado += eliminados [21] + " proveedor eliminados\n";
-			resultado += eliminados [22] + " promDescuento eliminados\n";
-			resultado += eliminados [23] + " promPagueLleveUnidad eliminados\n";
-			resultado += eliminados [24] + " PromPagueLleveCant eliminados\n";
-			resultado += eliminados [25] + " PromSegUniDescuento eliminados\n";
-			resultado += eliminados [26] + " producto eliminados\n";
+			resultado += eliminados [15] + " tipo eliminados\n";
+			resultado += eliminados [16] + " personaNatural eliminados\n";
+			resultado += eliminados [17] + " empresas eliminados\n";
+			resultado += eliminados [18] + " Ordenpedidos eliminados\n";
+			resultado += eliminados [19] + " sucursal eliminados\n";
+			resultado += eliminados [20] + " proveedor eliminados\n";
+			resultado += eliminados [21] + " promDescuento eliminados\n";
+			resultado += eliminados [22] + " promPagueLleveUnidad eliminados\n";
+			resultado += eliminados [23] + " PromPagueLleveCant eliminados\n";
+			resultado += eliminados [24] + " PromSegUniDescuento eliminados\n";
+			resultado += eliminados [25] + " producto eliminados\n";
+			resultado += eliminados [26] + " categoria eliminados\n";;
 
 			resultado += "\nLimpieza terminada";
 
