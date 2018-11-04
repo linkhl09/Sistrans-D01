@@ -148,6 +148,22 @@ public class SuperAndes {
 		log.info ("Buscando tipo: " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
+	
+	/**
+	 * Encuentra todos los tipos de SuperAndes y los devuelve como una lista de VOTipo.
+	 * Adiciona entradas al log de la aplicación,
+	 * @return Una lista de objetos VOTipo con todas los tipos que conoce la aplicación.
+	 * Llenos con su información básica.
+	 */
+	public List<VOTipo> darVOTipo()
+	{
+		log.info("Generando los VO de Tipo");
+		List<VOTipo> list = new LinkedList<VOTipo>();
+		for(Tipo tb: psa.darTipos())
+			list.add(tb);
+		log.info("Generando los Vo de Tipo: " + list.size() + " existentes.");
+		return list;
+	}
 
 	// -----------------------------------------------------------------
 	// Métodos de tabla Categoria

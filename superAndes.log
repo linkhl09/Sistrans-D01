@@ -1,23 +1,23 @@
-01:24:39,848 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: orye
-01:24:39,861 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, ESTAPROMOCION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
+01:58:07,592 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Tipo
+01:58:07,707 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los Vo de Tipo: 0 existentes.
+02:07:05,542 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:07:05,543 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:07:05,556 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:07:09,219 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
+02:07:09,340 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 11 existentes
+02:14:12,349 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:14:12,349 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:14:12,362 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:14:15,505 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
+02:14:15,618 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 11 existentes
+02:14:53,897 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: a
+02:14:54,081 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, ESTAPROMOCION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
 ORA-02290: restricción de control (ISIS2304A271820.CK_CODBARRAS) violada
 
-01:24:39,863 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
-01:25:42,420 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: asd
-01:25:42,424 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO PRODUCTO (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, ESTAPROMOCION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)".
-ORA-00001: restricción única (ISIS2304A271820.PRODUCTO_PK) violada
-
-01:25:42,426 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
-01:32:48,110 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-01:32:48,111 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-01:32:48,132 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-01:37:45,258 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-01:37:45,258 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-01:37:45,272 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-01:38:30,351 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: a
-01:38:30,557 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
-01:42:19,362 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-01:42:19,362 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-01:42:19,375 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-01:43:18,681 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: b
-01:43:18,880 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
+02:14:54,085 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
+02:20:04,588 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+02:20:04,588 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+02:20:04,602 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+02:20:08,191 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
+02:20:08,304 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 11 existentes
+02:20:48,575 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
