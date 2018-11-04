@@ -28,6 +28,8 @@ public interface VOOrdenPedido {
 	 * @return calificacion otorgada al proveedor por el estado de los productos en la orden.
 	 */
 	public double getCalificacionProveedor();
+
+	public String getEstado();
 	
 	/**
 	 * @return identificacion del proveedor al que se le hace la orden.

@@ -46,7 +46,7 @@ import uniandes.isis2304.superAndes.negocio.*;
 @SuppressWarnings("serial")
 public class InterfazSuperAndesApp extends JFrame implements ActionListener
 {
-	
+
 	// -----------------------------------------------------------------
 	// Constantes.
 	// -----------------------------------------------------------------
@@ -79,7 +79,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 * Asociación a la clase principal del negocio.
 	 */
 	private SuperAndes superAndes;
-	
+
 	/**
 	 * Cliente que esta usando la aplicación.
 	 */
@@ -405,7 +405,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						int day = Integer.parseInt(info[13].split("/")[0]);
 						fechaVencimiento = new Date(year, month, day);
 					}
-	
+
 					boolean estaEnPromocion = cbPromocion.isSelected();
 
 					VOProducto productoAdicionado= superAndes.adicionarProducto(info[0], info[1], info[2], precioUnitario, info[4], precioUnidadMedida, cantidadPresentacion, peso, 
@@ -416,17 +416,19 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					else
 						resultado += "Producto adicionado exitosamente: " + productoAdicionado.toString()+ "\n";
 
+					//AHORA SE ASOCIA EL PRODUCTO A UNA SUCURSAL.
 					List<VOSucursal> sucursales = superAndes.darVOSucursal();
 					String[] sucursalesDisponibles = new String[sucursales.size()];
 					for(int i = 0; i < sucursalesDisponibles.length; i++)
-						sucursalesDisponibles[i]=sucursales.get(i).getId()+"";
+						sucursalesDisponibles[i]=sucursales.get(i).getNombre();
 					JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
 					cbCategorias.addActionListener(this);
 
 					int option2 = JOptionPane.showConfirmDialog(null, cbSucursales, "Inserte Sucursal del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 					if(option2 == JOptionPane.OK_OPTION)
 					{
-						VOSucursalProducto sucursalProducto = superAndes.adicionarSucursalProducto(Long.parseLong(cbSucursales.getSelectedItem().toString()), info[0]);
+						long idSucursal = superAndes.darSucursalPorNombre(cbSucursales.getSelectedItem().toString()).getId();
+						VOSucursalProducto sucursalProducto = superAndes.adicionarSucursalProducto(idSucursal, info[0]);
 						if(sucursalProducto == null)
 							throw new Exception("No se pudo asociar el producto: " + info[1] + " a una sucursal.");
 						else
@@ -565,10 +567,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
 		}
 	}
-	// -----------------------------------------------------------------
-	// Métodos administrativos.
-	// -----------------------------------------------------------------
-
 
 	/**
 	 * Adiciona una sucursal con la información dada por el usuario.
@@ -576,33 +574,207 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarSucursal()
 	{
-		
+		try
+		{
+			String[] infoSucursal = new String[5];
+
+			JTextField jTFdireccion = new JTextField();
+			JTextField jTFciudad = new JTextField();
+			JTextField jTFnombre = new JTextField();
+			JTextField jTFsegmentacionMercado = new JTextField();
+			JTextField jTFtamanio = new JTextField();
+			Object[] message = {
+					"Dirección:", jTFdireccion,
+					"Ciudad", jTFciudad,
+					"Nombre:", jTFnombre,
+					"Segmentación de mercado:", jTFsegmentacionMercado,
+					"Tamaño:", jTFtamanio
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Sucursal: \n\n";
+				infoSucursal[0] = jTFdireccion.getText();
+				infoSucursal[1] = jTFciudad.getText();
+				infoSucursal[2] = jTFnombre.getText();
+				infoSucursal[3] = jTFsegmentacionMercado.getText();
+				infoSucursal[4] = jTFtamanio.getText();
+				if(!infoSucursal[0].equals("") && !infoSucursal[1].equals("") && !infoSucursal[2].equals("") &&!infoSucursal[3].equals("") && !infoSucursal[4].equals(""))
+				{
+					String direccion = infoSucursal[0];
+					String ciudad = infoSucursal[1];
+					String nombre = infoSucursal[2] ;
+					String segmentacionMercado = infoSucursal[3];
+					int tamanio = Integer.parseInt(infoSucursal[4]);
+					VOSucursal sucursal = superAndes.adicionarSucursal(direccion, ciudad, nombre, segmentacionMercado, tamanio);
+					if (sucursal==null)
+						throw new Exception("No se pudo agregar la sucursal con el nombre: " + nombre );
+					resultado += "Sucursal adicionada correctamente: " + sucursal.toString();
+					resultado += "\n Operación terminada.";
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
-	
+
 	/**
 	 * Adiciona una Bodega con la información dada por el usuario.
 	 * Se crea una nueva tupla de Bodega en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void adicionarBodega()
 	{
-		
+		try
+		{
+			//Lista de posibles categorias de la bodega.
+			List<VOCategoria> categorias = superAndes.darVOCategoria();
+			String[] categoriasDisponibles = new String[categorias.size()];
+			for(int i = 0; i < categoriasDisponibles.length; i++)
+				categoriasDisponibles[i]=categorias.get(i).getNombre();
+			JComboBox<String> cbTipos = new JComboBox<String>(categoriasDisponibles);
+			cbTipos.addActionListener(this);
+
+			//Lista de posibles sucursales.
+			List<VOSucursal> sucursales = superAndes.darVOSucursal();
+			String[] sucursalesDisponibles = new String[sucursales.size()];
+			for(int i = 0; i<sucursalesDisponibles.length; i++)
+				sucursalesDisponibles[i] = sucursales.get(i).getNombre();
+			JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
+			cbSucursales.addActionListener(this);
+
+			//Información que provee usuario.
+			String[] infoBodega = new String[2];
+
+			JTextField jTFcapacidadVol = new JTextField();
+			JTextField jTFcapacidadPeso = new JTextField();
+			Object[] message = {
+					"Capacidad Volumen:", jTFcapacidadVol,
+					"Capacidad Peso", jTFcapacidadPeso,
+					"Tipo:", cbTipos,
+					"Sucursal:",cbSucursales
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Bodega: \n\n";
+				infoBodega[0] = jTFcapacidadVol.getText();
+				infoBodega[1] = jTFcapacidadPeso.getText();
+
+				if(!infoBodega[0].equals("") && !infoBodega[1].equals(""))
+				{
+					double capacidadVol = Double.parseDouble(infoBodega[0]);
+					double capacidadPeso = Double.parseDouble(infoBodega[1]);
+					long idSucursal = superAndes.darSucursalPorNombre(cbSucursales.getSelectedItem().toString()).getId();
+					VOBodega bodega = superAndes.adicionarBodega(capacidadVol, capacidadPeso, cbTipos.getSelectedItem().toString(), idSucursal);	
+					if (bodega == null)
+						throw new Exception("No se pudo agregar la bodega.");
+					resultado += "Bodega adicionada correctamente: " + bodega.toString();
+					resultado += "\n Operación terminada.";
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
-	
+
 	/**
 	 * Adiciona una Estante con la información dada por el usuario.
 	 * Se crea una nueva tupla de Estante en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void adicionarEstante()
 	{
-		
+		try
+		{
+			//Lista de posibles categorias del estante.
+			List<VOCategoria> categorias = superAndes.darVOCategoria();
+			String[] categoriasDisponibles = new String[categorias.size()];
+			for(int i = 0; i < categoriasDisponibles.length; i++)
+				categoriasDisponibles[i]=categorias.get(i).getNombre();
+			JComboBox<String> cbTipos = new JComboBox<String>(categoriasDisponibles);
+			cbTipos.addActionListener(this);
+
+			//Lista de posibles sucursales.
+			List<VOSucursal> sucursales = superAndes.darVOSucursal();
+			String[] sucursalesDisponibles = new String[sucursales.size()];
+			for(int i = 0; i<sucursalesDisponibles.length; i++)
+				sucursalesDisponibles[i] = sucursales.get(i).getNombre();
+			JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
+			cbSucursales.addActionListener(this);
+
+			//Información que provee usuario.
+			String[] infoBodega = new String[2];
+
+			JTextField jTFcapacidadVol = new JTextField();
+			JTextField jTFcapacidadPeso = new JTextField();
+			Object[] message = {
+					"Capacidad Volumen:", jTFcapacidadVol,
+					"Capacidad Peso", jTFcapacidadPeso,
+					"Tipo:", cbTipos,
+					"Sucursal:",cbSucursales
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Bodega: \n\n";
+				infoBodega[0] = jTFcapacidadVol.getText();
+				infoBodega[1] = jTFcapacidadPeso.getText();
+
+				if(!infoBodega[0].equals("") && !infoBodega[1].equals(""))
+				{
+					double capacidadVol = Double.parseDouble(infoBodega[0]);
+					double capacidadPeso = Double.parseDouble(infoBodega[1]);
+					long idSucursal = superAndes.darSucursalPorNombre(cbSucursales.getSelectedItem().toString()).getId();
+					VOEstante estante = superAndes.adicionarEstante(capacidadVol, capacidadPeso, cbTipos.getSelectedItem().toString(), idSucursal);	
+					if (estante == null)
+						throw new Exception("No se pudo agregar la bodega.");
+					resultado += "Bodega adicionada correctamente: " + estante.toString();
+					resultado += "\n Operación terminada.";
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
-	
-	
+
+
 	public void adicionarPromocion()
 	{
-		
+
 	}
-	
+
 	/**
 	 * Adiciona una OrdenPedido manual con la información dada por el usuario.
 	 * Se crea una nueva tupla de OrdenPedido en la base de datos. Si se cumplen las condiciones necesarias.
@@ -610,53 +782,197 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarOrdenPedido()
 	{
-		
+		try
+		{
+			//Para información del usuario.
+			JTextField jTFfechaEsperada= new JTextField();
+
+			//Para manejar los estados.
+			String[] estados = {"Entregado", "En Espera"};
+			JComboBox<String> cbEstado = new JComboBox<String>(estados);
+			cbEstado.addActionListener(this);
+
+			//Para manejar los proveedores
+			List<VOProveedor> proveedores = superAndes.darVOProveedor();
+			String[] proveedoresDisponibles = new String[proveedores.size()];
+			for (int i = 0; i < proveedoresDisponibles.length; i++) 
+				proveedoresDisponibles[i]= proveedores.get(i).getNombre();
+			JComboBox<String> cbProveedores = new JComboBox<String>(proveedoresDisponibles);
+			cbProveedores.addActionListener(this);
+
+			//Para manejar las sucursales.
+			List<VOSucursal> sucursales = superAndes.darVOSucursal();
+			String[] sucursalesDisponibles = new String[sucursales.size()];
+			for(int i = 0; i<sucursalesDisponibles.length; i++)
+				sucursalesDisponibles[i] = sucursales.get(i).getNombre();
+			JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
+			cbSucursales.addActionListener(this);
+
+			Object[] message = {
+					"Fecha esperada de entrega(dd/mm/yyyy)", jTFfechaEsperada,
+					"Estado", cbEstado,
+					"Proveedor:", cbProveedores,
+					"Sucursal:",cbSucursales
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				//Manejo del proveedor.
+				String nitProveedor = superAndes.darProveedorPorNombre(cbProveedores.getSelectedItem().toString()).getNit();
+
+				//Manejo de la sucursal.
+				long idSucursal = superAndes.darSucursalPorNombre(cbSucursales.getSelectedItem().toString()).getId();
+
+
+
+				//if(null== superAndes.darOrdenPedidoEnEsperaPorProveedor(nitProveedor,idSucursal)){
+				String resultado = "En adicionar Orden pedido manual \n\n";
+				String fechaParaSplit =jTFfechaEsperada.getText(); 
+				if(!fechaParaSplit.equals(""))
+				{
+					//Manejo de la fecha.
+					int year = Integer.parseInt(fechaParaSplit.split("/")[2]);
+					int month = Integer.parseInt(fechaParaSplit.split("/")[1]);
+					int day = Integer.parseInt(fechaParaSplit.split("/")[0]);
+					@SuppressWarnings("deprecation")
+					Date fechaEsperadaEntrega = new Date(year, month, day);
+
+					VOOrdenPedido ordenPedido = superAndes.adicionarOrdenPedido(fechaEsperadaEntrega, nitProveedor , idSucursal, cbEstado.getSelectedItem().toString());
+					if(ordenPedido == null)
+						throw new Exception("No se pudo agregar la orden de pedido al proveedor: " + cbProveedores.getSelectedItem().toString());
+					resultado+="OrdenPedido adicionada correctamente: " + ordenPedido.toString();
+					resultado+="\n Operación terminada.";
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+
+				panelDatos.actualizarInterfaz(resultado);
+				//}
+				//else throw new Exception("Ya existe una orden de pedido en espera para este proveedor, en esa sucursal, solo registre el producto.");
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
-		
-	
+
+	/**
+	 * Registra la fecha de llegada de una orden pedido y actualiza la calificación de su proveedor.
+	 */
 	public void registrarFechaLlegada()
-	{
-		
+	{/**
+		try
+		{
+			//Para manejar las Ordenes de pedido
+			List<VOOrdenPedido> ordenPedido = superAndes.darVOOrdenPedido();
+			String[] ordenPedidoDisponibles = new String[ordenPedido.size()];
+			for (int i = 0; i < ordenPedidoDisponibles.length; i++) 
+				ordenPedidoDisponibles[i]= ordenPedido.get(i).getId()+"-"+ordenPedido.get(i).getEstado();
+			JComboBox<String> cbProveedores = new JComboBox<String>(ordenPedidoDisponibles);
+			cbProveedores.addActionListener(this);
+
+			//Para información del usuario.
+			JTextField jTFfechaEntrega= new JTextField();
+
+			Object[] message = {
+					"Fecha de entrega(dd/mm/yyyy)", jTFfechaEntrega,
+					"Orden de pedido a despachar", cbProveedores
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Orden pedido manual \n\n";
+				String fechaParaSplit =jTFfechaEntrega.getText(); 
+				if(!fechaParaSplit.equals(""))
+				{
+					double nuevaCalificacion= 0;
+
+					long id = Long.parseLong(cbProveedores.getSelectedItem().toString());
+
+					//Manejo de la fecha.
+					int year = Integer.parseInt(fechaParaSplit.split("/")[2]);
+					int month = Integer.parseInt(fechaParaSplit.split("/")[1]);
+					int day = Integer.parseInt(fechaParaSplit.split("/")[0]);
+					@SuppressWarnings("deprecation")
+					Date fechaEntrega = new Date(year, month, day);
+
+					List<ProductoOrdenPedido> productosOrdenP = superAndes.darProductosDelPedido(id);
+					int cantidadProductosOrden = 0;
+					double calidadTotal = 0;
+					for(VOProductoOrdenPedido x : productosOrdenP)
+					{
+						cantidadProductosOrden++;
+						calidadTotal += x.getCalidad();
+					}
+
+
+
+
+					superAndes.registrarFechaLlegada(id, fechaEntrega, nuevaCalificacion);
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}*/
 	}
-	
+
 	/**
 	 * Adiciona un CarritoCompras con la información dada por el usuario.
 	 * Se crea una nueva tupla de CarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void adicionarCarritoCompras()
 	{
-		
+
 	}
-	
+
 	public void abandonarCarritoCompras()
 	{
-		
+
 	}
-	
+
 	/**
 	 * Adiciona una ProductoCarritoCompras con la información dada por el usuario.
 	 * Se crea una nueva tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void agregarProductoCarrito()
 	{
-		
+
 	}
-	
+
 	/**
 	 * Adiciona una ProductoCarritoCompras con la información dada por el usuario.
 	 * Se crea una nueva tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void devolverProductoCarritoCompras()
 	{
-		
+
 	}
-	
-	
+
+
 	public void pagarCarritoCompras()
 	{
-		
+
 	}
-	
+
 	@SuppressWarnings("deprecation")
 	public void identificarCliente()
 	{
@@ -674,7 +990,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		JComboBox<String> cbClientes = new JComboBox<String>(clientes);
 		Object[] message = 
 			{
-				"Seleccione su identificador", cbClientes
+					"Seleccione su identificador", cbClientes
 			};
 		int resp = JOptionPane.showConfirmDialog(null, message, "Confirme su identidad", JOptionPane.OK_CANCEL_OPTION);
 		if(resp == JOptionPane.CANCEL_OPTION)
@@ -691,11 +1007,11 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			menuBar.getComponentAtIndex(7).setEnabled(false);
 		}
 	}
-	
+
 	// -----------------------------------------------------------------
 	// Métodos administrativos
 	// -----------------------------------------------------------------
-	
+
 	/**
 	 * Muestra el log de superAndes
 	 */
@@ -830,17 +1146,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void mostrarScriptBD ()
 	{
-		//TODO 
-		mostrarArchivo ("data/");
-	}
-
-	/**
-	 * Muestra la arquitectura de referencia para SuperAndes
-	 */
-	public void mostrarArqRef ()
-	{
-		//TODO
-		mostrarArchivo ("data/");
+		mostrarArchivo ("data/Crear y poblar tablas/esquemaSuperAndes.sql");
 	}
 
 	/**
@@ -853,10 +1159,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 	// -----------------------------------------------------------------
 	// Métodos privados para la presentación de resultados y otras operaciones
-	// -----------------------------------------------------------------
-	
-	// -----------------------------------------------------------------
-	// Métodos privados.
 	// -----------------------------------------------------------------
 
 	/**
@@ -926,10 +1228,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	}
 
 	// -----------------------------------------------------------------
-	// Métodos de la interacción.
-	// -----------------------------------------------------------------
-	
-	// -----------------------------------------------------------------
 	// Métodos de interacción
 	// -----------------------------------------------------------------
 
@@ -957,10 +1255,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	}
 
 	// -----------------------------------------------------------------
-	// Programa Principal
-	// -----------------------------------------------------------------
-	
-	// -----------------------------------------------------------------
 	// Programa principal.
 	// -----------------------------------------------------------------
 
@@ -972,7 +1266,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	{
 		try
 		{
-
 			// Unifica la interfaz para Mac y para Windows.
 			UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName( ) );
 			InterfazSuperAndesApp interfaz = new InterfazSuperAndesApp( );

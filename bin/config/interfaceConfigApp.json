@@ -200,10 +200,6 @@
 					"event": "mostrarScriptBD"
 				},
 				{
-					"label": "Arquitectura de referencia",
-					"event": "mostrarArqRef"
-				},
-				{
 					"label": "Javadoc SuperAndes",
 					"event": "mostrarJavadoc"
 				}
