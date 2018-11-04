@@ -69,7 +69,7 @@ class SQLCliente
 	 */
 	public long adicionarClientePersonaNatural(PersistenceManager pm, String correoElectronico, String nombre, String documento)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCliente() + " (correoelectronico, nombre, puntos, documentopn) VALUES (?, ?, 0, ?, ? )");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCliente() + " (correoelectronico, nombre, puntos, documentopn) VALUES (?, ?, 0, ? )");
 		q.setParameters(correoElectronico, nombre, documento);
 		return (long) q.executeUnique();		
 	}

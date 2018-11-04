@@ -117,14 +117,14 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		{
 			crearMenu( guiConfig.getAsJsonArray("menuBar") );
 		}
-		
+
 
 		tableConfig = openConfig ("Tablas BD", CONFIG_TABLAS);
 		superAndes = new SuperAndes(tableConfig);
 
-// corre la prueba del timer
+		// corre la prueba del timer
 		superAndes.prueba();
-		
+
 		String path = guiConfig.get("bannerPath").getAsString();
 		panelDatos = new PanelDatos ( );
 
@@ -312,7 +312,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				categoriasDisponibles[i]=categorias.get(i).getNombre();
 			JComboBox<String> cbCategorias = new JComboBox<String>(categoriasDisponibles);
 			cbCategorias.addActionListener(this);
-			
+
 			String [] info = new String[15];
 			JTextField tFCodigoBarras = new JTextField();
 			JTextField tFNombre = new JTextField();
@@ -368,7 +368,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				info[12]	=tFNivelReorden.getText();
 				info[13]	=tFFechaVencimiento.getText();
 				info[14]	=cbCategorias.getSelectedItem().toString();
-				
+
 				if(!info[0].equals("") && !info[1].equals("") && !info[2].equals("") && !info[3].equals("")
 						&& !info[4].equals("") && !info[6].equals("") && !info[11].equals("") && !info[12].equals("")
 						&& !info[14].equals("") )
@@ -378,7 +378,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					NumberFormat formatter = new DecimalFormat("#0.0");
 					String strDouble = formatter.format(calidadSinFormato).trim().replace(',', '.');
 					double calidadDouble = Double.parseDouble(strDouble);
-					
+
 					//Conversiones generales.
 					double precioUnitario = Double.parseDouble(info[3]);
 					double precioUnidadMedida = Double.parseDouble(info[5]);
@@ -398,22 +398,22 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						fechaVencimiento = new Date(year, month, day);
 					}
 					boolean estaEnPromocion = cbPromocion.isSelected();
-					
+
 					VOProducto productoAdicionado= superAndes.adicionarProducto(info[0], info[1], info[2], precioUnitario, info[4], precioUnidadMedida, cantidadPresentacion, peso, 
 							info[8], volumen, info[10], calidadDouble, nivelReorden, fechaVencimiento, info[14], estaEnPromocion);
-					
+
 					if(productoAdicionado == null)
 						throw new Exception("No se pudo crear el producto con el nombre: " + info[1]);
 					else
 						resultado += "Producto adicionado exitosamente: " + productoAdicionado.toString()+ "\n";
-					
+
 					List<VOSucursal> sucursales = superAndes.darVOSucursal();
 					String[] sucursalesDisponibles = new String[sucursales.size()];
 					for(int i = 0; i < sucursalesDisponibles.length; i++)
 						sucursalesDisponibles[i]=sucursales.get(i).getId()+"";
 					JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
 					cbCategorias.addActionListener(this);
-					
+
 					int option2 = JOptionPane.showConfirmDialog(null, cbSucursales, "Inserte Sucursal del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 					if(option2 == JOptionPane.OK_OPTION)
 					{
@@ -423,15 +423,15 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						else
 							resultado+= "En adicionar Sucursal Producto: \n\n SucursalProducto adicionado exitosamente: " + sucursalProducto.toString() + "\n";
 					}
-					
+
 				}
 				else
 				{
 					resultado += "No se llenaron los campos correctamente.";
 				}
-				
-				
-				
+
+
+
 				panelDatos.actualizarInterfaz(resultado);
 			}
 			else
@@ -451,10 +451,126 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		//TODO lo del JComboBox.
 	}
 
+	/**
+	 * Adiciona un cliente persona natural con la información dada por el usuario.
+	 * Se crea una nueva tupla de Persona natural en la base de datos, si se cumple todo lo necesario.
+	 * Se crea una nueva tupla de Cliente en la base de datos, si se cumple todo lo necesario.
+	 */
+	public void adicionarPersonaNatural()
+	{
+		try
+		{
+			String[] infoPN = new String[3];
+			JTextField documento = new JTextField();
+			String[] opcionesDocumento = 
+				{
+						"CI", "DUI", "ID", "CC", "TI", "TD", "RC","CE", "CI","DNI"
+				};
+			JComboBox<String> cbTipoDocumento = new JComboBox<String>(opcionesDocumento);
+			JTextField correoElectronico = new JTextField();
+			JTextField nombre = new JTextField();
+			Object[] message = {
+					"Número de documento:", documento,
+					"Tipo de documento:", cbTipoDocumento,
+					"Correo electrónico:", correoElectronico,
+					"Nombre completo:", nombre
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar CLIENTE Persona Natural: \n\n";
+				infoPN[0] = documento.getText();
+				infoPN[1] = correoElectronico.getText();
+				infoPN[2] = nombre.getText();
+				if(!infoPN[0].equals("") && !infoPN[1].equals("") && !infoPN[2].equals(""))
+				{
+					VOPersonaNatural pn = superAndes.adicionarPersonaNatural(infoPN[0], cbTipoDocumento.getSelectedItem().toString(), infoPN[1], infoPN[2]);
+					if(pn == null)
+						throw new Exception("No se pudo agregar el cliente Persona natural con nombre: " + nombre);
+					resultado += "Cliente adicionado correctamente: " + pn.toString();
+					resultado += "\n Operación terminada.";
+
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
+	}
+
+	/**
+	 * Adiciona un cliente empresa con la información dada por el usuario.
+	 * Se crea una nueva tupla de Empresa en la base de datos, si se cumple todo lo necesario.
+	 * Se crea una nueva tupla de Cliente en la base de datos, si se cumple todo lo necesario.
+	 */
+	public void adicionarEmpresa()
+	{
+		try
+		{
+			String[] infoPN = new String[4];
+			JTextField NIT = new JTextField();
+			JTextField direccion = new JTextField();
+			JTextField correoElectronico = new JTextField();
+			JTextField nombre = new JTextField();
+			Object[] message = {
+					"NIT:", NIT,
+					"Dirección:", direccion,
+					"Correo electrónico:", correoElectronico,
+					"Nombre completo:", nombre
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar CLIENTE Empresa: \n\n";
+				infoPN[0] = NIT.getText();
+				infoPN[1] = direccion.getText();
+				infoPN[2] = correoElectronico.getText();
+				infoPN[3] = nombre.getText();
+				if(!infoPN[0].equals("") && !infoPN[1].equals("") && !infoPN[2].equals("") && !infoPN[3].equals(""))
+				{
+					VOEmpresa empresa = superAndes.adicionarEmpresa(infoPN[0], infoPN[1], infoPN[2], infoPN[3] );
+					if(empresa == null)
+						throw new Exception("No se pudo agregar el cliente Persona natural con nombre: " + nombre);
+					resultado += "Cliente adicionado correctamente: " + empresa.toString();
+					resultado += "\n Operación terminada.";
+
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
+	}
 	// -----------------------------------------------------------------
 	// Métodos administrativos.
 	// -----------------------------------------------------------------
 
+
+	
+	// -----------------------------------------------------------------
+	// Métodos administrativos
+	// -----------------------------------------------------------------
+	
 	/**
 	 * Muestra el log de superAndes
 	 */
@@ -611,6 +727,10 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	}
 
 	// -----------------------------------------------------------------
+	// Métodos privados para la presentación de resultados y otras operaciones
+	// -----------------------------------------------------------------
+	
+	// -----------------------------------------------------------------
 	// Métodos privados.
 	// -----------------------------------------------------------------
 
@@ -681,6 +801,10 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	}
 
 	// -----------------------------------------------------------------
+	// Métodos de la interacción.
+	// -----------------------------------------------------------------
+	
+	// -----------------------------------------------------------------
 	// Métodos de interacción
 	// -----------------------------------------------------------------
 
@@ -707,6 +831,10 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		}
 	}
 
+	// -----------------------------------------------------------------
+	// Programa Principal
+	// -----------------------------------------------------------------
+	
 	// -----------------------------------------------------------------
 	// Programa principal.
 	// -----------------------------------------------------------------
