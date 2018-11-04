@@ -78,7 +78,6 @@ class SQLUtil {
 		Query qCliente 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCliente() );
 		Query qBodega 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaBodega() );
 		Query qEstante 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaEstante() );
-		Query qCategoria 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCategoria() );
 		Query qTipo 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaTipo() );
 		Query qPersonaNatural 			= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPersonaNatural() );
 		Query qEmpresa 					= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaEmpresa() );
@@ -90,6 +89,7 @@ class SQLUtil {
 		Query qPromPagueLleveCant 	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromPagLleveCant());
 		Query qPromSegUniDescuento 	    = pm.newQuery(SQL, "DELETE FROM " + psa.darTablaPromDescSegUnid());
 		Query qProducto 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaProducto() );
+		Query qCategoria 				= pm.newQuery(SQL, "DELETE FROM " + psa.darTablaCategoria() );
 		
 		
 		long proveedoresProductoEliminados   = (long) qProveedoresProducto.executeUnique();
@@ -105,7 +105,6 @@ class SQLUtil {
 	    long clienteEliminados               = (long) qCliente.executeUnique();	
 	    long bodegaEliminados                = (long) qBodega.executeUnique();
 		long estanteEliminados               = (long) qEstante.executeUnique();
-		long categoriaEliminados             = (long) qCategoria.executeUnique();
 		long tipoEliminados                  = (long) qTipo.executeUnique();
 		long personaNaturalEliminados        = (long) qPersonaNatural.executeUnique();
 		long empresaEliminados               = (long) qEmpresa.executeUnique();
@@ -117,11 +116,12 @@ class SQLUtil {
 		long promPagLleveUniEliminados       = (long) qPromPagueLleveUnidad.executeUnique();
 		long promPagLleveCantEliminados      = (long) qPromPagueLleveCant.executeUnique();
 		long productoEliminados              = (long) qProducto.executeUnique();
+		long categoriaEliminados             = (long) qCategoria.executeUnique();
 			
 		return new long[] {proveedoresProductoEliminados,productoOrdenPedidoEliminados, facturaProductoEliminados ,productosEnBodegaEliminados, 
 				productosEnEstanteEliminados , sucursalProductoEliminados, productoCarritoComprasEliminados, tipoProductoEliminados, 
-				carritoComprasEliminados, facturaEliminados , clienteEliminados, bodegaEliminados , estanteEliminados, categoriaEliminados, tipoEliminados, 
+				carritoComprasEliminados, facturaEliminados , clienteEliminados, bodegaEliminados , estanteEliminados, tipoEliminados, 
 				personaNaturalEliminados , empresaEliminados, ordenPedidoEliminados , sucursalEliminados, proveedorEliminados, promDescuentoEliminados,
-				promSegUniDescuentoEliminados , promPagLleveUniEliminados, promPagLleveCantEliminados, productoEliminados };
+				promSegUniDescuentoEliminados , promPagLleveUniEliminados, promPagLleveCantEliminados, productoEliminados, categoriaEliminados };
 	}
 }

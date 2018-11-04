@@ -19,6 +19,21 @@ public interface VOEmpresa {
 	public String getDireccion();
 	
 	/**
+	 * devuelve el correo electronico del cliente
+	 */
+	public String getCorreoElectronico();
+	
+	/**
+	 * devuelve el nombre del cliente
+	 */
+	public String getNombre();
+	
+	/**
+	 * devuelve los puntos acumulados del cliente
+	 */
+	public int getPuntos();
+	
+	/**
 	 * Cadena de caracteres con todos los atributos de Empresa.
 	 */
 	@Override

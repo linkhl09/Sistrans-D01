@@ -69,7 +69,7 @@ class SQLCliente
 	 */
 	public long adicionarClientePersonaNatural(PersistenceManager pm, String correoElectronico, String nombre, String documento)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCliente() + " (correoelectronico, nombre, puntos, documentopn) VALUES (?, ?, 0, ?, ? )");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCliente() + " (correoelectronico, nombre, puntos, documentopn) VALUES (?, ?, 0, ? )");
 		q.setParameters(correoElectronico, nombre, documento);
 		return (long) q.executeUnique();		
 	}
@@ -91,7 +91,7 @@ class SQLCliente
 	*/
 	public Cliente darCliente(PersistenceManager pm, String correoElectronico)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCliente() + "WHERE correoElectronico = ?");
+		Query q = pm.newQuery(SQL, "SELECT correoElectronico, nombre, puntos FROM " + psa.darTablaCliente() + "WHERE correoElectronico = ?");
 		q.setResultClass(Cliente.class);
 		q.setParameters(correoElectronico);
 		return (Cliente) q.executeUnique();
@@ -102,9 +102,21 @@ class SQLCliente
 	 **/
 	public List<Cliente> darClientes(PersistenceManager pm)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCliente());
+		Query q = pm.newQuery(SQL, "SELECT correoElectronico, nombre, puntos FROM " + psa.darTablaCliente());
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
+	}
+	
+	/**
+	 * Devuelve todos los correos electronicos de la base de datos.
+	 * @param pm - El manejador de persistencia.
+	 * @return Una lista con todos los correos de la base de datos.
+	 */
+	public List<String> darTodosLosCorreos(PersistenceManager pm)
+	{
+		Query q = pm.newQuery(SQL, "SELECT correoElectronico FROM " + psa.darTablaCliente());
+		q.setResultClass(String.class);
+		return (List<String>) q.executeList();
 	}
 
 	/**
