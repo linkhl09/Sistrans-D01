@@ -448,7 +448,12 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 	// Métodos de tabla sucursal
 	// -----------------------------------------------------------------
+<<<<<<< HEAD
+
+	
+=======
 		
+>>>>>>> c9fbef221e02b392b4237952dd2f25fab9f0a3ce
 	/**
 	 * Adiciona de manera persistente una sucursal.
 	 * Adiciona entradas al log de la aplicación
@@ -2627,11 +2632,8 @@ public class SuperAndes {
 		return idEstante;
 	}
 	
-	
-	
-	
 	/**
-	 * prueba 1
+	 * prueba del timer
 	 * Adiciona entradas al log de la aplicación
 	 */
   private final ScheduledExecutorService scheduler3 =   Executors.newScheduledThreadPool(1);
