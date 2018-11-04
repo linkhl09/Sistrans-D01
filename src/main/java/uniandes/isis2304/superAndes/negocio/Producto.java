@@ -453,7 +453,7 @@ public class Producto implements VOProducto{
 			msj += ", fechaVencimiento =" + fechaVencimiento.toString();
 		else
 			msj += ", fechaVencimiento =" + fechaVencimiento;
-		msj +=	", categoria=" + categoria + ", estaEnPromocion" + estaEnPromocion + "]";
+		msj +=	", categoria=" + categoria + ", estaEnPromocion=" + estaEnPromocion + "]";
 		return msj;
 	}
 }
