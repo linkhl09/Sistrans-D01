@@ -687,7 +687,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			menuBar.getComponentAtIndex(5).setEnabled(false);
 			menuBar.getComponentAtIndex(6).setEnabled(false);
 			menuBar.getComponentAtIndex(7).setEnabled(false);
-			
 		}
 	}
 	
@@ -980,6 +979,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		catch( Exception e )
 		{
 			e.printStackTrace( );
+			System.exit(0); 
 		}
 	}
 }
