@@ -85,11 +85,23 @@ class SQLProveedor {
 	 * Devuelve toda la informacion del proveedor cuyo numero de identificacion es igual al ingresado por parametro 
 	 * @param nit - numero de identificacion unico del proveedor
 	 * */
-	public Proveedor darProveedor(PersistenceManager pm, String nit)
+	public Proveedor darProveedorPorNit(PersistenceManager pm, String nit)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProveedor() + "WHERE nit = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProveedor() + " WHERE nit = ?");
 		q.setResultClass(Proveedor.class);
 		q.setParameters(nit);
+		return (Proveedor) q.executeUnique();
+	}
+	
+	/**
+	 * Devuelve toda la informacion del proveedor cuyo nombre es igual al ingresado por parametro 
+	 * @param nombre - Nombre del proveedor.
+	 */
+	public Proveedor darProveedorPorNombre(PersistenceManager pm, String nombre)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProveedor() + " WHERE nombre = ?");
+		q.setResultClass(Proveedor.class);
+		q.setParameters(nombre);
 		return (Proveedor) q.executeUnique();
 	}
 	

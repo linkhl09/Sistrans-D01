@@ -2864,11 +2864,21 @@ public class PersistenciaSuperAndes {
 	 * @param nit - identificador del proveedor.
 	 * @return El objeto Proveedor, construido con base en la tabla PROVEEDOR.
 	 */
-	public Proveedor darProveedor(String nit)
+	public Proveedor darProveedorPorNit(String nit)
 	{
-		return sqlProveedor.darProveedor(pmf.getPersistenceManager(), nit);
+		return sqlProveedor.darProveedorPorNit(pmf.getPersistenceManager(), nit);
 	}
-
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla con un nombre dado.
+	 * @param nombre - El nombre del proveedor.
+	 * @return El objeto Proveedor, construido con base en la tabla PROVEEDOR.
+	 */
+	public Proveedor darProveedorPorNombre(String nombre)
+	{
+		return sqlProveedor.darProveedorPorNombre(pmf.getPersistenceManager(), nombre);
+	}
+	
 	/**
 	 * Método que actualiza la calificacion de  todas las tuplas en la tabla con un identificador dado.
 	 * @param nit - identificador del proveedor.
@@ -3097,6 +3107,17 @@ public class PersistenciaSuperAndes {
 	public OrdenPedido darOrdenPedido(long id)
 	{
 		return sqlOrdenPedido.darOrdenPedido(pmf.getPersistenceManager(), id);
+	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla OrdenPedido, con un proveedor y que estan en estado "En Espera" para cierta sucursal.
+	 * @param nit - Nit del proveedor. 
+	 * @param idSucursal - Identificador de la sucursal.
+	 * @return El objeto OrdenPedido, construido con base en la tabla OrdenPedido.
+	 */
+	public List<OrdenPedido> darOrdenPedidoEnEsperaPorProveedor(String nit, long idSucursal)
+	{
+		return sqlOrdenPedido.darOrdenPedidoEnEsperaPorProveedor(pmf.getPersistenceManager(), nit, idSucursal);
 	}
 
 	/**

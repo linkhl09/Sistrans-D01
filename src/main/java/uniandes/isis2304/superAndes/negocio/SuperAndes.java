@@ -149,7 +149,7 @@ public class SuperAndes {
 		log.info ("Buscando tipo: " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
-	
+
 	/**
 	 * Encuentra todos los tipos de SuperAndes y los devuelve como una lista de VOTipo.
 	 * Adiciona entradas al log de la aplicación,
@@ -263,7 +263,7 @@ public class SuperAndes {
 		log.info("Adicionado TipoCategoria");
 		return agregado;
 	}
-	
+
 	/**
 	 * Elimina un TipoCategoria por su identificador.
 	 * @param nombreTipo - nombre del tipo asociado a la categoria.
@@ -277,7 +277,7 @@ public class SuperAndes {
 		log.info("Eliminada: " + resp + " tuplas eliminadas.");
 		return resp;
 	}
-	
+
 	/**
 	 * Encuentra todos las tipos del producto SuperAndes.
 	 * Adiciona entradas al log de la aplicación.
@@ -305,7 +305,7 @@ public class SuperAndes {
 		log.info("Consultando todos los tipoCategoria: " + list.size() + " existentes.");
 		return list;
 	}
-	
+
 	/**
 	 * Encuentra todas los TipoProducto de SuperAndes y las devuelve como una lista de VOTipoProducto.
 	 * Adiciona entradas al log de la aplicación.
@@ -323,16 +323,16 @@ public class SuperAndes {
 		log.info("Generando los VO de : " + list.size() + " existentes.");
 		return list;
 	}
-	
+
 	// -----------------------------------------------------------------
 	// Métodos de tabla Producto
 	// -----------------------------------------------------------------
 
-	
+
 	// -----------------------------------------------------------------
-    // RF2. REGISTRAR PRODUCTO
+	// RF2. REGISTRAR PRODUCTO
 	// -----------------------------------------------------------------
-		
+
 	/**
 	 * Adiciona de manera persistente un producto.
 	 * Adiciona entradas al log de la aplicación.
@@ -495,7 +495,7 @@ public class SuperAndes {
 		log.info ("Eliminando sucursal por id: " + resp + " tuplas eliminadas");
 		return resp;
 	}
-	
+
 	/**
 	 * Encuentra todos las sucursales  en SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -647,7 +647,7 @@ public class SuperAndes {
 	 * Encuentra todas las sucursales con todos sus productos de SuperAndes y las devuelve como una lista de VOSucursalProducto.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOSucursalProducto
-     * con todas las sucursales con  sus productos  que conoce la aplicación.
+	 * con todas las sucursales con  sus productos  que conoce la aplicación.
 	 */
 	public List<VOSucursalProducto> darVOSucursalProducto ()
 	{
@@ -672,7 +672,7 @@ public class SuperAndes {
 	 * @param capacidadVolumen - Capacidad en volumen de la bodega, por defecto en m^3.
 	 * @param tipo - Tipo de la bodega.
 	 * @param idSucursal - identificador de la surcursal .
-	* @return El objeto Bodega adicionado. null si ocurre alguna Excepción
+	 * @return El objeto Bodega adicionado. null si ocurre alguna Excepción
 	 */
 	public Bodega adicionarBodega(double capacidadVol, double capacidadPeso, String tipo, long idSucursal)
 	{
@@ -708,7 +708,7 @@ public class SuperAndes {
 		log.info ("Consultando Bodegas: " + list.size() + " existentes");
 		return list;
 	}
-	
+
 	/**
 	 * Encuentra todos las bodegas de una sucursal en SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -727,7 +727,7 @@ public class SuperAndes {
 	 * Encuentra todas las bodegas de SuperAndes y las devuelve como una lista de VOBodega.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOBodega
-     * con todas las bodegas que conoce la aplicación.
+	 * con todas las bodegas que conoce la aplicación.
 	 */
 	public List<VOBodega> darVOBodega()
 	{
@@ -760,9 +760,9 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 
 	// -----------------------------------------------------------------
-    // RF6. REGISTRAR UN ESTANTE EN UNA SUCURSAL
+	// RF6. REGISTRAR UN ESTANTE EN UNA SUCURSAL
 	// -----------------------------------------------------------------
-		
+
 	/**
 	 * Adiciona de manera persistente un objeto Estante.
 	 * Adiciona entradas al log de la aplicación
@@ -811,7 +811,7 @@ public class SuperAndes {
 	 * Encuentra todas los estantes de SuperAndes y las devuelve como una lista de VOEstante.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOEstante
-     * con todas los estantes que conoce la aplicación.
+	 * con todas los estantes que conoce la aplicación.
 	 */
 	public List<VOEstante> darVOEstante ()
 	{
@@ -935,7 +935,7 @@ public class SuperAndes {
 	 * Encuentra todas las bodegas y todos sus productos de SuperAndes y las devuelve como una lista de VOProductosEnBodega.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOProductosEnBodega
-     * con todas las bodegas y todos sus productos que conoce la aplicación.
+	 * con todas las bodegas y todos sus productos que conoce la aplicación.
 	 */
 	public List<VOProductosEnBodega> darVOProductosEnBodega()
 	{
@@ -956,7 +956,7 @@ public class SuperAndes {
 	 * @param producto - El codigo de barras del producto
 	 * @param productosPedidos - La cantidad de productos a adicionar
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long aumentarProductosEnBodega( long bodega, String producto, int productosPedidos )
 	{
 		//TODO aumentar productos en Bodega.
@@ -965,7 +965,7 @@ public class SuperAndes {
 		log.info ("Aumentada la cantidad del producto en bodega: " + resp + " tuplas actualizadas");
 		return resp;
 	}
-	
+
 	/**
 	 * Disminuye la cantidad del producto en la bodega SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -973,7 +973,7 @@ public class SuperAndes {
 	 * @param producto - El codigo de barras del producto
 	 * @param productosPedidos - La cantidad de productos a disminuir
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long disminuirProductosEnBodega(long bodega, String producto, int pasadosAEstante )
 	{
 		//TODO disminuir productos en Bodega.
@@ -991,7 +991,7 @@ public class SuperAndes {
 	 * Adiciona de manera persistente un objeto en la clase relacion productosEnEstante.
 	 * Adiciona entradas al log de la aplicación
 	 * Constructor con valores.
-	  * @param idEstante Id del estante donde se almacena el producto.
+	 * @param idEstante Id del estante donde se almacena el producto.
 	 * @param cantidad Cantidad de productos que se almacenan en el estante.
 	 * @param codigoBarrasProducto Codigo de barras del producto almacenado en el estante.
 	 * @return El objeto ProductosEnEstante adicionado. null si ocurre alguna Excepción
@@ -1050,7 +1050,7 @@ public class SuperAndes {
 	 * Encuentra todas los estantes y todos sus productos de SuperAndes y las devuelve como una lista de VOProductosEnEstante.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOProductosEnEstante
-     * con todos los estantes y todos sus productos que conoce la aplicación.
+	 * con todos los estantes y todos sus productos que conoce la aplicación.
 	 */
 	public List<VOProductosEnEstante> darVOProductosEnEstante ()
 	{
@@ -1086,7 +1086,7 @@ public class SuperAndes {
 	 * @param producto - El codigo de barras del producto
 	 * @param productosTraidos - La cantidad de productos a adicionar
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long aumentarCantidadProductosEnEstante(long idEstante, int productosTraidos, String codigoBarrasProducto)
 	{
 		log.info("Aumentar cantidad de Productos en el estante: " + idEstante);
@@ -1102,7 +1102,7 @@ public class SuperAndes {
 	 * @param producto - El codigo de barras del producto
 	 * @param productosAQuitar - La cantidad de productos a disminuir
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long quitarProductosEstante(long estante, int productosAQuitar, String producto)
 	{
 		log.info("Quitar productos del estante: " + estante);
@@ -1164,7 +1164,7 @@ public class SuperAndes {
 	 * Encuentra todas las personas naturales de SuperAndes y las devuelve como una lista de VOPersonaNatural.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOPersonaNatural
-    * con todas las personas naturales que conoce la aplicación.
+	 * con todas las personas naturales que conoce la aplicación.
 	 */
 	public List<VOPersonaNatural> darVOPersonaNatural()
 	{
@@ -1262,7 +1262,7 @@ public class SuperAndes {
 	 * Encuentra todas las empresas de SuperAndes y las devuelve como una lista de VOEmpresa.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOEmpresa
-     * con todas las empresas que conoce la aplicación.
+	 * con todas las empresas que conoce la aplicación.
 	 */
 	public List<VOEmpresa> darVOEmpresa ()
 	{
@@ -1311,7 +1311,7 @@ public class SuperAndes {
 	 * Encuentra todos las clientes de SuperAndes y las devuelve como una lista de VOCliente.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOCliente
-     * con todos los clientes que conoce la aplicación.
+	 * con todos los clientes que conoce la aplicación.
 	 */
 	public List<VOCliente> darVOCliente()
 	{
@@ -1352,14 +1352,14 @@ public class SuperAndes {
 		log.info("Consultados todos los correos: " + list.size() + " existentes");
 		return list;
 	}
-	
+
 	/**
 	 * Aumenta los puntos del cliente en  SuperAndes
 	 * Adiciona entradas al log de la aplicación
 	 * @param correo - El correo del cliente 
 	 * @param puntos - La cantidad de puntos a adicionar
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long aumentarPuntos(String correoElectronico, int puntos)
 	{
 		log.info("Aumentar puntos del cliente.");
@@ -1400,7 +1400,7 @@ public class SuperAndes {
 		log.info("Eliminando CarritoCompras: " + id + " tuplas eliminadas.");
 		return resp;
 	}
-	
+
 	/**
 	 * Encuentra el carrito de compras de SuperAndes con el id solicitado.
 	 * @param id - El id del carrito de compras.
@@ -1414,7 +1414,7 @@ public class SuperAndes {
 		log.info("Buscando CarritoComrpas: " + buscado != null ? buscado.toString() : "NO EXISTE.");
 		return buscado;
 	}
-	
+
 	/**
 	 * Encuentra el carrito de compras de SuperAndes con el cliete solicitado.
 	 * @param cliente - El correo electronico del cliente 
@@ -1441,12 +1441,12 @@ public class SuperAndes {
 		log.info("Consultando CarritosCompras: " + list.size() + " existentes." );
 		return list;
 	}
-	
+
 	/**
 	 * Encuentra todos los carritos de compras de SuperAndes y las devuelve como una lista de VOCarritoCompras.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOCarritoCompras
-     * con todos los carritos de compras que conoce la aplicación.
+	 * con todos los carritos de compras que conoce la aplicación.
 	 */
 	public List<VOCarritoCompras> darVOCarritoCompras()
 	{
@@ -1457,17 +1457,17 @@ public class SuperAndes {
 		log.info("Generando los VO de CarritoCompras: " + list.size() +" existentes.");
 		return list;
 	}
-	
+
 	// -----------------------------------------------------------------
 	// Métodos de tabla Producto Carrito Compras
 	// -----------------------------------------------------------------
 
-	
+
 	// -----------------------------------------------------------------
 	// RF.13 ADICIONAR PRODUCTOS AL CARRITO DE COMPRAS 
 	// -----------------------------------------------------------------
-		  
-	
+
+
 	/**
 	 * Adiciona de manera persistente un  producto a un carrito de compras.
 	 * Adiciona entradas al log de la aplicación
@@ -1483,11 +1483,11 @@ public class SuperAndes {
 		log.info("Adicionado ProductoCarritoCompras.");
 		return agregado;
 	}
-	
+
 	// -----------------------------------------------------------------
 	// RF.14 ELIMINAR PRODUCTOS DEL	CARRITO DE COMPRAS 
 	// -----------------------------------------------------------------	
-	
+
 	/**
 	 * Elimina un producto del carrito de compras
 	 * Adiciona entradas al log de la aplicación
@@ -1502,7 +1502,7 @@ public class SuperAndes {
 		log.info("Eliminando CarritoCompras: " + resp + " tuplas eliminadas");
 		return resp;
 	}
-	
+
 	/**
 	 * Encuentra el productoCarrito de SuperAndes con el id de carrito y codigo de barras de producto solicitado.
 	 * @param carrito - El id del carrito.
@@ -1517,7 +1517,7 @@ public class SuperAndes {
 		log.info("Consultando carrito de compras" + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
-	
+
 	/**
 	 * Encuentra todos los productos de un carrito de compras SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -1531,7 +1531,7 @@ public class SuperAndes {
 		log.info("Consultando todos ProductoCarritoCompras: " + list.size() + " existentes.");
 		return list;
 	}
-	
+
 	/**
 	 * Aumenta la cantidad del producto en el carrito de compras SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -1539,7 +1539,7 @@ public class SuperAndes {
 	 * @param producto - El codigo de barras del producto
 	 * @param productosAgregados - La cantidad de productos a adicionar
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long aumentarUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto , int productosAgregados)
 	{
 		log.info("Aumentando unidades del producto: " + codigoBarrasProducto + " en el carrito: " + carrito);
@@ -1547,7 +1547,7 @@ public class SuperAndes {
 		log.info("Aumentadas las unidades del producto en el carrito.");
 		return resp;
 	}
-	
+
 	/**
 	 * Disminuye la cantidad del producto en el carrito en SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -1555,7 +1555,7 @@ public class SuperAndes {
 	 * @param producto - El codigo de barras del producto
 	 * @param productosPedidos - La cantidad de productos a disminuir
 	 * @return el numero de tuplas actualizadas
-	  */
+	 */
 	public long disminuirUnidadesProductoCarritoCompras(long carrito, String codigoBarrasProducto, int productosDevueltos)
 	{
 		log.info("Disminuyendo unidades del producto: " + codigoBarrasProducto + " en el carrito: " + carrito);
@@ -1622,7 +1622,7 @@ public class SuperAndes {
 	 * Encuentra todas las facturas de SuperAndes y las devuelve como una lista de VOFactura.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOFactura
-     * con todas las facturas que conoce la aplicación.
+	 * con todas las facturas que conoce la aplicación.
 	 */
 	public List<VOFactura> darVOFactura ()
 	{
@@ -1716,7 +1716,7 @@ public class SuperAndes {
 	 * Encuentra todas las facturas con todos sus productos en SuperAndesy las devuelve como una lista de VOFacturaProducto.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOFacturaProducto
-     * con todas as facturas con todos sus productos que conoce la aplicación.
+	 * con todas as facturas con todos sus productos que conoce la aplicación.
 	 */
 	public List<VOFacturaProducto> darVOFacturaProducto ()
 	{
@@ -1745,7 +1745,7 @@ public class SuperAndes {
 		return buscado;
 	}
 
-	
+
 	// -----------------------------------------------------------------
 	// Métodos de tabla Proveedor
 	// -----------------------------------------------------------------
@@ -1811,11 +1811,11 @@ public class SuperAndes {
 	 * Encuentra todas los proveedores de SuperAndes y las devuelve como una lista de VOProveedor.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOProveedor
-     * con todas los proveedores que conoce la aplicación.
+	 * con todas los proveedores que conoce la aplicación.
 	 */
 	public List<VOProveedor> darVOProveedor ()
 	{
-		log.info ("Generando los VO de ");        
+		log.info ("Generando los VO de Proveedor:");        
 		List<VOProveedor> list = new LinkedList<VOProveedor> ();
 		for (Proveedor tb : psa.darProveedores())
 		{
@@ -1831,10 +1831,24 @@ public class SuperAndes {
 	 * @return Un objeto Proveedor con el proveedor de ese nit que conoce la aplicación.
 	 * Lleno con su información básica.
 	 */
-	public Proveedor darProveedor(String nit)
+	public Proveedor darProveedorPorNit(String nit)
 	{
-		log.info ("Dar información de ");
-		Proveedor buscado = psa.darProveedor(nit); 
+		log.info ("Dar información de Proveedor con nit: " + nit);
+		Proveedor buscado = psa.darProveedorPorNit(nit); 
+		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
+		return buscado;
+	}
+	
+	/**
+	 * Encuentra el proveedor de SuperAndes con el nombre solicitado.
+	 * @param nombre - El nombre del proveedor.
+	 * @returnUn objeto Proveedor con el proveedor de ese nombre que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
+	public Proveedor darProveedorPorNombre(String nombre)
+	{
+		log.info("Dar información del Proveedor con nombre: " + nombre);
+		Proveedor buscado = psa.darProveedorPorNombre(nombre);
 		log.info ("Buscando : " + buscado != null ? buscado : "NO EXISTE");
 		return buscado;
 	}
@@ -1885,7 +1899,7 @@ public class SuperAndes {
 		log.info ("Eliminando : " + resp + " tuplas eliminadas");
 		return resp;
 	}
-	
+
 	/**
 	 * Encuentra todos los proveedores que tienen el producto ingresado por parametro en SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -1931,7 +1945,7 @@ public class SuperAndes {
 	 *Encuentra todos los proveedores con todos sus productos en SuperAndes  y las devuelve como una lista de VOProveedoresProducto.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOProveedoresProducto
-         * con todos los proveedores con todos sus productos que conoce la aplicación.
+	 * con todos los proveedores con todos sus productos que conoce la aplicación.
 	 */
 	public List<VOProveedoresProducto> darVOProveedoresProducto ()
 	{
@@ -1996,7 +2010,7 @@ public class SuperAndes {
 	 * Encuentra todas las odenes de pedido de SuperAndes y las devuelve como una lista de VOOrdenPedido.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOOrdenPedido
-     * con todas las odenes de pedido que conoce la aplicación.
+	 * con todas las odenes de pedido que conoce la aplicación.
 	 */
 	public List<VOOrdenPedido> darVOOrdenPedido ()
 	{
@@ -2024,25 +2038,40 @@ public class SuperAndes {
 		return buscado;
 	}
 
+	/**
+	 * Encuentra la OrdenPedido de SuperAndes con el proveedor dado y con estado "En Espera"
+	 * @param nit - identificador del proveedor.
+	 * @param idSucursal - Identificador de la sucursal.
+	 * @return Un objeto OrdenPedido con la otden pedido de ese proveedor en estado "En Espera" que conoce la aplicación.
+	 * Lleno con su información básica.
+	 */
+	public List<OrdenPedido> darOrdenPedidoEnEsperaPorProveedor(String nit, long idSucursal)
+	{
+		log.info ("Dar información de OrdenPedido en Espera del proveedor con nit: " + nit + " y sucursal con id: " + idSucursal);
+		List<OrdenPedido> buscado = psa.darOrdenPedidoEnEsperaPorProveedor(nit, idSucursal);
+		log.info ("Buscando ordenes pedido: " + buscado + " tuplas");
+		return buscado;
+	}
+	
 	// -----------------------------------------------------------------
-    // RF10. REGISTRAR LA LLEGADA DE UNA ORDEN PEDIDO
+	// RF10. REGISTRAR LA LLEGADA DE UNA ORDEN PEDIDO
 	// -----------------------------------------------------------------
-	
-	  /**
-		 *Actualza la fecha de llegada de la orden de pedido y la calificacion de calidad de la orden 
-		 * @param id - El id de la orden de pedido.
-		 * @param fechaEntrega - La fecha en la que se registra la entrega de la orden de pedido.
-		 * @param nuevaCalificacion - La calificacion de calidad  de la orden de pedido.
-		 * @return el numero de tuplas actualizadas.
-		 */
-		public long registrarFechaLlegada(long id, Date fechaEntrega, double nuevaCalificacion)
-		{
-			log.info("Registrar fecha de llega del pedido.");
-			long cambios = psa.registrarFechaLlegada(id, fechaEntrega, nuevaCalificacion);
-			return cambios;
-		}	
-	
-	
+
+	/**
+	 *Actualza la fecha de llegada de la orden de pedido y la calificacion de calidad de la orden 
+	 * @param id - El id de la orden de pedido.
+	 * @param fechaEntrega - La fecha en la que se registra la entrega de la orden de pedido.
+	 * @param nuevaCalificacion - La calificacion de calidad  de la orden de pedido.
+	 * @return el numero de tuplas actualizadas.
+	 */
+	public long registrarFechaLlegada(long id, Date fechaEntrega, double nuevaCalificacion)
+	{
+		log.info("Registrar fecha de llega del pedido.");
+		long cambios = psa.registrarFechaLlegada(id, fechaEntrega, nuevaCalificacion);
+		return cambios;
+	}	
+
+
 	// -----------------------------------------------------------------
 	// Métodos de tabla ProductoOrdenPedido
 	// -----------------------------------------------------------------
@@ -2106,7 +2135,7 @@ public class SuperAndes {
 	 * Encuentra todos los productos de todas las ordenes de pedido en SuperAndes y las devuelve como una lista de VOProductoOrdenPedido.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOProductoOrdenPedido
-     * con todos los productos de todas las ordenes de pedido que conoce la aplicación.
+	 * con todos los productos de todas las ordenes de pedido que conoce la aplicación.
 	 */
 	public List<VOProductoOrdenPedido> darVOProductoOrdenPedido ()
 	{
@@ -2141,7 +2170,7 @@ public class SuperAndes {
 	/**
 
 	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
-	* @param id - identificador de la promocion
+	 * @param id - identificador de la promocion
 	 * @param descripcion - descripcion de la promocion
 	 * @param unidadesDisponibles - unidades disponibles de la promocion
 	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
@@ -2185,12 +2214,12 @@ public class SuperAndes {
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
-	
+
 	/**
 	 * Encuentra todas las promDescuento de SuperAndes y las devuelve como una lista de VOPromDesc.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOPromDesc
-     * con todas las promDescuento que conoce la aplicación.
+	 * con todas las promDescuento que conoce la aplicación.
 	 */
 	public List<VOPromDesc> darVOPromDesc()
 	{
@@ -2222,7 +2251,7 @@ public class SuperAndes {
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Pag Lleve unid
 	// -----------------------------------------------------------------
-	
+
 	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un PromPagueLleveUnid a la base de datos de SuperAndes
 	 * @param id - identificador de la promocion
@@ -2234,7 +2263,7 @@ public class SuperAndes {
 	 * @param poducto - codigo del producto asociado a la promocion
 	 **@param pague -  unidades del producto que se debe pagar  
 	 **@param lleve - unidades del producto que se llevara 
-	**/
+	 **/
 	public PromPagueLleveUnid adicionarPromPagueLleveUnid( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
 	{
@@ -2276,7 +2305,7 @@ public class SuperAndes {
 	 * Encuentra todas las promPagueLleveUnid de SuperAndes y las devuelve como una lista de VOPromPagueLleveUnid.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOPromPagueLleveUnid
-     * con todas las promPagueLleveUnidad que conoce la aplicación.
+	 * con todas las promPagueLleveUnidad que conoce la aplicación.
 	 */
 	public List<VOPromPagueLleveUnid> darVOPromPagueLleveUnid ()
 	{
@@ -2303,15 +2332,14 @@ public class SuperAndes {
 		return list;
 	}
 
-	
+
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Desc Seg Unidad
 	// -----------------------------------------------------------------
-	
-	/**
 
+	/**
 	 * Crea y ejecuta la sentencia SQL para adicionar un PromDescuento a la base de datos de SuperAndes
-	* @param id - identificador de la promocion
+	 * @param id - identificador de la promocion
 	 * @param descripcion - descripcion de la promocion
 	 * @param unidadesDisponibles - unidades disponibles de la promocion
 	 * @param unidadesVendidas - unidades de la promocion q ya fueron vendidas
@@ -2360,7 +2388,7 @@ public class SuperAndes {
 	 * Encuentra todas las promSegUniDescuento de SuperAndes y las devuelve como una lista de VOPromSegUniDesc.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOPromSegUniDesc
-     * con todas las promSegUniDescuento que conoce la aplicación.
+	 * con todas las promSegUniDescuento que conoce la aplicación.
 	 */
 	public List<VOPromSegUniDesc> darVOPromSegUniDesc()
 	{
@@ -2388,7 +2416,7 @@ public class SuperAndes {
 		return buscado;
 	}
 
-	
+
 	// -----------------------------------------------------------------
 	// Métodos de tabla Prom Pag Lleve Cantidad
 	// -----------------------------------------------------------------
@@ -2445,7 +2473,7 @@ public class SuperAndes {
 	 * Encuentra todas las PromPagueLleveCant de SuperAndes y las devuelve como una lista de VOPromPagueLleveCant.
 	 * Adiciona entradas al log de la aplicación.
 	 * @return Una lista de objetos VOPromPagueLleveCant
-     * con todas las PromPagueLleveCant que conoce la aplicación.
+	 * con todas las PromPagueLleveCant que conoce la aplicación.
 	 */
 	public List<VOPromPagueLleveCant> darVOPromPagueLleveCant ()
 	{
@@ -2471,8 +2499,8 @@ public class SuperAndes {
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
-	
-	
+
+
 	/**
 	 * Encuentra todos las promociones  en SuperAndes
 	 * Adiciona entradas al log de la aplicación
@@ -2482,12 +2510,12 @@ public class SuperAndes {
 	{
 		log.info ("Consultando ");
 		List<Promocion> list = new ArrayList<Promocion>();
-		
+
 		for (int i =0; i< darPromDescuento().size(); i++)
 		{
 			list.add(darPromDescuento().get(i));
 		}
-		
+
 		for (int i =0; i< darPromDescSegUnid().size(); i++)
 		{
 			list.add(darPromDescSegUnid().get(i));
@@ -2500,156 +2528,156 @@ public class SuperAndes {
 		{
 			list.add(darPromDescSegUnid().get(i));
 		}
-		
+
 		log.info ("Consultando : " + list.size() + " existentes");
 		return list;
 	}
-	
-	
+
+
 	// -----------------------------------------------------------------
-    // METODOS DE REQUERIMIENTOS FUNCIONALES
+	// METODOS DE REQUERIMIENTOS FUNCIONALES
 	// -----------------------------------------------------------------
 
 	// -----------------------------------------------------------------
-    // RF8. FINALIZAR UNA PROMOCION, (EXPIRO LA FEHA)
+	// RF8. FINALIZAR UNA PROMOCION, (EXPIRO LA FEHA)
 	// -----------------------------------------------------------------
 
-	  private final ScheduledExecutorService scheduler =   Executors.newScheduledThreadPool(1);
+	private final ScheduledExecutorService scheduler =   Executors.newScheduledThreadPool(1);
 
-	  /**
-		 * Finaliza una promocion , ya sea por q se agotaron las existencias o por que llego la fecha de finalizacion 
-		 * Adiciona entradas al log de la aplicación
-		 */
-	  public void verificarPromociones()
-	  {
-		  final Runnable verificador = new Runnable() 
-		  {
-			  public void run()
-			  {
-				  //aqui se pone el metodo 
-				  for(int i=0; i<darPromDescuento().size() ; i ++)
-				  {
-					  Date fecha = new Date();
-					 
-					  if(darPromDescuento().get(i).getFechaFin().after( fecha )  )
-					  {
-						  eliminarPromDescuento(darPromDescuento().get(i).getId());
+	/**
+	 * Finaliza una promocion , ya sea por q se agotaron las existencias o por que llego la fecha de finalizacion 
+	 * Adiciona entradas al log de la aplicación
+	 */
+	public void verificarPromociones()
+	{
+		final Runnable verificador = new Runnable() 
+		{
+			public void run()
+			{
+				//aqui se pone el metodo 
+				for(int i=0; i<darPromDescuento().size() ; i ++)
+				{
+					Date fecha = new Date();
+
+					if(darPromDescuento().get(i).getFechaFin().after( fecha )  )
+					{
+						eliminarPromDescuento(darPromDescuento().get(i).getId());
 						// cambia el estado del producto
-						  terminarPromocion(darPromDescuento().get(i).getProducto());
-					  }
-				  }
-				  
-				  for(int i=0; i<darPromDescSegUnid().size() ; i ++)
-				  {
-					  Date fecha = new Date();
-					 
-					  if(darPromDescSegUnid().get(i).getFechaFin().after( fecha ))
-					  {
-						  eliminarPromDescSegUnidPorId(darPromDescSegUnid().get(i).getId());
-						// cambia el estado del producto
-						  terminarPromocion(darPromDescSegUnid().get(i).getProducto());
-					  }
-				  }
-				  
-				  for(int i=0; i<darPromPagLleveCatidad().size() ; i ++)
-				  {
-					  Date fecha = new Date();
-					 
-					  if(darPromPagLleveCatidad().get(i).getFechaFin().after( fecha ))
-					  {
-						  eliminarPromPagLleveCatidadPorId(darPromPagLleveCatidad().get(i).getId());
-						// cambia el estado del producto
-						  terminarPromocion(darPromPagLleveCatidad().get(i).getProducto());	  
-					  }
-				  }
-				  
-				  for(int i=0; i<darPromPagueLleveUnid().size() ; i ++)
-				  {
-					  Date fecha = new Date();
-					
-					  if(darPromPagueLleveUnid().get(i).getFechaFin().after( fecha ))
-					  {
-						  eliminarPromPagLlevUnidadPorId(darPromPagueLleveUnid().get(i).getId());
-						// cambia el estado del producto
-						  terminarPromocion(darPromPagLleveCatidad().get(i).getProducto());
-					  }
-				  }
+						terminarPromocion(darPromDescuento().get(i).getProducto());
+					}
+				}
 
-			  }
-		  };
+				for(int i=0; i<darPromDescSegUnid().size() ; i ++)
+				{
+					Date fecha = new Date();
 
-		  final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 0 , 24, HOURS);
+					if(darPromDescSegUnid().get(i).getFechaFin().after( fecha ))
+					{
+						eliminarPromDescSegUnidPorId(darPromDescSegUnid().get(i).getId());
+						// cambia el estado del producto
+						terminarPromocion(darPromDescSegUnid().get(i).getProducto());
+					}
+				}
 
-		  scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, SECONDS); 
-		  }
-	  
-	   
+				for(int i=0; i<darPromPagLleveCatidad().size() ; i ++)
+				{
+					Date fecha = new Date();
+
+					if(darPromPagLleveCatidad().get(i).getFechaFin().after( fecha ))
+					{
+						eliminarPromPagLleveCatidadPorId(darPromPagLleveCatidad().get(i).getId());
+						// cambia el estado del producto
+						terminarPromocion(darPromPagLleveCatidad().get(i).getProducto());	  
+					}
+				}
+
+				for(int i=0; i<darPromPagueLleveUnid().size() ; i ++)
+				{
+					Date fecha = new Date();
+
+					if(darPromPagueLleveUnid().get(i).getFechaFin().after( fecha ))
+					{
+						eliminarPromPagLlevUnidadPorId(darPromPagueLleveUnid().get(i).getId());
+						// cambia el estado del producto
+						terminarPromocion(darPromPagLleveCatidad().get(i).getProducto());
+					}
+				}
+
+			}
+		};
+
+		final ScheduledFuture<?> beeperHandle = scheduler.scheduleWithFixedDelay(verificador, 0 , 24, HOURS);
+
+		scheduler.schedule(new Runnable() { public void run()  { beeperHandle.cancel(true); }  }  , 60 * 60, SECONDS); 
+	}
+
+
 	// -----------------------------------------------------------------
-    // VERIFICA SI LOS CARRITOS ESTAN ABANDONADOS
-    // -----------------------------------------------------------------
-  
-	  
-	  /**
-		 * Verifica si los carritos no han sido abandonados,si lo fueron devuelve los productos al estante
-		 * Adiciona entradas al log de la aplicación
-		 */
-	  private final ScheduledExecutorService scheduler2 =   Executors.newScheduledThreadPool(1);
+	// VERIFICA SI LOS CARRITOS ESTAN ABANDONADOS
+	// -----------------------------------------------------------------
 
-	  public void verificarCarritosAbandonados()
-	  {
-		  final Runnable verificador = new Runnable() 
-		  {
-			  public void run()
-			  {
-		//aqui se pone el metodo
-				  for(int i =0; i< darTodosCarritosCompras().size(); i++){
-					  if(darTodosCarritosCompras().get(i).getCliente()==null)
-					  {
-						  devolverTodosProductosAlEstante(darTodosCarritosCompras().get(i).getId());
-						  eliminarCarritoCompras(darTodosCarritosCompras().get(i).getId());
-						  
-					  }
-				  }
-			  }
-		  };
-		  
-		  
-		  final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 4, 4, MINUTES);
-		  scheduler2.schedule(new Runnable() {
-			  public void run() 
-			  {
-				  beeperHandle.cancel(true);
-			  }
-		  }, 60 * 60, SECONDS);
-	  }
-	
+
+	/**
+	 * Verifica si los carritos no han sido abandonados,si lo fueron devuelve los productos al estante
+	 * Adiciona entradas al log de la aplicación
+	 */
+	private final ScheduledExecutorService scheduler2 =   Executors.newScheduledThreadPool(1);
+
+	public void verificarCarritosAbandonados()
+	{
+		final Runnable verificador = new Runnable() 
+		{
+			public void run()
+			{
+				//aqui se pone el metodo
+				for(int i =0; i< darTodosCarritosCompras().size(); i++){
+					if(darTodosCarritosCompras().get(i).getCliente()==null)
+					{
+						devolverTodosProductosAlEstante(darTodosCarritosCompras().get(i).getId());
+						eliminarCarritoCompras(darTodosCarritosCompras().get(i).getId());
+
+					}
+				}
+			}
+		};
+
+
+		final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 4, 4, MINUTES);
+		scheduler2.schedule(new Runnable() {
+			public void run() 
+			{
+				beeperHandle.cancel(true);
+			}
+		}, 60 * 60, SECONDS);
+	}
+
 	// -----------------------------------------------------------------
 	// RF.16 ABANDONAR CARRITO DE COMPRAS
 	// -----------------------------------------------------------------
-		
-	  /**
-		 * Abandona el carrito de compras cuyo id es igual al ingresado por parametro
-		 * Adiciona entradas al log de la aplicación
-		 * @param id - el numero de identificacion del carrito a abandonar
-		 * @return El número de tuplas actualizadas
-		 */	
-		public long abandonarCarrito(long idCarrito)
-		{
-			log.info ("Abandonando carrito :" + idCarrito);
-			long resp = psa.abandonarCarrito(idCarrito);
-			log.info ("El carrito : "+ idCarrito + "ha sido abandonado" + resp + " tuplas actualizadas");
-			return resp;
-		}
+
+	/**
+	 * Abandona el carrito de compras cuyo id es igual al ingresado por parametro
+	 * Adiciona entradas al log de la aplicación
+	 * @param id - el numero de identificacion del carrito a abandonar
+	 * @return El número de tuplas actualizadas
+	 */	
+	public long abandonarCarrito(long idCarrito)
+	{
+		log.info ("Abandonando carrito :" + idCarrito);
+		long resp = psa.abandonarCarrito(idCarrito);
+		log.info ("El carrito : "+ idCarrito + "ha sido abandonado" + resp + " tuplas actualizadas");
+		return resp;
+	}
 
 	// -----------------------------------------------------------------
 	// RF.17 RECOLECTAR PRODUCTOS ABANDONADOS
 	// -----------------------------------------------------------------
-	  
-	  /**
-		 * Devuelve todos los productos de un carrito de compras a los respectivos estantes donde se encontraban
-		 * @param idCarrito - El id del carrito de compras del cual vamos a devolver los productos.
-		 * Adiciona entradas al log de la aplicación
-		 */
+
+	/**
+	 * Devuelve todos los productos de un carrito de compras a los respectivos estantes donde se encontraban
+	 * @param idCarrito - El id del carrito de compras del cual vamos a devolver los productos.
+	 * Adiciona entradas al log de la aplicación
+	 */
 	public void devolverTodosProductosAlEstante(long idCarrito)
 	{
 		//devueve todos los prodcutos en un carrito
@@ -2658,15 +2686,15 @@ public class SuperAndes {
 		{
 			//encuentra el id del estante donde se encontraba el producto
 			long idEstante = darEstanteProductoSucursal(darCarritoComprasPorId(idCarrito).getIdSucursal(), productos.get(i).getCodigoBarrasProducto());
-		
+
 			//aumenta la cantidad de productos en el estante y elimina el producto del carrito
 			aumentarCantidadProductosEnEstante(idEstante, productos.get(i).getCantidad(), productos.get(i).getCodigoBarrasProducto());
 			eliminarProductoCarrito(idCarrito,  productos.get(i).getCodigoBarrasProducto());
 		}
 	}
-	
-	
-	 /**
+
+
+	/**
 	 * Encuentra el id del estante  de la sucursal donde esta almacenado el producto
 	 * @param idSucursal - El id de la sucursal.
 	 * @param codigoBarrasProducto - El codigo de barras del prodcuto.
@@ -2677,102 +2705,102 @@ public class SuperAndes {
 		//devuelve todos los estantes de las sucursal
 		long idEstante =0;
 		List<Estante> estantes = darEstantePorSucursal(idSucursal);
-		 
+
 		for(int i=0; i< estantes.size() ; i ++)
 		{
-		// por cada estante se verifica si el producto estaba en dicho estante, si si se guarda le id
-		if( darProductoEnEstante(estantes.get(i).getId(), codigoBarrasProducto) != null)
-		{
-			idEstante = estantes.get(i).getId();
+			// por cada estante se verifica si el producto estaba en dicho estante, si si se guarda le id
+			if( darProductoEnEstante(estantes.get(i).getId(), codigoBarrasProducto) != null)
+			{
+				idEstante = estantes.get(i).getId();
+			}
+
 		}
-		
-		}
-	
+
 		return idEstante;
 	}
-	
+
 	/**
 	 * prueba del timer
 	 * Adiciona entradas al log de la aplicación
 	 */
-  private final ScheduledExecutorService scheduler3 =   Executors.newScheduledThreadPool(1);
+	private final ScheduledExecutorService scheduler3 =   Executors.newScheduledThreadPool(1);
 
-  public void prueba()
-  {
-	  final Runnable verificador = new Runnable() 
-	  {
-		  public void run()
-		  {
-	//aqui se pone el metodo
-			 System.out.println("estoy funcionando");
-				  }
-			
-	  };
-	  
-	  final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 1 , 1 , MINUTES);
-	  scheduler2.schedule(new Runnable() {
-		  public void run() 
-		  {
-			  beeperHandle.cancel(true);
-		  }
-	  }, 60*60, SECONDS);
-  }
-	
+	public void prueba()
+	{
+		final Runnable verificador = new Runnable() 
+		{
+			public void run()
+			{
+				//aqui se pone el metodo
+				System.out.println("estoy funcionando");
+			}
 
-  //-----------------------------------------------------------------
-  // METODOS DE CONSULTA
-  // -----------------------------------------------------------------
+		};
 
-  public List<Promocion> dar20promocionesMasPopulares()
-  {
-	  List<Promocion> temp = darPromociones();
-	  int inicial= temp.size();
+		final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 1 , 1 , MINUTES);
+		scheduler2.schedule(new Runnable() {
+			public void run() 
+			{
+				beeperHandle.cancel(true);
+			}
+		}, 60*60, SECONDS);
+	}
 
-	  List<Promocion> populares = new ArrayList<Promocion>();
-	  Promocion masPopular = null;
 
-	  double mayor=0;
+	//-----------------------------------------------------------------
+	// METODOS DE CONSULTA
+	// -----------------------------------------------------------------
 
-	  for(int j = 0; j< temp.size(); j++)
-	  {
-		  for(int i = 0; i< temp.size(); i++)
-		  {
-			  Date inicio = temp.get(i).getFechaInicio();
-			  Date fecha = new Date();
+	public List<Promocion> dar20promocionesMasPopulares()
+	{
+		List<Promocion> temp = darPromociones();
+		int inicial= temp.size();
 
-			  long minutos = ((Math.abs(fecha.getTime() - inicio.getTime())) / 1000) / 60;
+		List<Promocion> populares = new ArrayList<Promocion>();
+		Promocion masPopular = null;
 
-			  int vendidas = temp.get(i).getUnidadesVendidas();
+		double mayor=0;
 
-			  double relacion = (vendidas /minutos);
+		for(int j = 0; j< temp.size(); j++)
+		{
+			for(int i = 0; i< temp.size(); i++)
+			{
+				Date inicio = temp.get(i).getFechaInicio();
+				Date fecha = new Date();
 
-			  if( mayor< relacion)
-			  {
-				  mayor=relacion;
-				  masPopular = temp.get(i);
-			  }
-		  }
-		  populares.add(masPopular);
-		  temp.remove(masPopular);
+				long minutos = ((Math.abs(fecha.getTime() - inicio.getTime())) / 1000) / 60;
 
-		  if(temp.size()== inicial-20)
-		  {
-			  break;
-		  }
-	  }
+				int vendidas = temp.get(i).getUnidadesVendidas();
 
-return populares;
+				double relacion = (vendidas /minutos);
 
-}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+				if( mayor< relacion)
+				{
+					mayor=relacion;
+					masPopular = temp.get(i);
+				}
+			}
+			populares.add(masPopular);
+			temp.remove(masPopular);
+
+			if(temp.size()== inicial-20)
+			{
+				break;
+			}
+		}
+
+		return populares;
+
+	}
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -199,7 +199,6 @@ public class OrdenPedido implements VOOrdenPedido {
 		this.estado = estado;
 	}
 	
-
 	/**
 	 * Cadena de caracteres con todos los atributos de.
 	 */
@@ -212,9 +211,9 @@ public class OrdenPedido implements VOOrdenPedido {
 		return "OrdenPedido [id =" + id + ", fechaEntrega =" + fechEn 
 				+ ", fechaEsperadaEntrega =" + fechaEsperadaEntrega.toString() 
 				+ ", calificacionProveedor =" + calificacionProveedor 
+				+ ", estado=" + estado
 				+ ", proveedor =" + proveedor 
 				+ ", idSucursal =" + idSucursal 
-				+ ", estado de la orden =" + estado 
 				 + " ]";
 	}
 	

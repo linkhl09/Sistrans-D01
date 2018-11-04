@@ -77,14 +77,29 @@ class SQLOrdenPedido {
 	
 	/**
 	 * Devuele la informacion de la orden de pedido cuyo identificador es igual al ingresado por parametro
-	 * * @param id -identificador unico de la orden de pedido buscada
+	 * @param id -identificador unico de la orden de pedido buscada
 	 **/
 	public OrdenPedido darOrdenPedido(PersistenceManager pm, long id)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaOrdenPedido() + "WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaOrdenPedido() + " WHERE id = ?");
 		q.setResultClass(OrdenPedido.class);
 		q.setParameters(id);
 		return (OrdenPedido) q.executeUnique();
+	}
+	
+	/**
+	 * De vuelve orden de pedido en espera de un proveedor para cierta sucursal. Null si no existe ninguna.
+	 * @param pm - El manejador de persistencia.
+	 * @param idSucursal - El identificador de la sucursal.
+	 * @param nit - identificador del proveedor buscado.
+	 * @return El objeto OrdenPedido que se encuentra en estado "En Espera" y es del proveedor con el nit suministrado.
+	 */
+	public List<OrdenPedido> darOrdenPedidoEnEsperaPorProveedor(PersistenceManager pm, String nit, long idSucursal)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaOrdenPedido() + " WHERE proveedor = ? AND idSucursal = ? AND estado = 'En Espera'");
+		q.setResultClass(OrdenPedido.class);
+		q.setParameters(nit, idSucursal);
+		return (List<OrdenPedido>) q.executeList();
 	}
 	
 	/**
@@ -108,7 +123,6 @@ class SQLOrdenPedido {
 	public long registrarFechaLlegada(PersistenceManager pm, long id, Date fechaEntrega, double nuevaCalificacion)
 	{
 		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaOrdenPedido() + "SET fechaentrega = ? , calificacionproveedor = ? WHERE id = ?");
-
 		q.setParameters(fechaEntrega, nuevaCalificacion, id);
 		return (long) q.executeUnique();
 	}

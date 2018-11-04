@@ -87,6 +87,6 @@ public class SucursalProducto implements VOSucursalProducto{
 	public String toString()
 	{
 		return "SucursalProducto [idSucursal =" + idSucursal 
-				+ ", codigoBarrasProducto" + codigoBarrasProducto +"]";
+				+ ", codigoBarrasProducto=" + codigoBarrasProducto +"]";
 	}
 }
