@@ -18,6 +18,7 @@ import java.util.List;
 
 import javax.jdo.JDODataStoreException;
 import javax.swing.ImageIcon;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -297,11 +298,20 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 	/**
 	 * Adiciona un producto con la información dada por el usuario.
+	 * Se crea una nueva tupla de Producto en la base de datos, si se cumple todo lo necesario.
 	 */
+	@SuppressWarnings("deprecation")
 	public void adicionarProducto()
 	{
 		try
 		{
+			List<VOCategoria> categorias = superAndes.darVOCategoria();
+			String[] categoriasDisponibles = new String[categorias.size()];
+			for(int i = 0; i < categoriasDisponibles.length; i++)
+				categoriasDisponibles[i]=categorias.get(i).getNombre();
+			JComboBox<String> cbCategorias = new JComboBox<String>(categoriasDisponibles);
+			cbCategorias.addActionListener(this);
+			
 			String [] info = new String[16];
 			JTextField tFCodigoBarras = new JTextField();
 			JTextField tFNombre = new JTextField();
@@ -317,7 +327,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			JTextField tFCalidad = new JTextField();
 			JTextField tFNivelReorden = new JTextField();
 			JTextField tFFechaVencimiento = new JTextField();
-			JTextField TFcategoria = new JTextField();
 			JTextField tFEstaPromocion = new JTextField();
 			Object[] message = 
 				{
@@ -335,8 +344,9 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						"Calidad:", tFCalidad,
 						"Nivel de reorden:", tFNivelReorden,
 						"Fecha de vencimiento 'dd/mm/yyyy' (opcional):", tFFechaVencimiento,
-						"Categoria:", TFcategoria,
-						"¿Esta en promocion? (Y/N)", tFEstaPromocion
+						"Categoria:", cbCategorias,
+						"¿Esta en promocion? (Y/N)", tFEstaPromocion,
+						"Tipos Disponibles:", "TODO" 
 				};
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
@@ -356,10 +366,10 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				info[11]	=tFCalidad.getText();
 				info[12]	=tFNivelReorden.getText();
 				info[13]	=tFFechaVencimiento.getText();
-				info[14]	=TFcategoria.getText();
+				info[14]	=cbCategorias.getSelectedItem().toString();
 				info[15]	=tFEstaPromocion.getText();
 				
-				
+				System.out.println(info[14]);
 				
 				if(!info[0].equals("") && !info[1].equals("") && !info[2].equals("") && !info[3].equals("")
 						&& !info[4].equals("") && !info[6].equals("") && !info[11].equals("") && !info[12].equals("")
@@ -370,17 +380,15 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					NumberFormat formatter = new DecimalFormat("#0.0");
 					String strDouble = formatter.format(calidadSinFormato).trim().replace(',', '.');
 					double calidadDouble = Double.parseDouble(strDouble);
-					boolean estaEnPromocion = false;
-					if(info[15].equals("Y"))
-						estaEnPromocion = true;
 					
-					
+					//Conversiones generales.
 					double precioUnitario = Double.parseDouble(info[3]);
 					double precioUnidadMedida = Double.parseDouble(info[5]);
 					int cantidadPresentacion = Integer.parseInt(info[6]);
 					double peso = Double.parseDouble(info[7]);
 					double volumen = Double.parseDouble(info[9]);
 					int nivelReorden = Integer.parseInt(info[12]);
+					//Manejo de la fecha
 					Date fechaVencimiento; 
 					if(info[13].equals(""))
 						fechaVencimiento= null;
@@ -392,7 +400,9 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						fechaVencimiento = new Date(year, month, day);
 					}
 					
-					
+					boolean estaEnPromocion = false;
+					if(info[15].equals("Y"))
+						estaEnPromocion = true;
 					
 					System.out.println("valores-> precio: " + precioUnitario + " precioUM: " + precioUnidadMedida + " cantidadPr: " + cantidadPresentacion 
 							+ "\n peso: " + peso + " volumen: " + volumen + " calidad:" + calidadDouble + " nivelRO: " + nivelReorden +  " fecha: " + fechaVencimiento);
@@ -673,16 +683,19 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent pEvento)
 	{
-		String evento = pEvento.getActionCommand( );		
-		try 
+		String evento = pEvento.getActionCommand( );
+		if(!evento.equals("comboBoxChanged"))
 		{
-			Method req = InterfazSuperAndesApp.class.getMethod ( evento );			
-			req.invoke ( this );
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		} 
+			try 
+			{
+				Method req = InterfazSuperAndesApp.class.getMethod ( evento );			
+				req.invoke ( this );
+			} 
+			catch (Exception e) 
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 
 	// -----------------------------------------------------------------
