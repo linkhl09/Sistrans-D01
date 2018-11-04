@@ -93,7 +93,6 @@ INSERT INTO TIPO values('Hombre');
 INSERT INTO TIPO values('Mujer');
 
 --Poblando Tabla PRODUCTO.
---superAndes_sequence.NEXTVAL PARA USAR EL SECUENCIADOR DESDE DEVELOPER.
 INSERT INTO PRODUCTO values('AAAAAAAAAAAA1', 'Zanahoria',                   'Delta',            4710, 'Por gramos',     9.4,    1, 500, 'G', 0.05,  'm3',   4.3,    100,    NULL,           'Vegetales', 0);
 INSERT INTO PRODUCTO values('AAAAAAAAAAAA2', 'Espinaca',                    'Delta',            1290, 'Por gramos',     4.3,    1, 300, 'G', 0.05,  'm3',   3.5,    30,     NULL,           'Vegetales', 0);
 INSERT INTO PRODUCTO values('AAAAAAAAAAAA3', 'Mora',                        'BlueBerry',        5340, 'Por gramos',     10.7,   1, 500, 'G', 0.06,  'm3',   4,      15,     NULL,           'Frutas y verduras', 0);
@@ -426,7 +425,7 @@ INSERT INTO PERSONANATURAL values('99040202095','TI');
 INSERT INTO EMPRESA values('860005396','Calle 93 #11-11');--PHILIPS
 INSERT INTO EMPRESA values('860025900','KM. 3 VÍA BRICEÑO - SOPÓ');--ALPINA
 INSERT INTO EMPRESA values('800184925-9','CARRERA 72 #80-94');--ELECTROLUX
-INSERT INTO EMPRESA values('830507278-9','Km 3.5 Vía Bogotá – Siberia.');--ALGARRA S.A.
+INSERT INTO EMPRESA values('830507278-9','Km 3.5 Vía Bogotá-Siberia.');--ALGARRA S.A.
 INSERT INTO EMPRESA values('830028931-5','Carrera 7 # 113 - 43 Of 607 (Torre Samsung)');--Samsung
 INSERT INTO EMPRESA values('830077570','Calle 108 # 62-47');--Huawei
 INSERT INTO EMPRESA values('830016046','Calle 15S #19-23');--Avantel 
@@ -502,8 +501,32 @@ INSERT INTO PROVEEDORES_PRODUCTO values ('900460312-0','AAAAAAAAAAA21');
 INSERT INTO PROVEEDORES_PRODUCTO values ('123456789','AAAAAAAAAAA22');
 
 --Poblando Tabla ORDENPEDIDO.
-
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '30/10/2018', '31/10/2018' , 4, 'Entregado', '111111111', 1);
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '30/10/2018', '31/10/2018' , 4.5, 'Entregado', '111111111', 2);
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '30/10/2018', '31/10/2018' , 4.2, 'Entregado', '111111111', 4);
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '31/10/2018' , 4.4, 'Entregado', '222222222', 2);
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '20/10/2018' , 1.5, 'Entregado', '333333333', 2);
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '27/10/2018' , 2.7, 'Entregado', '444444444', );
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '01/11/2018' , 4, 'Entregado', '555555555', );
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '24/11/2018' , cal, 'Entregado', '666666666', );
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '26/10/2018' , cal, 'Entregado', '777777777', );
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '28/10/2018' , cal, 'Entregado', '888888888', );
+INSERT INTO ORDENPEDIDO values (superAndes_sequence.NEXTVAL, '31/10/2018', '07/11/2018' , cal, 'Entregado', '830047819', 2);
 --Poblando Tabla PRODUCTO_ORDENPEDIDO.
+
+INSERT INTO PRODUCTO_ORDENPEDIDO values(59, 50, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
+INSERT INTO PRODUCTO_ORDENPEDIDO values(i, c, cal, fech, prod);
 
 --Poblando Tabla PROM_DESCUENTO.
 
