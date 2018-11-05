@@ -25,6 +25,10 @@
 				{
 					"label":"Adicionar Promoción",
 					"event":"adicionarPromocion"
+				},
+				{
+					"label":"Realizar Compra",
+					"event":"realizarCompraProducto"
 				}
 			]
 		},

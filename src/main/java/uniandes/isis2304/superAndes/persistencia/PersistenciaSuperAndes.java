@@ -240,9 +240,9 @@ public class PersistenciaSuperAndes {
 		tablas.add("ORDENPEDIDO");
 		tablas.add("PRODUCTO_ORDENPEDIDO");
 		tablas.add("PROM_DESCUENTO");
-		tablas.add("PROM_PAG_LLEVE_UNID");
-		tablas.add("PROM_DESC_SEG_UNIDAD");
-		tablas.add("PROM_PAG_LLEVE_CANT");
+		tablas.add("PROM_SEGUNIDESCUENTO");
+		tablas.add("PROM_PAGLLEVEUNID");
+		tablas.add("PROM_PAGLLEVECANT");
 
 	}
 

@@ -11,7 +11,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.sql.Date;
+import java.util.Date;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
@@ -38,6 +38,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonReader;
 
+import oracle.net.aso.n;
 import uniandes.isis2304.superAndes.negocio.*;
 
 /**
@@ -423,7 +424,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					for(int i = 0; i < sucursalesDisponibles.length; i++)
 						sucursalesDisponibles[i]=sucursales.get(i).getNombre();
 					JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
-					cbCategorias.addActionListener(this);
+					cbSucursales.addActionListener(this);
 
 					int option2 = JOptionPane.showConfirmDialog(null, cbSucursales, "Inserte Sucursal del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 					if(option2 == JOptionPane.OK_OPTION)
@@ -455,6 +456,80 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		{
 			panelDatos.actualizarInterfaz("Exception!!!!: " + e.getMessage());
 		}
+	}
+
+	public void realizarCompraProducto()
+	{
+		try
+		{
+			//Información importante.
+			JTextField jTFnombreCajero = new JTextField();
+			JTextField jTFCantidad = new JTextField();
+
+			//Lista de productos para comprar uno solo.
+			List<VOProducto> productos = superAndes.darVOProducto();
+			String[] productosDisponibles = new String[productos.size()];
+			for(int i = 0; i < productosDisponibles.length; i++)
+				productosDisponibles[i]=productos.get(i).getCodigoBarras() + "-" + productos.get(i).getNombre();
+			JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
+			cbProductos.addActionListener(this);
+
+			//AHORA SE ASOCIA EL PRODUCTO A UNA SUCURSAL.
+			List<VOSucursal> sucursales = superAndes.darVOSucursal();
+			String[] sucursalesDisponibles = new String[sucursales.size()];
+			for(int i = 0; i < sucursalesDisponibles.length; i++)
+				sucursalesDisponibles[i]=sucursales.get(i).getNombre();
+			JComboBox<String> cbSucursales = new JComboBox<String>(sucursalesDisponibles);
+			cbSucursales.addActionListener(this);
+
+			Object[] message = 
+				{
+						"Ingrese nombre del cajero:", jTFnombreCajero,
+						"Seleccione sucursal de la compra:", cbSucursales,
+						"Seleccione el producto que desea comprar:", cbProductos,
+						"Ingrese la cantidad de este producto:", jTFCantidad
+				};
+			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En hacer compra de producto \n\n";
+				
+				String codigoBarrasProducto = cbProductos.getSelectedItem().toString().split("-")[0];
+				
+				String nombreCajero = jTFnombreCajero.getText();
+				String cantidadStr = jTFCantidad.getText();
+				if(!nombreCajero.equals("") && !cantidadStr.equals(""))
+				{
+					long idSucursal = superAndes.darSucursalPorNombre(cbSucursales.getSelectedItem().toString()).getId();
+					String direccion = superAndes.darSucursalPorId(idSucursal).getDireccion();
+					int cantidad = Integer.parseInt(cantidadStr);
+					Date fecha = new Date();
+
+					
+					double valorUnitario = superAndes.darProducto(codigoBarrasProducto).getPrecioUnitario();
+					double valorTotal = valorUnitario * cantidad;
+					int puntos = (int) valorTotal/100;
+					
+					VOFactura factura = superAndes.adicionarFactura(direccion,fecha , nombreCajero, valorTotal, true, puntos , clienteActual, idSucursal);
+					long estante = superAndes.darEstanteProductoSucursal(idSucursal, codigoBarrasProducto);
+					superAndes.quitarProductosEstante(estante, cantidad, codigoBarrasProducto);
+					superAndes.adicionarFacturaProducto(factura.getNumero(), cantidad, codigoBarrasProducto);
+					
+				}
+				
+				
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch(Exception e)
+		{
+			panelDatos.actualizarInterfaz("Exception!!!!: " + e.getMessage());
+		}
+
+
 
 	}
 
@@ -591,7 +666,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					"Nombre:", jTFnombre,
 					"Segmentación de mercado:", jTFsegmentacionMercado,
 					"Tamaño:", jTFtamanio
-		};
+			};
 			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
 			{
@@ -636,21 +711,12 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 	/**
 	 * Adiciona una Bodega con la información dada por el usuario.
-	 * * @param pm - El manejador de persistencia.
-	 * @param id - El identificador de la bodega.
-	 * @param capacidadVol - Capacidad númerica del volumen de la bodega.
-	 * @param capacidadPeso - Capacidad númerica del peso de la bodega.
-	 * @param tipo - Tipo de los objetos que puede almacenar la bodega.
-	 * @param idSucursal - id de la sucursal a la que pertenece la bodega.
-	 PersistenceManager pm, long id, double capacidadVol, 
-			double capacidadPeso, String tipo, long idSucursal
 	 * Se crea una nueva tupla de Bodega en la base de datos. Si se cumplen las condiciones necesarias.
-	 */
+	 */	
 	public void adicionarBodega()
 	{
 		try
 		{
-
 			//Lista de posibles categorias de la bodega.
 			List<VOCategoria> categorias = superAndes.darVOCategoria();
 			String[] categoriasDisponibles = new String[categorias.size()];
@@ -678,7 +744,9 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					"Tipo:", cbTipos,
 					"Sucursal:",cbSucursales
 			};
-			
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
 				String resultado = "En adicionar Bodega: \n\n";
 				infoBodega[0] = jTFcapacidadVol.getText();
 				infoBodega[1] = jTFcapacidadPeso.getText();
@@ -693,14 +761,17 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						throw new Exception("No se pudo agregar la bodega.");
 					resultado += "Bodega adicionada correctamente: " + bodega.toString();
 					resultado += "\n Operación terminada.";
-
 				}
 				else
 				{
 					resultado+= "No se pueden dejar campos vacios!";
 				}
 				panelDatos.actualizarInterfaz(resultado);
-			
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
 		}
 		catch (Exception e) 
 		{
@@ -714,7 +785,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarEstante()
 	{
-try
+		try
 		{
 			//Lista de posibles categorias del estante.
 			List<VOCategoria> categorias = superAndes.darVOCategoria();
@@ -776,7 +847,6 @@ try
 		{
 			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
 		}
-
 	}
 
 
@@ -1009,7 +1079,7 @@ try
 		if(!clienteActual.equals("ADMINISTRADOR"))
 		{
 			menuBar.getComponentAtIndex(0).setEnabled(false);
-			menuBar.getComponentAtIndex(1).setEnabled(false);
+			//menuBar.getComponentAtIndex(1).setEnabled(false);
 			menuBar.getComponentAtIndex(2).setEnabled(false);
 			menuBar.getComponentAtIndex(4).setEnabled(false);
 			menuBar.getComponentAtIndex(5).setEnabled(false);
@@ -1017,6 +1087,8 @@ try
 			menuBar.getComponentAtIndex(7).setEnabled(false);
 		}
 	}
+
+
 
 	// -----------------------------------------------------------------
 	// Métodos administrativos
