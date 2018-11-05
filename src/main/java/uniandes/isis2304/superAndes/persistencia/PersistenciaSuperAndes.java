@@ -1,6 +1,7 @@
 package uniandes.isis2304.superAndes.persistencia;
 
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
@@ -1203,6 +1204,36 @@ public class PersistenciaSuperAndes {
 	{
 		return sqlSucursal.darSucursalPorId(pmf.getPersistenceManager(), id);
 	}
+	
+	/**
+	 * RFC1 MUESTRA EL DINERO RECOLECTADO POR VENTAS EN CADA SUCURSAL DURANTE UN PERIODO 
+	  DE TIEMPO Y EN EL AÑO CORRIDO
+	 * @return La lista de parejas de objetos, construidos con base en las tuplas de la tabla BEBEDOR y VISITAN. 
+	 * El primer elemento de la pareja es un el valor total pagado por la sucursal; 
+	 * el segundo elemento es el identificador de la sucursal
+	 */
+	 
+	public  List<long[]>  darDineroRecolectadoSucursales(  Date fechaInicio, Date fechaFin){
+	
+		List<long []> respuesta = new LinkedList <long []> ();
+		List<Object[]> tuplas = sqlSucursal.darDineroRecolectadoSucursales(pmf.getPersistenceManager(),fechaInicio, fechaFin);
+		for ( Object [] tupla : tuplas)
+        {
+			long [] datos = new long [2] ;
+		   
+			long valorTotal = ((BigDecimal) tupla [0]).longValue ();
+			long idSucursal = ((BigDecimal) tupla [1]).longValue ();
+			
+			datos [0] = valorTotal;
+			datos [1] = idSucursal;	
+			
+			respuesta.add(datos);
+        }
+
+		return respuesta;
+	}
+		
+	
 
 
 	// -----------------------------------------------------------------
