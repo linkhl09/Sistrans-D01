@@ -22,5 +22,3 @@ select * from PRODUCTO_ORDENPEDIDO;
 
 
 select * from ordenPedido Where proveedor = '830047819' AND estado = 'En Espera' AND idSucursal = 1;
-
-

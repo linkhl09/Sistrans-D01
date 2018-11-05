@@ -1,0 +1,9 @@
+--RFC2
+--Encuentra las 20 promciones mas populares.
+	
+SELECT * FROM (SELECT RELACION , ID
+FROM ( SELECT  TRUNC((SELECT SYSDATE FROM DUAL)   - FECHAINICIAL)  AS RELACION, ID
+FROM prom_descuento)
+GROUP BY RELACION , ID
+ORDER BY RELACION DESC)
+WHERE rownum between 1 and 20 ;
