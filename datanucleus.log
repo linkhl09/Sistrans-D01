@@ -8359,3 +8359,663 @@ With the Partitioning, OLAP, Advanced Analytics and Real Application Testing opt
 11:26:07,039 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Vegetales]
 11:26:07,039 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1aca2a7 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@8ab68c, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
 >>>>>>> 576001ddedf0933cbdbe242dadec5c9a107a18bd
+20:54:47,517 (main) DEBUG [DataNucleus.General] - Using PluginRegistry org.datanucleus.plugin.NonManagedPluginRegistry
+20:54:47,543 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.api.jdo version 5.1.7 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar.
+20:54:47,557 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-api-jdo-5.1.7.jar!/plugin.xml.
+20:54:47,564 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar.
+20:54:47,566 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-core-5.1.10.jar!/plugin.xml.
+20:54:47,572 (main) DEBUG [DataNucleus.General] - Registering bundle org.datanucleus.store.rdbms version 5.1.10 at URL file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteración2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar.
+20:54:47,579 (main) DEBUG [DataNucleus.General] - Leyendo extension-points y extensiones del archivo de plug-in jar:file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/lib/datanucleus-rdbms-5.1.10.jar!/plugin.xml.
+20:54:47,599 (main) DEBUG [DataNucleus.MetaData] - Analizando el MetaData "file:/A:/Universidad/4toSemestre/Sistrans/Iteraciones/Iteraci%c3%b3n2/Proyecto%20eclipse/Sistrans-D01/bin/META-INF/persistence.xml" con handler "persistence" (validar="false")
+20:54:47,615 (main) DEBUG [DataNucleus.Persistence] - Tipos de Java inicializando ...
+20:54:47,672 (main) DEBUG [DataNucleus.Persistence] - Soporte para tipos de Java listo : tipos soportados = [B, [C, [D, [F, [I, [J, [Ljava.lang.Boolean;, [Ljava.lang.Byte;, [Ljava.lang.Character;, [Ljava.lang.Double;, [Ljava.lang.Enum;, [Ljava.lang.Float;, [Ljava.lang.Integer;, [Ljava.lang.Long;, [Ljava.lang.Number;, [Ljava.lang.Object;, [Ljava.lang.Short;, [Ljava.lang.String;, [Ljava.math.BigDecimal;, [Ljava.math.BigInteger;, [Ljava.util.Date;, [Ljava.util.Locale;, [S, [Z, boolean, byte, char, double, float, int, java.awt.Color, java.awt.image.BufferedImage, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Class, java.lang.Double, java.lang.Enum, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Number, java.lang.Short, java.lang.String, java.lang.StringBuffer, java.lang.StringBuilder, java.math.BigDecimal, java.math.BigInteger, java.net.URI, java.net.URL, java.sql.Date, java.sql.Time, java.sql.Timestamp, java.time.Duration, java.time.Instant, java.time.LocalDate, java.time.LocalDateTime, java.time.LocalTime, java.time.MonthDay, java.time.OffsetDateTime, java.time.OffsetTime, java.time.Period, java.time.Year, java.time.YearMonth, java.time.ZonedDateTime, java.time.ZoneId, java.time.ZoneOffset, java.util.ArrayList, java.util.Arrays$ArrayList, java.util.BitSet, java.util.Calendar, java.util.Collection, java.util.Currency, java.util.Date, java.util.GregorianCalendar, java.util.HashMap, java.util.HashSet, java.util.Hashtable, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.LinkedList, java.util.List, java.util.Locale, java.util.Map, java.util.Optional, java.util.PriorityQueue, java.util.Properties, java.util.Queue, java.util.Set, java.util.SortedMap, java.util.SortedSet, java.util.Stack, java.util.TimeZone, java.util.TreeMap, java.util.TreeSet, java.util.UUID, java.util.Vector, long, short
+20:54:47,673 (main) DEBUG [DataNucleus.Persistence] - Inicializando TypeConverters ...
+20:54:47,711 (main) DEBUG [DataNucleus.Persistence] - TypeConverters listo
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for byte[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for char[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for double[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for float[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for int[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for long[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigDecimal; to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for [Ljava.math.BigInteger; to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for short[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for boolean[] to : java.nio.ByteBuffer
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.Color to : java.lang.String,int[]
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.awt.image.BufferedImage to : java.nio.ByteBuffer,byte[]
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.io.Serializable to : java.lang.String,java.nio.ByteBuffer,byte[]
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Boolean to : java.lang.Integer,java.lang.Character
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Character to : java.lang.String
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Class to : java.lang.String
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Integer to : java.lang.String
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.Long to : java.lang.String
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuffer to : java.lang.String
+20:54:47,712 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.lang.StringBuilder to : java.lang.String
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigDecimal to : java.lang.String,java.lang.Double
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.math.BigInteger to : java.lang.String,java.lang.Long
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URI to : java.lang.String
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.net.URL to : java.lang.String
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Date to : java.lang.String,java.util.Date,java.lang.Long
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Time to : java.lang.String,java.util.Date,java.lang.Long
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.sql.Timestamp to : java.lang.String,java.util.Date,java.lang.Long
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Duration to : java.lang.String,java.lang.Long,java.lang.Double
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Instant to : java.lang.String,java.util.Date,java.lang.Long,java.sql.Timestamp
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDate to : java.lang.String,java.util.Date,java.sql.Date
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.LocalTime to : java.lang.String,java.sql.Time,java.util.Date,java.lang.Long
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.MonthDay to : java.lang.String,java.util.Date,java.sql.Date,int[]
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetDateTime to : java.lang.String,java.util.Date,java.sql.Timestamp
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.OffsetTime to : java.lang.String,java.sql.Time,java.lang.Long
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Period to : java.lang.String,int[]
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.Year to : java.lang.String,java.lang.Integer
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.YearMonth to : java.lang.String,java.util.Date,java.sql.Date,int[]
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZonedDateTime to : java.lang.String,java.sql.Timestamp
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneId to : java.lang.String
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.time.ZoneOffset to : java.lang.String
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.BitSet to : java.lang.String
+20:54:47,713 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Calendar to : java.lang.String,[Ljava.lang.Object;,java.util.Date,java.sql.Timestamp
+20:54:47,714 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Currency to : java.lang.String
+20:54:47,714 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Date to : java.lang.String,java.lang.Long
+20:54:47,714 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.Locale to : java.lang.String
+20:54:47,714 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.TimeZone to : java.lang.String
+20:54:47,714 (main) DEBUG [DataNucleus.Persistence] - TypeConverter(s) available for java.util.UUID to : java.lang.String
+20:54:47,714 (main) DEBUG [DataNucleus.MetaData] - MetaDataManager : Input=(XML,Annotations), XML-Validation=false, XML-Suffices=(persistence=*.jdo, orm=orm, query=*.jdoquery) mapping-name=oracle, JDO-listener=false
+20:54:47,714 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata del persistence-unit "SuperAndes" ...
+20:54:47,714 (main) DEBUG [DataNucleus.MetaData] - MetaData Management : Carga de Metadata ya ha terminado
+20:54:47,716 (main) DEBUG [DataNucleus.Datastore] - Creating StoreManager for datastore
+20:54:47,888 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "tx" con data source de tipo dbcp2-builtin
+20:54:47,888 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones transaccionales bajo el nombre "rdbms/tx"
+20:54:47,888 (main) DEBUG [DataNucleus.Connection] - Registrado la factoria de connecciones nontransaccionales bajo el nombre "rdbms/nontx"
+20:54:47,913 (main) DEBUG [DataNucleus.Connection] - Creado ConnectionPool "nontx" con data source de tipo dbcp2-builtin
+20:54:49,357 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=null, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx"
+20:54:49,693 (main) DEBUG [DataNucleus.Datastore] - No Soportando el tipo RDBMS de Java java.lang.Boolean, jdbc-type=BOOLEAN
+20:54:49,693 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "[B" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.File" con jdbc-types=[LONGVARBINARY], sql-types=[LONGVARBINARY] y defecto (jdbc-type=LONGVARBINARY, sql-type=LONGVARBINARY)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.io.Serializable" con jdbc-types=[BLOB, VARBINARY, LONGVARBINARY], sql-types=[BLOB, VARBINARY, LONGVARBINARY] y defecto (jdbc-type=BLOB, sql-type=BLOB)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Boolean" con jdbc-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT], sql-types=[NUMERIC, SMALLINT, CHAR, BIT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Byte" con jdbc-types=[NUMERIC, SMALLINT, TINYINT], sql-types=[NUMERIC, SMALLINT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Character" con jdbc-types=[NUMERIC, CHAR, INTEGER], sql-types=[NUMERIC, CHAR, INTEGER] y defecto (jdbc-type=CHAR, sql-type=CHAR)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Double" con jdbc-types=[FLOAT, NUMERIC, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+20:54:49,694 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Float" con jdbc-types=[FLOAT, NUMERIC, REAL, DECIMAL, DOUBLE], sql-types=[FLOAT, NUMBER, REAL, DECIMAL, DOUBLE] y defecto (jdbc-type=FLOAT, sql-type=FLOAT)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Integer" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Long" con jdbc-types=[NUMERIC, SMALLINT, BIGINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, BIGINT, INT, TINYINT] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.Short" con jdbc-types=[NUMERIC, SMALLINT, TINYINT, INTEGER], sql-types=[NUMERIC, NUMBER, SMALLINT, TINYINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.lang.String" con jdbc-types=[XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR], sql-types=[NVARCHAR2, XMLTYPE, BLOB, LONGVARCHAR, CLOB, VARCHAR, CHAR, BIGINT, NVARCHAR, NCHAR] y defecto (jdbc-type=VARCHAR, sql-type=VARCHAR)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigDecimal" con jdbc-types=[NUMERIC, DECIMAL], sql-types=[NUMERIC, NUMBER, DECIMAL] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.math.BigInteger" con jdbc-types=[NUMERIC], sql-types=[NUMERIC, NUMBER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, BIGINT] y defecto (jdbc-type=DATE, sql-type=DATE)
+20:54:49,695 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Time" con jdbc-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIME, sql-type=TIME)
+20:54:49,696 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.sql.Timestamp" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+20:54:49,696 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "java.util.Date" con jdbc-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT], sql-types=[DATE, TIMESTAMP, VARCHAR, CHAR, TIME, BIGINT] y defecto (jdbc-type=TIMESTAMP, sql-type=TIMESTAMP)
+20:54:49,696 (main) DEBUG [DataNucleus.Datastore] - Soporte de RDBMS configurado para el tipo "org.datanucleus.identity.DatastoreId" con jdbc-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER], sql-types=[NUMERIC, VARCHAR, CHAR, BIGINT, INTEGER] y defecto (jdbc-type=NUMERIC, sql-type=NUMERIC)
+20:54:49,746 (main) DEBUG [DataNucleus.Datastore] - ======================= Datastore =========================
+20:54:49,746 (main) DEBUG [DataNucleus.Datastore] - StoreManager : "rdbms" (org.datanucleus.store.rdbms.RDBMSStoreManager)
+20:54:49,746 (main) DEBUG [DataNucleus.Datastore] - Datastore : read-write
+20:54:49,746 (main) DEBUG [DataNucleus.Datastore] - Schema Control : AutoCreate(None), Validate(None)
+20:54:49,746 (main) DEBUG [DataNucleus.Datastore] - Schema : NamingFactory=datanucleus2 identifierCase=null
+20:54:49,746 (main) DEBUG [DataNucleus.Datastore] - Query Languages : JDOQL, JPQL, STOREDPROC, SQL
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - Queries : Timeout=0
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - Datastore Adapter : org.datanucleus.store.rdbms.adapter.OracleAdapter
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - Datastore : name="Oracle" version="Oracle Database 12c Enterprise Edition Release 12.1.0.2.0 - 64bit Production
+With the Partitioning, OLAP, Advanced Analytics and Real Application Testing options"
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - Datastore Driver : name="Oracle JDBC driver" version="12.2.0.1.0"
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - Primary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+20:54:49,747 (main) DEBUG [DataNucleus.Datastore] - Secondary Connection Factory : URL[jdbc:oracle:thin:@fn3.oracle.virtual.uniandes.edu.co:1521:prod]
+20:54:49,748 (main) DEBUG [DataNucleus.Datastore] - Datastore Identifiers : factory="datanucleus2" case=UPPERCASE schema=ISIS2304A271820
+20:54:49,748 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Cases : "MixedCase" UPPERCASE "MixedCase-Sensitive" 
+20:54:49,749 (main) DEBUG [DataNucleus.Datastore] - Supported Identifier Lengths (max) : Table=30 Column=30 Constraint=30 Index=30 Delimiter="
+20:54:49,749 (main) DEBUG [DataNucleus.Datastore] - Support for Identifiers in DDL : catalog=false schema=true
+20:54:49,749 (main) DEBUG [DataNucleus.Datastore] - Datastore : checkTableViewExistence, rdbmsConstraintCreateMode=DataNucleus, initialiseColumnInfo=ALL
+20:54:49,749 (main) DEBUG [DataNucleus.Datastore] - Support Statement Batching : yes (max-batch-size=50)
+20:54:49,750 (main) DEBUG [DataNucleus.Datastore] - Queries : Results direction=forward, type=forward-only, concurrency=read-only
+20:54:49,750 (main) DEBUG [DataNucleus.Datastore] - Java-Types : string-default-length=255
+20:54:49,750 (main) DEBUG [DataNucleus.Datastore] - JDBC-Types : NCLOB, NCHAR, [id=2007], REF, CLOB, BLOB, ARRAY, STRUCT, DATE, TIME, TIMESTAMP, VARCHAR, LONGVARCHAR, VARBINARY, LONGVARBINARY, BIGINT, TINYINT, BIT, NVARCHAR, [id=-101], CHAR, [id=-103], NUMERIC, [id=-102], DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE, [id=-104]
+20:54:49,750 (main) DEBUG [DataNucleus.Datastore] - ===========================================================
+20:54:49,750 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a21078 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@2bb6e0, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:54:49,752 (main) DEBUG [DataNucleus.Datastore] - StoreManager now created
+20:54:49,757 (main) DEBUG [DataNucleus.Persistence] - Started pool of ExecutionContext (maxPool=20, reaperThread=false)
+20:54:49,771 (main) DEBUG [DataNucleus.Persistence] - ================= NucleusContext ===============
+20:54:49,771 (main) DEBUG [DataNucleus.Persistence] - DataNucleus Context : Versión: "5.1.10" con JRE "1.8.0_112" en "Windows 10"
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - Persistence API : JDO
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - Persistence-Unit : SuperAndes
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - Plugin Registry : org.datanucleus.plugin.NonManagedPluginRegistry
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - ClassLoading : default
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - Persistence : pm-singlethreaded, nontransactional-read, nontransactional-write, reachability-at-commit, copy-on-attach, managed-relations(checked), deletion-policy=JDO2, serverTimeZone=America/Bogota
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - Transactions : type=RESOURCE_LOCAL, mode=datastore, isolation=read-committed
+20:54:49,772 (main) DEBUG [DataNucleus.Persistence] - ValueGeneration : txn-isolation=read-committed connection=New
+20:54:49,773 (main) DEBUG [DataNucleus.Persistence] - Cache : Level1 (soft), Level2 (soft, mode=UNSPECIFIED), QueryResults (soft), Collections/Maps 
+20:54:49,773 (main) DEBUG [DataNucleus.Persistence] - ================================================
+20:54:49,850 (main) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1d76cb5" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@136fa8d"
+20:54:49,871 (main) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT correoElectronico FROM CLIENTE"
+20:54:49,882 (main) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1c79729 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@f6515b, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:54:49,917 (main) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@eb2b70" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@f6515b"
+20:54:49,922 (main) DEBUG [DataNucleus.Datastore.Native] - SELECT correoElectronico FROM CLIENTE
+20:54:49,936 (main) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 14 ms
+20:54:49,942 (main) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1c79729 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@f6515b, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:54:49,960 (main) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@af4467d8" como la conneccion va a cerrar o cometer
+20:54:49,998 (main) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1c79729 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@f6515b, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:55:03,765 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@65c04f" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@340562"
+20:55:03,767 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=1183408405-1, enlisted resources=[]]
+20:55:03,767 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@65c04f (optimistic=false)
+20:55:03,767 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (?, ? , ?)"
+20:55:04,081 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@683d47 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a3e031, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+20:55:04,082 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@160946c, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=1183408405-1, enlisted resources=[]]
+20:55:04,083 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@cc52e2" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a3e031"
+20:55:04,083 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PROVEEDOR (nit, nombre, calificacionCalidad) VALUES (<'123'>, <'prueba'> , <1.1>)
+20:55:04,109 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 26 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@cc52e2"
+20:55:04,109 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@cc52e2"
+20:55:04,110 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@65c04f
+20:55:04,110 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+20:55:04,120 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+20:55:04,121 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+20:55:04,121 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+20:55:04,121 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=1183408405-1, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@160946c]]
+20:55:04,121 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@683d47 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a3e031, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+20:55:04,137 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@683d47 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a3e031, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+20:55:04,158 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 48 ms
+20:55:04,161 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@65c04f" se cerró
+20:55:06,324 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@65c04f" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@11f03de"
+20:55:06,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM CATEGORIA"
+20:55:06,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@7b7640 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@15a2de4, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:55:06,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@b2d522" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@15a2de4"
+20:55:06,326 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM CATEGORIA
+20:55:06,343 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 17 ms
+20:55:06,343 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@7b7640 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@15a2de4, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:55:06,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@d7b6e0" como la conneccion va a cerrar o cometer
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Aseo]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Bebidas]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cereales]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Congelados]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cuidado Personal]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Frutas y verduras]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Juguetes]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Lipidos]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Mascotas]
+20:55:06,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Ropa]
+20:55:06,377 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Vegetales]
+20:55:06,377 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@7b7640 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@15a2de4, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:55:23,570 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@607dbd" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@1a0a786"
+20:55:23,570 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=1183408405-2, enlisted resources=[]]
+20:55:23,570 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@607dbd (optimistic=false)
+20:55:23,570 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PRODUCTO (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, ESTAPROMOCION) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+20:55:23,571 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@e65c70 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a47bd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+20:55:23,571 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@1190d3f, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=1183408405-2, enlisted resources=[]]
+20:55:23,571 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@245bcb" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a47bd"
+20:55:23,571 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PRODUCTO (codigobarras, nombre, marca, preciounitario, presentacion, preciounidadmedida, cantidadpresentacion, peso, unidadmedidapeso, volumen, unidadmedidavolumen, calidad, nivelreorden, fechavencimiento, categoria, ESTAPROMOCION) VALUES (<'bbbbbbbbbbbbb'>, <'1'>, <'1'>, <1.0>, <'1'>, <1.0>, <1>, <1.0>, <'1'>, <1.0>, <'1'>, <1.0>, <1>, <null>, <'Aseo'>, <false>)
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 19 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@245bcb"
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@245bcb"
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@607dbd
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=1183408405-2, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@1190d3f]]
+20:55:23,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@e65c70 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a47bd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+20:55:23,608 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@e65c70 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a47bd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+20:55:23,635 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 45 ms
+20:55:23,637 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@607dbd" se cerró
+20:55:23,639 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@607dbd" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@b7d65d"
+20:55:23,640 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM SUCURSAL"
+20:55:23,640 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@17ef6b7 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@10a0a90, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:55:23,641 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@1b925d2" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@10a0a90"
+20:55:23,641 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM SUCURSAL
+20:55:23,670 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 29 ms
+20:55:23,670 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@17ef6b7 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@10a0a90, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:55:23,711 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@a4bca062" como la conneccion va a cerrar o cometer
+20:55:23,711 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:55:23,712 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:55:23,713 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:55:23,713 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:55:23,713 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:55:23,714 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:55:23,715 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:55:23,715 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:55:23,715 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:55:23,715 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:55:23,715 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:55:23,716 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:55:23,717 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:55:23,717 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:55:23,717 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:55:23,717 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:55:23,717 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:55:23,717 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:55:23,718 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:55:23,719 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:55:23,719 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:55:23,719 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:55:23,719 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:55:23,719 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:55:23,719 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:55:23,720 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:55:23,721 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:55:23,721 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@17ef6b7 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@10a0a90, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:55:26,521 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1643713" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@11b9769"
+20:55:26,521 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM SUCURSAL WHERE nombre = ?"
+20:55:26,521 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a16a34 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1871afc, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:55:26,522 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@c797a" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1871afc"
+20:55:26,522 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM SUCURSAL WHERE nombre = <'Sucursal 2'>
+20:55:26,547 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 25 ms
+20:55:26,547 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a16a34 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1871afc, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:55:26,565 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@4067dabc" como la conneccion va a cerrar o cometer
+20:55:26,565 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:55:26,565 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:55:26,566 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:55:26,567 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:55:26,567 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:55:26,567 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:55:26,567 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1a16a34 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1871afc, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:55:26,588 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@1ad919c"
+20:55:26,589 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=1183408405-3, enlisted resources=[]]
+20:55:26,589 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7 (optimistic=false)
+20:55:26,589 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO SUCURSAL_PRODUCTO (idsucursal, codigoProducto) VALUES (?, ?)"
+20:55:26,589 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1006e73 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@802a7e, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+20:55:26,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@1528787, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=1183408405-3, enlisted resources=[]]
+20:55:26,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@5719a8" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@802a7e"
+20:55:26,590 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO SUCURSAL_PRODUCTO (idsucursal, codigoProducto) VALUES (<2>, <'bbbbbbbbbbbbb'>)
+20:55:26,614 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 24 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@5719a8"
+20:55:26,614 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@5719a8"
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=1183408405-3, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@1528787]]
+20:55:26,615 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1006e73 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@802a7e, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+20:55:26,631 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1006e73 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@802a7e, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+20:55:26,652 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 38 ms
+20:55:26,653 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se cerró
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@429ac9"
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=1183408405-4, enlisted resources=[]]
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7 (optimistic=false)
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO PERSONANATURAL (documento, tipodocumento) VALUES (?, ?)"
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1b5b7bc [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@17feb51, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@66f9b0, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=1183408405-4, enlisted resources=[]]
+20:55:44,850 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1923571" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@17feb51"
+20:55:44,851 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO PERSONANATURAL (documento, tipodocumento) VALUES (<'123123'>, <'CC'>)
+20:55:44,870 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 19 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1923571"
+20:55:44,870 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1923571"
+20:55:44,870 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO CLIENTE (correoelectronico, nombre, puntos, documentopn) VALUES (?, ?, 0, ? )"
+20:55:44,871 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1c17f31" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@17feb51"
+20:55:44,871 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO CLIENTE (correoelectronico, nombre, puntos, documentopn) VALUES (<'asdas'>, <'asdasd'>, 0, <'123123'> )
+20:55:44,903 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 32 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1c17f31"
+20:55:44,903 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@1c17f31"
+20:55:44,903 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7
+20:55:44,904 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+20:55:44,904 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+20:55:44,904 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+20:55:44,904 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+20:55:44,904 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=1183408405-4, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@66f9b0]]
+20:55:44,904 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1b5b7bc [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@17feb51, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+20:55:44,926 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1b5b7bc [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@17feb51, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+20:55:44,946 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 43 ms
+20:55:44,949 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se cerró
+20:55:53,730 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@1f9bb2"
+20:55:53,730 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=1183408405-5, enlisted resources=[]]
+20:55:53,730 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7 (optimistic=false)
+20:55:53,731 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO EMPRESA (nit, direccion) VALUES (?, ?)"
+20:55:53,731 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@12769e0 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1afb9bd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+20:55:53,731 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@144751e, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=1183408405-5, enlisted resources=[]]
+20:55:53,731 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@f2e8a7" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1afb9bd"
+20:55:53,731 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO EMPRESA (nit, direccion) VALUES (<'adsd'>, <'asdasd'>)
+20:55:53,753 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 21 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@f2e8a7"
+20:55:53,753 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@f2e8a7"
+20:55:53,753 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO CLIENTE (correoelectronico, nombre, puntos, empresa) VALUES (?, ?, 0, ?)"
+20:55:53,753 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@68d015" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1afb9bd"
+20:55:53,753 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO CLIENTE (correoelectronico, nombre, puntos, empresa) VALUES (<'sadasd'>, <'adssa'>, 0, <'adsd'>)
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 31 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@68d015"
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@68d015"
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=1183408405-5, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@144751e]]
+20:55:53,784 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@12769e0 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1afb9bd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+20:55:53,807 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@12769e0 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1afb9bd, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+20:55:53,823 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 39 ms
+20:55:53,825 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se cerró
+20:56:14,978 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@15f0309"
+20:56:14,978 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transaction created [DataNucleus Transaction, ID=1183408405-6, enlisted resources=[]]
+20:56:14,978 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción empezada para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7 (optimistic=false)
+20:56:14,979 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@74d883" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@6d37ef"
+20:56:14,979 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT superAndes_sequence.nextval FROM DUAL"
+20:56:14,979 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@145142d [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1ef6506, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:14,979 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@cfa9b" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1ef6506"
+20:56:14,979 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT superAndes_sequence.nextval FROM DUAL
+20:56:15,007 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 28 ms
+20:56:15,007 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@145142d [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1ef6506, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:15,023 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@54db2d45" como la conneccion va a cerrar o cometer
+20:56:15,023 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@145142d [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1ef6506, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:56:15,045 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "INSERT INTO SUCURSAL (id, direccion, ciudad, nombre, segmentacionmercado, tamanio) VALUES (?, ?, ?, ?, ?, ?)"
+20:56:15,045 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@148de70 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d72fe0, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" en resource "tx" con isolación "read-committed" y auto-commit=false
+20:56:15,045 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Running enlist operation on resource: org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@730eb0, error code TMNOFLAGS and transaction [DataNucleus Transaction, ID=1183408405-6, enlisted resources=[]]
+20:56:15,046 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@79ed46" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d72fe0"
+20:56:15,046 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - INSERT INTO SUCURSAL (id, direccion, ciudad, nombre, segmentacionmercado, tamanio) VALUES (<81>, <'aa'>, <'aa'>, <'aa'>, <'aa'>, <2>)
+20:56:15,073 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Persist] - SQL Tiempo de cumplir = 27 ms (numero de lineas cambiado = 1) con el PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@79ed46"
+20:56:15,073 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Cerrando PreparedStatement "org.datanucleus.store.rdbms.ParamLoggingPreparedStatement@79ed46"
+20:56:15,073 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Haciendo commit de la transaacción para el ExecutionContext org.datanucleus.ExecutionContextImpl@c3f3d7
+20:56:15,073 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() empezado con flush ordenado - 0 objetos registrados
+20:56:15,073 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext.internalFlush() terminado
+20:56:15,073 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : EMPIEZA
+20:56:15,074 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - Persistence-By-Reachability (commit) : TERMINADO
+20:56:15,074 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Committing [DataNucleus Transaction, ID=1183408405-6, enlisted resources=[org.datanucleus.store.rdbms.ConnectionFactoryImpl$EmulatedXAResource@730eb0]]
+20:56:15,074 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@148de70 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d72fe0, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]"
+20:56:15,100 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@148de70 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d72fe0, commitOnRelease=false, closeOnRelease=false, closeOnTxnEnd=true]" 
+20:56:15,115 (AWT-EventQueue-0) DEBUG [DataNucleus.Transaction] - Transacción committed en 42 ms
+20:56:15,115 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se cerró
+20:56:18,628 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@c3f3d7" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@1a89d5"
+20:56:18,628 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM CATEGORIA"
+20:56:18,628 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1bc4f39 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a68d25, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:18,629 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@74fd45" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a68d25"
+20:56:18,629 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM CATEGORIA
+20:56:18,650 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 21 ms
+20:56:18,650 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1bc4f39 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a68d25, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:18,665 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@d7b6e0" como la conneccion va a cerrar o cometer
+20:56:18,666 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Aseo]
+20:56:18,666 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Bebidas]
+20:56:18,666 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cereales]
+20:56:18,666 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Congelados]
+20:56:18,666 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cuidado Personal]
+20:56:18,666 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Frutas y verduras]
+20:56:18,667 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Juguetes]
+20:56:18,667 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Lipidos]
+20:56:18,667 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Mascotas]
+20:56:18,667 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Ropa]
+20:56:18,685 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Vegetales]
+20:56:18,685 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1bc4f39 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@a68d25, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:56:18,707 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@ab56cc" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@1380bc9"
+20:56:18,707 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM SUCURSAL"
+20:56:18,707 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@2f651a [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@dc54a5, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:18,708 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@1c376b4" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@dc54a5"
+20:56:18,708 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM SUCURSAL
+20:56:18,725 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 17 ms
+20:56:18,726 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@2f651a [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@dc54a5, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:18,740 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@a4bca062" como la conneccion va a cerrar o cometer
+20:56:18,740 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:18,741 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:18,741 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:18,741 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:18,741 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:18,741 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:18,741 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:18,742 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:18,743 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:18,744 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:18,745 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:18,746 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:18,746 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:18,746 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:18,746 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:18,746 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:18,746 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:18,747 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:18,748 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:18,748 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:18,748 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:18,748 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:18,748 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:18,748 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:18,749 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:18,750 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:18,750 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:18,750 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:18,750 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@2f651a [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@dc54a5, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:56:21,228 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@6e48f" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@5c6d5f"
+20:56:21,228 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM CATEGORIA"
+20:56:21,229 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@c35890 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a6f89b, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:21,229 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@654da5" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a6f89b"
+20:56:21,229 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM CATEGORIA
+20:56:21,249 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 20 ms
+20:56:21,249 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@c35890 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a6f89b, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@d7b6e0" como la conneccion va a cerrar o cometer
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Aseo]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Bebidas]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cereales]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Congelados]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cuidado Personal]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Frutas y verduras]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Juguetes]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Lipidos]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Mascotas]
+20:56:21,266 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Ropa]
+20:56:21,284 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Vegetales]
+20:56:21,285 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@c35890 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@1a6f89b, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:56:21,306 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@1845a4e" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@1e1153d"
+20:56:21,306 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM SUCURSAL"
+20:56:21,306 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@143b97f [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@18dcb3, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:21,307 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@1077170" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@18dcb3"
+20:56:21,307 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM SUCURSAL
+20:56:21,331 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 24 ms
+20:56:21,331 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@143b97f [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@18dcb3, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:21,346 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@a4bca062" como la conneccion va a cerrar o cometer
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:21,347 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:21,348 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:21,349 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:21,350 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:21,350 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:21,350 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:21,350 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:21,350 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:21,350 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:21,351 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:21,352 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:21,353 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:21,354 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:21,355 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:21,355 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:21,355 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@143b97f [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@18dcb3, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:56:23,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@30f144" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@c8ff4e"
+20:56:23,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM CATEGORIA"
+20:56:23,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1917f58 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d2113f, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:23,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@127b624" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d2113f"
+20:56:23,325 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM CATEGORIA
+20:56:23,345 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 20 ms
+20:56:23,345 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1917f58 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d2113f, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@d7b6e0" como la conneccion va a cerrar o cometer
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Aseo]
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Bebidas]
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cereales]
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Congelados]
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Cuidado Personal]
+20:56:23,360 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Frutas y verduras]
+20:56:23,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Juguetes]
+20:56:23,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Lipidos]
+20:56:23,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Mascotas]
+20:56:23,361 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Ropa]
+20:56:23,380 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject of type uniandes.isis2304.superAndes.negocio.Categoria created with following constructor arguments: [Vegetales]
+20:56:23,380 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1917f58 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@d2113f, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
+20:56:23,400 (AWT-EventQueue-0) DEBUG [DataNucleus.Persistence] - ExecutionContext "org.datanucleus.ExecutionContextImpl@76260d" se abrió para la base de datos "org.datanucleus.store.rdbms.RDBMSStoreManager@d9cf" con transaccion="org.datanucleus.TransactionImpl@6b95d5"
+20:56:23,400 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Query de SQL : "SELECT * FROM SUCURSAL"
+20:56:23,401 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection ABIERTO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1301d82 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@cf15e7, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" en resource "nontx" con isolación "read-committed" y auto-commit=false
+20:56:23,401 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore] - Utilizando PreparedStatement "oracle.jdbc.driver.OraclePreparedStatementWrapper@18fa16" para la conneccion "org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@cf15e7"
+20:56:23,401 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Native] - SELECT * FROM SUCURSAL
+20:56:23,420 (AWT-EventQueue-0) DEBUG [DataNucleus.Datastore.Retrieve] - SQL Tiempo de cumplir = 19 ms
+20:56:23,420 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection VA A COMMIT : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1301d82 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@cf15e7, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]"
+20:56:23,435 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - Leyendo los resultados del query "org.datanucleus.store.rdbms.query.SQLQuery@a4bca062" como la conneccion va a cerrar o cometer
+20:56:23,436 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:23,436 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:23,437 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:23,438 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:23,439 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:23,440 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:23,441 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:23,441 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:23,441 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:23,441 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:23,441 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:23,441 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:23,442 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:23,443 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:23,443 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un constructor con arguments de tipos [class java.math.BigDecimal, class java.lang.String, class java.lang.String, class java.lang.String, class java.lang.String, class java.math.BigDecimal]
+20:56:23,443 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "id"
+20:56:23,443 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=ID using setId() method after converting value
+20:56:23,443 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "direccion"
+20:56:23,443 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=DIRECCION using public setDireccion() method
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "ciudad"
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=CIUDAD using public setCiudad() method
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "nombre"
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=NOMBRE using public setNombre() method
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "segmentacionMercado"
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=SEGMENTACIONMERCADO using public setSegmentacionMercado() method
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - La clase de resultado "uniandes.isis2304.superAndes.negocio.Sucursal" no tiene un campo publico "tamanio"
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Query] - ResultObject set field=TAMANIO using setTamanio() method after converting value
+20:56:23,444 (AWT-EventQueue-0) DEBUG [DataNucleus.Connection] - ManagedConnection CERRADO : "org.datanucleus.store.rdbms.ConnectionFactoryImpl$ManagedConnectionImpl@1301d82 [conn=org.datanucleus.store.rdbms.datasource.dbcp2.PoolingDataSource$PoolGuardConnectionWrapper@cf15e7, commitOnRelease=true, closeOnRelease=true, closeOnTxnEnd=true]" 
