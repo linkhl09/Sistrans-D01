@@ -877,7 +877,7 @@ try
 	 * Registra la fecha de llegada de una orden pedido y actualiza la calificación de su proveedor.
 	 */
 	public void registrarFechaLlegada()
-	{/**
+	{
 		try
 		{
 			//Para manejar las Ordenes de pedido
@@ -942,7 +942,7 @@ try
 		catch (Exception e) 
 		{
 			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
-		}*/
+		}
 	}
 
 	/**
