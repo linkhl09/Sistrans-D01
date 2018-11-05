@@ -240,69 +240,69 @@ INSERT INTO SUCURSAL_PRODUCTO values('4','AAAAAAAAAAA18');
 
 
 --Poblando Tabla BODEGA.
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Vegetales',            1);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Frutas y verduras',    1);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Lipidos',              1);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Aseo',                 1); 
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Vegetales',            1);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Frutas y verduras',    1);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Lipidos',              1);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Aseo',                 1); 
 
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Vegetales',            2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Frutas y verduras',    2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Cereales',             2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Lipidos',              2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Congelados',           2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Aseo',                 2);    
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Cuidado Personal',     2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Mascotas',             2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Bebidas',              2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Juguetes',             2);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Ropa',                 2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Vegetales',            2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Frutas y verduras',    2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Cereales',             2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Lipidos',              2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Congelados',           2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Aseo',                 2);    
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Cuidado Personal',     2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Mascotas',             2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Bebidas',              2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Juguetes',             2);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Ropa',                 2);
 
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Vegetales',            3);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Cereales',             3);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Congelados',           3);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Cuidado Personal',     3);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Mascotas',             3);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Bebidas',              3);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Vegetales',            3);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Cereales',             3);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Congelados',           3);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Cuidado Personal',     3);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Mascotas',             3);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Bebidas',              3);
 
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Vegetales',            4);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Frutas y verduras',    4);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Cereales',             4);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Lipidos',              4);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Congelados',           4);
-INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000, 10000, 'Bebidas',              4);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Vegetales',            4);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Frutas y verduras',    4);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Cereales',             4);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Lipidos',              4);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Congelados',           4);
+INSERT INTO BODEGA values(superAndes_sequence.NEXTVAL, 1000000, 10000, 'Bebidas',              4);
 
 
 --Poblando Tabla ESTANTE.
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Vegetales',            1);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Frutas y verduras',    1);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Lipidos',              1);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Vegetales',            1);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Frutas y verduras',    1);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Lipidos',              1);
 INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Aseo',                 1); 
 
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Vegetales',            2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Frutas y verduras',    2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Cereales',             2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Lipidos',              2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Congelados',           2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Aseo',                 2);    
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Cuidado Personal',     2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Mascotas',             2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Bebidas',              2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Juguetes',             2);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Ropa',                 2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Vegetales',            2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Frutas y verduras',    2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Cereales',             2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Lipidos',              2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Congelados',           2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Aseo',                 2);    
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Cuidado Personal',     2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Mascotas',             2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Bebidas',              2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Juguetes',             2);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Ropa',                 2);
 
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Vegetales',            3);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Cereales',             3);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Congelados',           3);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Cuidado Personal',     3);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Mascotas',             3);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Bebidas',              3);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Vegetales',            3);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Cereales',             3);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Congelados',           3);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Cuidado Personal',     3);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Mascotas',             3);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Bebidas',              3);
 
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Vegetales',            4);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Frutas y verduras',    4);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Cereales',             4);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Lipidos',              4);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Congelados',           4);
-INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100, 1000, 'Bebidas',              4);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Vegetales',            4);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Frutas y verduras',    4);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Cereales',             4);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Lipidos',              4);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Congelados',           4);
+INSERT INTO ESTANTE values(superAndes_sequence.NEXTVAL, 100000, 1000, 'Bebidas',              4);
 
 --Poblando Tabla PRODUCTOSENBODEGA.
 INSERT INTO PRODUCTOSENBODEGA values ( 5,   100,    50,     'AAAAAAAAAAAA1' );
