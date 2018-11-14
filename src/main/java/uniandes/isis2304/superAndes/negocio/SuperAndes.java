@@ -402,7 +402,7 @@ public class SuperAndes {
 		List<VOProducto> list = new LinkedList<VOProducto> ();
 		for (Producto tb : psa.darProductos())
 		{
-			list.add (tb);
+			list.add(tb);
 		}
 		log.info ("Generando los VO de productos: " + list.size() + " existentes");
 		return list;
@@ -418,6 +418,20 @@ public class SuperAndes {
 	{
 		log.info ("Dar información de Producto con codigo de barras: "+ codigoBarras);
 		Producto buscado = psa.darProducto(codigoBarras);
+		log.info ("Buscando Producto: " + buscado != null ? buscado.toString() : "NO EXISTE");
+		return buscado;
+	}
+	
+	/**
+	 * Encuentra el Producto de SuperAndes con el nombre solicitado.
+	 * @param nombre - El nombre  del producto.
+	 * @return Un objeto producto con el nombre solicitado que conoce la aplicacion.
+	 * Lleno con su información básica.
+	 */
+	public Producto darProductoPorNombre(String nombre)
+	{
+		log.info ("Dar información de Producto con nombre: "+ nombre);
+		Producto buscado = psa.darProductoPorNombre(nombre);
 		log.info ("Buscando Producto: " + buscado != null ? buscado.toString() : "NO EXISTE");
 		return buscado;
 	}
@@ -2179,11 +2193,11 @@ public class SuperAndes {
 	 * @param poducto - codigo del producto asociado a la promocion
 	 **@param descuento -  porcentaje del descuento a  realizar 
 	 **/
-	public PromDesc adicionarPromDescuento( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromDesc adicionarPromDescuento( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento )
 	{
 		log.info ("Adicionando PromDescuento "  );
-		PromDesc agregado = psa.adicionarPromocionDescuento(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+		PromDesc agregado = psa.adicionarPromocionDescuento( descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -2264,11 +2278,11 @@ public class SuperAndes {
 	 **@param pague -  unidades del producto que se debe pagar  
 	 **@param lleve - unidades del producto que se llevara 
 	 **/
-	public PromPagueLleveUnid adicionarPromPagueLleveUnid( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromPagueLleveUnid adicionarPromPagueLleveUnid( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
 	{
 		log.info ("Adicionando PromPagueLleveUnid "  );
-		PromPagueLleveUnid agregado = psa.adicionarPromocionPagueLleveUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+		PromPagueLleveUnid agregado = psa.adicionarPromocionPagueLleveUnid( descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -2348,11 +2362,11 @@ public class SuperAndes {
 	 * @param poducto - codigo del producto asociado a la promocion
 	 **@param descuento -  porcentaje del descuento a  realizar   
 	 **/
-	public PromSegUniDesc adicionarPromDescSegUnid( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromSegUniDesc adicionarPromDescSegUnid(  String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento )
 	{
 		log.info ("Adicionando PromDescuento "  );
-		PromSegUniDesc agregado = psa.adicionarPromDescSegUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+		PromSegUniDesc agregado = psa.adicionarPromDescSegUnid( descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 		log.info ("Adicionado");
 		return agregado;
 	}
@@ -2432,11 +2446,11 @@ public class SuperAndes {
 	 **@param pague -  cantidad del producto que se debe pagar  
 	 **@param lleve -  cantidad del producto que se llevara 
 	 **/
-	public PromPagueLleveCant adicionarPromPagueLleveCantidad( long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromPagueLleveCant adicionarPromPagueLleveCantidad( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
 	{
 		log.info ("Adicionando PromPagueLleveCant "  );
-		PromPagueLleveCant agregado = psa.adicionarPromPagueLleveCant(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+		PromPagueLleveCant agregado = psa.adicionarPromPagueLleveCant( descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
 		log.info ("Adicionado");
 		return agregado;
 	}

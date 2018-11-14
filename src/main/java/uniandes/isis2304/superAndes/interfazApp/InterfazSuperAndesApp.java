@@ -14,6 +14,7 @@ import java.lang.reflect.Method;
 import java.util.Date;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import javax.jdo.JDODataStoreException;
@@ -787,6 +788,8 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	{
 		try
 		{
+		
+			
 			//Lista de posibles categorias del estante.
 			List<VOCategoria> categorias = superAndes.darVOCategoria();
 			String[] categoriasDisponibles = new String[categorias.size()];
@@ -850,11 +853,153 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	}
 
 
+	/**
+	 * Adiciona una Promocion manual con la información dada por el usuario.
+	 * Se crea una nueva tupla de Promocion en la base de datos. Si se cumplen las condiciones necesarias.
+	 * En caso de que el producto ya tenga una Promocion activa , no se crea una tupla y manda error. 
+	 */
 	public void adicionarPromocion()
 	{
+		try
+		{
+//			//Lista de posibles productos.
+//			List<VOProducto> productos = superAndes.darVOProducto();
+//			String[] productosDisponibles = new String[productos.size()];
+//			for(int i = 0; i < productosDisponibles.length; i++)
+//				productosDisponibles[i]=productos.get(i).getNombre();
+//			JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
+//			cbProductos.addActionListener(this);
 
+
+			//Información que provee usuario.
+			String[] infoPromo = new String[7];
+
+			JTextField jTFdescripcion = new JTextField();
+			JTextField jTFunidadesDisponibles = new JTextField();
+			JTextField jTFfechaInicio = new JTextField();
+			JTextField jTFfechaFin = new JTextField();
+			JTextField jTFdescuento = new JTextField();
+			JTextField jTFpague = new JTextField();
+			JTextField jTFlleve = new JTextField();
+
+
+			JCheckBox cbDescuento = new JCheckBox();
+			JCheckBox cbPagueLleveUnidad = new JCheckBox();
+			JCheckBox cbDescuentoSegundaUnidad = new JCheckBox();
+			JCheckBox cbPagueLleveCantidad = new JCheckBox();
+
+			Object[] message = {
+					"Descripcion:", jTFdescripcion,
+					"Uidades disponibles", jTFunidadesDisponibles,
+					"FechaInicio:", jTFfechaInicio,
+					"FechaFin:",jTFfechaFin,
+					"descuento:",jTFdescuento,
+					"pague:",jTFpague,
+					"lleve:",jTFlleve,
+					"Promocion Descuento", cbDescuento,
+					"Promocion Pague Lleve Unidad ", cbPagueLleveUnidad,
+					"Promocion descuento en al segunda unidad" ,cbDescuentoSegundaUnidad,
+					"Promocion Pague Lleve Cantidad ", cbPagueLleveCantidad,
+//					"Producto:",cbProductos
+			};
+
+
+
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar Promcion: \n\n";
+				infoPromo[0] = jTFdescripcion.getText();
+				infoPromo[1] = jTFunidadesDisponibles.getText();
+				infoPromo[2] = jTFfechaInicio.getText();
+				infoPromo[3] = jTFfechaFin.getText();
+				infoPromo[4] = jTFdescuento.getText();
+				infoPromo[5] = jTFpague.getText();
+				infoPromo[6] = jTFlleve.getText();
+
+				if(!infoPromo[0].equals("") && !infoPromo[1].equals("") && !infoPromo[2].equals("") && !infoPromo[3].equals(""))
+				{
+					int descuento = Integer.parseInt(infoPromo[4]);
+					int pague = Integer.parseInt(infoPromo[5]);
+					int lleve = Integer.parseInt(infoPromo[6]);
+					String descripcion = infoPromo[0];
+					int unidadesDisponibles = Integer.parseInt(infoPromo[0]);
+					SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+					Date fechaInicio = formatter.parse(infoPromo[2]);
+					Date fechaFin = formatter.parse(infoPromo[3]);
+//					String codigoBarrasProducto = superAndes.darProductoPorNombre(cbProductos.getSelectedItem().toString()).getCodigoBarras();
+					String codigoBarrasProducto = "";
+;					if(cbDescuento.isSelected() && !(descuento<=0))
+					{
+						VOPromDesc promDescuento = superAndes.adicionarPromDescuento( descripcion, unidadesDisponibles, 0, fechaInicio, fechaFin, codigoBarrasProducto, descuento);	
+						if (promDescuento == null)
+							throw new Exception("No se pudo agregar la promocion.");
+
+						resultado += "Promocion adicionada correctamente: " + promDescuento.toString();
+						resultado += "\n Operación terminada.";
+					}
+
+					if(cbDescuentoSegundaUnidad.isSelected() && !(descuento<=0))
+					{
+						VOPromSegUniDesc promDescuentoSegundaUnidad = superAndes.adicionarPromDescSegUnid( descripcion, unidadesDisponibles, 0, fechaInicio, fechaFin, codigoBarrasProducto, descuento);	
+						if (promDescuentoSegundaUnidad == null)
+							throw new Exception("No se pudo agregar la promocion.");
+
+						resultado += "Promocion adicionada correctamente: " + promDescuentoSegundaUnidad.toString();
+						resultado += "\n Operación terminada.";
+					}
+
+					if(cbPagueLleveCantidad.isSelected() && !(pague<=0) && !(lleve<=0) )
+					{
+						VOPromPagueLleveCant promPagueLleveCant = superAndes.adicionarPromPagueLleveCantidad( descripcion, unidadesDisponibles, 0, fechaInicio, fechaFin, codigoBarrasProducto, pague, lleve);	
+						if (promPagueLleveCant == null)
+							throw new Exception("No se pudo agregar la promocion.");
+
+						resultado += "Promocion adicionada correctamente: " + promPagueLleveCant.toString();
+						resultado += "\n Operación terminada.";
+					}
+
+					if(cbPagueLleveUnidad.isSelected() && !(pague<=0) && !(lleve<=0) )
+					{
+						VOPromPagueLleveUnid promPagueLleveUnid = superAndes.adicionarPromPagueLleveUnid( descripcion, unidadesDisponibles, 0, fechaInicio, fechaFin, codigoBarrasProducto, pague, lleve);	
+						if (promPagueLleveUnid == null)
+							throw new Exception("No se pudo agregar la promocion.");
+
+						resultado += "Promocion adicionada correctamente: " + promPagueLleveUnid.toString();
+						resultado += "\n Operación terminada.";
+					}
+
+
+				}
+
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
-
+	
+///Lista de posibles productos.
+//	List<VOProducto> productos = superAndes.darVOProducto();
+//	String[] productosDisponibles = new String[productos.size()];
+//	for(int i = 0; i < productosDisponibles.length; i++)
+//		productosDisponibles[i]=productos.get(i).getNombre();
+//	JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
+//	cbProductos.addActionListener(this);
+//	//
+	
+	
 	/**
 	 * Adiciona una OrdenPedido manual con la información dada por el usuario.
 	 * Se crea una nueva tupla de OrdenPedido en la base de datos. Si se cumplen las condiciones necesarias.
@@ -1022,11 +1167,17 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	public void adicionarCarritoCompras()
 	{
 
+		
 	}
 
+	/**
+	 * Se abandona el  CarritoCompras vinculado al cliente
+	 * Se cambia el cliente del carrito a null.
+	 */
 	public void abandonarCarritoCompras()
 	{
 
+		
 	}
 
 	/**
@@ -1036,18 +1187,19 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	public void agregarProductoCarrito()
 	{
 
+		
 	}
 
 	/**
-	 * Adiciona una ProductoCarritoCompras con la información dada por el usuario.
-	 * Se crea una nueva tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
+	 * Elimina la cantidad dada de un ProductoCarritoCompras con la información dada por el usuario.
+	 * Se actualiza la tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
 	public void devolverProductoCarritoCompras()
 	{
 
 	}
 
-
+	
 	public void pagarCarritoCompras()
 	{
 

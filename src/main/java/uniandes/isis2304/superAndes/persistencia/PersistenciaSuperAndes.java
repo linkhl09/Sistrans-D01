@@ -1001,6 +1001,16 @@ public class PersistenciaSuperAndes {
 	{
 		return sqlProducto.darProducto(pmf.getPersistenceManager(), codigoBarras);
 	}
+	
+	/**
+	 * Método que consulta todas las tuplas en la tabla PRODUCTO con el nombre dado.
+	 * @param nombre - Nombre del producto buscado.
+	 * @return El objeto Producto construido con base en las tuplas de la tabla PRODUCTO.
+	 */
+	public Producto darProductoPorNombre(String nombre)
+	{
+		return sqlProducto.darProducto(pmf.getPersistenceManager(), nombre);
+	}
 
 	/**
 	 * Método que cambia el valor booleano de estaEnPromoción de un producto dado a verdadero.
@@ -3247,7 +3257,7 @@ public class PersistenciaSuperAndes {
 	 * @param tipoProm tipo de promocion 1: PromPagLleveUni , 2: PronDesc , 3: PronSegunUnidDesc, 4 : PromPagueLleveCant
 	 * @param   descuento   porcentaje del descuento a  realizar
 	 **/
-	public PromDesc adicionarPromocionDescuento(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromDesc adicionarPromocionDescuento( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento)
 	{
 
@@ -3257,13 +3267,13 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numeroPromo = nextval ();
-			long tuplasInsertadas = sqlPromDescuento.adicionarPromDescuento(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento); 
+			long tuplasInsertadas = sqlPromDescuento.adicionarPromDescuento(pm, numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento); 
 			
 			tx.commit();
 
 			log.trace ("Inserción de promocion descuento: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
 			
-			return new PromDesc(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+			return new PromDesc(numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 
 
 		}
@@ -3353,7 +3363,7 @@ public class PersistenciaSuperAndes {
 	 **@param lleve - unidades del producto que se llevara 
 	 * @return El objeto promPagueLleveUnidad adicionado
 	 */
-	public PromPagueLleveUnid adicionarPromocionPagueLleveUnid (long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromPagueLleveUnid adicionarPromocionPagueLleveUnid ( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve  )
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -3362,13 +3372,13 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numeroPromo = nextval ();
-			long tuplasInsertadas = sqlPromPagLlevUnidad.adicionarPromPagueLleveUnid(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+			long tuplasInsertadas = sqlPromPagLlevUnidad.adicionarPromPagueLleveUnid(pm, numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
 			
 			tx.commit();
 
 			log.trace ("Inserción de promocion pague n lleve m unidades: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
 			
-			return new PromPagueLleveUnid(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+			return new PromPagueLleveUnid(numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
 
 
 		}
@@ -3457,7 +3467,7 @@ public class PersistenciaSuperAndes {
 	 **@param descuento -  porcentaje del descuento a  realizar   
 	 * @return El nÃºmero de tuplas insertadas
 	 */
-	public PromSegUniDesc adicionarPromDescSegUnid(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromSegUniDesc adicionarPromDescSegUnid( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, int descuento)
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -3466,13 +3476,13 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numeroPromo = nextval ();
-			long tuplasInsertadas = sqlPromDescSegUnid.adicionarPromDescSegUnid(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+			long tuplasInsertadas = sqlPromDescSegUnid.adicionarPromDescSegUnid(pm,numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 			
 			tx.commit();
 
 			log.trace ("Inserción de promocion segunda unidad descuento: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
 			
-			return new PromSegUniDesc(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
+			return new PromSegUniDesc(numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, descuento);
 
 
 		}
@@ -3565,7 +3575,7 @@ public class PersistenciaSuperAndes {
 	 **@param lleve -  cantidad del producto que se llevara 
 	 * @return El nÃºmero de tuplas insertadas
 	 */
-	public PromPagueLleveCant adicionarPromPagueLleveCant(long id, String descripcion, int unidadesDisponibles,int unidadesVendidas
+	public PromPagueLleveCant adicionarPromPagueLleveCant( String descripcion, int unidadesDisponibles,int unidadesVendidas
 			, Date fechaInicio, Date fechaFin, String producto, double pague, double lleve )
 	{
 		PersistenceManager pm = pmf.getPersistenceManager();
@@ -3574,12 +3584,12 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long numeroPromo = nextval ();
-			long tuplasInsertadas = sqlPromPagLleveCatidad.adicionarPromPagueLleveCantidad(pm, id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
+			long tuplasInsertadas = sqlPromPagLleveCatidad.adicionarPromPagueLleveCantidad(pm, numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);
 			tx.commit();
 
 			log.trace ("Inserción de proveedor: " + numeroPromo + ": " + tuplasInsertadas + " tuplas insertadas");
 
-			return new PromPagueLleveCant(id, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);   
+			return new PromPagueLleveCant(numeroPromo, descripcion, unidadesDisponibles, unidadesVendidas, fechaInicio, fechaFin, producto, pague, lleve);   
 		}
 		catch (Exception e)
 		{

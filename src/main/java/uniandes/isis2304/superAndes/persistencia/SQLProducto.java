@@ -106,6 +106,20 @@ class SQLProducto {
 		q.setParameters(codigoBarras);
 		return (Producto) q.executeUnique();
 	}
+	
+	/**
+	 * Crea y ejecuta la secuencia SQL para encontrar la información de un PRODUCTO de la base de datos, por su nombre.
+	 * @param pm - El manejador de persistencia.
+	 * @param nombre - El nombvre del producto.
+	 * @return El objeto Producto que tiene el identificador dado.
+	 */
+	public Producto darProductoPorNombre(PersistenceManager pm, String nombre)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProducto() + "WHERE nombre = ?");
+		q.setResultClass(Producto.class);
+		q.setParameters(nombre);
+		return (Producto) q.executeUnique();
+	}
 
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información de todos los productos de la base de datos.
