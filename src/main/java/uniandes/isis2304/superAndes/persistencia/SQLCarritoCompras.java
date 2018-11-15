@@ -56,7 +56,7 @@ class SQLCarritoCompras {
 	 */
 	public long adicionarCarritoCompras(PersistenceManager pm, long id, String cliente, long idSucursal)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCarritoCompras() + "(id, cliente,idSucursal) values (?, ?,?)");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCarritoCompras() + "(id, cliente,Sucursal) values (?,?,?)");
 		q.setParameters(id, cliente, idSucursal);
 		return (long) q.executeUnique();
 	}
@@ -96,7 +96,7 @@ class SQLCarritoCompras {
 	 */
 	public CarritoCompras darCarritoComprasPorCliente(PersistenceManager pm, String cliente)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras() + "WHERE cliente = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras() + " WHERE cliente = ?");
 		q.setResultClass(CarritoCompras.class);
 		q.setParameters(cliente);
 		return (CarritoCompras) q.executeUnique();

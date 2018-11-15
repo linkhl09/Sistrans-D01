@@ -24,4 +24,7 @@ DROP TABLE prom_descuento CASCADE CONSTRAINTS;
 DROP TABLE prom_segunidescuento CASCADE CONSTRAINTS;
 DROP TABLE prom_paglleveunid CASCADE CONSTRAINTS;
 DROP TABLE prom_pagllevecant CASCADE CONSTRAINTS;
+
+delete from CARRITOCOMPRAS;
+
 commit;

@@ -989,7 +989,9 @@ public class PersistenciaSuperAndes {
 	 */
 	public List<Producto> darProductos()
 	{
+		System.out.println("llegue 2 : " + sqlProducto.darProductos(pmf.getPersistenceManager()).size() );
 		return sqlProducto.darProductos(pmf.getPersistenceManager());
+		
 	}
 
 	/**

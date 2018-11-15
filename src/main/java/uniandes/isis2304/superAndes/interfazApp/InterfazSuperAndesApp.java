@@ -106,7 +106,8 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 * Menú de la aplicación
 	 */
 	private JMenuBar menuBar;
-
+	
+	
 	// -----------------------------------------------------------------
 	// Constructores
 	// -----------------------------------------------------------------
@@ -862,15 +863,18 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	{
 		try
 		{
-//			//Lista de posibles productos.
-//			List<VOProducto> productos = superAndes.darVOProducto();
-//			String[] productosDisponibles = new String[productos.size()];
-//			for(int i = 0; i < productosDisponibles.length; i++)
-//				productosDisponibles[i]=productos.get(i).getNombre();
-//			JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
-//			cbProductos.addActionListener(this);
+			//Lista de posibles productos.
+			List<VOProducto> productos = superAndes.darVOProducto();
+			String[] productosDisponibles = new String[productos.size()];
+			System.out.println("productosDisponibles" + productosDisponibles.length );
+			for(int i = 0; i < productosDisponibles.length; i++)
+			{
+				productosDisponibles[i]=productos.get(i).getNombre();
+			}
+			JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
+			cbProductos.addActionListener(this);
 
-
+			
 			//Información que provee usuario.
 			String[] infoPromo = new String[7];
 
@@ -900,7 +904,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					"Promocion Pague Lleve Unidad ", cbPagueLleveUnidad,
 					"Promocion descuento en al segunda unidad" ,cbDescuentoSegundaUnidad,
 					"Promocion Pague Lleve Cantidad ", cbPagueLleveCantidad,
-//					"Producto:",cbProductos
+					"Producto:",cbProductos
 			};
 
 
@@ -989,16 +993,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
 		}
 	}
-	
-///Lista de posibles productos.
-//	List<VOProducto> productos = superAndes.darVOProducto();
-//	String[] productosDisponibles = new String[productos.size()];
-//	for(int i = 0; i < productosDisponibles.length; i++)
-//		productosDisponibles[i]=productos.get(i).getNombre();
-//	JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
-//	cbProductos.addActionListener(this);
-//	//
-	
+
 	
 	/**
 	 * Adiciona una OrdenPedido manual con la información dada por el usuario.
@@ -1166,8 +1161,11 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarCarritoCompras()
 	{
-
-		
+       long numeroCarrito;
+		CarritoCompras a =superAndes.adicionarCarritoCompras(clienteActual, 1);
+	
+		numeroCarrito = a.getId();
+		panelDatos.actualizarInterfaz("Carrito Solicitado : cliente: " + clienteActual + "  numero Carrito : " + numeroCarrito);
 	}
 
 	/**
@@ -1176,7 +1174,10 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void abandonarCarritoCompras()
 	{
-
+		long idCarrito = superAndes.darCarritoComprasPorCliente(clienteActual).getId();
+		panelDatos.actualizarInterfaz(" Abandonando Carrito: cliente: " + clienteActual + "  numero Carrito : " + idCarrito);
+		superAndes.abandonarCarrito(idCarrito);
+		panelDatos.actualizarInterfaz("Se abandono correctamente el carrito : " + idCarrito);
 		
 	}
 
@@ -1238,6 +1239,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			menuBar.getComponentAtIndex(6).setEnabled(false);
 			menuBar.getComponentAtIndex(7).setEnabled(false);
 		}
+		
 	}
 
 

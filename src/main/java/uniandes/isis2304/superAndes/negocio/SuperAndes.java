@@ -384,9 +384,9 @@ public class SuperAndes {
 	 * @return Una lista de objetos Producto con todos los productos que conoce la aplicación, llenos con su información básica
 	 */
 	public List<Producto> darProductos()
-	{
+	{	
 		log.info ("Consultando productos");
-		List<Producto> list = psa.darProductos();	
+		List<Producto> list = psa.darProductos();
 		log.info ("Consultando productos: " + list.size() + " existentes");
 		return list;
 	}
@@ -398,13 +398,16 @@ public class SuperAndes {
 	 */
 	public List<VOProducto> darVOProducto ()
 	{
+		System.out.println("HOLI :");
 		log.info ("Generando los VO de Productos");        
 		List<VOProducto> list = new LinkedList<VOProducto> ();
-		for (Producto tb : psa.darProductos())
+		
+		for (int i =0; i<darProductos().size(); i++)
 		{
-			list.add(tb);
+			list.add(darProductos().get(i));
 		}
 		log.info ("Generando los VO de productos: " + list.size() + " existentes");
+		System.out.println("HOLI 32 :");
 		return list;
 	}
 
