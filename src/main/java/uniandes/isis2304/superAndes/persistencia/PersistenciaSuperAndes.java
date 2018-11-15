@@ -2295,6 +2295,7 @@ public class PersistenciaSuperAndes {
 	 */
 	public CarritoCompras darCarritoComprasPorCliente(String cliente)
 	{
+		System.out.println("holi 4");
 		return sqlCarritoCompras.darCarritoComprasPorCliente(pmf.getPersistenceManager(), cliente);
 	}
 
@@ -2320,13 +2321,14 @@ public class PersistenciaSuperAndes {
 		{
 			tx.begin();
 			long resp = sqlCarritoCompras.abandonarCarrito(pm, id);
-			tx.commit();
+		    tx.commit();
 			return resp;
 		}
 		catch (Exception e) 
 		{
 			//        	e.printStackTrace();
 			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			System.out.println(e.getMessage());
 			return -1;
 		}
 		finally

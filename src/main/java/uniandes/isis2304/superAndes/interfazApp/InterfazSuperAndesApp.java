@@ -87,6 +87,8 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 * Cliente que esta usando la aplicación.
 	 */
 	private String clienteActual;
+	
+	private long idCarrito;
 
 	// -----------------------------------------------------------------
 	// Atributos de interfaz
@@ -134,6 +136,12 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 		// corre la prueba del timer
 		superAndes.prueba();
+		
+		//corre la verificacion de los carritos abandonados
+		superAndes.verificarCarritosAbandonados();
+		
+		//corre la verificacion de las promociones
+		superAndes.verificarPromociones();
 
 		String path = guiConfig.get("bannerPath").getAsString();
 		panelDatos = new PanelDatos ( );
@@ -1161,12 +1169,19 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void adicionarCarritoCompras()
 	{
+		try
+		{
        long numeroCarrito;
 		CarritoCompras a =superAndes.adicionarCarritoCompras(clienteActual, 1);
-	
 		numeroCarrito = a.getId();
+		idCarrito = numeroCarrito;
 		panelDatos.actualizarInterfaz("Carrito Solicitado : cliente: " + clienteActual + "  numero Carrito : " + numeroCarrito);
-	}
+		}
+		catch (Exception e)
+		{
+			panelDatos.actualizarInterfaz("Usted ya tiene un carrito asociado");	
+		}
+		}
 
 	/**
 	 * Se abandona el  CarritoCompras vinculado al cliente
@@ -1174,8 +1189,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void abandonarCarritoCompras()
 	{
-		long idCarrito = superAndes.darCarritoComprasPorCliente(clienteActual).getId();
-		panelDatos.actualizarInterfaz(" Abandonando Carrito: cliente: " + clienteActual + "  numero Carrito : " + idCarrito);
+	panelDatos.actualizarInterfaz(" Abandonando Carrito: cliente: " + clienteActual + "  numero Carrito : " + idCarrito);
 		superAndes.abandonarCarrito(idCarrito);
 		panelDatos.actualizarInterfaz("Se abandono correctamente el carrito : " + idCarrito);
 		
@@ -1239,6 +1253,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			menuBar.getComponentAtIndex(6).setEnabled(false);
 			menuBar.getComponentAtIndex(7).setEnabled(false);
 		}
+		
 		
 	}
 

@@ -1440,8 +1440,11 @@ public class SuperAndes {
 	 */
 	public CarritoCompras darCarritoComprasPorCliente(String cliente)
 	{
+		System.out.println("holi 1 ");
 		log.info("Dar información de carrito de compras con cliente: " + cliente);
 		CarritoCompras buscado = psa.darCarritoComprasPorCliente(cliente);
+		System.out.println("holi 2 " + cliente + "id _:" );
+		System.out.println(buscado.getId());
 		log.info("Buscando CarritoComrpas: " + buscado != null ? buscado.toString() : "NO EXISTE.");
 		return buscado;		
 	}
@@ -2642,24 +2645,33 @@ public class SuperAndes {
 
 	public void verificarCarritosAbandonados()
 	{
+		System.out.println("estoy verificando");
+		
 		final Runnable verificador = new Runnable() 
 		{
 			public void run()
 			{
+				System.out.println("voy a aempezar a correr");
 				//aqui se pone el metodo
-				for(int i =0; i< darTodosCarritosCompras().size(); i++){
+				System.out.println("cuantos carritos hay" + darTodosCarritosCompras().size());
+				for(int i =0; i< darTodosCarritosCompras().size(); i++)
+				{
+					System.out.println(darTodosCarritosCompras().get(i).getCliente());
 					if(darTodosCarritosCompras().get(i).getCliente()==null)
 					{
+						System.out.println("entre al if");
 						devolverTodosProductosAlEstante(darTodosCarritosCompras().get(i).getId());
+						System.out.println("elimine los productos quiza");
 						eliminarCarritoCompras(darTodosCarritosCompras().get(i).getId());
 
+						System.out.println("Recogiendo Carrito abandonado: id: " + darTodosCarritosCompras().get(i).getId() );
 					}
 				}
 			}
 		};
 
 
-		final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 4, 4, MINUTES);
+		final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador,10, 10, SECONDS);
 		scheduler2.schedule(new Runnable() {
 			public void run() 
 			{
@@ -2754,8 +2766,8 @@ public class SuperAndes {
 
 		};
 
-		final ScheduledFuture<?> beeperHandle = scheduler2.scheduleAtFixedRate(verificador, 1 , 1 , MINUTES);
-		scheduler2.schedule(new Runnable() {
+		final ScheduledFuture<?> beeperHandle = scheduler3.scheduleAtFixedRate(verificador, 1 , 1 , MINUTES);
+		scheduler3.schedule(new Runnable() {
 			public void run() 
 			{
 				beeperHandle.cancel(true);

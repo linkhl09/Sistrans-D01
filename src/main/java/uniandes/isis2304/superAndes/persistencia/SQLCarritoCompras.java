@@ -5,6 +5,7 @@ import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
 import uniandes.isis2304.superAndes.negocio.CarritoCompras;
+import uniandes.isis2304.superAndes.negocio.Tipo;
 
 /**
  * Clase que encapsula los métodos que hacen acceso a la base de datos para el concepto CarritoCompras de SuperAndes.
@@ -96,9 +97,13 @@ class SQLCarritoCompras {
 	 */
 	public CarritoCompras darCarritoComprasPorCliente(PersistenceManager pm, String cliente)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras() + " WHERE cliente = ?");
+		System.out.println("holi 72" + cliente);
+		Query q = pm.newQuery(SQL, " SELECT * FROM " + psa.darTablaCarritoCompras() + " WHERE cliente = ?");
+		System.out.println("holi 82" + q.toString());
 		q.setResultClass(CarritoCompras.class);
+		System.out.println("bray");
 		q.setParameters(cliente);
+		System.out.println("bray 2");
 		return (CarritoCompras) q.executeUnique();
 	}
 	
@@ -110,7 +115,8 @@ class SQLCarritoCompras {
 	 */
 	public long abandonarCarrito(PersistenceManager pm, long id)
 	{
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaCarritoCompras() + "  SET cliente = null - ? WHERE carrito =? ");
+		
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaCarritoCompras() + "  SET cliente = null WHERE id = ? ");
 		q.setParameters(id);
 		return (long) q.executeUnique();
 	}
@@ -125,8 +131,9 @@ class SQLCarritoCompras {
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras());
 		q.setResultClass(CarritoCompras.class);
+		System.out.println(" cantidad de carritos sql :" + ((List<CarritoCompras>) q.executeList()).size() );
 		return (List<CarritoCompras>) q.executeList();
 	}
 	
-	
+
 }

@@ -675,3 +675,606 @@ ORA-00904: "IDSUCURSAL": identificador no válido
 17:59:38,969 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
 17:59:41,709 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: asdas
 20:31:17,876 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: asdas
+12:40:59,297 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:40:59,299 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:40:59,353 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:41:03,599 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:41:03,878 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:41:10,787 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: asdasen al sucursal 1
+12:41:11,039 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CARRITOCOMPRAS(id, cliente,Sucursal) values (?,?,?)".
+ORA-00001: restricción única (ISIS2304A271820.CLIENTE_UNICO) violada
+
+12:41:11,051 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:42:31,331 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:42:31,333 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:42:31,393 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:42:36,197 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:42:36,479 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:42:47,670 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: asdasen al sucursal 1
+12:42:47,933 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CARRITOCOMPRAS(id, cliente,Sucursal) values (?,?,?)".
+ORA-00001: restricción única (ISIS2304A271820.CLIENTE_UNICO) violada
+
+12:42:47,948 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:45:23,036 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: asdas
+12:48:41,265 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:48:41,267 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:48:41,314 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:48:46,240 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:48:46,578 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:48:54,222 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:48:54,229 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:48:54,282 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:48:58,125 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:48:58,390 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:49:07,316 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: de.saavedra@hotmail.comen al sucursal 1
+12:49:07,529 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:49:09,999 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: de.saavedra@hotmail.com
+12:53:02,580 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:53:02,583 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:53:02,626 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:53:05,922 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:53:06,186 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:53:20,803 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: sadasden al sucursal 1
+12:53:21,003 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:53:23,968 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: sadasd
+12:53:56,718 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:53:56,720 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:53:56,783 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:54:00,360 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:54:00,651 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:54:09,481 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: mj.ocampov@hotmail.comen al sucursal 1
+12:54:09,751 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:54:11,496 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: mj.ocampov@hotmail.com
+12:56:09,203 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:56:09,204 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:56:09,250 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:56:12,637 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:56:12,903 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:56:23,146 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: jp.rodriguez@hotmail.comen al sucursal 1
+12:56:23,574 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:56:28,148 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: jp.rodriguez@hotmail.com
+12:57:47,918 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:57:47,922 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:57:47,974 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:57:50,612 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:57:50,613 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:57:50,663 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:57:51,883 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:57:52,191 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:57:54,344 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:57:54,700 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:57:59,015 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: de.saavedra@hotmail.comen al sucursal 1
+12:57:59,309 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CARRITOCOMPRAS(id, cliente,Sucursal) values (?,?,?)".
+ORA-00001: restricción única (ISIS2304A271820.CLIENTE_UNICO) violada
+
+12:57:59,425 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:58:24,888 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:58:24,890 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:58:24,932 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:58:28,256 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:58:28,543 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:58:40,589 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: de.saavedra@hotmail.comen al sucursal 1
+12:59:14,359 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:59:14,361 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:59:14,407 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:59:17,769 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:59:18,057 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+12:59:25,369 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: cjimenez@hotmail.comen al sucursal 1
+12:59:25,580 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+12:59:28,730 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Dar información de carrito de compras con cliente: cjimenez@hotmail.com
+13:04:41,246 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:04:41,248 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:04:41,299 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:04:44,644 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:04:44,898 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:04:51,880 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: asdasen al sucursal 1
+13:05:07,865 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:05:07,867 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:05:07,915 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:05:11,515 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:05:11,784 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:05:22,250 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: lj.romero@hotmail.comen al sucursal 1
+13:05:22,461 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:05:25,411 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :151
+13:05:25,430 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : SQL query tiene parametro "2" pero no existe en el query : UPDATE CARRITOCOMPRAS  SET cliente = null - ? WHERE carrito =?
+
+13:05:25,431 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 151ha sido abandonado-1 tuplas actualizadas
+13:05:59,275 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: lj.romero@hotmail.comen al sucursal 1
+13:05:59,303 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CARRITOCOMPRAS(id, cliente,Sucursal) values (?,?,?)".
+ORA-00001: restricción única (ISIS2304A271820.CLIENTE_UNICO) violada
+
+13:05:59,311 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:06:11,909 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:06:11,911 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:06:11,949 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:06:15,354 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:06:15,626 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:06:24,518 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: mj.ocampov@hotmail.comen al sucursal 1
+13:06:47,108 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:06:47,111 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:06:47,159 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:06:50,539 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:06:50,813 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:06:59,485 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: empresa10@hotmail.comen al sucursal 1
+13:06:59,688 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:07:02,804 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :154
+13:07:02,824 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : SQL query tiene parametro "2" pero no existe en el query : UPDATE CARRITOCOMPRAS  SET cliente = null - ? WHERE carrito =?
+
+13:07:02,825 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 154ha sido abandonado-1 tuplas actualizadas
+13:11:19,945 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:11:19,948 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:11:19,998 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:11:23,865 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:11:24,119 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:11:31,473 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: sadasden al sucursal 1
+13:11:39,615 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:11:39,616 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:11:39,661 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:11:43,073 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:11:43,345 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:11:51,563 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: j.prieto@hotmail.comen al sucursal 1
+13:11:51,794 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:11:54,076 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :156
+13:11:54,097 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 156ha sido abandonado1 tuplas actualizadas
+13:18:19,489 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:18:19,491 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:18:19,535 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:18:23,035 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:18:23,269 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:18:23,355 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:18:23,355 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:18:23,372 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:18:23,372 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:18:23,390 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:18:23,390 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:18:23,407 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:18:23,452 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:18:38,465 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: cc.aparicio@hotmail.comen al sucursal 1
+13:18:38,680 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:18:41,381 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :157
+13:18:41,396 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 157ha sido abandonado1 tuplas actualizadas
+13:20:35,569 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:20:35,571 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:20:35,610 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:20:39,604 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:20:39,825 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:20:39,904 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:20:39,904 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:20:39,919 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:20:39,919 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:20:39,932 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:20:39,932 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:20:39,948 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:20:40,043 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:20:47,421 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: empresa10@hotmail.comen al sucursal 1
+13:21:00,185 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:21:00,187 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:21:00,224 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:21:03,550 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:03,784 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:21:03,848 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:03,849 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:03,863 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:03,863 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:03,876 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:03,876 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:03,891 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:03,979 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:21:11,326 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: de.saavedra@hotmail.comen al sucursal 1
+13:21:42,294 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:21:42,298 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:21:42,340 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:21:45,641 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:45,839 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:21:45,920 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:45,921 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:45,938 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:45,938 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:45,951 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:45,951 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:21:45,967 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:21:46,024 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:21:53,394 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: cjimenez@hotmail.comen al sucursal 1
+13:22:58,313 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:22:58,315 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:22:58,355 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:23:01,436 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:23:01,651 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:23:01,732 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:23:01,732 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:23:01,746 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:23:01,746 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:23:01,760 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:23:01,760 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:23:01,774 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:23:01,835 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:23:13,536 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: empresa1@hotmail.comen al sucursal 1
+13:23:13,755 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:23:16,906 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :161
+13:23:16,920 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 161ha sido abandonado1 tuplas actualizadas
+13:24:01,434 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:24:01,456 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:25:01,434 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:25:01,448 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:26:01,435 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:26:01,449 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:26:13,402 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:26:13,405 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:26:13,444 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:26:16,537 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:26:16,772 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:26:16,880 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:26:16,881 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:26:16,893 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:26:16,893 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:26:16,907 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:26:16,907 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:26:16,921 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:26:17,005 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:26:36,824 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: sadasden al sucursal 1
+13:27:16,534 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:27:16,554 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:27:35,102 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:27:35,104 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:27:35,147 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:27:38,329 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:27:38,528 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:27:38,618 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:27:38,618 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:27:38,632 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:27:38,633 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:27:38,646 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:27:38,646 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:27:38,658 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:27:38,709 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:27:46,617 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: empresa4@hotmail.comen al sucursal 1
+13:27:46,817 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:27:49,165 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :163
+13:27:49,180 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 163ha sido abandonado1 tuplas actualizadas
+13:28:38,328 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:28:38,349 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:29:38,328 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:29:38,341 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:30:48,077 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:30:48,079 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:30:48,138 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:30:52,337 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:30:52,579 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:30:52,665 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:30:52,666 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:30:52,679 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:30:52,679 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:30:52,692 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:30:52,692 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:30:52,708 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:30:52,768 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:31:02,270 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: lc.cruz@hotmail.comen al sucursal 1
+13:31:02,336 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:31:02,355 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:31:02,474 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:31:04,301 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :164
+13:31:04,319 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 164ha sido abandonado1 tuplas actualizadas
+13:31:12,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:31:12,355 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:31:22,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:31:22,348 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:31:32,336 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:31:32,355 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:31:42,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:31:42,348 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:31:52,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:31:52,347 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:32:02,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:32:02,350 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:32:12,336 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:32:12,349 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:32:22,334 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:32:22,350 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:32:32,334 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:32:32,348 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:32:42,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:32:42,351 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:32:52,335 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:32:52,352 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:33:02,334 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:33:02,356 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:33:16,046 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:33:16,047 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:33:16,093 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:33:19,489 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:33:19,725 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:33:19,806 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:33:19,806 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:33:19,819 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:33:19,820 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:33:19,836 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:33:19,836 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:33:19,854 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:33:19,906 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:33:28,379 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: j.prieto@hotmail.comen al sucursal 1
+13:33:28,585 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:33:29,486 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:33:29,504 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:33:30,224 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Abandonando carrito :165
+13:33:30,239 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - El carrito : 165ha sido abandonado1 tuplas actualizadas
+13:33:39,486 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:33:39,502 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:33:49,486 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:33:49,502 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:33:59,487 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:33:59,499 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:34:09,487 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:34:09,504 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:34:26,171 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:34:26,173 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:34:26,240 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:34:30,300 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:34:30,520 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:34:30,593 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:34:30,593 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:34:30,607 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:34:30,607 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:34:30,622 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:34:30,622 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:34:30,635 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:34:30,703 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:34:40,297 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:34:40,329 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:34:40,329 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:34:40,346 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:34:50,297 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:34:50,311 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:34:50,311 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:34:50,326 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:00,298 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:00,313 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:00,314 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:00,330 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:10,299 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:10,322 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:10,322 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:10,339 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:20,297 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:20,309 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:20,309 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:20,322 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:30,298 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:30,311 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:30,312 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:30,325 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:40,297 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:40,314 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:40,315 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:40,329 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:50,298 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:50,311 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:35:50,311 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:35:50,326 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:00,297 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:00,310 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:00,311 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:00,323 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:18,632 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:36:18,634 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:36:18,664 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:36:18,666 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:36:18,710 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:36:18,738 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:36:22,501 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:22,501 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:22,872 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:36:22,987 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:36:22,994 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:22,994 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:23,009 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,009 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:23,025 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,026 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:23,040 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,057 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,057 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:23,076 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,076 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:23,089 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,089 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:36:23,104 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:36:23,112 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:36:23,183 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:36:32,499 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:32,505 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:32,542 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:32,543 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:32,574 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:32,574 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:32,576 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:32,604 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:42,500 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:42,529 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:36:42,530 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:36:42,558 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:39:40,241 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:39:40,242 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:39:40,284 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:39:43,471 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:39:43,684 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:39:43,768 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:39:43,769 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:39:43,785 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:39:43,785 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:39:43,800 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:39:43,800 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:39:43,814 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:39:43,871 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:39:53,467 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:39:53,507 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:39:53,508 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:39:53,536 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:40:03,466 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:40:03,502 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:40:03,502 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:40:03,535 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:40:48,762 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:40:48,765 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:40:48,831 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:40:52,160 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:40:52,365 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:40:52,435 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:40:52,436 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:40:52,448 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:40:52,448 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:40:52,461 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:40:52,462 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:40:52,474 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:40:52,545 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:41:02,157 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:41:52,001 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:41:52,003 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:41:52,054 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:41:55,326 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:41:55,551 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:41:55,662 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:41:55,662 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:41:55,676 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:41:55,676 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:41:55,690 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:41:55,690 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:41:55,704 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:41:55,756 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:42:05,325 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:05,361 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:05,362 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:05,392 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:15,324 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:15,357 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:15,357 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:15,387 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:25,324 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:25,355 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:25,356 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:25,383 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:35,325 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:35,351 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:35,351 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:42:35,380 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:42:50,821 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:42:50,822 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:42:50,873 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:42:54,750 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:42:55,017 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:42:55,116 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:42:55,116 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:42:55,130 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:42:55,130 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:42:55,144 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:42:55,144 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:42:55,158 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:42:55,226 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:43:04,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:04,785 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:04,785 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:04,815 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:14,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:14,778 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:14,778 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:14,810 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:24,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:24,780 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:24,780 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:24,814 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:34,748 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:34,781 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:34,781 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:34,814 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:44,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:44,771 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:44,771 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:44,797 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:54,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:54,777 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:43:54,777 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:43:54,803 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:04,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:04,776 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:04,776 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:04,801 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:14,748 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:14,776 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:14,776 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:14,802 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:24,748 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:24,773 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:24,773 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:24,801 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:34,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:34,775 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:34,775 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:34,810 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:44,749 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:44,775 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:44,775 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:44,803 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:54,748 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:54,779 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:44:54,780 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:44:54,808 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:45:40,620 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:45:40,626 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:45:40,704 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:45:44,590 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:45:44,800 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:45:44,865 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:45:44,866 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:45:44,883 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:45:44,883 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:45:44,897 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:45:44,898 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:45:44,912 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:45:44,992 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:45:51,887 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: sadasden al sucursal 1
+13:45:54,586 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:45:54,626 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:45:54,626 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:45:54,660 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:46:17,566 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+13:46:17,568 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+13:46:17,614 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+13:46:20,984 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:46:21,202 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+13:46:21,279 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:46:21,279 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:46:21,297 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:46:21,297 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:46:21,313 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:46:21,313 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando 
+13:46:21,328 (pool-1-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando : 0 existentes
+13:46:21,397 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+13:46:30,982 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:46:31,016 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:46:31,016 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:46:31,041 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:46:34,101 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: empresa1@hotmail.comen al sucursal 1
+13:46:34,314 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
+13:46:40,982 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:46:41,007 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:46:41,007 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:46:41,034 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:46:50,984 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:46:51,052 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:46:51,052 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:46:51,086 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:00,982 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:01,019 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:01,019 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:01,048 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:10,982 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:11,012 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:11,012 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:11,055 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:20,982 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:21,014 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:21,014 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:21,040 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:30,983 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:31,014 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
+13:47:31,014 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos CarritosCompras.
+13:47:31,044 (pool-2-thread-1) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando CarritosCompras: 0 existentes.
