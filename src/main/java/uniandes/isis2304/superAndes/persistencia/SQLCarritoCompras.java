@@ -131,7 +131,6 @@ class SQLCarritoCompras {
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras());
 		q.setResultClass(CarritoCompras.class);
-		System.out.println(" cantidad de carritos sql :" + ((List<CarritoCompras>) q.executeList()).size() );
 		return (List<CarritoCompras>) q.executeList();
 	}
 	

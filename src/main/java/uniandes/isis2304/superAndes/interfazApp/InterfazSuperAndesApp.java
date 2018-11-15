@@ -136,12 +136,12 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 		// corre la prueba del timer
 		superAndes.prueba();
-		
-		//corre la verificacion de los carritos abandonados
-		superAndes.verificarCarritosAbandonados();
-		
-		//corre la verificacion de las promociones
-		superAndes.verificarPromociones();
+//		
+//		//corre la verificacion de los carritos abandonados
+//		superAndes.verificarCarritosAbandonados();
+//		
+//		//corre la verificacion de las promociones
+//		superAndes.verificarPromociones();
 
 		String path = guiConfig.get("bannerPath").getAsString();
 		panelDatos = new PanelDatos ( );
@@ -941,6 +941,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					Date fechaFin = formatter.parse(infoPromo[3]);
 //					String codigoBarrasProducto = superAndes.darProductoPorNombre(cbProductos.getSelectedItem().toString()).getCodigoBarras();
 					String codigoBarrasProducto = "";
+					
 ;					if(cbDescuento.isSelected() && !(descuento<=0))
 					{
 						VOPromDesc promDescuento = superAndes.adicionarPromDescuento( descripcion, unidadesDisponibles, 0, fechaInicio, fechaFin, codigoBarrasProducto, descuento);	
@@ -1199,9 +1200,74 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 * Adiciona una ProductoCarritoCompras con la información dada por el usuario.
 	 * Se crea una nueva tupla de ProductoCarritoCompras en la base de datos. Si se cumplen las condiciones necesarias.
 	 */
-	public void agregarProductoCarrito()
+	public void adicionarProductoCarrito()
 	{
 
+		try
+		{
+			//Lista de posibles productos.
+			List<VOProducto> productos = superAndes.darVOProducto();
+			String[] productosDisponibles = new String[productos.size()];
+			System.out.println("productosDisponibles" + productosDisponibles.length );
+			for(int i = 0; i < productosDisponibles.length; i++)
+			{
+				productosDisponibles[i]=productos.get(i).getNombre();
+			}
+			JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
+			cbProductos.addActionListener(this);
+			
+			String[] infoProductoCarrito = new String[2];
+
+			JTextField jTFcantidad = new JTextField();
+			
+			Object[] message = {
+					
+     				"Producto:",cbProductos,
+					"cantidad:", jTFcantidad
+					
+			};
+			
+			
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar producto al carrito: \n\n";
+
+
+				infoProductoCarrito[0] = jTFcantidad.getText();
+				
+				if(!infoProductoCarrito[0].equals("")  )
+				{
+					int cantidad = Integer.parseInt(infoProductoCarrito[0]);
+	                String nombreProducto = cbProductos.getSelectedItem().toString();
+	                Producto a =superAndes.darProductoPorNombre(nombreProducto);
+	                String codigoProducto = a.getCodigoBarras();
+	                 
+					VOProductoCarritoCompras produtoCarrito = superAndes.adicionarProductoCarrito(idCarrito, cantidad, codigoProducto);
+					
+					if (produtoCarrito ==null)
+						throw new Exception("No se pudo agregar el producto "+ nombreProducto +" al carrito : " + idCarrito );
+					resultado += cantidad +" "+ nombreProducto + " adicionada correctamente al carrito: " + idCarrito ;
+					resultado += "\n Operación terminada.";
+
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
+		
+		
 		
 	}
 
