@@ -1277,7 +1277,71 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 */
 	public void devolverProductoCarritoCompras()
 	{
+		try
+		{
+			//Lista de posibles productos en el carrito.
+			List<ProductoCarritoCompras> productos = superAndes.darTodosProductosDeUnCarrito(idCarrito);
+			String[] productosDisponibles = new String[productos.size()];
+			System.out.println("productosDisponibles" + productosDisponibles.length );
+			for(int i = 0; i < productosDisponibles.length; i++)
+			{
+				productosDisponibles[i]=superAndes.darProducto( productos.get(i).getCodigoBarrasProducto()).getNombre();
+			}
+			JComboBox<String> cbProductos = new JComboBox<String>(productosDisponibles);
+			cbProductos.addActionListener(this);
+			
+			String[] infoProductoCarrito = new String[2];
 
+			JTextField jTFcantidad = new JTextField();
+			
+			Object[] message = {
+					
+     				"Producto:",cbProductos,
+					"cantidad:", jTFcantidad
+					
+			};
+			
+			
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "En adicionar producto al carrito: \n\n";
+
+
+				infoProductoCarrito[0] = jTFcantidad.getText();
+				
+				if(!infoProductoCarrito[0].equals("")  )
+				{
+					int cantidad = Integer.parseInt(infoProductoCarrito[0]);
+	                String nombreProducto = cbProductos.getSelectedItem().toString();
+	                Producto a =superAndes.darProductoPorNombre(nombreProducto);
+	                String codigoProducto = a.getCodigoBarras();
+	                 
+			long disminuyo= superAndes.disminuirUnidadesProductoCarritoCompras(idCarrito, codigoProducto, cantidad);
+					
+					if (disminuyo == -1)
+						throw new Exception("No se pudo eliminar el producto "+ nombreProducto +" del carrito : " + idCarrito );
+					resultado += cantidad +" "+ nombreProducto + " elimindo correctamente del carrito: " + idCarrito ;
+					resultado += "\n Operación terminada.";
+
+				}
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
+		
+		
 	}
 
 	

@@ -101,7 +101,7 @@ class SQLProducto {
 	 */
 	public Producto darProducto(PersistenceManager pm, String codigoBarras)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProducto() + "WHERE codigobarras = ?");
+		Query q = pm.newQuery(SQL, " SELECT * FROM " + psa.darTablaProducto() + " WHERE codigobarras = ?");
 		q.setResultClass(Producto.class);
 		q.setParameters(codigoBarras);
 		return (Producto) q.executeUnique();
