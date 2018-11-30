@@ -2295,7 +2295,7 @@ public class PersistenciaSuperAndes {
 	 */
 	public CarritoCompras darCarritoComprasPorCliente(String cliente)
 	{
-		System.out.println("holi 4");
+		
 		return sqlCarritoCompras.darCarritoComprasPorCliente(pmf.getPersistenceManager(), cliente);
 	}
 
