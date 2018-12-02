@@ -3998,4 +3998,4 @@ insert into CARRITOCOMPRAS (id, CLIENTE, SUCURSAL) values (997, 'Nenita Baumbach
 insert into CARRITOCOMPRAS (id, CLIENTE, SUCURSAL) values (998, 'Aldo Beatty@hotmail.com', 609);
 insert into CARRITOCOMPRAS (id, CLIENTE, SUCURSAL) values (999, 'Viviana VonRueden@hotmail.com', 242);
 insert into CARRITOCOMPRAS (id, CLIENTE, SUCURSAL) values (1000, 'Holley Bartoletti@hotmail.com', 446);
-
+commit;

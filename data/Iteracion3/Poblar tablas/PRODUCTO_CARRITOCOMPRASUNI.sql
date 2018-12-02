@@ -9998,4 +9998,4 @@ insert into PRODUCTO_CARRITOCOMPRAS (carrito, cantidad, codigobarras) values (21
 insert into PRODUCTO_CARRITOCOMPRAS (carrito, cantidad, codigobarras) values (3356, 2, '40I388347E4CY');
 insert into PRODUCTO_CARRITOCOMPRAS (carrito, cantidad, codigobarras) values (2116, 14, 'K9311V9HX6UHO');
 insert into PRODUCTO_CARRITOCOMPRAS (carrito, cantidad, codigobarras) values (1505, 25, '0Q8WV8M62Q811');
-
+commit;

@@ -14998,4 +14998,4 @@ insert into EMPRESA (nit, direccion) values ('503792658-8', 'Carrera 4s # 95-32'
 insert into EMPRESA (nit, direccion) values ('794872680', 'calle 50C # 93-44');
 insert into EMPRESA (nit, direccion) values ('235181100-5', 'calle 4i # 94-69');
 insert into EMPRESA (nit, direccion) values ('711964915', 'Carrera 48i # 96-79');
-
+commit;
