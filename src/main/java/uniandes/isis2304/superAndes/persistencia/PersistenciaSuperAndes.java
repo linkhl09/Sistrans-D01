@@ -1224,8 +1224,8 @@ public class PersistenciaSuperAndes {
 	 * El primer elemento de la pareja es un el valor total pagado por la sucursal; 
 	 * el segundo elemento es el identificador de la sucursal
 	 */
-	 
-	public  List<long[]>  darDineroRecolectadoSucursales(  Date fechaInicio, Date fechaFin){
+	public List<long[]> darDineroRecolectadoSucursales(Date fechaInicio, Date fechaFin)
+	{
 	
 		List<long []> respuesta = new LinkedList <long []> ();
 		List<Object[]> tuplas = sqlSucursal.darDineroRecolectadoSucursales(pmf.getPersistenceManager(),fechaInicio, fechaFin);
@@ -1245,9 +1245,6 @@ public class PersistenciaSuperAndes {
 		return respuesta;
 	}
 		
-	
-
-
 	// -----------------------------------------------------------------
 	// Métodos de tabla SucursalProducto
 	// -----------------------------------------------------------------

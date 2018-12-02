@@ -59,7 +59,7 @@ class SQLCarritoCompras {
 	 */
 	public long adicionarCarritoCompras(PersistenceManager pm, long id, String cliente, long idSucursal)
 	{
-		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCarritoCompras() + "(id, cliente,Sucursal) values (?,?,?)");
+		Query q = pm.newQuery(SQL, "INSERT INTO " + psa.darTablaCarritoCompras() + " (id, cliente,Sucursal) values (?,?,?)");
 		q.setParameters(id, cliente, idSucursal);
 		return (long) q.executeUnique();
 	}
@@ -85,7 +85,7 @@ class SQLCarritoCompras {
 	 */
 	public CarritoCompras darCarritoComprasPorId(PersistenceManager pm, long id)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + "CARRITOCOMPRAS" + " WHERE id = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras() + " WHERE id = ?");
 		q.setResultClass(CarritoCompras.class);
 		q.setParameters(id);
 		return (CarritoCompras) q.executeUnique();
@@ -99,7 +99,7 @@ class SQLCarritoCompras {
 	 */
 	public CarritoCompras darCarritoComprasPorCliente(PersistenceManager pm, String cliente)
 	{
-		Query q = pm.newQuery(SQL, " SELECT * FROM " + psa.darTablaCarritoCompras() + " WHERE cliente = ?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaCarritoCompras() + " WHERE cliente = ?");
 		q.setResultClass(CarritoCompras.class);
 		q.setParameters(cliente);
 		return (CarritoCompras) q.executeUnique();
@@ -114,12 +114,10 @@ class SQLCarritoCompras {
 	 */
 	public long abandonarCarrito(PersistenceManager pm, long id)
 	{
-		
-		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaCarritoCompras() + "  SET cliente = null WHERE id = ? ");
+		Query q = pm.newQuery(SQL, "UPDATE " + psa.darTablaCarritoCompras() + " SET cliente = null WHERE id = ? ");
 		q.setParameters(id);
 		return (long) q.executeUnique();
-	}
-	
+	}	
 	
 	/**
 	 * Crea y ejecuta la sentencia SQL para encontrar la información los CARRITOCOMPRAS de la base de datos.
@@ -133,6 +131,4 @@ class SQLCarritoCompras {
 		q.setResultClass(CarritoCompras.class);
 		return (List<CarritoCompras>) q.executeList();
 	}
-	
-
 }

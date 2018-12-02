@@ -84,7 +84,7 @@ class SQLProductoCarritoCompras
 	 */
 	public ProductoCarritoCompras darProductoCarrito(PersistenceManager pm, long carrito, String codigoBarrasProducto)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoCarritoCompras() + " WHERE carrito = ? AND codigoBarrasProducto =?");
+		Query q = pm.newQuery(SQL, "SELECT * FROM " + psa.darTablaProductoCarritoCompras() + " WHERE carrito = ? AND codigoBarrasProducto = ?");
 		q.setParameters(carrito, codigoBarrasProducto);
 		q.setResultClass(ProductoCarritoCompras.class);
 		return (ProductoCarritoCompras) q.executeUnique();
