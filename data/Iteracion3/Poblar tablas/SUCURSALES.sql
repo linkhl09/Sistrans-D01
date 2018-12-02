@@ -10998,4 +10998,4 @@ insert into SUCURSAL (id, direccion, ciudad, nombre, segmentacionMercado, tamani
 insert into SUCURSAL (id, direccion, ciudad, nombre, segmentacionMercado, tamanio) values (998, '035 Fisk Junction', 'Sabanagrande', 'Nksfzjxibh', 'Ni', 335);
 insert into SUCURSAL (id, direccion, ciudad, nombre, segmentacionMercado, tamanio) values (999, '4542 Bluejay Parkway', 'Velké Hoštice', 'Jsvulyowcb', 'Idea', 473);
 insert into SUCURSAL (id, direccion, ciudad, nombre, segmentacionMercado, tamanio) values (1000, '000 Dottie Alley', 'Picoto', 'Sfdsgpeihx', 'quejesto', 509);
-commit;
+commit;

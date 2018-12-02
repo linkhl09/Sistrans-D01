@@ -1708,3 +1708,16 @@ ORA-02290: restricción de control (ISIS2304A271820.CK_CODBARRAS) violada
 00:20:09,435 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando productos
 00:20:09,556 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando productos: 0 existentes
 00:20:09,557 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de productos: 0 existentes
+15:39:54,493 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+15:39:54,493 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+15:39:54,533 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+15:39:55,938 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+15:39:56,046 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 22 existentes
+15:40:03,707 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+15:40:42,883 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Borrada la base de datos.
+15:40:42,884 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+15:41:25,978 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando carrito compras al cliente: ADMINISTRADORen al sucursal 1
+15:41:26,000 (AWT-EventQueue-0) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "INSERT INTO CARRITOCOMPRAS(id, cliente,Sucursal) values (?,?,?)".
+ORA-02291: restricción de integridad (ISIS2304A271820.FK_SUCURSAL_CARRITO) violada - clave principal no encontrada
+
+15:41:26,002 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
