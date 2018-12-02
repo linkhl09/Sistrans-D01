@@ -1721,12 +1721,91 @@ ORA-02290: restricción de control (ISIS2304A271820.CK_CODBARRAS) violada
 ORA-02291: restricción de integridad (ISIS2304A271820.FK_SUCURSAL_CARRITO) violada - clave principal no encontrada
 
 15:41:26,002 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado carritoCompras
-09:21:15,715 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
-09:21:15,728 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
-09:21:15,830 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
-09:21:21,803 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
-09:21:22,170 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 0 existentes
-09:21:28,706 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Productos
-09:21:28,706 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando productos
-09:21:28,855 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando productos: 0 existentes
-09:21:28,855 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de productos: 0 existentes
+09:09:46,690 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:09:46,691 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:09:46,710 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:10:18,208 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+09:10:18,248 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+09:10:28,897 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: javax.jdo.JDOFatalUserException
+09:10:28,897 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Error de E/S: The Network Adapter could not establish the connection
+NestedThrowables:
+java.sql.SQLRecoverableException: Error de E/S: The Network Adapter could not establish the connection
+09:10:28,903 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+09:10:28,904 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+09:10:28,935 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+09:10:28,935 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Error de E/S: The Network Adapter could not establish the connection
+NestedThrowables:
+java.sql.SQLRecoverableException: Error de E/S: The Network Adapter could not establish the connection
+09:10:28,935 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+09:10:28,935 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+09:10:28,968 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+09:10:28,968 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Error de E/S: The Network Adapter could not establish the connection
+NestedThrowables:
+java.sql.SQLRecoverableException: Error de E/S: The Network Adapter could not establish the connection
+09:10:28,969 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+09:10:28,969 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+09:10:28,993 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de acceso normal FALLÓ !!. La excepción generada es: javax.jdo.JDOFatalUserException
+09:10:28,993 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Error de E/S: The Network Adapter could not establish the connection
+NestedThrowables:
+java.sql.SQLRecoverableException: Error de E/S: The Network Adapter could not establish the connection
+09:44:30,680 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+09:44:30,732 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+09:45:13,377 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente incompleta. No se pudo conectar a la base de datos !!. La excepción generada es: javax.jdo.JDOFatalUserException
+09:45:13,377 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Error de E/S: The Network Adapter could not establish the connection
+NestedThrowables:
+java.sql.SQLRecoverableException: Error de E/S: The Network Adapter could not establish the connection
+09:45:13,381 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+09:45:13,381 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+09:45:42,690 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+09:45:42,690 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+09:45:42,703 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+09:45:55,428 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+09:45:55,429 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Error de E/S: The Network Adapter could not establish the connection
+NestedThrowables:
+java.sql.SQLRecoverableException: Error de E/S: The Network Adapter could not establish the connection
+10:02:21,068 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:02:21,069 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+10:02:21,081 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:02:23,502 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+10:02:23,754 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 0 existentes
+10:02:29,638 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Proveedor:
+10:02:29,704 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 0 existentes
+10:02:29,710 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal
+10:17:55,006 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+10:17:55,007 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+10:17:55,019 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+10:17:57,240 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+10:26:16,552 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+10:26:16,592 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+10:26:18,803 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+10:26:18,976 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+10:26:18,976 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+10:26:18,976 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+10:26:19,327 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+10:26:19,370 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+10:26:19,419 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+10:26:19,420 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+10:26:19,574 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+10:26:19,574 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+10:26:19,575 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+10:26:19,575 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+10:26:20,799 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+10:26:20,799 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+10:26:20,800 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+10:26:20,800 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+10:26:21,234 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+10:26:21,234 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+10:26:21,254 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
