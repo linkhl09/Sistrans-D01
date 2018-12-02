@@ -24,11 +24,14 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.UIManager;
 
 import org.apache.log4j.Logger;
@@ -87,6 +90,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 	 * Cliente que esta usando la aplicación.
 	 */
 	private String clienteActual;
+	
 	
 	private long idCarrito;
 
@@ -331,7 +335,17 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				categoriasDisponibles[i]=categorias.get(i).getNombre();
 			JComboBox<String> cbCategorias = new JComboBox<String>(categoriasDisponibles);
 			cbCategorias.addActionListener(this);
-
+			
+			List<VOTipo> tipos = superAndes.darVOTipo();
+			String[] tiposDisponibles = new String[tipos.size()];
+			for(int i = 0; i <tipos.size(); i++ )
+				tiposDisponibles[i] = tipos.get(i).getNombre();
+			JList<String> listaTipos = new JList<String>(tiposDisponibles);
+			listaTipos.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+			listaTipos.setLayoutOrientation(JList.VERTICAL);
+			JScrollPane listScroller = new JScrollPane(listaTipos);
+			
+			
 			String [] info = new String[15];
 			JTextField tFCodigoBarras = new JTextField();
 			JTextField tFNombre = new JTextField();
@@ -347,8 +361,8 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			JTextField tFCalidad = new JTextField();
 			JTextField tFNivelReorden = new JTextField();
 			JTextField tFFechaVencimiento = new JTextField();
-
 			JCheckBox cbPromocion = new JCheckBox();
+						
 			Object[] message = 
 				{
 						"Codigo Barras:", tFCodigoBarras,
@@ -367,7 +381,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 						"Fecha de vencimiento 'dd/mm/yyyy' (opcional):", tFFechaVencimiento,
 						"Categoria:", cbCategorias,
 						"¿Esta en promocion? ", cbPromocion,
-						"Tipos Disponibles:", "TODO" 
+						"Tipos Disponibles:", listScroller
 				};
 			int option = JOptionPane.showConfirmDialog(null, message, "Inserte información del producto a adicionar", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)

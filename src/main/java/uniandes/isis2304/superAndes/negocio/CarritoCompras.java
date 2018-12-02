@@ -93,7 +93,8 @@ public class CarritoCompras implements VOCarritoCompras {
 	/**
 	 * @return El identificador de la sucursal donde esta el carrito de compras.
 	 */
-	public long getIdSucursal() {
+	public long getIdSucursal() 
+	{
 		return idSucursal;
 	}
 
@@ -101,7 +102,8 @@ public class CarritoCompras implements VOCarritoCompras {
 	 * Asigna una nueva sucursal al carrito de compras.
 	 * @param idSucursal - El nuevo id de la sucursal donde se encuentra el carrito de compras.
 	 */
-	public void setIdSucursal(long idSucursal) {
+	public void setIdSucursal(long idSucursal) 
+	{
 		this.idSucursal = idSucursal;
 	}
 	
@@ -111,6 +113,6 @@ public class CarritoCompras implements VOCarritoCompras {
 	@Override
 	public String toString()
 	{
-		return "CarritoCompras [id=" + id + "sucursal" + idSucursal +"]";
+		return "CarritoCompras [id=" + id + ", cliente= "+ cliente + ", sucursal=" + idSucursal +"]";
 	}
 }
