@@ -1402,6 +1402,63 @@ public class SuperAndes {
 		return list;
 	}
 	
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadoNombreClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		log.info ("Consultando Clientes que realizaron almenos una compra del producto: " + codigoProducto + " en las fechas " + fechaInicio +"-" + fechaFin);
+		List<Cliente> list = psa.darOrdenadoNombreClientesRealizaronCompra(codigoProducto, fechaInicio, fechaFin);	
+		log.info ("Consultando Clientes: " + list.size() + " existentes");
+		return list;
+	}
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOredenadoPuntosClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		log.info ("Consultando Clientes que realizaron almenos una compra del producto: " + codigoProducto + " en las fechas " + fechaInicio +"-" + fechaFin);
+		List<Cliente> list = psa.darOrdenadoPuntosClientesRealizaronCompra(codigoProducto, fechaInicio, fechaFin);	
+		log.info ("Consultando Clientes: " + list.size() + " existentes");
+		return list;
+	}
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadoFechaClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		log.info ("Consultando Clientes que realizaron almenos una compra del producto: " + codigoProducto + " en las fechas " + fechaInicio +"-" + fechaFin);
+		List<Cliente> list = psa.darOrdenadoFechasClientesRealizaronCompra(codigoProducto, fechaInicio, fechaFin);	
+		log.info ("Consultando Clientes: " + list.size() + " existentes");
+		return list;
+	}
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadoUnidadesClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		log.info ("Consultando Clientes que realizaron almenos una compra del producto: " + codigoProducto + " en las fechas " + fechaInicio +"-" + fechaFin);
+		List<Cliente> list = psa.darOrdenadosCantidadClientesRealizaronCompra(codigoProducto, fechaInicio, fechaFin);	
+		log.info ("Consultando Clientes: " + list.size() + " existentes");
+		return list;
+	}
+	
 	// -----------------------------------------------------------------
 	// Métodos de tabla CarritoCompras
 	// -----------------------------------------------------------------

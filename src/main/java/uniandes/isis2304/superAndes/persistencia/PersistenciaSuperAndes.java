@@ -2221,7 +2221,7 @@ public class PersistenciaSuperAndes {
 	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
 	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
 	 *  */
-	public List<Cliente> darOrdenadoNomreClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	public List<Cliente> darOrdenadoNombreClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
 	{
 		return sqlCliente.ordenarPorNombreR10(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
 	}
