@@ -1410,6 +1410,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			menuBar.getComponentAtIndex(5).setEnabled(false);
 			menuBar.getComponentAtIndex(6).setEnabled(false);
 			menuBar.getComponentAtIndex(7).setEnabled(false);
+			menuBar.getComponentAtIndex(9).setEnabled(false); 
 		}
 		
 		
