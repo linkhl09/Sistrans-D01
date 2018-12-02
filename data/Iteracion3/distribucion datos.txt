@@ -4,16 +4,16 @@ sucursal 10.000
 categorias-22
 tipos 5000
 tipo-producto 15.000
-
 bodegas 40.000
 estantes 40.000
+cliente 200.000
+
+
 productos-bodega 80.000
 productos-estante 150.000
-
-
 sucursal-producto 55.000
-proveedores 4.000
-proveedores-producto 37.000
+
+MALDITAS FACTURASSS
 factura 90.000
 
 
@@ -26,9 +26,11 @@ prom descuento 2.000
 prom pague lleve uni 1.400
 prom pague lleve cantidad 600
 prom descuento segunda unid 500
-cliente 200.000
+
 persona-natural 185.000
 empresas 15.000
+proveedores 4.000
+proveedores-producto 37.000
 
 ------------------------------------------------
 total base de datos 1'000.000
