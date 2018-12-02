@@ -2209,7 +2209,7 @@ public class PersistenciaSuperAndes {
 	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
 	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
 	 *  */
-	public List<Cliente> darClientesRealizaronCompra( String codigoProducto, Date fechaInicio, Date  fechaFin)
+	public List<Cliente> darClientesRealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
 	{
 		return sqlCliente.darClientesRealizaronCompra(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
 	}
