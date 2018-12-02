@@ -1,13 +1,16 @@
 ANDRÉS:
-producto 79.978
+producto 80.000
 sucursal 10.000
+categorias-22
+tipos 5000
+tipo-producto 15.000
+
 bodegas 40.000
 estantes 40.000
 productos-bodega 80.000
 productos-estante 150.000
-categorias-22
-tipos 5000
-tipo-producto 15.000
+
+
 sucursal-producto 55.000
 proveedores 4.000
 proveedores-producto 37.000
