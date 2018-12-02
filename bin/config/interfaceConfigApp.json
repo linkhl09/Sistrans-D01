@@ -180,7 +180,24 @@
 				{
 					"label":"RFC9",
 					"event":"productosConPocaDemanda"
+				},
+				{
+					"label":"RFC10",
+					"event":"consultarConsumoSuperAndesV1"
+				},
+				{
+					"label":"RFC11",
+					"event":"consultarConsumoSuperAndesV2"
+				},
+				{
+					"label":"RFC12",
+					"event":"consultarFuncionamiento"
+				},
+				{
+					"label":"RFC13",
+					"event":"consultarBuenosClientes"
 				}
+				
 
 			]
 		},
