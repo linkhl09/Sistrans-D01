@@ -8,6 +8,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 
+import javax.jdo.PersistenceManager;
+
 import static java.util.concurrent.TimeUnit.*;
 
 import java.text.DateFormat;
@@ -1385,6 +1387,21 @@ public class SuperAndes {
 		return cambios;
 	}
 
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darClientesRealizaronCompra( String codigoProducto, Date fechaInicio, Date  fechaFin)
+	{
+		log.info ("Consultando Clientes que realizaron almenos una compra del producto: " + codigoProducto + " en las fechas " + fechaInicio +"-" + fechaFin);
+		List<Cliente> list = psa.darClientesRealizaronCompra(codigoProducto, fechaInicio, fechaFin);	
+		log.info ("Consultando Clientes: " + list.size() + " existentes");
+		return list;
+	}
+	
 	// -----------------------------------------------------------------
 	// Métodos de tabla CarritoCompras
 	// -----------------------------------------------------------------

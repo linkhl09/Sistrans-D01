@@ -139,11 +139,12 @@ class SQLCliente
 	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
 	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
 	 *  */
-	public long darClientesRealizaronCompra(PersistenceManager pm, String codigoProducto, Date fechaInicio, Date  fechaFin)
+	public List<Cliente>  darClientesRealizaronCompra(PersistenceManager pm, String codigoProducto, Date fechaInicio, Date  fechaFin)
 	{
 		Query q = pm.newQuery(SQL, "select * from( select factura from factura_producto  where producto = ? ) a join (select * "
 				+ "from (( select numero , cliente from factura where fecha BETWEEN ? AND ?)  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero ");
 		q.setParameters(codigoProducto, fechaInicio, fechaFin);
-		return (long) q.executeUnique();
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
 	}
 }

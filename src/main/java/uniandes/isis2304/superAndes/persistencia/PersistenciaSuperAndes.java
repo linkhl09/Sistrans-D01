@@ -2209,31 +2209,9 @@ public class PersistenciaSuperAndes {
 	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
 	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
 	 *  */
-	public long darClientesRealizaronCompra( String codigoProducto, Date fechaInicio, Date  fechaFin)
+	public List<Cliente> darClientesRealizaronCompra( String codigoProducto, Date fechaInicio, Date  fechaFin)
 	{
-		PersistenceManager pm = pmf.getPersistenceManager();
-		Transaction tx=pm.currentTransaction();
-		try
-		{
-			tx.begin();
-			long resp = sqlCliente.darClientesRealizaronCompra(pm, codigoProducto, fechaInicio, fechaFin);
-			tx.commit();
-			return resp;
-		}
-		catch (Exception e)
-		{
-			//        	e.printStackTrace();
-			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
-			return -1;
-		}
-		finally
-		{
-			if (tx.isActive())
-			{
-				tx.rollback();
-			}
-			pm.close();
-		}
+		return sqlCliente.darClientesRealizaronCompra(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
 	}
 
 	// -----------------------------------------------------------------
