@@ -1809,3 +1809,97 @@ java.sql.SQLException: ORA-01017: invalid username/password; logon denied
 10:26:21,234 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
 10:26:21,234 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
 10:26:21,254 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+11:26:48,580 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+11:26:48,620 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+11:26:50,543 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+11:26:50,755 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+11:26:50,756 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+11:26:50,756 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+11:26:51,108 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+11:26:51,148 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+11:26:51,185 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+11:26:51,186 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+11:26:51,302 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+11:26:51,302 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+11:26:51,302 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+11:26:51,303 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+11:26:52,528 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+11:26:52,528 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+11:26:52,529 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+11:26:52,530 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+11:26:52,922 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+11:26:52,923 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+11:26:52,939 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+11:26:56,201 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+11:26:56,202 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+11:26:56,214 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+11:26:58,515 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+11:26:58,703 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 0 existentes
+11:27:18,911 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
+11:27:19,007 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 23 existentes
+11:27:19,010 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Tipo
+11:27:19,063 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los Vo de Tipo: 0 existentes.
+11:32:09,388 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+11:32:09,389 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+11:32:09,401 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+11:32:11,562 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+11:32:11,747 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+11:32:15,384 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
+11:32:15,549 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 34 existentes
+11:32:15,555 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Tipo
+11:32:15,760 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los Vo de Tipo: 57 existentes.
+11:49:55,099 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+11:49:55,099 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+11:49:55,112 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+11:49:57,386 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+11:49:57,625 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+11:50:05,521 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de categoria
+11:50:05,650 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de : 34 existentes
+11:50:05,657 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Tipo
+11:50:05,830 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los Vo de Tipo: 57 existentes.
+11:50:31,471 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Productos
+11:50:31,472 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando productos
+11:50:31,609 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando productos: 0 existentes
+11:50:31,609 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de productos: 0 existentes
+11:50:36,889 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionando producto: a
+11:50:37,421 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Adicionado el producto.
+11:50:37,422 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal
+11:50:37,644 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Generando los VO de Sucursal: 4 existentes
+12:03:32,037 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:03:32,037 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:03:32,050 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:03:34,417 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:03:34,617 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+12:09:39,049 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:09:39,050 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:09:39,062 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:09:41,142 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:09:41,317 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+12:11:32,795 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:11:32,795 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:11:32,808 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:11:35,196 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:11:35,385 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+12:11:57,654 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:11:57,655 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:11:57,667 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:12:00,003 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:12:00,180 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+12:13:48,660 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+12:13:48,661 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+12:13:48,682 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+12:13:51,186 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+12:13:51,380 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes

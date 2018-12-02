@@ -402,6 +402,12 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				info[12]	=tFNivelReorden.getText();
 				info[13]	=tFFechaVencimiento.getText();
 				info[14]	=cbCategorias.getSelectedItem().toString();
+				if(cbPromocion.isSelected())
+				{
+					adicionarPromocion();
+				}
+				//String[] listTipos = listScroller.getlist
+			
 
 				if(!info[0].equals("") && !info[1].equals("") && !info[2].equals("") && !info[3].equals("")
 						&& !info[4].equals("") && !info[6].equals("") && !info[11].equals("") && !info[12].equals("")
@@ -590,6 +596,11 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				infoPN[2] = nombre.getText();
 				if(!infoPN[0].equals("") && !infoPN[1].equals("") && !infoPN[2].equals(""))
 				{
+					if(!infoPN[1].contains("@"))
+					{
+						JOptionPane.showMessageDialog(this, "El correo del cliente debería tener un @", "Correo Invalido", JOptionPane.ERROR_MESSAGE);
+						throw new Exception("El correo del cliente debería tener un @");
+					}
 					VOPersonaNatural pn = superAndes.adicionarPersonaNatural(infoPN[0], cbTipoDocumento.getSelectedItem().toString(), infoPN[1], infoPN[2]);
 					if(pn == null)
 						throw new Exception("No se pudo agregar el cliente Persona natural con nombre: " + nombre);
@@ -644,6 +655,11 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				infoPN[3] = nombre.getText();
 				if(!infoPN[0].equals("") && !infoPN[1].equals("") && !infoPN[2].equals("") && !infoPN[3].equals(""))
 				{
+					if(!infoPN[2].contains("@"))
+					{
+						JOptionPane.showMessageDialog(this, "El correo del cliente debería tener un @", "Correo Invalido", JOptionPane.ERROR_MESSAGE);
+						throw new Exception("El correo del cliente debería tener un @");
+					}					
 					VOEmpresa empresa = superAndes.adicionarEmpresa(infoPN[0], infoPN[1], infoPN[2], infoPN[3] );
 					if(empresa == null)
 						throw new Exception("No se pudo agregar el cliente Persona natural con nombre: " + nombre);
@@ -875,7 +891,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		}
 	}
 
-
 	/**
 	 * Adiciona una Promocion manual con la información dada por el usuario.
 	 * Se crea una nueva tupla de Promocion en la base de datos. Si se cumplen las condiciones necesarias.
@@ -1017,7 +1032,6 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		}
 	}
 
-	
 	/**
 	 * Adiciona una OrdenPedido manual con la información dada por el usuario.
 	 * Se crea una nueva tupla de OrdenPedido en la base de datos. Si se cumplen las condiciones necesarias.
@@ -1401,7 +1415,25 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 		
 	}
 
-
+	public void consultarConsumoSuperAndesV1()
+	{
+		
+	}
+	
+	public void consultarConsumoSuperAndesV2()
+	{
+		
+	}
+	
+	public void consultarFuncionamiento()
+	{
+		
+	}
+	
+	public void consultarBuenosClientes()
+	{
+		
+	}
 
 	// -----------------------------------------------------------------
 	// Métodos administrativos
