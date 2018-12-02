@@ -2200,6 +2200,41 @@ public class PersistenciaSuperAndes {
 			pm.close();
 		}
 	}
+	
+	
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public long darClientesRealizaronCompra( String codigoProducto, Date fechaInicio, Date  fechaFin)
+	{
+		PersistenceManager pm = pmf.getPersistenceManager();
+		Transaction tx=pm.currentTransaction();
+		try
+		{
+			tx.begin();
+			long resp = sqlCliente.darClientesRealizaronCompra(pm, codigoProducto, fechaInicio, fechaFin);
+			tx.commit();
+			return resp;
+		}
+		catch (Exception e)
+		{
+			//        	e.printStackTrace();
+			log.error ("Exception : " + e.getMessage() + "\n" + darDetalleException(e));
+			return -1;
+		}
+		finally
+		{
+			if (tx.isActive())
+			{
+				tx.rollback();
+			}
+			pm.close();
+		}
+	}
 
 	// -----------------------------------------------------------------
 	// Métodos de CarritoCompras 

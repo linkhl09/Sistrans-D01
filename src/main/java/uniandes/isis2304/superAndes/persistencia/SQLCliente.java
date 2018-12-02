@@ -1,5 +1,6 @@
 package uniandes.isis2304.superAndes.persistencia;
 
+import java.util.Date;
 import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
@@ -130,4 +131,19 @@ class SQLCliente
 		q.setParameters(puntos, correoElectronico);
 		return (long) q.executeUnique();
 	}	
+	
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public long darClientesRealizaronCompra(PersistenceManager pm, String codigoProducto, Date fechaInicio, Date  fechaFin)
+	{
+		Query q = pm.newQuery(SQL, "select * from( select factura from factura_producto  where producto = ? ) a join (select * "
+				+ "from (( select numero , cliente from factura where fecha BETWEEN ? AND ?)  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero ");
+		q.setParameters(codigoProducto, fechaInicio, fechaFin);
+		return (long) q.executeUnique();
+	}
 }
