@@ -1414,41 +1414,39 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			menuBar.getComponentAtIndex(7).setEnabled(false);
 			menuBar.getComponentAtIndex(9).setEnabled(false); 
 		}
-		
-		
+
+
 	}
-	
+
 
 	/**
 	 * Se ordena la resouesta por nombre del cliente.
 	 */
 	public void ordenarNombreCliente(String codigoProducto, String fechaInicio, String fechFin)
 	{
-		
-	panelDatos.actualizarInterfaz(" Abandonando Carrito: cliente: " + clienteActual + "  numero Carrito : " + idCarrito);
+
+		panelDatos.actualizarInterfaz(" Abandonando Carrito: cliente: " + clienteActual + "  numero Carrito : " + idCarrito);
 		superAndes.abandonarCarrito(idCarrito);
 		panelDatos.actualizarInterfaz("Se abandono correctamente el carrito : " + idCarrito);
-		
+
 	}
-	
-	
+
+
 
 	public void consultarConsumoSuperAndesV1()
 	{
 		try
 		{
-			
+
 			String[] ordenamientos = new String[5];
 			ordenamientos[0]= "nombre del cliente";
 			ordenamientos[1]= "puntos del cliente";
-			ordenamientos[3]= "fecha";
-			ordenamientos[4]= "unidades compradas del producto";
-			JComboBox<String> cbCategorias = new JComboBox<String>(ordenamientos);
-			cbCategorias.addActionListener(this);
-			
-			
-			
-			
+			ordenamientos[2]= "fecha";
+			ordenamientos[3]= "unidades compradas del producto";
+			JComboBox<String> cbOrdenamientos = new JComboBox<String>(ordenamientos);
+			cbOrdenamientos.addActionListener(this);
+
+
 			String[] infoConsulta = new String[4];
 			JTextField CodigoProducto = new JTextField();
 			JTextField fechaInicio = new JTextField();
@@ -1457,7 +1455,8 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					"producto:", CodigoProducto,
 					"fechaInicio(dd/mm/yyyy):", fechaInicio,
 					"fechaFin(dd/mm/yyyy):", fechaFin,
-					
+					"seleccione un ordenamiento si lo desea" , cbOrdenamientos
+
 			};
 			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
 			if(option == JOptionPane.OK_OPTION)
@@ -1466,22 +1465,99 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 				infoConsulta[0] = CodigoProducto.getText();
 				infoConsulta[1] = fechaInicio.getText();
 				infoConsulta[2] = fechaFin.getText();
-				
-				if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
-				{
-					 
-					
-					
-					List<Cliente> respuesta = superAndes.darClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
-					if(respuesta == null)
-						throw new Exception("No se pudo realizar la consulta: " );
-					resultado += "Consulta realizada correctamente: "; 
-        for (int i =0; i<respuesta.size(); i++){
-         	resultado += respuesta.get(i).toString();
-};
-					resultado += "\n Operación terminada.";
 
+				if(cbOrdenamientos.getSelectedItem()!=null)
+				{
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[0]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOrdenadoNombreClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[1]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOredenadoPuntosClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[2]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOrdenadoFechaClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[3]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOrdenadoUnidadesClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
 				}
+
+			
+
+//					if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+//					{
+//
+//						List<Cliente> respuesta = superAndes.darClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+//						if(respuesta == null)
+//							throw new Exception("No se pudo realizar la consulta: " );
+//						resultado += "Consulta realizada correctamente: "; 
+//						for (int i =0; i<respuesta.size(); i++)
+//						{
+//							resultado += respuesta.get(i).toString();
+//						};
+//						resultado += "\n Operación terminada.";
+//
+//					}
+				
+			
+				
+			
 				else
 				{
 					resultado+= "No se pueden dejar campos vacios!";
@@ -1498,7 +1574,7 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
 		}
 	}
-	
+
 	public void consultarConsumoSuperAndesV2()
 	{
 		
