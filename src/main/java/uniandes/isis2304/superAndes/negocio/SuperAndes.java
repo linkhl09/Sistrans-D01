@@ -1469,8 +1469,10 @@ public class SuperAndes {
 	 *  */
 	public List<Cliente> darOrdenadoNombreClientesNORealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
 	{
+		System.out.println("LLEGUE 4");
 		log.info ("Consultando Clientes que realizaron almenos una compra del producto: " + codigoProducto + " en las fechas " + fechaInicio +"-" + fechaFin);
 		List<Cliente> list = psa.darOrdenadoNombreClientesNORealizaronCompra(codigoProducto, fechaInicio, fechaFin);	
+		System.out.println("LLEGUE 4 :" +list.size());
 		log.info ("Consultando Clientes: " + list.size() + " existentes");
 		return list;
 	}

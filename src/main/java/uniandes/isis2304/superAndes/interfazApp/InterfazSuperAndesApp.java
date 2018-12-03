@@ -1614,14 +1614,17 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 					{
 						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
 						{
-
+                             System.out.println("LLEGUE 1" );
 							List<Cliente> respuesta = superAndes.darOrdenadoNombreClientesNORealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							System.out.println("LLEGUE 2");
 							if(respuesta == null)
 								throw new Exception("No se pudo realizar la consulta: " );
 							resultado += "Consulta realizada correctamente: "; 
 							for (int i =0; i<respuesta.size(); i++)
 							{
 								resultado += respuesta.get(i).toString();
+								System.out.println("LLEGUE 3 +" + respuesta.get(i).toString());
+								
 							};
 							resultado += "\n Operación terminada.";
 

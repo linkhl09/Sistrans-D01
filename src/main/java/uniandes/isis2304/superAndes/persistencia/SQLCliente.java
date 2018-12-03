@@ -155,10 +155,11 @@ class SQLCliente
 	 *  */
 	public List<Cliente>  ordenarPorNombreR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
-				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) order by nombre");
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente ) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero))order by nombre ");
 	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
 		q.setResultClass(Cliente.class);
+		System.out.println("llegue al final" + ((List<Cliente>) q.executeList()).size() );
 		return (List<Cliente>) q.executeList();
 	}
 	/**
@@ -170,8 +171,8 @@ class SQLCliente
 	 *  */
 	public List<Cliente>  ordenarPorPuntosR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
 	{
-		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
-				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente )d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) ");
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente order by puntos) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente )d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) order by puntos");
 	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();
@@ -202,7 +203,7 @@ class SQLCliente
 	public List<Cliente>  ordenarPorUnidadesR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
 	{
 		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
-				+ "from (( select numero , cliente, fecha from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "' )  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) order by fecha");
+				+ "from (( select numero , cliente, fecha, cantidad from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "' order by cantidad )  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) ");
 	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();

@@ -2269,6 +2269,7 @@ public class PersistenciaSuperAndes {
 	 *  */
 	public List<Cliente> darOrdenadoNombreClientesNORealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
 	{
+		System.out.println("llegue6 " +sqlCliente.ordenarPorNombreR11(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin).size());
 		return sqlCliente.ordenarPorNombreR11(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
 	}
 	/**
