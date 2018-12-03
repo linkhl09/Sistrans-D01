@@ -2024,3 +2024,189 @@ java.sql.SQLException: ORA-01017: invalid username/password; logon denied
 19:45:29,426 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
 19:45:59,129 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: jbhiihoi en las fechas 08/08/2018-09/08/2018
 19:45:59,500 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes: 0 existentes
+19:52:19,099 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:52:19,100 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:52:19,136 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:52:22,270 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:53:45,403 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:53:45,405 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:53:45,440 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:53:48,676 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:54:55,678 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+19:54:55,800 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:54:59,111 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+19:54:59,360 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+19:54:59,361 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+19:54:59,361 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+19:54:59,950 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+19:55:00,019 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+19:55:00,071 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+19:55:00,086 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:00,263 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:55:00,263 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+19:55:00,264 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+19:55:00,278 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:01,782 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:55:01,782 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+19:55:01,783 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+19:55:01,784 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:02,337 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+19:55:02,338 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+19:55:02,352 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+19:55:20,801 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+19:55:20,892 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:23,922 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+19:55:24,138 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+19:55:24,138 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+19:55:24,138 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+19:55:24,552 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+19:55:24,591 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+19:55:24,638 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+19:55:24,638 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:24,789 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:55:24,790 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+19:55:24,790 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+19:55:24,791 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:26,140 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:55:26,140 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+19:55:26,141 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+19:55:26,142 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:55:26,846 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+19:55:26,846 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+19:55:26,863 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+19:55:36,222 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:55:36,223 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:55:36,260 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:55:39,265 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:56:44,151 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+19:56:44,239 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:56:47,482 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+19:56:47,787 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+19:56:47,787 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+19:56:47,787 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+19:56:48,209 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+19:56:48,245 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+19:56:48,281 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+19:56:48,282 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:56:48,438 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:56:48,438 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+19:56:48,439 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+19:56:48,439 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:56:49,793 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:56:49,793 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+19:56:49,794 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+19:56:49,795 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:56:50,387 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+19:56:50,387 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+19:56:50,407 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+19:57:27,143 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+19:57:27,228 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:30,359 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+19:57:30,597 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+19:57:30,598 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+19:57:30,598 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+19:57:31,016 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+19:57:31,066 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+19:57:31,103 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+19:57:31,104 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:31,263 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:57:31,264 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+19:57:31,264 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+19:57:31,265 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:32,539 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:57:32,539 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+19:57:32,540 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+19:57:32,540 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:33,021 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+19:57:33,021 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+19:57:33,039 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+19:57:47,499 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario correctos, pero sin crear el esquema
+19:57:47,621 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:50,778 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Tipos.
+19:57:51,033 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba de tabla inexistente correcta. La excepción generada es: javax.jdo.JDODataStoreException
+19:57:51,033 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: java.sql.SQLSyntaxErrorException: ORA-00942: la tabla o vista no existe
+
+19:57:51,034 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes
+19:57:51,432 (main) ERROR [uniandes.isis2304.superAndes.persistencia.PersistenciaSuperAndes] - Exception : Error con la ejecucion de Query de SQL "DELETE FROM B_PROVEEDORES_PRODUCTO".
+ORA-00942: la tabla o vista no existe
+
+19:57:51,472 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Limpiando la BD de SuperAndes: Listo!
+19:57:51,510 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con una base de datos que no existe
+19:57:51,511 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:51,728 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:57:51,728 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+NestedThrowables:
+java.sql.SQLException: Listener refused the connection with the following error:
+ORA-12505, TNS:listener does not currently know of SID given in connect descriptor
+ 
+19:57:51,729 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos de usuario incorrectos
+19:57:51,732 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:53,064 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Prueba realizada exitosamente. La excepción generada es: javax.jdo.JDOFatalUserException
+19:57:53,064 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - La causa es: javax.jdo.JDOFatalDataStoreException: ORA-01017: invalid username/password; logon denied
+
+NestedThrowables:
+java.sql.SQLException: ORA-01017: invalid username/password; logon denied
+
+19:57:53,064 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Probando el acceso a la base de datos con datos válidos (BD, credenciales, esquema
+19:57:53,065 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Se encontró un archivo de configuración de tablas válido
+19:57:53,519 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión realizada correctamente
+19:57:53,519 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Cerrando la conexión
+19:57:53,541 (main) INFO  [uniandes.isis2304.superAndes.test.ConexionTest] - Conexión cerrada
+19:58:04,562 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:58:04,564 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:58:04,630 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:58:08,866 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
