@@ -153,9 +153,73 @@ class SQLCliente
 	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
 	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
 	 *  */
+	public List<Cliente>  ordenarPorNombreR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) order by nombre");
+	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas ordenados por puntos
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente>  ordenarPorPuntosR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente )d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) ");
+	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas ordenados por nombre
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente>  ordenarPorFechaR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "' order by fecha)  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) ");
+	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas ordenados por nombre
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente>  ordenarPorUnidadesR11(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente, fecha from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "' )  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) order by fecha");
+	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
+		q.setResultClass(Cliente.class);
+		return (List<Cliente>) q.executeList();
+	}
+
+	
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas ordenados por nombre
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
 	public List<Cliente>  ordenarPorNombreR10(PersistenceManager pm, String codigoProducto, String fechaInicio, String  fechaFin)
 	{
-		Query q = pm.newQuery(SQL, "select CORREOELECTRONICO, NOMBRE, PUNTOS,EMPRESA,DOCUMENTOPN from( select factura from factura_producto  where producto = '" +codigoProducto+ "' ) a join (select *  from (( select numero , cliente from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero order by nombre");
+		Query q = pm.newQuery(SQL, "SELECT * FROM ((select * from cliente) minus(select correoelectronico, nombre, puntos,empresa,documentopn from( select factura from factura_producto    where producto = '" +codigoProducto+ "' ) a join (select *"
+				+ "from (( select numero , cliente, fecha from factura where fecha BETWEEN '" +fechaInicio+ "' AND '" +fechaFin+ "')  c join(select * from cliente)d on c.cliente= d.correoelectronico )) b on a.factura=b.numero)) order by fecha");
 	//	q.setParameters(codigoProducto, fechaInicio, fechaFin);
 		q.setResultClass(Cliente.class);
 		return (List<Cliente>) q.executeList();

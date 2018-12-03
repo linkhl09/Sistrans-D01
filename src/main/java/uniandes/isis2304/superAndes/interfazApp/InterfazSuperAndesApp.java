@@ -1577,7 +1577,144 @@ public class InterfazSuperAndesApp extends JFrame implements ActionListener
 
 	public void consultarConsumoSuperAndesV2()
 	{
-		
+		try
+		{
+
+			String[] ordenamientos = new String[5];
+			ordenamientos[0]= "nombre del cliente";
+			ordenamientos[1]= "puntos del cliente";
+			ordenamientos[2]= "fecha";
+			ordenamientos[3]= "unidades compradas del producto";
+			JComboBox<String> cbOrdenamientos = new JComboBox<String>(ordenamientos);
+			cbOrdenamientos.addActionListener(this);
+
+
+			String[] infoConsulta = new String[4];
+			JTextField CodigoProducto = new JTextField();
+			JTextField fechaInicio = new JTextField();
+			JTextField fechaFin = new JTextField();
+			Object[] message = {
+					"producto:", CodigoProducto,
+					"fechaInicio(dd/mm/yyyy):", fechaInicio,
+					"fechaFin(dd/mm/yyyy):", fechaFin,
+					"seleccione un ordenamiento si lo desea" , cbOrdenamientos
+
+			};
+			int option = JOptionPane.showConfirmDialog(null, message, "Llena el formulario", JOptionPane.OK_CANCEL_OPTION);
+			if(option == JOptionPane.OK_OPTION)
+			{
+				String resultado = "Consulta consumo superAndes: \n\n";
+				infoConsulta[0] = CodigoProducto.getText();
+				infoConsulta[1] = fechaInicio.getText();
+				infoConsulta[2] = fechaFin.getText();
+
+				if(cbOrdenamientos.getSelectedItem()!=null)
+				{
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[0]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOrdenadoNombreClientesNORealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[1]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOredenadoPuntosClientesNORealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[2]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOrdenadoFechaClientesNORealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+					if(cbOrdenamientos.getSelectedItem().toString().equals(ordenamientos[3]))
+					{
+						if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+						{
+
+							List<Cliente> respuesta = superAndes.darOrdenadoUnidadesClientesNORealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+							if(respuesta == null)
+								throw new Exception("No se pudo realizar la consulta: " );
+							resultado += "Consulta realizada correctamente: "; 
+							for (int i =0; i<respuesta.size(); i++)
+							{
+								resultado += respuesta.get(i).toString();
+							};
+							resultado += "\n Operación terminada.";
+
+						}
+					}
+				}
+
+			
+
+//					if(!infoConsulta[0].equals("") && !infoConsulta[1].equals("") && !infoConsulta[2].equals("") )
+//					{
+//
+//						List<Cliente> respuesta = superAndes.darClientesRealizaronCompra(infoConsulta[0], infoConsulta[1], infoConsulta[2]);
+//						if(respuesta == null)
+//							throw new Exception("No se pudo realizar la consulta: " );
+//						resultado += "Consulta realizada correctamente: "; 
+//						for (int i =0; i<respuesta.size(); i++)
+//						{
+//							resultado += respuesta.get(i).toString();
+//						};
+//						resultado += "\n Operación terminada.";
+//
+//					}
+				
+			
+				
+			
+				else
+				{
+					resultado+= "No se pueden dejar campos vacios!";
+				}
+				panelDatos.actualizarInterfaz(resultado);
+			}
+			else
+			{
+				panelDatos.actualizarInterfaz("Operación cancelada por el usuario.");
+			}
+		}
+		catch (Exception e) 
+		{
+			panelDatos.actualizarInterfaz("Exception en interfaz!!!: " + e.getMessage());
+		}
 	}
 	
 	public void consultarFuncionamiento()

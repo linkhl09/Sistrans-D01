@@ -2259,6 +2259,52 @@ public class PersistenciaSuperAndes {
 		return sqlCliente.ordenarPorUnidadesR10(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
 	}
 	
+	
+	/**
+	 * Devuelve a todos los clientes que  NO realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadoNombreClientesNORealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		return sqlCliente.ordenarPorNombreR11(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
+	}
+	/**
+	 * Devuelve a todos los clientes que NO realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadoPuntosClientesNORealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		return sqlCliente.ordenarPorPuntosR11(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
+	}
+	/**
+	 * Devuelve a todos los clientes que NO realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadoFechasClientesNORealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		return sqlCliente.ordenarPorFechaR11(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
+	}
+	/**
+	 * Devuelve a todos los clientes que realizaron al menos una compra de un producto especifico
+	 * en un rango de fechas
+	 * @param codigoProducto -codigo del producto que se busca el cliente halla comprado
+	 * @param fechaInicio -Rango de fechas de la busqueda (inicio del rango)
+	 * @param fechaFin --Rango de fechas de la busqueda (final del rango)
+	 *  */
+	public List<Cliente> darOrdenadosCantidadClientesNORealizaronCompra( String codigoProducto, String fechaInicio, String  fechaFin)
+	{
+		return sqlCliente.ordenarPorUnidadesR11(pmf.getPersistenceManager(), codigoProducto, fechaInicio, fechaFin);
+	}
+	
 
 	// -----------------------------------------------------------------
 	// Métodos de CarritoCompras 

@@ -1957,3 +1957,42 @@ java.sql.SQLException: ORA-01017: invalid username/password; logon denied
 15:42:18,403 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
 15:43:05,883 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: fervdcvsf en las fechas 08/08/2018-08/08/2018
 15:43:05,960 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes: 0 existentes
+19:08:53,647 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:08:53,757 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:08:53,798 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:08:57,244 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:08:57,574 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+19:09:57,976 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: DHIUDH en las fechas 08/08/2018-09/08/2018
+19:09:58,074 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes: 0 existentes
+19:10:29,168 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: joiedjhois en las fechas 08/08/2018-09/08/2018
+19:10:29,229 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes: 0 existentes
+19:11:27,771 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:11:27,772 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:11:27,807 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:11:30,907 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:11:31,200 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+19:12:08,648 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: hjghgjh en las fechas 08/08/2018-09/08/2018
+19:16:20,829 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:16:20,831 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:16:20,868 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:16:23,939 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:16:24,233 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+19:16:47,351 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: jhiuhuih en las fechas 08/08/2018-058/08/2018
+19:24:09,263 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:24:09,265 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:24:09,337 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:24:12,932 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:24:13,233 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+19:24:48,706 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: gugyugyu en las fechas 08/08/2018-09/08/2018
+19:25:32,820 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:25:32,822 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:25:32,864 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:25:36,313 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:25:37,048 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+19:25:50,439 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+19:25:50,441 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+19:25:50,480 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+19:25:53,609 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+19:25:53,911 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultados todos los correos: 20 existentes
+19:26:21,474 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes que realizaron almenos una compra del producto: ghvhgv en las fechas 08/08/2018-09/08/2018
+19:26:21,565 (AWT-EventQueue-0) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando Clientes: 0 existentes
