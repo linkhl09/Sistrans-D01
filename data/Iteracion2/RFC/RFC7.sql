@@ -1,0 +1,37 @@
+--Dada una unidad de tiempo (por ejemplo, semana o mes) y un tipo de producto, considerando todo el tiempo
+--de operación de SuperAndes, indicar cuáles fueron las fechas de mayor demanda (mayor cantidad de
+--productos), las de mayores ingresos (mayor cantidad de dinero recibido) y las de menor demanda. Se deben
+--presentar los resultados de manera individual para cada sucursal.
+
+---producto mas solicitado
+
+SELECT MAX(CANTIDAD), SEMANA
+FROM
+ (SELECT COUNT(A.PRODUCTO) AS CANTIDAD,  TO_CHAR(fecha, '??') AS SEMANA
+ FROM
+ ( SELECT CODIGOBARRASPRODUCTO AS PRODUCTO FROM TIPO_PRODUCTO
+ WHERE NOMBRETIPO ='') A JOIN (SELECT * FROM(SELECT FACTURA , PRODUCTO FROM FACTURA_PRODUCTO)P JOIN (SELECT NUMERO, FECHA FROM FACTURA )K ON P.FACTURA= K.NUMERO)B ON A.PRODUCTO = B.PRODUCTO
+ GROUP BY TO_CHAR(fecha, '??'))
+ GROUP BY SEMANA;
+
+--- producto menos solicitado 
+
+ SELECT Min(CANTIDAD), SEMANA
+FROM
+ (SELECT COUNT(A.PRODUCTO) AS CANTIDAD,  TO_CHAR(fecha, '??') AS SEMANA
+ FROM
+ ( SELECT CODIGOBARRASPRODUCTO AS PRODUCTO FROM TIPO_PRODUCTO
+ WHERE NOMBRETIPO ='') A JOIN (SELECT * FROM(SELECT FACTURA , PRODUCTO FROM FACTURA_PRODUCTO)P JOIN (SELECT NUMERO, FECHA FROM FACTURA )K ON P.FACTURA= K.NUMERO)B ON A.PRODUCTO = B.PRODUCTO
+ GROUP BY TO_CHAR(fecha, '??'))
+ GROUP BY SEMANA;
+
+----- mayores ingresos 
+
+ SELECT MAX(CANTIDAD) as valorTotal, SEMANA
+FROM
+ (SELECT COUNT(valortotal) AS cantidad,  TO_CHAR(fecha, '??') AS SEMANA
+ FROM
+ ( SELECT CODIGOBARRASPRODUCTO AS PRODUCTO FROM TIPO_PRODUCTO
+ WHERE NOMBRETIPO ='') A JOIN (SELECT * FROM(SELECT FACTURA , PRODUCTO FROM FACTURA_PRODUCTO)P JOIN (SELECT NUMERO, FECHA,valortotal FROM FACTURA )K ON P.FACTURA= K.NUMERO)B ON A.PRODUCTO = B.PRODUCTO
+ GROUP BY TO_CHAR(fecha, '??'))
+ GROUP BY SEMANA;

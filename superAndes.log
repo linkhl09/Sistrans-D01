@@ -2210,3 +2210,11 @@ java.sql.SQLException: ORA-01017: invalid username/password; logon denied
 19:58:04,564 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
 19:58:04,630 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
 19:58:08,866 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+20:07:00,496 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:07:00,496 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:07:00,509 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:07:03,027 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
+20:07:28,440 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Interfaz
+20:07:28,440 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se aplica configuración indicada en el archivo de configuración
+20:07:28,453 (main) INFO  [uniandes.isis2304.superAndes.interfazApp.InterfazSuperAndesApp] - Se encontró un archivo de configuración válido: Tablas BD
+20:07:31,391 (main) INFO  [uniandes.isis2304.superAndes.negocio.SuperAndes] - Consultando todos los correos: 
